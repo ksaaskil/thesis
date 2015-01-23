@@ -1,0 +1,960 @@
+\appendix
+
+\chapter{Lattice dynamics}
+
+\section{Crystal Hamiltonian}
+
+In this appendix, we study the atomic lattice dynamics in a three-dimensional periodically repeating crystal with lattice vectors $\bb{a}_1$, $\bb{a}_2$ and $\bb{a}_3$. In mechanical equilibrium, the atoms are located at their equilibrium positions $\bb{r}^0_l=l_1\bb{a}_1+l_2\bb{a}_2+l_3\bb{a}_3$. For notational simplicity, we assume that each unit cell in the crystal lattice contains only a single atom. We can then write the crystal Hamiltonian as
+\begin{equation}
+ \ca{H} = \sum_{l} \frac{\bb{p}_l^2}{2m} + \ca{V}(\bb{r}_1,\dots,\bb{r}_N).
+\end{equation}
+The interaction energy $\ca{V}$ can be written as a sum over interacting atom pairs, triplets, quadruplets, etc. as
+\begin{equation}
+ \ca{V} = \frac{1}{2} \sum_{l,l'} f(\bb{r}_{l}-\bb{r}_{l'}) + \frac{1}{6} \sum_{l,l',l''} g(\bb{r}_l,\bb{r}_{l'},\bb{r}_{l''}) + \dots,
+\end{equation}
+where the higher-order many-body terms account for, e.g., directional chemical bonding that cannot be captured by a pure two-body potential $f$. %For the purposes of this section, we assume that the pair-potential energy dominates over the many-body terms and we can neglect them.
+
+In a solid, the atoms perform small motion around their equilibrium positions $\bb{r}_0^l$, where the forces on each atom vanish:
+\begin{equation}
+  \left. \frac{\partial \ca{V}}{\partial \bb{r}_l} \right|_{\bb{r}=\bb{r}_0} = 0.
+\end{equation}
+It is then useful to expand the potential energy in terms of the atomic displacement $\bb{u}_l = \bb{r}_l-\bb{r}_l^0$ from the equilibrium position. Noting that the first-order derivative vanishes, one gets the expansion
+\begin{equation}
+ \ca{V} = \ca{V}_0 + \frac{1}{2} \sum_{l,l'} u_l^{\alpha} K_{ll'}^{\alpha\beta}  {u}_{l'}^{\beta} + \frac{1}{6} \sum_{l,l',l''} A^{\alpha \beta \gamma}_{l,l',l''} u^{\alpha}_l u^{\beta}_{l'} u^{\gamma}_{l''} + \dots \label{eq:V_expansion}
+\end{equation}
+where the constant contribution $\ca{V}_0$ can be neglected. The harmonic force constant matrix is defined as
+\begin{equation}
+K_{ll'}^{\alpha\beta} = \left. \frac{\partial^2 \ca{V}}{\partial  u_l^{\alpha}  \partial {u}_{l'}^{\beta}} \right|_0
+\end{equation}
+and the first-order anharmonicity matrix is 
+\begin{equation}
+A^{\alpha \beta \gamma}_{l,l',l''} = \frac{\partial^3 \ca{V}}{\partial u^{\alpha}_l \partial u^{\beta}_{l'} \partial u^{\gamma}_{l''}} 
+\end{equation}
+
+\section{Free phonons}
+
+At sufficiently low temperatures, where the atomic displacements from the equilibrium position are small, the anharmonic terms in Eq. \eqref{eq:V_expansion} can be neglected. The Hamiltonian is then of the quadratic form
+\begin{equation}
+ \ca{H}_{\textrm{free}} = \sum_{\bb{l}} \frac{\bb{p}_l^2}{2m} + \frac{1}{2} \sum_{l,l'} \bb{u}_l^T \bb{K}_{l,l'} \bb{u}_{l'}. \label{eq:H_free}
+\end{equation}
+Our goal is to determine the eigenstates of the Hamiltonian \eqref{eq:H_free}. Because the Hamiltonian bears close resemblance with the harmonic oscillator Hamiltonian, its eigenstates are obtained straightforwardly in terms of the so-called ladder operators \cite{schwabl}. We must, however, first separate the different degrees of freedom by defining so-called normal coordinates. Because we wish to study the propagation of phonons in an infinite crystal, we exploit the translational invariance of the crystal lattice and turn into the Fourier representation. As shown in solid state physics textbooks \cite{ashcroftmermin}, the lattice displacement can be written as 
+\begin{equation}
+ \bb{u}_l = \frac{1}{\sqrt{N}}  \sum_{\bb{q}} \tilde{\bb{u}}_{\bb{q}} e^{-i\bb{q} \cdot\bb{r}_l^0 }, \label{eq:uq_def}
+\end{equation}
+where the spatial Fourier transform is
+\begin{equation}
+ \tilde{\bb{u}}_{\bb{q}} = \frac{1}{\sqrt{N}} \sum_l \bb{u}_l e^{i\bb{q}\cdot \bb{r}_l^0}.
+\end{equation}
+The summation in Eq. \eqref{eq:uq_def} extends over the first Brillouin zone. Substituting \eqref{eq:uq_def} to \eqref{eq:H_free}, we get
+\begin{alignat}{2}
+ \ca{H}_{\textrm{free}} =& \frac{1}{N} \sum_{l} \sum_{\bb{q},\bb{q'}} \frac{\tilde{\bb{p}}_{\bb{q}}^T\tilde{\bb{p}}_{\bb{q'}}}{2m} e^{-i(\bb{q}+\bb{q}')\cdot\bb{r}^0_l} + \frac{1}{2N} \sum_{l,l'} \sum_{\bb{q},\bb{q}'} \bb{u}_{\bb{q}}^T e^{-i\bb{q}\cdot\bb{r}_l^0}\bb{K}_{l,l'}e^{-i\bb{q}'\cdot\bb{r}_{l'}^0} \bb{u}_{q'}. 
+\end{alignat}
+The first term can be straightforwardly simplified by employing the identity $\sum_{l}e^{-i\bb{q}\cdot \bb{r}_0^l} = N\delta_{\bb{q},0}$, where the modified Kronecker delta is defined so that $\hat \delta_{\bb{q},\bb{0}}$ is zero unless $\bb{q}$ differs from zero vector only by a vector $\bb{G}$ belonging to the reciprocal lattice ($e^{i\bb{G}\cdot \bb{r}_l^0}=1$ $\forall l$), in which case the function is unity. The second term can be simplified by redefining $\bb{q}' \to -\bb{q}+\bb{q}'$ and noting that due to the translational invariance, the force constant matrix can only depend on the difference $\bb{r}^0_l - \bb{r}^0_{l'}$. We can therefore set $l=0$ in $\bb{K}_{l,l'}$ and obtain 
+\begin{alignat}{2}
+ \ca{H}_{\textrm{free}} &= \sum_{\bb{q}} \frac{\tilde{\bb{p}}_{\bb{q}} \tilde{\bb{p}}_{-\bb{q}}}{2m} + \frac{1}{2N} \sum_{\bb{q},\bb{q}'} \tilde{\bb{u}}_{\bb{q}}^T \underbrace{ \sum_{l'} e^{-i\bb{q}' \cdot \bb{r}^0_{l'}}}_{N\hat \delta_{\bb{q}',0}} \underbrace{ \sum_{l} e^{-i \bb{q} \cdot (\bb{r}^0_l-\bb{r}^0_{l'})} \bb{K}_{l,l'}}_{\equiv \tilde{\bb{K}}(\bb{q})}  \tilde{\bb{u}}_{-\bb{q}+\bb{q}'} \\
+ &=   \sum_{\bb{q}} \frac{\tilde{\bb{p}}_{\bb{q}} \tilde{\bb{p}}_{-\bb{q}}}{2m} +\frac{1}{2} \sum_{\bb{q}} \tilde{\bb{u}}_{\bb{q}}^T \tilde{\bb{K}}(\bb{q}) \tilde{\bb{u}}_{-\bb{q}}.
+\end{alignat}
+We now look for the diagonal eigenvalue matrix $m\Omega^2=\textrm{diag}[m\omega_{\bb{q},1}^2,m\omega_{\bb{q},2}^2,m\omega_{\bb{q},3}^2]$ of $\bb{K}(\bb{q})$ satisfying
+\begin{equation}
+ \bb{K}(\bb{q}) = \bb{E}_{\bb{q}} m\Omega_{\bb{q}}^2 \bb{E}_{\bb{q}}^{\dagger},
+\end{equation}
+where $\bb{E}_{\bb{q}}$ is the matrix containing the \textit{polarization vectors} $\bb{e}_{\bb{q},p}$: $\bb{E}_{\bb{q}}=[\bb{e}_{\bb{q},1},\bb{e}_{\bb{q},2},\bb{e}_{\bb{q},3}]$. The polarization vectors are normalized to unit length. In an isotropic medium, the polarization vectors can be chosen such that $\bb{e}_{\bb{q},1}\parallel \bb{q}$ (longitudinal mode) and $\bb{e}_{\bb{q},2}\perp \bb{q}$, $\bb{e}_{\bb{q},3}\perp \bb{q}$ (two transversal modes).
+
+With the help of the polarization vectors, we define the normal coordinates as
+\begin{equation}
+ \left\{
+\begin{array}{ll}
+  \eta_{\bb{q}} &= \sqrt{m} \bb{E}_{\bb{q}}^{T} \bb{u}_{\bb{q}} \\
+  \pi_{\bb{q}} &= (1/\sqrt{m}) \bb{E}_{\bb{q}}^{\dagger} \bb{p}_{\bb{q}} .
+ \end{array}
+\right.
+\label{eq:normal_coord_def}
+\end{equation}
+It is straigtforward to verify that the normal coordinates satisfy the commutation relation $[\eta_{\bb{q}}^{\alpha}, \pi_{\bb{q}}^{\beta}]=\delta^{\alpha\beta}$, and the Hamiltonian reduces to 
+\begin{equation}
+ \ca{H}_{\textrm{free}} = \frac{1}{2} \sum_{\bb{q},p} \left[ \pi_{\bb{q},p} \pi_{\bb{q},p}^{\dagger} + \omega_{\bb{q,p}}^2 \eta_{\bb{q},p}  \eta_{\bb{q},p}^{\dagger} \right] \label{eq:Hfree_normal}
+\end{equation}
+
+Because the different degrees of freedom are now separated, we are ready to find the eigenstates of the Hamiltonian by defining the bosonic creation and annihilation operators through the relations
+\begin{equation}
+ \left\{
+\begin{array}{ll}
+  \eta_{\bb{q},p} &= \sqrt{\frac{\hbar}{2\omega_{\bb{q},p}}}[a_{\bb{q},p}+a_{-\bb{q},p}^{\dagger}] \\
+  \pi_{\bb{q},p} &= -i \sqrt{\frac{\hbar \omega_{\bb{q},p}}{2}}[a_{-\bb{q},p}-a_{\bb{q},p}^{\dagger}],
+  \end{array}
+\right.
+\label{eq:aa_def}
+\end{equation}
+which can be inverted to give the annihilation and creation operators as
+\begin{equation}
+ \left\{
+\begin{array}{ll}
+  a_{\bb{q},p} &= \frac{\omega}{2\hbar} \left[ \eta_{\bb{q},p} + \frac{i}{\omega} \pi_{-\bb{q},p} \right] \\
+  a_{\bb{q},p}^{\dagger} &= \frac{\omega}{2\hbar} \left[ \eta_{-\bb{q},p} - \frac{i}{\omega} \pi_{\bb{q},p} \right]
+\end{array}
+\right.
+\end{equation}
+Note that even though $\eta_{\bb{-q},p}=\eta_{\bb{q},p}^{\dagger}$, the same does not hold for the creation and annihilation operators: $a_{-\bb{q},p} \neq a_{\bb{q},p}^{\dagger}$.
+
+Substituting Eqs. \eqref{eq:aa_def} to \eqref{eq:Hfree_normal} and utilizing the fact that the operators satisfy the commutation relation $[a_{\bb{q},p}^{\dagger},a_{\bb{q},p}]=1$, the Hamiltonian can be written in the form
+\begin{equation}
+ \ca{H}_{\textrm{free}} = \sum_{\bb{q},p} \hbar \omega_{\bb{q},p} \left[ a_{\bb{q},p}^{\dagger} a_{\bb{q},p} + \frac{1}{2} \right] .
+\end{equation}
+It is well-known that the Fock eigenstates of the Hamiltonian are then
+\begin{equation}
+ \prod_{\bb{q},p} |n_{\bb{q},p} \rangle = \prod_{\bb{q},p} (a_{\bb{q},p}^{\dagger})^{n_{\bb{q},p}} |0 \rangle,
+\end{equation}
+where each state $(\bb{q},p)$ is populated with $n_{\bb{q},p}$ quanta. These quanta of lattice oscillations are called phonons.
+
+% Because we assume that the equilibrium positions define a local minimum for the interatomic potential energy, it follows that $\bb{K}$ is a positive-definite matrix. 
+\section{Phonon-phonon interactions from anharmonicity}
+
+Phonon-phonon interactions are responsible for the non-zero thermal resistance in pristine crystals. We now show that the phonon-phonon interactions arise from the anharmonic terms in Eq. \eqref{eq:V_expansion} and derive a practically useful expression for the perturbation Hamiltonian that can be used to calculate phonon relaxation rates. 
+
+We consider the first-order anharmonic term
+\begin{equation}
+ \ca{V}^{(3)} = \frac{1}{6} \sum_{l,l',l''} A_{l,l',l''}^{\alpha\beta\gamma} u_l^{\alpha} u_{l'}^{\beta} u_{l''}^{\gamma}
+\end{equation}
+that describes three-phonon interactions. We first substitute \eqref{eq:uq_def}, which gives
+\begin{equation}
+ \ca{V}^{(3)} =\frac{1}{6N^{3/2}} \sum_{l,l',l''}\sum_{\bb{q},\bb{q}',\bb{q}''} A_{l,l',l''}^{\alpha\beta\gamma} e^{-i\bb{q}\cdot\bb{r}^0_l-i\bb{q}'\cdot\bb{r}^0_{l'}-i\bb{q}''\cdot\bb{r}^0_{l''}} \tilde{u}_{\bb{q}}^{\alpha} \tilde{u}_{\bb{q}'}^{\beta} \tilde{u}_{\bb{q}''}^{\gamma} . \label{eq:V3_2}
+\end{equation}
+Due to translational invariance, the anharmonicity coefficient $A_{l,l',l''}^{\alpha\beta\gamma}$ only depends on the relative distances $\bb{r}^0_{l}-\bb{r}^0_{l''}$ and $\bb{r}^0_{l'}-\bb{r}^0_{l''}$, so we can define [in analogy with the definition of $\tilde{\bb{K}}(\bb{q})$]
+\begin{equation}
+ \tilde A_{\bb{k},\bb{k}'}^{\alpha\beta\gamma}= \sum_{l,l'} e^{-i \bb{k} \cdot (\bb{r}^0_{l}-\bb{r}^0_{l''})-i\bb{k}'\cdot(\bb{r}^0_{l'}-\bb{r}^0_{l''}) }  A_{l,l',l''}^{\alpha\beta\gamma}.
+\end{equation}
+The choice of index $l''$ is here arbitrary. The inverse transformation reads
+\begin{equation}
+ A_{l,l',l''}^{\alpha\beta\gamma} = \frac{1}{N^2} \sum_{\bb{k},\bb{k}'} e^{i\bb{k} \cdot(\bb{r}_l^0-\bb{r}^0_{l''}) + i\bb{k}' \cdot(\bb{r}_{l'}^0-\bb{r}^0_{l''})} \tilde A_{\bb{k},\bb{k}'}^{\alpha\beta\gamma}. \label{eq:Aq_inv}
+\end{equation}
+Substituting \eqref{eq:Aq_inv} to \eqref{eq:V3_2}, summing over $l$, $l'$ and $l''$ and using $\sum_{\bb{q}}e^{i\bb{q}\cdot \bb{r}^0_{l}}=N \hat\delta_{\bb{q},0}$, we get
+\begin{alignat}{2}
+ \ca{V}^{(3)} &=\frac{1}{6\sqrt{N}} \sum_{\bb{q},\bb{q}',\bb{q}''} \tilde A_{\bb{q},\bb{q}'}^{\alpha\beta\gamma} \tilde u_{\bb{q}}^{\alpha} \tilde {u}_{\bb{q}'}^{\beta} \tilde  {u}_{\bb{q}''}^{\gamma} \hat \delta_{\bb{q}+\bb{q}'+\bb{q}'',\bb{0}} \\
+ &= \frac{1}{6m^{3/2}\sqrt{N}} \sum_{\bb{q},\bb{q}',\bb{q}''} \sum_{\alpha,\beta,\gamma} \sum_{p,p',p''} (e^{\alpha}_{\bb{q},p})^* (e^{\beta}_{\bb{q}',p'})^* (e^{\gamma}_{\bb{q}'',p''})^* \tilde A_{\bb{q},\bb{q}'}^{\alpha\beta\gamma} \eta_{\bb{q},p} \eta_{\bb{q}',p'} \eta_{\bb{q}'',p''} \hat \delta_{\bb{q}+\bb{q}'+\bb{q}'',\bb{0}}.
+\end{alignat}
+In the second line, we switched to the normal coordinates \eqref{eq:normal_coord_def}. Substituting finally the bosonic ladder operators \eqref{eq:aa_def}, we get the perturbation Hamiltonian
+\begin{alignat}{2}
+\ca{V}^{(3)} = & \frac{1}{6\sqrt{N}} \left(\frac{\hbar}{2m} \right)^{3/2} \sum_{\bb{q},\bb{q}',\bb{q}''} \sum_{p,p',p''} \frac{1}{\sqrt{\omega_{\bb{q},p}\omega_{\bb{q}',p'} \omega_{\bb{q}'',p''}}} \tilde{A}^{p,p',p''}_{\bb{q},\bb{q}'} \notag \\
+  & \times \left[a_{\bb{q},p}+a_{-\bb{q},p}^{\dagger} \right] \left[[a_{\bb{q}',p'}+a_{-\bb{q}',p'}^{\dagger}\right] \left[[a_{\bb{q}'',p''}+a_{-\bb{q}'',p''}^{\dagger}\right] \hat \delta_{\bb{q}+\bb{q}'+\bb{q}'',\bb{0}}. \label{eq:V3_3}
+\end{alignat}
+
+Expanding the parenthesis in Eq. \eqref{eq:V3_3} delivers terms of the form $a_{\bb{q},p}a_{\bb{q}',p'}a_{\bb{q}'',p''}$, $a_{-\bb{q},p}^{\dagger} a_{\bb{q}',p'}a_{\bb{q}'',p''}$, \textit{etc}., which can be readily interpreted as phonon-phonon interactions resulting in the annihilation and creation of phonons. In each such processes, the crystal momentum is conserved: $\bb{q}+\bb{q}'+\bb{q}''=\bb{G}$, where $\bb{G}$ is a vector of the reciprocal lattice. Processes with $\bb{G}=\bb{0}$ and $\bb{G}\neq \bb{0}$ are called \textit{normal} and \textit{Umklapp} processes, respectively. It can be shown \cite{ziman} that the total heat current carried by the phonons is conserved in a normal process, meaning that normal processes cannot hinder heat flow, i.e. non-zero thermal resistance is purely due to Umklapp processes. Normal processes play, however, an important role in re-distributing the occupation numbers of different modes.
+
+\chapter{MD methods for thermal conductivity prediction}
+
+\begin{itemize}
+ \item M\"uller-Plathe \cite{mullerplathe97}: exchange the velocities of hot and cold atoms (\textit{fix thermal/conductivity} in LAMMPS), use PBC
+ \item Jund-Jullien \cite{jund99}: scale the velocities of hot and cold regions such that total momentum conserved (\textit{fix heat} in LAMMPS), use PBC. Used also e.g. by Schelling
+ \item Ikeshoji-Hafskjold \cite{ikeshoji94}: Apparently the same kind of scaling as was used by Jund and Jullien later, but applied here for liquids and gases
+ \item Landry \cite{landry08}: Jund-Jullien method without PBC, fixed boundary atoms
+ \item Different methods reviewed by Schelling
+\end{itemize}
+
+
+\chapter{Keldysh Green's function method}
+
+
+\label{app:keldysh}. 
+\section{Phonon current through an interacting region}
+Consider the Hamiltonian 
+\begin{equation}
+ \mathcal{H} = \sum_I \mathcal{H}_I + \bb{u}_L^T \bb{V}_{LC} \bb{u}_C +  \bb{u}_R^T \bb{V}_{RC} \bb{u}_C + \ca{H}_C,
+\end{equation}
+where the lead Hamiltonians are ($I=L,R$)
+\begin{equation}
+ \mathcal{H}_I = \frac{\bb{p}_I^2}{2m} + \frac{1}{2} \bb{u}_I^T \bb{K}_I \bb{u}_I.
+\end{equation}
+and the center region Hamiltonian 
+\begin{equation}
+ \ca{H}_C = \frac{\bb{p}_C^2}{2m} + \frac{1}{2} \bb{u}_C^T \bb{K}_C \bb{u}_C + V_{int}
+\end{equation}
+can contain a non-linear interaction term $V_{int}$. The current operator for the thermal energy flow from the lead $I$ to the center region can be defined $J_I = - \dot{\mathcal{H}}_I$. Heisenberg equation of motion gives
+\begin{equation}
+ J_I = \dot{\bb{u}}_I^T \bb{V}_{IC} \bb{u}_C ,
+\end{equation}
+so by defining so-called lesser Green's function 
+\begin{equation}
+ G_{\alpha \beta}^<(t,t') = -i \langle u_{\beta}(t') u_{\alpha}(t) \rangle,
+\end{equation}
+where $u$'s are Heisenberg operators, we can write the current in the form
+\begin{equation}
+ \langle J_I \rangle = i \left.  \textrm{Tr}\left[\frac{\partial}{\partial t'} \bb{G}^<_{CI}(t,t') \bb{V}_{IC} \right] \right|_{t'\to t},
+\end{equation}
+which, in steady state, can be Fourier-transformed to give  
+\begin{equation}
+ \langle J_I \rangle =  - \int \frac{d\omega}{2\pi} \omega \textrm{Tr}\left[\bb{G}^<_{CI}(\omega) \bb{V}_{IC} \right] .
+\end{equation}
+Thus all we have to do is to calculate the lesser Green's function \textit{in non-equilibrium}. Proper symmetrization of the heat current and slight rearrangement gives the form
+\begin{equation}
+ \langle J_I \rangle = \frac{1}{2} \int \frac{d\omega}{2\pi} \omega \textrm{Tr}\bb{V}_{CI}[\bb{G}^>_{IC}(\omega)+\bb{G}^<_{IC}(\omega) ] .
+\end{equation}
+
+Below it is shown that
+\begin{alignat}{2}
+ \bb{G}_{IC} &= \bb{g}_I\hat{\bb{V}}_{IC} \bb{G}_{CC} ,
+\end{alignat}
+so a direct calculation in the full Keldysh basis gives
+\begin{alignat}{2}
+  \bb{G}_{IC} &= \left( \begin{matrix}
+          \bb{g}_I^{T} & \bb{g}_I^< \\
+	  \bb{g}_I^> & \bb{g}_I^{\tilde{T}}
+            \end{matrix}
+ \right) 
+\left( \begin{matrix}
+           \bb{V}_{IC} & 0 \\
+	  0 & -\bb{V}_{IC}
+            \end{matrix}
+ \right)
+\left( \begin{matrix}
+          \bb{G}_{CC}^{T} & \bb{G}_{CC}^< \\
+	  \bb{G}_{CC}^> & \bb{G}_{CC}^{\tilde{T}}
+            \end{matrix}
+ \right)
+\\
+  &= \left(\begin{matrix}
+      \bb{g}_I^T \bb{V}_{IC} \bb{G}_{CC}^T-\bb{g}_I^< \bb{V}_{IC} \bb{G}_{CC}^> &	\bb{g}_I^T \bb{V}_{IC} \bb{G}_{CC}^< - \bb{g}_I^< \bb{V}_{IC} \bb{G}_{CC}^{\tilde{T}} \\
+     \bb{g}_I^> \bb{V}_{IC} \bb{G}_{CC}^T-\bb{g}_I^{\tilde{T}} \bb{V}_{IC} \bb{G}_{CC}^> &	\bb{g}_I^> \bb{V}_{IC} \bb{G}_{CC}^< - \bb{g}_I^{\tilde{T}} \bb{V}_{IC} \bb{G}_{CC}^{\tilde{T}}
+     \end{matrix}
+ \right)
+\end{alignat}
+The lesser and greater components $\bb{G}^<_{IC}$ and $\bb{G}^>_{IC}$ of $\bb{G}_{IC}$ can be read from the upper right and lower left blocks, respectively. 
+
+We write $\Sigma_I=\bb{V}_{CI}\bb{g}_I\bb{V}_{IC}$ for the self-energy caused by the coupling to the leads, which should not be confused with the self-energy $\Sigma_{II}=-im0^+$ of the isolated lead Green's functions. We get
+\begin{alignat}{2}
+ \bb{V}_{CI}\bb{G}_{IC}^< &= \Sigma_I^T \bb{G}_{CC}^< -\Sigma^<_I \bb{G}_{CC}^{\tilde{T}} \\
+  &= (\Sigma_I^R+\Sigma^<_I) \bb{G}_{CC}^< - \Sigma^<_I( \bb{G}_{CC}^< - \bb{G}_{CC}^A) \\
+  &= \Sigma_I^R \bb{G}_{CC}^< + \Sigma^<_I \bb{G}_{CC}^A
+\end{alignat}
+and
+\begin{alignat}{2}
+ \bb{V}_{CI}\bb{G}_{IC}^> &= \Sigma_I^> \bb{G}_{CC}^T -\Sigma^{\tilde{T}}_I \bb{G}_{CC}^> \\
+ &= \Sigma_I^>(\bb{G}_{CC}^A + \bb{G}_{CC}^>) - (\Sigma^>_I-\Sigma^R_I) \bb{G}_{CC}^> \\
+  &=  \Sigma_I^> \bb{G}_{CC}^A + \Sigma^R_I \bb{G}_{CC}^>
+\end{alignat}
+The sum is
+\begin{equation}
+ \bb{V}_{CI}\bb{G}_{IC}^< + \bb{V}_{CI}\bb{G}_{IC}^> = \Sigma_I^R \bb{G}_{CC}^K + \Sigma_{I}^K \bb{G}_{CC}^A,
+\end{equation}
+so the final general result for the current flowing from lead $I$ is
+\begin{equation}
+ \langle J_I \rangle = \frac{1}{2}\int \frac{d\omega}{2\pi} \omega \textrm{Tr}\left[\Sigma_I^R \bb{G}_{CC}^K + \Sigma_{I}^K \bb{G}_{CC}^A\right].
+\end{equation}
+
+We could have also performed the calculation in Keldysh rotated basis to get
+\begin{alignat}{2}
+ \bb{G}_{IC} &= \bb{g}_I\hat{\bb{V}}_{IC} \bb{G}_{CC} \\
+  &= \left( \begin{matrix}
+          \bb{g}_I^{K} & \bb{g}_I^R \\
+	  \bb{g}_I^A & 0
+            \end{matrix}
+ \right) 
+\left( \begin{matrix}
+          0 & \bb{V}_{IC} \\
+	  \bb{V}_{IC} & 0
+            \end{matrix}
+ \right)
+\left( \begin{matrix}
+          \bb{G}_{CC}^{K} & \bb{G}_{CC}^R \\
+	  \bb{G}_{CC}^A & 0
+            \end{matrix}
+ \right)
+\\
+  &= \left(\begin{matrix}
+      \bb{g}_I^K \bb{V}_{IC} \bb{G}^A_{CC} + \bb{g}_I^R \bb{V} \bb{G}_{CC}^K &  \bb{g}_I^R \bb{V} \bb{G}_{CC}^R \\
+    \bb{g}_I^A \bb{V} \bb{G}_{CC}^A	& 0
+     \end{matrix}
+ \right)
+\end{alignat}
+The sum of lesser and greater components is $\bb{G}_{IC}^>+\bb{G}_{IC}^<=\bb{G}_{IC}^K$, which is the upper left block of the matrix.
+
+In the following, we suppress the subscript $CC$ from the center region Green's function $\bb{G}_{CC}$. The Keldysh self-energy of the lead is
+\begin{alignat}{2}
+ \Sigma_I^K &= \bb{V}_{CI} \bb{g}_I^K \bb{V}_{IC} \\
+  &= \bb{V}_{CI} \bb{g}_I^R \Sigma_{II}^K \bb{g}_{I}^A\bb{V}_{IC} \\
+  &= \coth\left(\frac{\omega}{2T_I}\right) \bb{V}_{CI} [\bb{g}_I^R-\bb{g}_I^A] \bb{V}_{IC} \\
+  &= \coth\left(\frac{\omega}{2T_I}\right) \left[ \Sigma_I^R - \Sigma_I^A \right] \\
+  &= -i \coth\left(\frac{\omega}{2T_I}\right) \Gamma_I.
+\end{alignat}
+The second term inside the trace can then be written further 
+\begin{alignat}{2}
+ \Sigma_I^K \bb{G}^A &= -i \coth\left(\frac{\omega}{2T_I}\right) \Gamma_I \{\textrm{Re}[G^A(\omega)] + i \textrm{Im}[G^A(\omega)] \} \\
+  &=-i \coth\left(\frac{\omega}{2T_I}\right) \Gamma_I \{\textrm{Re}[\bb{G}^R(\omega)] - i \underbrace{\textrm{Im}[\bb{G}^R]}_{(\bb{G}^R-\bb{G}^A)/(2i)} \} \\
+  &=-i \coth\left(\frac{\omega}{2T_I}\right) \Gamma_I \left\{\textrm{Re}[\bb{G}^R(\omega)] + \frac{i}{2} [\bb{G}^R \Gamma \bb{G}^A] \right\}
+\end{alignat}
+The first term inside the braces is even and when combined with the other terms inside the integral, gives zero contribution. Therefore
+\begin{alignat}{2}
+ \Sigma_I^K \bb{G}^A & \hspace{-0mm}\stackrel{\int} {=} \frac{1}{2} \coth\left(\frac{\omega}{2T_I}\right)  \Gamma_I \bb{G}^R [\Gamma_L+\Gamma_R+\Gamma_{int}] \bb{G}^A
+\end{alignat}
+
+The Keldysh component of the center block of the Green's function is
+\begin{alignat}{2}
+ \bb{G}^K &= \bb{G}^R \Sigma^K \bb{G}^A  \\
+  &= \bb{G}^R [\Sigma_L^K + \Sigma_R^K + \Sigma_{int}^K ] \bb{G}^A \\
+  &= -i \bb{G}^R \left[\coth\left(\frac{\omega}{2T_L}\right)\Gamma_L+\coth\left(\frac{\omega}{2T_R}\right)\Gamma_R \right]\bb{G}^A + \bb{G}^R \Sigma_{int}^K\bb{G}^A
+\end{alignat}
+The first term inside the trace is then
+\begin{alignat}{2}
+ \Sigma_I^R \bb{G}^K &= -i \Sigma_I^R\bb{G}^R \left[\coth\left(\frac{\omega}{2T_L}\right)\Gamma_L+\coth\left(\frac{\omega}{2T_R}\right)\Gamma_R \right]\bb{G}^A \notag \\
+  &\quad + \Sigma_I^R\bb{G}^R \Sigma_{int}^K\bb{G}^A.
+\end{alignat}
+We substitute $\Sigma_I^R(\omega) =\textrm{Re}[\Sigma_I] - (i/2) \Gamma_I$, where the first term is even and the second is odd in frequency. By noting that $\bb{G}^R(\omega)\Gamma_I(\omega) \bb{G}^A(\omega)$ is odd in frequency, we can write
+\begin{alignat}{2}
+ \Sigma_I^R \bb{G}^K & \hspace{-0mm}\stackrel{\int} {=} - \frac{1}{2} \Gamma_I \bb{G}^R \left[\coth\left(\frac{\omega}{2T_L}\right)\Gamma_L+\coth\left(\frac{\omega}{2T_R}\right)\Gamma_R \right]\bb{G}^A \notag \\
+  &\quad + \Sigma_I^R\bb{G}^R \Sigma_{int}^K\bb{G}^A.
+\end{alignat}
+
+The term inside the trace is, for the left lead $L$, 
+\begin{alignat}{2}
+  &\Sigma_L^R \bb{G}^K + \Sigma_{L}^K \bb{G}^A \hspace{-0mm}\stackrel{\int} {=} - \frac{1}{2} \Gamma_L \bb{G}^R \left[\coth\left(\frac{\omega}{2T_L}\right)\Gamma_L+\coth\left(\frac{\omega}{2T_R}\right)\Gamma_R \right]\bb{G}^A  \notag \\
+  &\qquad + \Sigma_L^R\bb{G}^R \Sigma_{int}^K\bb{G}^A  + \frac{1}{2} \coth\left(\frac{\omega}{2T_L}\right)  \Gamma_L \bb{G}^R [\Gamma_L+\Gamma_R+\Gamma_{int}] \bb{G}^A \\
+  &\quad = \frac{1}{2} \Gamma_L \bb{G}^R \Gamma_R \bb{G}^A \left[\coth\left(\frac{\omega}{2T_L}\right)-\coth\left(\frac{\omega}{2T_R}\right) \right] \notag \\
+  &\qquad + \Sigma_L^R\bb{G}^R \Sigma_{int}^K\bb{G}^A + \frac{1}{2} \coth\left(\frac{\omega}{2T_L}\right) \Gamma_L \bb{G}^R\Gamma_{int}\bb{G}^A \\
+  &\quad \stackrel{\int} {=} \frac{1}{2} \Gamma_L \bb{G}^R \Gamma_R \bb{G}^A \left[\coth\left(\frac{\omega}{2T_L}\right)-\coth\left(\frac{\omega}{2T_R}\right) \right] \notag \\
+  &\qquad - \frac{i}{2} \Gamma_L\bb{G}^R \Sigma_{int}^K\bb{G}^A + \frac{1}{2} \coth\left(\frac{\omega}{2T_L}\right) \Gamma_L \bb{G}^R\Gamma_{int}\bb{G}^A \\
+  &\quad = \frac{1}{2} \Gamma_L \bb{G}^R \Gamma_R \bb{G}^A \left[\coth\left(\frac{\omega}{2T_L}\right)-\coth\left(\frac{\omega}{2T_R}\right) \right] \notag \\
+  &\qquad + \frac{1}{2} \Gamma_L\bb{G}^R \left[ -i \Sigma^K_{int}+\coth\left(\frac{\omega}{2T_L}\right)\Gamma_{int} \right] \bb{G}^A .
+\end{alignat}
+Note that in thermal equilibrium ($T_L=T_R=T$), $\Sigma_{int}^K=-i\coth(\omega/2T)\Gamma_{int}$, so the expression vanishes.
+
+Assuming that the center region is non-interacting gives
+\begin{alignat}{2}
+  \Sigma_L^R \bb{G}^K + \Sigma_{L}^K \bb{G}^A &\hspace{-0mm}\stackrel{\int} {=} \frac{1}{2} \Gamma_L \bb{G}^R \Gamma_R \bb{G}^A \left[\coth\left(\frac{\omega}{2T_L}\right)-\coth\left(\frac{\omega}{2T_R}\right) \right] \\
+  & = \Gamma_L \bb{G}^R \Gamma_R \bb{G}^A [f_B(\omega,T_L)-f_B(\omega,T_R)].
+\end{alignat}
+The non-interacting current becomes, as expected,
+\begin{equation}
+ \langle J_L \rangle = \int_0^{\infty} \frac{d\omega}{2\pi} \omega \textrm{Tr}[\Gamma_L \bb{G}^R \Gamma_R \bb{G}^A] [f_B(\omega,T_L)-f_B(\omega,T_R)].
+\end{equation}
+
+\section{Schwinger-Keldysh formalism}
+Let us consider an arbitrary Hamiltonian of the form
+\begin{equation}
+ H = H_0 + V(t),
+\end{equation}
+where the perturbation is turned on at $t=t_0$ and we assume that the system is described by the density matrix $\rho^0$ for $t<t_0$. For simplicity, we assume that the interaction is turned on suddenly such that the Hamiltonian is time-independent for $t>t_0$. Time-dependent expectation values of a Schr\"odinger operator $A$ is then 
+\begin{equation}
+  \langle A(t) \rangle = \textrm{Tr}[e^{-iH(t-t_0)} \rho^0 e^{iH(t-t_0)} A] \equiv \textrm{Tr}[\rho^0 A_H(t)],
+\end{equation}
+where the latter form is obtained by defining the Heisenberg picture
+\begin{equation}
+ A_H(t) = e^{iH(t-t_0)} A_S e^{-iH(t-t_0)}.
+\end{equation}
+For general time-evolution, one should substitute $e^{-iH(t-t_0)}\to T_t \exp\left[-i\int_{t_0}^t dt' H(t')\right]$. In practice, we want to calculate two-point correlation functions (Green's functions) defined, for example, as
+\begin{alignat}{2}
+ iG^{>}_{AB}(t_1,t_2) &\equiv \langle A_H(t_1) B_H(t_2) \rangle \\
+  &\equiv \textrm{Tr}[\rho^0 A_H(t_1) B_H(t_2)] \\
+  &= \textrm{Tr}[\rho^0 e^{iH(t_1-t_0)} A_s e^{-iH(t_1-t_0)} e^{iH(t_2-t_0)} B_s e^{-iH(t_2-t_0)} ].
+\end{alignat}
+
+To make progress, we define the so-called interaction picture where the operators evolve according to the ''easy'' Hamiltonian $H_0$:
+\begin{equation}
+ A_I(t) = e^{iH_0(t-t_0)} A_s e^{-iH_0(t-t_0)}.
+\end{equation}
+and the ''easy'' evolution is subtracted from the time-evolution of the density matrix:
+\begin{equation}
+ \rho_I(t) = e^{iH_0 (t-t_0)} e^{-iH(t-t_0)} \rho^0 e^{iH(t-t_0)}e^{-iH_0 (t-t_0)}.
+\end{equation}
+The Green's function is then
+\begin{alignat}{2}
+  iG^{>}_{AB}(t_1,t_2) = &\textrm{Tr}\left[\rho^0 e^{iH(t_1-t_0)} e^{-iH_0(t_1-t_0)} A_I(t_1) e^{iH_0(t_1-t_0)}e^{-iH(t_1-t_2)} \right.\notag \\
+   &\quad  \left.\times e^{-iH_0(t_2-t_0)} B_I(t_2) e^{iH_0(t_2-t_0)} e^{-iH(t_2-t_0)} \right] 
+\end{alignat}
+
+Let us now define the time-evolution operator in the interaction picture as
+\begin{equation}
+ S(t,t') = e^{iH_0 (t-t_0)} e^{-iH(t-t')}e^{-iH_0 (t'-t_0)},
+\end{equation}
+which satisfies $S(t,t)=1$, $S(t,t')^{\dagger}=S(t',t)$ and
+\begin{alignat}{2}
+ \frac{\partial}{\partial t} S(t,t') &= i e^{iH_0(t-t_0)} (H_0-H)  e^{-iH(t-t')}e^{-iH_0 (t'-t_0)} \\
+  &=-i e^{iH_0(t-t_0)} V(t) e^{-iH_0(t-t_0)} e^{iH_0(t-t_0)} e^{-iH(t-t')}e^{-iH_0 (t'-t_0)}\\
+  &= -i V_I(t) S(t,t').
+\end{alignat}
+The solution is \cite{dyson,fetter2,bruus}
+\begin{equation}
+ S(t,t') = T \exp\left( -i\int_{t'}^t d\tau V_I(\tau) \right),
+\end{equation}
+where $T$ is the time-ordering operator that arranges later times to the left. The time-evolution operator also has the group property $S(t_1,t_2)S(t_2,t_3)=S(t_1,t_3)$.
+
+The Green's function now becomes
+\begin{alignat}{2}
+ iG^{>}_{AB}(t_1,t_2) = &\textrm{Tr}\left[ \rho^0 e^{iH(t_1-t_0)} e^{-iH_0(t_1-t_0)} A_I(t_1) S(t_1,t_2) B_I(t_2) S(t_2,t_0) \right] \\
+  &= \textrm{Tr}\left[\rho^0 S(t_0,t_1) A_I(t_1) S(t_1,t_2) B_I(t_2) S(t_2,t_0)\right].
+\end{alignat}
+This is as far as one can get with the greater Green's function $G_{AB}^>(t_1,t_2)$. If we had considered the time-ordered Green's function
+\begin{equation}
+ iG^T_{AB}(t_1,t_2) = \langle T A_H(t_1) B_H(t_2) \rangle,
+\end{equation}
+we could substitute the expression for $S$ and write the Green's function in the slightly more compact form
+\begin{equation}
+ iG^T_{AB}(t_1,t_2) = \textrm{Tr} \left[ \rho^0 S(t_0,t_1) T [S A_I(t_1)  B_I(t_2)] \right],
+\end{equation}
+since the time-ordering operator automatically arranges the operators correctly. Here $S$ is the time-evolution from $t_0$ to $\max\{t_1,t_2\}$.
+
+If we would go one step even further and define so-called (Schwinger-)Keldysh contour which runs from $t_0$ to $\max\{t_1,t_2\}$ and then back to $t_0$, the expression for the contour-ordered Green's function
+\begin{equation}
+ iG_{AB}(\tau_1,\tau_2) = \langle T_{\tau} A_H(\tau_1)B_H(\tau_2) \rangle,
+\end{equation}
+where $T_{\tau}$ arranges operators such that operators later on the contour come to the left, would be very compact:
+\begin{equation}
+ iG_{AB}(\tau_1,\tau_2) = \textrm{Tr}\left[ \rho^0 T_{\tau} S_c A_I(\tau_1)  B_I(\tau_2) \right].
+\end{equation}
+Here $\tau=(t,\sigma)$ contains real time $t$ and the contour index $\sigma \in \{+,-\}$. Contour $C_+$ is the path from $t_0$ to $\max\{t_1,t_2\}$ and $C_-$ is the path backwards. $S_c=\exp\left(-i\int_C V_I(\tau) d\tau\right)$ contains time-evolution along the whole Keldysh contour $C=C_+\cup C_-$.
+
+Depending on whether $\tau_1$ and $\tau_2$ are on the $C_+$ or $C_-$ branches of the contour, the time-ordering operator gives the following Green's functions
+\begin{alignat}{2}
+  G_{AB}(\tau_1,\tau_2) &= G^T_{AB}(t_1,t_2), \textrm{ if }  \tau_1,\tau_2 \in C_+ \\
+  G_{AB}(\tau_1,\tau_2) &= G^<_{AB}(t_1,t_2), \textrm{ if }  \tau_1 \in C_+, \tau_2 \in C_- \\
+  G_{AB}(\tau_1,\tau_2) &= G^>_{AB}(t_1,t_2), \textrm{ if }  \tau_1 \in C_-, \tau_2 \in C_+ \\
+  G_{AB}(\tau_1,\tau_2) &= G^{\tilde{T}}_{AB}(t_1,t_2), \textrm{ if } \tau_1,\tau_2 \in C_-
+\end{alignat}
+Here 
+\begin{equation}
+ iG^>_{AB}(t_1,t_2) = \langle A_H(t_1)B_H(t_2) \rangle
+\end{equation}
+is the greater Green's function ($t_1$ is greater than $t_2$ on the contour),
+\begin{equation}
+ iG^<_{AB}(t_1,t_2) = \langle A_H(t_1)B_H(t_2) \rangle
+\end{equation}
+is the lesser Green's function ($t_1$ is less than $t_2$ on the contour)
+and
+\begin{equation}
+ iG^{\tilde{T}}_{AB}(t_1,t_2) = \langle \tilde{T} A_H(t_1)B_H(t_2) \rangle
+\end{equation}
+is the anti-chronological time ordering operator that arranges operators such that earlier times appear left. The contour-ordered Green's function is often written in the matrix form
+\begin{equation}
+ G = \left(\begin{matrix}
+      G^T & G^< \\
+      G^> & G^{\tilde{T}} \\
+     \end{matrix}\right)
+\end{equation}
+The Keldysh index can be interpreted simply as an additional ''quantum number'', and standard perturbation theory rules of equilibrium theory can be used.
+
+We expect the system to approach steady-state at very large times, so we take $t_0\to -\infty$ and extend the Keldysh contour to run from $-\infty$ to $+\infty$ and back. The Green's functions only depend on time-differences and we can, therefore, work in Fourier space.
+
+As an example, we will consider the coupling of semi-infinite leads at temperatures $T_L$ and $T_R$ to the center region. The density matrix at equilibrium is
+\begin{equation}
+ \rho^0 = \rho^0_L \kronecker \rho^0_C \kronecker \rho^0_L, 
+\end{equation}
+where $\rho^0_I=\exp(-\beta_I \bb{K}_I)$.  Let us first calculate, however, the Green's functions in equilibrium.
+
+\section{Example: Green's functions in a non-interacting system at equilibrium}
+
+We consider a Hamiltonian of the form
+\begin{equation}
+ H_I = \frac{\bb{p}_I^2}{2m} + \frac{1}{2} \bb{u}_I^T \bb{K}_I \bb{u}_I,
+\end{equation}
+whose spring matrix $\bb{K}_I$ we diagonalize with the similarity transformation $\bb{K}_I=U_I \Lambda_I U_I^T$, giving
+\begin{alignat}{2}
+  H_I&= \frac{\bb{\pi}_I^2}{2m} + \frac{1}{2} \bb{y}_I^T \Lambda_I \bb{y}_I,
+\end{alignat}
+where $\bb{y}_I=\bb{U}_I^T \bb{u}_I$ and $\pi_I=\bb{U}_I \bb{p}_I$. The Heisenberg equation of motion for $y_k$ reads
+\begin{equation}
+ m\ddot{y}_k(t) = - m \omega_k^2 y_k(t),
+\end{equation}
+where we have defined $\Lambda_{kk}=m\omega_k^2$. We assume that in the lead, Schr\"odinger and Heisenberg pictures coincide at $t=0$, meaning that we can write the solution in the form
+\begin{alignat}{2}
+ y_k(t) &= y_k(0) \cos(\omega_k t) + \frac{\pi_i(0)}{m\omega_k} \sin(\omega_k t) \\
+  &= \frac{1}{2}\left[y_k(0) + \frac{\pi_i(0)}{i m\omega_k}\right] e^{i\omega_k t} + \frac{1}{2} \left[y_k(0) - \frac{\pi_i(0)}{i m\omega_k}\right] e^{-i\omega_k t}. 
+\end{alignat}
+Averages of Schr\"odinger operators with respect to the thermal density matrix 
+\begin{equation}
+\rho^0_I=\frac{\exp(-\beta H_I)}{\textrm{Tr}[\exp(-\beta H_I)]}
+\end{equation}
+are straightforward to calculate, and one gets for the diagonal elements
+\begin{equation}
+ \langle y_k^2 \rangle_0 =\frac{1}{m\omega_k} \left(f_B(\omega_k,T)+\frac{1}{2}\right).
+\end{equation}
+Similarly
+\begin{equation}
+ \langle \pi_k^2 \rangle_0 = m\omega_k \left(f_B(\omega_k,T)+\frac{1}{2}\right).
+\end{equation}
+Also,
+\begin{equation}
+ \langle y_k \pi_k \rangle_0 = \frac{i}{2}.
+\end{equation}
+The lesser Green's function in equilibrium is
+\begin{alignat}{2}
+ ig^<_{kl}(t,0) &= \langle y_l(0) y_k(t) \rangle_0 \\
+  &= \frac{1}{2} \left\langle y_l \left[y_k + \frac{\pi_k}{i m\omega_k}\right] \right\rangle e^{i\omega_k t} + \frac{1}{2} \left\langle y_l \left[y_k - \frac{\pi_k}{i m\omega_k}\right] \right\rangle e^{-i\omega_k t}\\
+  &=  \frac{1}{2}\left[ \frac{1}{m\omega_k} \left(f_B(\omega_k,T)+\frac{1}{2}\right) + \frac{1}{2m\omega_k}\right] \delta_{kl} e^{i\omega_k t} \notag \\
+  &\quad + \frac{1}{2}\left[ \frac{1}{m\omega_k} \left(f_B(\omega_k,T)+\frac{1}{2}\right) - \frac{1}{2m\omega_k}\right] \delta_{kl} e^{i\omega_k t} \\
+  &= \frac{1}{2m\omega_k} \left[f_B(\omega_k,T)+1 \right] \delta_{kl} e^{i\omega_k t} +  \frac{1}{2m\omega_k} f_B(\omega_k,T) \delta_{kl} e^{-i\omega_k t}
+\end{alignat}
+The Fourier transform with respect to $t$ is
+\begin{equation}
+ ig^<_{kl}(\omega) = \frac{2\pi}{2m\omega_k} \left\{\left[f_B(\omega_k,T)+1 \right] \delta(\omega+\omega_k) + f_B(\omega_k,T) \delta(\omega-\omega_k) \right\}\delta_{kl}.
+\end{equation}
+The greater function can be similarly calculated:
+\begin{alignat}{2}
+ ig^>_{kl}(t,0) &= \langle y_k(t)y_l(0) \rangle \\	
+  &= \frac{1}{2m\omega_k} f_B(\omega_k,T) \delta_{kl} e^{i\omega_k t} +  \frac{1}{2m\omega_k} [f_B(\omega_k,T)+1] \delta_{kl} e^{-i\omega_k t},
+\end{alignat}
+so 
+\begin{equation}
+ ig^>_{kl}(\omega) = \frac{2\pi}{2m\omega_k} \left\{f_B(\omega_k,T)  \delta(\omega+\omega_k) +[ f_B(\omega_k,T) +1 ]\delta(\omega-\omega_k) \right\}\delta_{kl}.
+\end{equation}
+The retarded Green's function
+\begin{alignat}{2}
+ g_{kl}^r(t,t') &= -i\theta(t-t') \langle [y_k(t),y_l(t')] \rangle_0 \\ & \equiv \theta(t-t') \left[g^>(t,t')-g^<(t,t') \right]
+\end{alignat}
+is then
+\begin{equation}
+ g_{kl}^r(t,0) = -i\theta(t) \frac{1}{2\omega_k} [-e^{i\omega_k t}+e^{-i\omega_k t}] \delta_{kl},
+\end{equation}
+giving 
+\begin{alignat}{2}
+ g_{kl}^r(\omega) &= -\frac{i}{2m\omega_k}\delta_{kl}\int_0^{\infty}e^{i(\omega+i\eta)t} [-e^{i\omega_k t}+e^{-i\omega_k t}]  dt \\
+  &= -\frac{1}{2m\omega_k}\delta_{kl} \left[ \frac{1}{\omega+\omega_k+i\eta} - \frac{1}{\omega-\omega_k+i\eta} \right]. \\
+  &= \frac{1}{m } \frac{1}{(\omega+i\eta)^2-\omega_k^2 } \delta_{kl}.
+\end{alignat}
+Of course, this result could have been derived much more straightforwardly by using the equation of motion technique. For later use, we note that
+\begin{equation}
+ \textrm{Im}[g^r_{kl}(\omega)] = - \frac{\pi}{2m\omega}[\delta(\omega+\omega_k) + \delta(\omega-\omega_k)].
+\end{equation}
+
+
+We also need the expression for the time-ordered Green's function 
+\begin{alignat}{2}
+ g^T_{kl}(t_1,t_2) &= -i \langle T y_k(t_1)y_l(t_2) \rangle \\
+  &= \theta(t_1-t_2) g^>_{kl}(t_1,t_2) + \theta(t_2-t_1) g^<_{kl}(t_1,t_2),
+\end{alignat}
+which becomes
+\begin{alignat}{2}
+ g^T_{kl}(t,0) &= -i \theta(t)\frac{1}{2m\omega_k} \left\{  f_B(\omega_k,T) e^{i\omega_k t} +  [f_B(\omega_k,T)+1] e^{-i\omega_k t}\right\} \delta_{kl} \notag \\
+ &-i \theta(-t) \frac{1}{2m\omega_k}  \left\{\left[f_B(\omega_k,T)+1 \right] e^{i\omega_k t} +   f_B(\omega_k,T) e^{-i\omega_k t} \right\}  \delta_{kl}.
+\end{alignat}
+The Fourier transformation is
+\begin{alignat}{2}
+ g^T_{kl}(\omega) &= \frac{1}{2m\omega_k} \left\{\frac{f_B(\omega_k,T)}{\omega+i\eta+\omega_k} + \frac{f_B(\omega_k,T)+1}{\omega+i\eta-\omega_k}\right\}\delta_{kl} \notag \\
+  & - \frac{1}{2m\omega_k} \left\{\frac{f_B(\omega_k,T)+1}{\omega-i\eta+\omega_k} + \frac{f_B(\omega_k,T)}{\omega-i\eta-\omega_k} \right\}\delta_{kl}.\\
+  &= \frac{1}{m\omega_k} \left\{- \mathcal{P} \frac{1}{\omega+\omega_k} +  \mathcal{P} \frac{1}{\omega-\omega_k} \right. \\
+  &\quad - i \left. \pi \left[ f_B(\omega_k,T)+\frac{1}{2} \right]\left[ \delta(\omega+\omega_k) + \delta(\omega-\omega_k)\right] \right\}.
+\end{alignat}
+The imaginary part of the time-ordered function is 
+\begin{alignat}{2}
+ \textrm{Im}[g^T_{kl}(\omega)] &=- \frac{\pi}{2m\omega_k} \coth\left(\frac{\omega_k}{2T} \right)\left[ \delta(\omega+\omega_k) + \delta(\omega-\omega_k)\right] \\
+  &= - \frac{\pi}{2m\omega} \coth\left(\frac{\omega}{2T} \right)\left[ \delta(\omega+\omega_k) + \delta(\omega-\omega_k)\right] \\
+  &= \coth\left(\frac{\omega}{2T} \right) \textrm{Im}[g^r_{kl}(\omega)].
+\end{alignat}
+Keldysh Green's function is defined 
+\begin{alignat}{2}
+ g^K_{kl}(\omega) &= g^>_{kl}(\omega) + g^<_{kl}(\omega)	\\
+  &=- \frac{i\pi}{m\omega} \coth\left(\frac{\omega}{2T} \right) [\delta(\omega+\omega_k) + \delta(\omega-\omega_k)] \delta_{kl},
+\end{alignat}
+so
+\begin{equation}
+ g^K_{kl}(\omega) = 2i \textrm{Im}[g^T_{kl}(\omega)].
+\end{equation}
+
+
+%\subsection{Expressions for the quantum-mechanical Green's functions}
+\section{Keldysh functional integral}
+
+Having calculated the free Green's functions, we move on to discussing the perturbation theory obtained by expanding the time-evolution operator as a series in $V_I(\tau)$. In operator formalism, the main tool is Wick's theorem, which allows to calculate many-body correlation functions with respect to the non-interacting density matrix by considering all pairings of operators. For ease of presentation, we now move to the functional integral formalism, where Green's functions are calculated as averages
+\begin{alignat}{2}
+ \langle T_\tau u(\tau_1) u(\tau_2) \rangle &= \frac{ \int Du e^{iS_0-iS_{int}}u(\tau_1) u(\tau_2)}{ \int Du e^{iS_0-iS_{int}}} \\
+  &= \frac{\langle e^{-iS_{int}}u(\tau_1)u(\tau_2) \rangle_0}{\langle e^{-iS_{int}} \rangle_0}
+\end{alignat}
+where all quantities on the right-hand side are simply numbers. Time-ordering is automatically built in the functional integral. Bare action $S_0$ can be fixed by demanding that the free Green's functions coincide with those calculated in the previous section. We try
+\begin{equation}
+ S_0 = \frac{1}{2} \int_{-\infty}^{\infty}\int_{-\infty}^{\infty} dt dt' (u_+(t),u_-(t))\left(\begin{matrix}
+      g^T & g^< \\
+      g^> & g^{\tilde{T}} \\
+     \end{matrix}\right)^{-1} \left(\begin{matrix} u_+(t') \\ u_-(t') \end{matrix} \right) 
+\end{equation}
+
+To show that this form of action produces the correct free Green's functions, we consider the auxiliary functional integral
+\begin{equation}
+ Z_0[\eta] = \int Du e^{iS_0+(\bb{u}(\tau),\eta)},
+\end{equation}
+where 
+\begin{equation}
+ (\bb{u}, \eta) = \int dt [u_+(t)\eta_+(t) + u_-(t) \eta_-(t)].
+\end{equation}
+By definition, the Green's function with Keldysh indices $\alpha$ and $\beta$ can then be calculated as
+\begin{equation}
+ G_{\alpha\beta}(t_1,t_2) = -i \frac{\delta^2 Z_0}{\delta \eta_{\alpha}(t_1)\delta \eta_{\beta}(t_2)}.
+\end{equation}
+The expression for $Z_0$ can be calculated by using the standard formula for Gaussian integrals:
+\begin{equation}
+ \int d\bb{v} \exp\left(-\frac{1}{2}\bb{v}^T \bb{A} \bb{v} + \bb{j}^T \bb{v}\right) = (2\pi)^{N/2} \det\bb{A}^{-1/2} e^{\frac{1}{2} \bb{j}^T \bb{A}^{-1} \bb{j}}.
+\end{equation}
+Since we assume that the normalizing constant factors are cancelled by the denominator, we get (with $\bb{A}=-i\bb{g}^{-1}$ and $\bb{j}=\eta$)
+\begin{equation}
+ Z_0[\eta] = \exp\left(\frac{i}{2} \bb{\eta}^T \bb{g} \bb{\eta} \right)  = 1 + \frac{i}{2} \bb{\eta}^T \bb{g} \bb{\eta} + \dots,
+\end{equation}
+so 
+\begin{equation}
+ -i \frac{\delta^2 Z_0}{\delta \eta_{\alpha}(t_1)\delta \eta_{\beta}(t_2)} = g_{\alpha\beta}(t_1,t_2),
+\end{equation}
+as required.
+
+To see how the Green's functions are calculated in practice, we consider the simple lead-center coupling interaction 
+\begin{alignat}{2}
+ S_{int} &= \int dt (\bb{u}_{L+}(t)^T,\bb{u}_{L-}(t)^T) \underbrace{\left(\begin{matrix}
+      \bb{V_{LC}} & 0 \\
+      0 & - \bb{V_{LC}} \\
+     \end{matrix}\right) }_{\bb{V}}
+    \left(\begin{matrix} \bb{u}_{C+}(t) \\ \bb{u}_{C-}(t) \end{matrix} \right) \\
+  &= \bb{u}_L^T \bb{V} \bb{u}_C,
+\end{alignat}
+where the latter form is written in compact matrix notation. The free action is, in matrix notation,
+\begin{alignat}{2}
+ S_0 = \frac{1}{2} \bb{u}_{L}^T \bb{g}^{-1}_{L} \bb{u}_{L} +  \frac{1}{2} \bb{u}_{C}^T \bb{g}^{-1}_{C} \bb{u}_{C}.
+\end{alignat}
+We combine now spatial index, time index and Keldysh index into a single multi-index $\xi=(i,t,\alpha)$ and wish to calculate the lead-center contour-ordered Green's function appearing in the current formula,
+\begin{alignat}{2}
+ G_{\xi,\xi'}^{LC} = -i \int \ca{D}u e^{iS_0-iS_{int}} u_{L\xi}u_{C\xi'}/\langle \exp(-iS_{int})\rangle_0.
+\end{alignat}
+
+In the following, we present three methods to calculate the Green's function. 
+
+\subsection{Matrix manipulations}
+The easiest way to advance is to write the quadratic part of the action in the matrix form as
+\begin{alignat}{2}
+ S &= S_0 + S_{coupling}	\\
+  &= \frac{1}{2} (\bb{u}_L^T,\bb{u}_C^T ) \left(\begin{matrix}
+     \bb{g}_L^{-1} & -\bb{V} \\
+       -\bb{V}^T & \bb{g}_C^{-1} \\
+     \end{matrix}\right)\left(\begin{matrix} \bb{u}_{L} \\ \bb{u}_{C} \end{matrix} \right) 
+\end{alignat}
+The full Green's function is then the inverse of the matrix in the middle satisfying
+\begin{equation}
+ \left(\begin{matrix}
+     \bb{g}_L^{-1} & -\bb{V} \\
+       -\bb{V}^T & \bb{g}_C^{-1} \\
+     \end{matrix}\right) 
+\left(\begin{matrix}
+     \bb{G}_{LL} & \bb{G}_{LC} \\
+       \bb{G}_{CL} & \bb{G}_{CC} \\
+     \end{matrix}\right)
+ = \left(\begin{matrix}
+     \bb{I} & 0 \\
+       0 & \bb{I} \\
+     \end{matrix}\right),
+\end{equation}
+which is equivalent to the system of equations
+\begin{equation}
+ \begin{cases}
+  \bb{g}_L^{-1}\bb{G}_{LL}-\bb{V}\bb{G}_{CL} = \bb{I} \\
+  -\bb{V}^T\bb{G}_{LC} + \bb{g}_C^{-1}\bb{G}_{CC} = \bb{I} \\
+  \bb{g}_L^{-1}\bb{G}_{LC} - \bb{V} \bb{G}_{CC} = 0 \\
+  -\bb{V}^T\bb{G}_{LL} + \bb{g}_C^{-1}\bb{G}_{CL} = 0.
+ \end{cases}
+\end{equation}
+The last two equations give 
+\begin{equation}
+ \begin{cases}
+  \bb{G}_{LC} = \bb{g}_L \bb{V} \bb{G}_{CC} \\
+   \bb{G}_{CL} = \bb{g}_C\bb{V}^T\bb{G}_{LL}.
+ \end{cases}
+\end{equation}
+The second equation of the system of equations then shows that before the addition of the non-linear interactions, the center block of the Green's function satisfies the Dyson equation
+\begin{alignat}{2}
+ \bb{G}_{CC} &= \bb{g}_C + \bb{g}_C \bb{V}^T\bb{G}_{LC} \\
+  &= \bb{g}_C + \bb{g}_C \bb{V}^T \bb{g}_L \bb{V} \bb{G}_{CC} \\
+  &= \bb{g}_C + \bb{g}_C \Sigma_L \bb{G}_{CC},
+\end{alignat}
+where the lead self-energy is defined
+\begin{alignat}{2}
+ \Sigma_L  &= \bb{V}^T \bb{g}_L \bb{V}  \\
+  &= \left(\begin{matrix}
+      0 & \bb{V}_{CL} \bb{g}^A \bb{V}_{LC}\\ 
+      \bb{V}_{CL} \bb{g}^R \bb{V}_{LC} & \bb{V}_{CL} \bb{g}^K \bb{V}_{LC} 
+     \end{matrix}\right) \\
+  &= \left(\begin{matrix}
+      0 & \Sigma^A_L \\ 
+      \Sigma^R_L & \coth(\omega/2T_L)(\Sigma^R_L-\Sigma_L^A)
+     \end{matrix}\right).
+\end{alignat}
+The Keldysh part is determined with the help of FDT.
+
+\subsection{Equation of motion method}
+
+\subsection{Perturbation theory}
+In functional integral perturbation theory, we encounter Gaussian integrals of the form
+\begin{equation}
+ \langle u_1 u_2\dots u_{2n} \rangle_0 = \frac{\int d\bb{u} e^{-\frac{1}{2} \bb{u}^T \bb{A}\bb{u}}u_1 u_2\dots u_{2n}}{\int d\bb{u}e^{-\frac{1}{2} \bb{u}^T \bb{A}\bb{u}}}
+\end{equation}
+The ''Wick theorem'' of Gaussian integration states that
+\begin{alignat}{2}
+ \langle u_1 u_2\dots u_{2n} \rangle_0 &= \sum _{\substack{\textrm{pairings of}\\ \{1,2,\dots,2n\}}} \langle u_{i_1}u_{i_2}\rangle_0 \dots \langle u_{i_{2n-1}}u_{i_{2n}}\rangle_0 \\
+  &\equiv \sum _{\substack{\textrm{pairings of}\\ \{1,2,\dots,2n\}}} A^{-1}_{i_1i_2} \dots A^{-1}_{i_{2n-1}i_{2n}}.
+\end{alignat}
+The average of an odd number of terms is zero.
+
+Expansion of the matrix exponential $\exp(-iS_{int})$ gives the perturbation expansion for the lead-center coupling function
+\begin{equation}
+  \bb{G}^{LC} = \frac{-i \int \ca{D}u e^{iS_0} \bb{u}_{L}\bb{u}_{C}^T \sum_{n=0}^{\infty} \frac{1}{n!}\left[-i \bb{u}_{L}^T \bb{V} \bb{u}_{C} \right]^n}{\int \ca{D}u e^{iS_0} \sum_{n=0}^{\infty} \frac{1}{n!}\left[-i \bb{u}_{L}^T \bb{V} \bb{u}_{C} \right]^n}
+\end{equation}
+By the rules of Gaussian integration, the zeroth-order term in the numerator is 
+\begin{equation}
+ G^{(0)}_{\xi,\xi'} = -i \int \ca{D}u e^{iS_0} u_{L\xi}u_{C\xi'} = 0,
+\end{equation}
+the first-order term is
+\begin{alignat}{2}
+ G^{(1)}_{\xi,\xi'} &= (-i)^2 \int \ca{D}u e^{iS_0} u_{L\xi}u_{C\xi'} u_{L\eta} V_{\eta\eta'} u_{C\eta'} \\
+  &= g^L_{\xi\eta} V_{\eta\eta'} g^C_{\eta',\xi'}\\
+  &= [\bb{g}^L \bb{V} \bb{g}^C ]_{\xi\xi'}
+\end{alignat}
+and the second-order term
+\begin{alignat}{2}
+ G^{(2)}_{\xi,\xi'} &= \frac{(-i)^3}{2!} \int \ca{D}u e^{iS_0} u_{L\xi}u_{C\xi'} u_{L\eta_1} V_{\eta_1\eta_2} u_{C\eta_2} u_{L\eta_3} V_{\eta_3\eta_4} u_{C\eta_4}=0.
+\end{alignat}
+The third-order term
+\begin{alignat}{2}
+ G^{(3)}_{\xi,\xi'} &= \frac{(-i)^4}{3!} \int \ca{D}u e^{iS_0} u_{L\xi}u_{C\xi'} u_{L\eta_1} V_{\eta_1\eta_2} u_{C\eta_2} u_{L\eta_3} V_{\eta_3\eta_4} u_{C\eta_4}u_{L\eta_5} V_{\eta_5\eta_6} u_{C\eta_6}
+\end{alignat}
+contains nine terms representing the different ways to couple the free propagators. These give two kinds of contributions,
+\begin{alignat}{2}
+ G^{(3)}_{\xi,\xi'} &= \frac{1}{2} [\bb{g}^L \bb{V} \bb{g}^C ]_{\xi\xi'} \times \textrm{Tr}[\bb{g}^L \bb{V} \bb{g}^C \bb{V}]
+  + [\bb{g}^L \bb{V} \bb{g}^C \bb{V} \bb{g}^L \bb{V} \bb{g}^C]_{\xi\xi'}
+\end{alignat}
+The first term represents a disconnected diagram whose contributions are cancelled by the denominator. To demonstrate this, we note that the denominator is, up to second order in $\bb{V}$,
+\begin{equation}
+ \langle e^{-iS_{int}} \rangle_0 = 1 + \frac{1}{2}   \textrm{Tr}[\bb{g}^L \bb{V} \bb{g}^C \bb{V}]+\dots,
+\end{equation}
+so up to third order,
+\begin{alignat}{2}
+ \bb{G}^{LC} &= \left\{\bb{g}^L \bb{V} \bb{g}^C + \frac{1}{2} \bb{g}^L \bb{V} \bb{g}^C \textrm{Tr}[\bb{g}^L \bb{V} \bb{g}^C \bb{V}]+\bb{g}^L \bb{V} \bb{g}^C \bb{V} \bb{g}^L \bb{V} \bb{g}^C\right\} \notag \\
+  &\quad \times \left(1-\frac{1}{2}   \textrm{Tr}[\bb{g}^L \bb{V} \bb{g}^C \bb{V}] +\dots \right) +\dots \\
+  &=\bb{g}^L \bb{V} \bb{g}^C+\bb{g}^L \bb{V} \bb{g}^C \bb{V} \bb{g}^L \bb{V} \bb{g}^C + \dots,
+\end{alignat}
+where the disconnected part has been cancelled. 
+
+A moment's thinking reveals that 
+\begin{equation}
+ \bb{G}^{LC} = \bb{g}^L \Sigma \bb{g}^C,  
+\end{equation}
+where $\Sigma$ is the full self-energy
+\begin{alignat}{2}
+ \Sigma &= \bb{V} + \bb{V} \bb{g}^C \bb{V} \bb{g}^L \bb{V} + \bb{V} \bb{g}^C \bb{V} \bb{g}^L \bb{V} \bb{g}^C \bb{V} \bb{g}^L \bb{V}  + \dots \\
+  &= \bb{V} + \Sigma \bb{g}^C \bb{V} \bb{g}^L \bb{V},
+\end{alignat}
+giving
+\begin{alignat}{2}
+ \Sigma &= \bb{V} [\bb{I} - \bb{g}^C \bb{V} \bb{g}^L \bb{V}]^{-1} \\
+  &= \bb{V} [\bb{I} - \bb{g}^C \Sigma_L]^{-1},
+\end{alignat}
+where the reservoir self-energy is $\Sigma_L=\bb{V} \bb{g}^L \bb{V}$. One can write further
+\begin{alignat}{2}
+ \Sigma &= \bb{V} [(\bb{g}^{C})^{-1}-\Sigma_L]^{-1}(\bb{g}^{C})^{-1}.
+\end{alignat}
+Therefore, we get the lead-center contour-ordered Green's function
+\begin{equation}
+ \bb{G}^{LC}  = \bb{g}^L \bb{V} [(\bb{g}^{C})^{-1}-\Sigma_L]^{-1}.
+\end{equation}
+This form is valid when there is coupling only to a single reservoir. With multiple reservoirs, one would have to sum over the self-energies of the reservoirs. Now one can show that in absence of interactions, the center-center block of the contour-ordered Green's function is simply
+\begin{equation}
+ \bb{G}^{CC}  =  \left[(\bb{g}^{C})^{-1}-\sum_I \Sigma_I \right]^{-1}
+\end{equation}
+and the final form valid also for multiple leads is 
+\begin{equation}
+ \bb{G}^{LC}  = \bb{g}^L \bb{V} \bb{G}^{CC}.
+\end{equation}
+
+% \subsection{Langreth rules}
+% 
+% Langreth rules are the rules by which one can extract block components such as $A^<$, $A^R$ etc. from contour convolutions such as
+% \begin{equation}
+%  A(\tau,\tau') = \int_C d\tau'' B(\tau,\tau'')C(\tau'',\tau')
+% \end{equation}
+% and from multiplications such
+% \begin{equation}
+%  A(\tau,\tau') =  B(\tau,\tau')C(\tau,\tau')
+% \end{equation}
+
+% \left(\begin{matrix}
+%    [\bb{g}^K_I]^{-1} & [\bb{g}^A_I]^{-1} \\
+%   [\bb{g}^R_I]^{-1}	& 0 \\
+%    \end{matrix}\right)
+
+\section{Langevin equation from Keldysh functional integral} 
+
+The Keldysh action of a linear system of particles ($I=C$) coupled to an external bath of particles ($I=B$) is
+\begin{alignat}{2}
+ S&[\bb{u}_{C+},\bb{u}_{C-},\bb{u}_{B+},\bb{u}_{B-}] =  \frac{1}{2} \int dtdt' \sum_{I=C,B} (\bb{u}_{I+}(t)^T,\bb{u}_{I-}(t)^T) 
+ \bb{g}^{-1}_I(t-t')
+ \left( 
+ \begin{matrix}
+  \bb{u}_{I+}(t') \\ \bb{u}_{I-}(t')
+ \end{matrix}
+ \right) \nonumber \\
+  &\quad + \int dt [\bb{u}_{B+}(t) \bb{V}_{BC} \bb{u}_{C+}(t) -  \bb{u}_{B-}(t) \bb{V}_{LC} \bb{u}_{C-}(t)]. 
+\end{alignat}
+The external bath can be integrated out and one gets the Keldysh action (we drop the index $C$)
+\begin{equation}
+ S[\bb{u}_+,\bb{u}_-] = \frac{1}{2} \int dtdt' (\bb{u}_{+}(t)^T,\bb{u}_{-}(t)^T) 
+ \left[\bb{g}^{-1}(t-t')-\Sigma_B(t-t') \right]
+ \left(\begin{matrix}
+  \bb{u}_{+}(t') \\ \bb{u}_{-}(t')
+ \end{matrix}
+ \right) ,
+\end{equation}
+%\left(\begin{matrix}
+%    0 & \bb{G}^A(\omega)^{-1} \\
+%   \bb{G}^R(\omega)^{-1}	& -\Sigma^K_B-\Sigma^K_C \\
+%    \end{matrix}\right)
+Switching to the rotated basis $\bb{u}_{cl}=(\bb{u}_++\bb{u}_-)/\sqrt{2}$, $\bb{u}_{q}=(\bb{u}_+-\bb{u}_-)/\sqrt{2}$, one can similarly write
+\begin{equation}
+ S[\bb{u}_{cl},\bb{u}_{q}] = \frac{1}{2} \int dtdt' (\bb{u}_{cl}(t)^T,\bb{u}_{q}(t)^T) 
+ \left[\bb{g}^{-1}(t-t')-\Sigma_B(t-t') \right]
+ \left(\begin{matrix}
+  \bb{u}_{cl}(t') \\ \bb{u}_{q}(t')
+ \end{matrix}
+ \right) ,
+\end{equation}
+where the Green's function is now in the Keldysh rotated basis 
+\begin{equation}
+ \bb{g} = \left( \begin{matrix}
+                  \bb{g}^K & \bb{g}^R \\
+		  \bb{g}^A & 0 \\
+                 \end{matrix}
+\right)
+\end{equation}
+and the bath self-energy is
+\begin{alignat}{2}
+  \Sigma_B &= \left(\begin{matrix}
+  0 & \bb{V}_{CB} \\ \bb{V}_{CB} & 0 \\
+ \end{matrix} \right) \bb{g}_L  \left(\begin{matrix}
+  0 & \bb{V}_{BC} \\ \bb{V}_{BC} & 0 \\
+ \end{matrix} \right)^T \\
+   &= \left(\begin{matrix}
+   0 &  \bb{V}_{CB}\bb{g}_B^A\bb{V}_{BC}^T \\ 
+    \bb{V}_{CB}\bb{g}_B^R\bb{V}_{BC}^T  &  \bb{V}_{CB}\bb{g}_B^K\bb{V}_{BC} ^T\\
+  \end{matrix} \right) \\
+  &= \left(\begin{matrix}
+   0 &  \Sigma_B^A \\ 
+    \Sigma_B^R  &  \Sigma_B^K \\
+  \end{matrix} \right).
+\end{alignat}
+Here the Keldysh component of the self-energy is $\Sigma^K_B=\coth(\omega/2T_B) (\Sigma_B^R-\Sigma_B^A)= -i \coth(\omega/2T_B) \Gamma_B$. For the linear system with $\ca{H}=\bb{p}^2/2+\bb{u}^T\bb{K}\bb{u}/2$,
+\begin{alignat}{2}
+ S&[\bb{u}_{cl},\bb{u}_{q}] = \frac{1}{2} \int \frac{d\omega}{2\pi} (\bb{u}_{cl}(-\omega)^T,\bb{u}_{q}(-\omega)^T) \notag \\
+  &\quad \times \left(\begin{matrix}
+   0 &  (\omega-i0^+)^2-\bb{K}-\Sigma_B^A(\omega) \\ 
+   (\omega+i0^+)^2-\bb{K}-\Sigma_B^R(\omega)   & -\Sigma_B^K(\omega)+4i\omega 0^+ \coth(\omega/2T) \\
+  \end{matrix} \right)\left(\begin{matrix}
+  \bb{u}_{cl}(\omega) \\ \bb{u}_{q}(\omega)
+ \end{matrix}
+ \right)
+\end{alignat}
+Let us define the positive-definite matrix $\bb{F}(\omega)=i[\Sigma_B^K(\omega)+\Sigma_C^K(\omega)] = \coth(\omega/2T_B) \Gamma_B + 4\omega 0^+ \coth(\omega/2T)$. Our goal is to replace the quadratic part in $\bb{u}_q$ by a linear coupling to an auxiliary field $\xi$. This can be achieved by noting that the part quadratic in $\bb{u}_q$ can be written as
+\begin{alignat}{2}
+ \exp &\left(-\frac{i}{2} \int \frac{d\omega}{2\pi} \bb{u}_q(-\omega)^T [\Sigma^K_B(\omega)+ \Sigma_C^K(\omega)] \bb{u}_q(\omega) \right) \notag  \\
+  &= \exp \left(- \frac{1}{2} \int dt dt' \bb{u}_q(t)^T \bb{F}(t-t') \bb{u}_{q}(t') \right) \\
+  &= \int \ca{D}\xi \exp\left(- \frac{1}{2} \int dt dt' \xi(t)^T \bb{F}^{-1}(t-t') \xi(t') - i \int dt \xi(t)^T \bb{u}_q(t) \right) \\
+  &= \int \ca{D}\xi \exp\left(- \frac{1}{2} \int \frac{d\omega}{2\pi} \xi(-\omega) \bb{F}(\omega)^{-1} \xi(\omega) \right. \notag \\
+  &\qquad \left. - \frac{i}{2} \int \frac{d\omega}{2\pi} [\xi(-\omega)^T\bb{u}_q(\omega)+\bb{u}_q(-\omega)^T\xi(\omega)] \right)
+\end{alignat}
+The functional integral representation for the partition function becomes 
+\begin{alignat}{2}
+ \frac{\ca{Z}}{\ca{Z}_0}&= \frac{1}{\ca{Z}_0}\int \ca{D}\xi\ca{D}\bb{u}_{cl}\ca{D}\bb{u}_q \exp\left\{- \frac{1}{2} \int \frac{d\omega}{2\pi} \xi(-\omega) \bb{F}(\omega)^{-1} \xi(\omega) \right. \notag  \\
+  & \quad + \frac{i}{2} \int \frac{d\omega}{2\pi} \left[ (\bb{u}_{cl}(-\omega)^T,\bb{u}_q(-\omega)^T)\phantom{\int}  \right.   \notag \\
+  & \quad \times \left(\begin{matrix}
+   0 & \bb{G}^A(\omega)^{-1} \\ 
+   \bb{G}^R(\omega)^{-1}   & 0\\
+  \end{matrix} \right)\left(\begin{matrix}
+  \bb{u}_{cl}(\omega) \\ \bb{u}_{q}(\omega)
+ \end{matrix}
+ \right) \notag \\
+  &\quad + \left. \left.\vphantom{\int} \xi(-\omega)^T\bb{u}_q(\omega)+\bb{u}_q(-\omega)^T\xi(\omega) \right] \right\} \\
+  &= \frac{1}{\ca{Z}_0}\int \ca{D}\xi\ca{D}\bb{u}_{cl}\ca{D}\bb{u}_q \exp\left\{- \frac{1}{2} \int \frac{d\omega}{2\pi} \xi(-\omega) \bb{F}(\omega)^{-1} \xi(\omega) \right. \notag \\
+  & \quad + \left.\frac{i}{2} \int \frac{d\omega}{2\pi} \bb{u}_q(-\omega)^T\left[\bb{G}^R(\omega)^{-1}\bb{u}_{cl}(\omega)-\xi(\omega)\right]+c.c. \right\} \\
+  &= \frac{1}{\ca{Z}_0}\int \ca{D}\xi\ca{D}\bb{u}_{cl} \exp\left\{- \frac{1}{2} \int \frac{d\omega}{2\pi} \xi(-\omega) \bb{F}(\omega)^{-1} \xi(\omega)\right\} \notag \\
+  &\quad  \times \delta\left\{\bb{G}^R(\omega)^{-1}\bb{u}_{cl}(\omega)-\xi(\omega)\right\}.
+\end{alignat}
+The partition function sums all paths $\bb{u}_{cl}(t)$ that satisfy the Langevin equation $\bb{u}_{cl}(\omega)=\bb{G}^R(\omega)\xi(\omega)$ and weighs the paths with the Gaussian statistics of $\xi$. The variance of $\xi$ is 
+\begin{alignat}{2}
+ \langle \xi(\omega) \xi(-\omega)^T \rangle &= \bb{F}(\omega) \\
+  &= \Gamma_B(\omega) \coth\left(\frac{\omega}{2T_B}\right) + \textrm{infinitesimal part}.
+\end{alignat}
+In terms of the variable $\bb{u}=\bb{u}_{cl}/\sqrt{2}=(\bb{u}_++\bb{u}_-)/2$, the Langevin equation reads
+\begin{equation}
+ \bb{u}(\omega) = \bb{G}^R(\omega) \eta(\omega),
+\end{equation}
+where $\eta(\omega)=\xi(\omega)/\sqrt{2}$ and
+\begin{alignat}{2}
+ \langle \eta(\omega) \eta(-\omega)^T \rangle = \frac{1}{2} \Gamma_B(\omega) \coth\left(\frac{\omega}{2T_B}\right) + \textrm{infinitesimal part}.
+\end{alignat}
+
+% \subsection{Introduction to Green's functions}
+% 
+% \label{sec:gf_linear}
+% Green's function method is based on inverting the ''equation of motion operator'', which we will discuss later. For a general non-homogenous equation of the form
+% \begin{equation}
+%  \mathcal{L} f = g,
+% \end{equation}
+% where $\mathcal{L}$ is a linear operator and $g$ is the source function, symbolic solution in terms of the Green's function $\mathcal{G}$ is
+% \begin{equation}
+%  f = \mathcal{G} g.
+% \end{equation}
+% The Green's function $\mathcal{G}$ is defined as the inverse of $\mathcal{L}$:
+% \begin{equation}
+%  \mathcal{L} \mathcal{G} = I,
+% \end{equation}
+% where $I$ is the identity operator. Since $\mathcal{L}$ is linear, solution for 
+% \begin{equation}
+%  \mathcal{L} f = g_1 + g_2
+% \end{equation}
+% is the sum of solutions
+% \begin{equation}
+%  f = \mathcal{G}g_1 + \mathcal{G} g_2.
+% \end{equation}
+% Calculating $\mathcal{G}$ for a given $\mathcal{L}$ determines, therefore, the solution for any source function $g$. 
+% 
+% 
+% 
+% \subsection{Quantum mechanical Green's functions}
+% 
+% For completeness, we also briefly discuss the Green's functions that appear in the quantum-mechanical many-body problem. These functions are directly defined as statistical averages of different correlation functions and, at first sight, bear no resemblance to the Green's function discussed in Sec. \ref{sec:gf_linear}. The most used two-particle Green's functions are \cite{wang08}
+%  \begin{alignat}{2}
+%    G^R(t,t') &= -i\theta(t-t') \langle [\bb{u}(t), \bb{u}(t')^T] \rangle \\
+%    G^A(t,t') &= i\theta(t'-t) \langle [\bb{u}(t), \bb{u}(t')^T] \rangle\\
+%    G^>(t,t') &= -i\langle \bb{u}(t) \bb{u}(t')^T \rangle\\
+%    G^<(t,t') &= -i\langle \bb{u}(t') \bb{u}(t)^T \rangle^T	 \\
+%    G^t(t,t') &= \theta(t-t') G^>(t,t') + \theta(t'-t) G^<(t,t') \\
+%    G^{\bar t}(t,t') &=\theta(t'-t) G^>(t,t') + \theta(t-t') G^<(t,t')  ,
+%  \end{alignat}
+% which are called the retarded, advanced, greater, lesser, time-ordered and anti-time-ordered Green's functions, respectively. The operators appearing inside the expectation values are written in Heisenberg picture. Out of the six Green's functions, only three are linearly independent and, in steady-state, the number of independent functions is reduced to two. In equilibrium, one of the Green's functions determines the others, and typically $G^R$ is considered. Note that $G^R$ satisfies
+% \begin{alignat}{2}
+%  \partial_t G^R(t,t')  &= -i \delta(t-t')  \langle [\bb{u}(t), \bb{u}(t')^T] \rangle -i \theta(t-t') \langle [\dot{\bb{u}}(t),\bb{u}(t')^T ] \rangle \\
+%   &= -i \theta(t-t') \langle [\bb{p}(t),\bb{u}(t') ]^T \rangle
+% \end{alignat}
+% and
+% \begin{alignat}{2}
+%  \partial_t^2 G^R(t,t') &= - i \delta(t-t') \langle [\bb{p}(t),\bb{u}(t') ]^T \rangle - i \theta(t-t') \langle [\dot{\bb{p}}(t),\bb{u}(t')^T] \rangle \\
+%   &= - \delta(t-t')\bb{I}  - i \theta(t-t') \langle [\dot{\bb{p}}(t),\bb{u}(t')^T] \rangle .
+% \end{alignat}
+% For a quadratic Hamiltonian 
+% \begin{equation}
+%  \mathcal{H} = \frac{\bb{p}^2}{2} + \frac{1}{2} \bb{u}^T \bb{K} \bb{u},
+% \end{equation}
+% the Heisenberg equation of motion for $\bb{p}(t)$ is 
+% \begin{equation}
+%  \dot{\bb{p}}(t) = - \bb{K} \bb{u}(t),
+%  \label{eq:dotpt}
+% \end{equation}
+% so 
+% \begin{equation}
+%  \partial_t^2 G^R_{ij} (t,t') = - \delta(t-t') \delta_{ij} - K_{ik} G^R_{kj}(t,t').
+% \end{equation}
+% Fourier transformation then gives the familiar Green's function
+% \begin{equation}
+%  G^R(\omega) = [(\omega+i\eta)^2-\bb{K}]^{-1}
+% \end{equation}
+% from the last section. This short calculation justifies the name Green's function. Note that for an interacting system, Eq. \eqref{eq:dotpt} would not be valid and the hiearchy of equations of motion would not close.
+% 
+% The usefulness of Green's functions in the statistical mechanics of quantum-mechanical systems lies in the facts that (1) they can be used to calculate all thermodynamic observables \cite{negele}, and (2) they allow an easy and intuitive perturbative expansion that can be represented as Feynman diagrams \cite{negele,fetter2}. At zero and non-zero temperature, the diagrammatic expansion in terms of the interaction parameter is carried out for the time-ordered Green's function and the Matsubara Green's function, respectively. Methods such as functional renormalization group \cite{metzner12,saaskilahti11} can be applied to sum a subset of diagrams up to an infinite order in a controlled manner.
+% 
+% In the context of non-equilibrium transport problem, Meir and Wingreen showed that the electronic current through an \textit{interacting} system can be written in terms of $A(\omega)$, the spectral function of the system. Corresponding formula for phonon transport through an anharmonic system was derived by Wang \cite{wang06} and Mingo \cite{mingo06}, and the formula reads for, say, the current flowing to the left lead
+% \begin{equation}
+%  I = \int \frac{d\omega}{2\pi} \omega \textrm{Tr}\left[G^R(\omega) \Sigma^<(\omega) + G^<(\omega) \Sigma^A(\omega) \right],
+% \end{equation}
+% where $\Sigma^<$ and $\Sigma^A$ are the lesser and advanced self-energies of the left lead. To calculate the Green's functions and self-energies perturbatively, the perturbation expansion is done for the more general Keldysh Green's function
+% \begin{equation}
+%  G (\tau,\tau') = -i \langle \mathcal{T}_{\tau} u(\tau) u(\tau') \rangle.
+% \end{equation}
+% Time variable $\tau$ lies on the Keldysh contour, which runs from $-\infty$ to $\infty$ slightly above the real axis and back to $-\infty$ slightly below the real axis \cite{jauho}.
+

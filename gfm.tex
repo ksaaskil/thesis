@@ -1,0 +1,129 @@
+\section{Green's function method}
+
+In physics, the Green's function method has two customary meanings. In its more general use, Green's function method refers to solving linear equations of motion in terms of the mathematical Green's function. This is the meaning implied in this work. In quantum mechanical many-body systems, on the other hand, the quantum-mechanical propagators appearing in the diagrammatic perturbation theory are also referred to as Green's functions. The non-equilibrium Keldysh Green's function formalism is briefly described in App. \ref{app:keldysh}. 
+
+To introduce the classical Green's functions, we consider a general non-homogenous equation of the form
+ \begin{equation}
+  \mathcal{L} f = g, \label{eq:Lf=g}
+ \end{equation}
+ where $\mathcal{L}$ is a linear operator and $g$ is the source function. The symbolic solution to Eq. \eqref{eq:Lf=g} in terms of the Green's function $\mathcal{G}$ is
+ \begin{equation}
+  f = -\mathcal{G} g.
+ \end{equation}
+where the Green's function $\mathcal{G}$ is defined as the inverse of $\mathcal{L}$ (minus sign appears for later convenience):
+ \begin{equation}
+  \mathcal{L} \mathcal{G} = -I.
+ \end{equation}
+ Here $I$ is the identity operator. Since $\mathcal{L}$ is linear, solution for 
+ \begin{equation}
+ \mathcal{L} f = g_1 + g_2
+ \end{equation}
+ is the sum of solutions
+ \begin{equation}
+  f = \mathcal{G}g_1 + \mathcal{G} g_2.
+ \end{equation}
+ Calculating $\mathcal{G}$ for a given $\mathcal{L}$ determines, therefore, the solution for any source function $g$. 
+
+We consider two problems in which the Green's function is used to calculate heat transfer rates: (i) thermal conduction through a nanojunction (phonon heat transfer) and (ii) electromagnetic energy transfer between fluctuating dipoles (photon heat transfer).
+
+\subsection{Lattice heat transfer}
+
+\begin{figure}
+% \includegraphics[width=8.6cm]{../scbaths_paper/pic1.ps}
+ \caption{(Color online) (a) A schematic illustration of the system under study. The structure is divided into the left lead, the center region and the right lead. All atoms are coupled to spatially uncorrelated quantum Langevin heat baths, which are shown explicitly for one cross-section in (b). In the left and right lead, the temperatures of the local heat baths have prescribed values $T_L$ and $T_R$, respectively. In the center region, on the other hand, temperature varies between $T_L$ and $T_R$ and the bath temperatures are determined self-consistently using the requirement that the average thermal current to each bath vanishes. The leads can contain an infinite number of atoms, but the center region is finite. Two-dimensional square lattice with nearest neighbor interactions is shown for illustrative purposes, but the basic principle can be applied to any geometry.}
+\label{fig:sud1}
+\end{figure}
+
+
+Green's functions are used to solve the equations of motion in the system of Fig. \ref{fig:sud1}. The setup consists of the left lead region, center region and right lead region as shown schematically in Fig. \ref{fig:sud1}. All atoms within the leads are coupled to local Langevin heat baths set to prescribed values $T_L$ and $T_R$. The atoms in the center region are coupled to local heat baths whose temperatures are determined self-consistently from the requirement of local current conservation. The coupling to the Langevin heat baths effectively mimics thermalizing events such as phonon-phonon scattering.
+
+Accompanied with the non-Hamiltonian time-evolution arising from the interaction with the heat bath, the equations of motion are
+\begin{equation}
+  m\ddot{\bb{u}}_I = - \bb{K}_I \bb{u}_I - \sum_{J\neq I} \bb{V}_{IJ} \bb{u}_J - m \gamma_I \dot{\bb{u}}_I + \xi_I. \label{eq:eom_I}
+\end{equation}
+
+For each index $I$, the atomic displacement vector $u_i^{\alpha}=q_i^{\alpha}-q_i^{\alpha 0}$ is defined as the variation of position $q_i^{\alpha}$ from the equilibrium position $q^{\alpha 0}_i$. The index $I\in\{C,L,R\}$ labels the region: $C$ stands for center region, and $L$ and $R$ for the left and right leads, respectively.
+
+
+\subsection{Electromagnetic heat transfer}
+
+
+% \subsection{Introduction to Green's functions}
+% 
+% \label{sec:gf_linear}
+% Green's function method is based on inverting the ''equation of motion operator'', which we will discuss later. For a general non-homogenous equation of the form
+% \begin{equation}
+%  \mathcal{L} f = g,
+% \end{equation}
+% where $\mathcal{L}$ is a linear operator and $g$ is the source function, symbolic solution in terms of the Green's function $\mathcal{G}$ is
+% \begin{equation}
+%  f = \mathcal{G} g.
+% \end{equation}
+% The Green's function $\mathcal{G}$ is defined as the inverse of $\mathcal{L}$:
+% \begin{equation}
+%  \mathcal{L} \mathcal{G} = I,
+% \end{equation}
+% where $I$ is the identity operator. Since $\mathcal{L}$ is linear, solution for 
+% \begin{equation}
+%  \mathcal{L} f = g_1 + g_2
+% \end{equation}
+% is the sum of solutions
+% \begin{equation}
+%  f = \mathcal{G}g_1 + \mathcal{G} g_2.
+% \end{equation}
+% Calculating $\mathcal{G}$ for a given $\mathcal{L}$ determines, therefore, the solution for any source function $g$. 
+% 
+% 
+% 
+% \subsection{Quantum mechanical Green's functions}
+% 
+% For completeness, we also briefly discuss the Green's functions that appear in the quantum-mechanical many-body problem. These functions are directly defined as statistical averages of different correlation functions and, at first sight, bear no resemblance to the Green's function discussed in Sec. \ref{sec:gf_linear}. The most used two-particle Green's functions are \cite{wang08}
+%  \begin{alignat}{2}
+%    G^R(t,t') &= -i\theta(t-t') \langle [\bb{u}(t), \bb{u}(t')^T] \rangle \\
+%    G^A(t,t') &= i\theta(t'-t) \langle [\bb{u}(t), \bb{u}(t')^T] \rangle\\
+%    G^>(t,t') &= -i\langle \bb{u}(t) \bb{u}(t')^T \rangle\\
+%    G^<(t,t') &= -i\langle \bb{u}(t') \bb{u}(t)^T \rangle^T	 \\
+%    G^t(t,t') &= \theta(t-t') G^>(t,t') + \theta(t'-t) G^<(t,t') \\
+%    G^{\bar t}(t,t') &=\theta(t'-t) G^>(t,t') + \theta(t-t') G^<(t,t')  ,
+%  \end{alignat}
+% which are called the retarded, advanced, greater, lesser, time-ordered and anti-time-ordered Green's functions, respectively. The operators appearing inside the expectation values are written in Heisenberg picture. Out of the six Green's functions, only three are linearly independent and, in steady-state, the number of independent functions is reduced to two. In equilibrium, one of the Green's functions determines the others, and typically $G^R$ is considered. Note that $G^R$ satisfies
+% \begin{alignat}{2}
+%  \partial_t G^R(t,t')  &= -i \delta(t-t')  \langle [\bb{u}(t), \bb{u}(t')^T] \rangle -i \theta(t-t') \langle [\dot{\bb{u}}(t),\bb{u}(t')^T ] \rangle \\
+%   &= -i \theta(t-t') \langle [\bb{p}(t),\bb{u}(t') ]^T \rangle
+% \end{alignat}
+% and
+% \begin{alignat}{2}
+%  \partial_t^2 G^R(t,t') &= - i \delta(t-t') \langle [\bb{p}(t),\bb{u}(t') ]^T \rangle - i \theta(t-t') \langle [\dot{\bb{p}}(t),\bb{u}(t')^T] \rangle \\
+%   &= - \delta(t-t')\bb{I}  - i \theta(t-t') \langle [\dot{\bb{p}}(t),\bb{u}(t')^T] \rangle .
+% \end{alignat}
+% For a quadratic Hamiltonian 
+% \begin{equation}
+%  \mathcal{H} = \frac{\bb{p}^2}{2} + \frac{1}{2} \bb{u}^T \bb{K} \bb{u},
+% \end{equation}
+% the Heisenberg equation of motion for $\bb{p}(t)$ is 
+% \begin{equation}
+%  \dot{\bb{p}}(t) = - \bb{K} \bb{u}(t),
+%  \label{eq:dotpt}
+% \end{equation}
+% so 
+% \begin{equation}
+%  \partial_t^2 G^R_{ij} (t,t') = - \delta(t-t') \delta_{ij} - K_{ik} G^R_{kj}(t,t').
+% \end{equation}
+% Fourier transformation then gives the familiar Green's function
+% \begin{equation}
+%  G^R(\omega) = [(\omega+i\eta)^2-\bb{K}]^{-1}
+% \end{equation}
+% from the last section. This short calculation justifies the name Green's function. Note that for an interacting system, Eq. \eqref{eq:dotpt} would not be valid and the hiearchy of equations of motion would not close.
+% 
+% The usefulness of Green's functions in the statistical mechanics of quantum-mechanical systems lies in the facts that (1) they can be used to calculate all thermodynamic observables \cite{negele}, and (2) they allow an easy and intuitive perturbative expansion that can be represented as Feynman diagrams \cite{negele,fetter2}. At zero and non-zero temperature, the diagrammatic expansion in terms of the interaction parameter is carried out for the time-ordered Green's function and the Matsubara Green's function, respectively. Methods such as functional renormalization group \cite{metzner12,saaskilahti11} can be applied to sum a subset of diagrams up to an infinite order in a controlled manner.
+% 
+% In the context of non-equilibrium transport problem, Meir and Wingreen showed that the electronic current through an \textit{interacting} system can be written in terms of $A(\omega)$, the spectral function of the system. Corresponding formula for phonon transport through an anharmonic system was derived by Wang \cite{wang06} and Mingo \cite{mingo06}, and the formula reads for, say, the current flowing to the left lead
+% \begin{equation}
+%  I = \int \frac{d\omega}{2\pi} \omega \textrm{Tr}\left[G^R(\omega) \Sigma^<(\omega) + G^<(\omega) \Sigma^A(\omega) \right],
+% \end{equation}
+% where $\Sigma^<$ and $\Sigma^A$ are the lesser and advanced self-energies of the left lead. To calculate the Green's functions and self-energies perturbatively, the perturbation expansion is done for the more general Keldysh Green's function
+% \begin{equation}
+%  G (\tau,\tau') = -i \langle \mathcal{T}_{\tau} u(\tau) u(\tau') \rangle.
+% \end{equation}
+% Time variable $\tau$ lies on the Keldysh contour, which runs from $-\infty$ to $\infty$ slightly above the real axis and back to $-\infty$ slightly below the real axis \cite{jauho}.
+

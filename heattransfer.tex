@@ -1,0 +1,55 @@
+
+\section{Introduction}
+
+\begin{itemize}
+ \item Define mean free path etc.
+\end{itemize}
+
+
+\section{Kinetic formula}
+
+To derive the formula for the thermal conductivity, we consider the one-dimensional geometry illustrated in Fig. \ref{fig:1dsystem}. Two thermal baths at temperatures $T_L$ and $T_R$ are connected by the material under study. The length of the connecting bridge is denoted by $L$. The central part is assumed to be microscopically periodic along the $x$-direction, so that the vibrational modes in the center part can be labeled by the longitudinal wavevector $q$ and the transversal ''quantum'' number $\alpha$, which can stand for, say, transversal wavevectors $\{k_y,k_z\}$. Assuming that the thermal baths are adiabatically coupled to the central part so that any phonon entering the baths is absorbed without being able to reflect, energy current carried by the phonons through the structure is then
+\begin{equation}
+ Q  = \int_0^{\pi/a} \frac{dq}{2\pi} \sum_{\alpha} \hbar \omega_{\alpha}(q) v_{\alpha}(q) \ca{T}_{\alpha}(q) [f_B(\omega_{\alpha}(q),T_L)-f_B(\omega_{\alpha}(q),T_R)]
+\end{equation}
+The values of the transmission factor $T_{\alpha}(q)$ range between zero and one. As shown in Sec. \ref{sec:transmission}, the transmission function can be quite generally written in terms of the mean free path $\Lambda_{\alpha}(q)$ as
+\begin{equation}
+ \ca{T}_{\alpha}(q) = \frac{1}{1+L/\Lambda_{\alpha}(q)}.
+\end{equation}
+Choosing $T_L=T+\Delta T$, $T_R=T-\Delta T$ and assuming that $\Delta T\ll T$, we get the conductance
+\begin{equation}
+ G \equiv \frac{Q}{\Delta T} = \int_0^{\pi/a} \frac{dq}{2\pi} \sum_{\alpha} \hbar \omega_{\alpha}(q) v_{\alpha}(q) \frac{v_{\alpha}(q)}{1+L/\Lambda_{\alpha}(q)}\frac{\partial f_B(\omega_{\alpha}(q),T)}{\partial T}.
+\end{equation}
+By defining the mode heat capacity as $c_{\alpha}(q) = \partial [\hbar \omega_{\alpha}(q) f_B(\omega_{\alpha}(q),T)]/\partial T$ and assuming that $L\gg \Lambda_{\alpha}(q)$, we get the thermal conductivity
+\begin{equation}
+ \kappa \equiv \frac{GL}{A} = \frac{1}{A} \int_0^{\pi/a} \frac{dq}{2\pi} \sum_{\alpha} c_{\alpha}(q) v_{\alpha}(q) \Lambda_{\alpha}(q). \label{eq:kappa}
+\end{equation}
+This is the kinetic formula for thermal conductivity. Whereas the mode heat capacity and group velocity are single-phonon properties that are relatively easy to determine from the phonon bandstructure, the determination of the mean-free path is typically much more difficult, because it lumps complicated single- and many-phonon scattering processes into a single length parameter. Equation \eqref{eq:kappa} can be written in the more commonly used form by assuming the material to be isotropic and periodic also in the $y$ and $z$-directions so that the transversal wavenumber $\alpha=\{k_y,k_z\}$. By also writing the mean-free path along $x$-direction as $\Lambda_{\alpha}(q)=v^x_{\alpha}(q) \tau_{\alpha}(q)$, converting the $q$-integral into a sum and defining the specific mode heat capacity $C_{\bb{k}}=c_{k_y,k_z}(q)/(LA)$, we can write the thermal conductivity as
+\begin{equation}
+ \kappa =  \sum_{\bb{k}} C_{\bb{k}} (v^x_{\bb{k}})^2 \tau(\bb{k}) .
+\end{equation}
+Directional averaging then delivers 
+\begin{equation}
+ \kappa =  \frac{1}{3} \sum_{\bb{k}} C_{\bb{k}} v_{\bb{k}}^2 \tau(\bb{k}).
+\end{equation}
+
+
+
+\section{Phonon heat transfer}
+
+\subsection{Anharmonic scattering}
+
+\subsection{Boundary scattering}
+
+\subsection{Interface scattering}
+
+
+
+\section{Photon heat transfer}
+
+\subsection{Near and far-field heat transfer}
+
+\subsection{Cavity effects}
+
+\section{Electron heat transfer}
+

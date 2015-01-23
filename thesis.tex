@@ -1,0 +1,93 @@
+\documentclass[english,a4paper,12pt]{report}
+\usepackage{aaltothesis}
+%\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{pslatex}
+\usepackage{ae,aecompl}
+\usepackage[english]{babel}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+\usepackage{url}
+\usepackage{psfrag,color,pstricks,pst-grad}
+\usepackage[dvips]{graphicx}
+\usepackage{lipsum}% just to automatically generate text
+\usepackage{amsmath,amsfonts,amssymb,amsbsy}  
+\usepackage{hyperref}
+\newcommand{\ud}{\mathrm{d}}
+\newcommand{\bb}{\mathbf}
+\newcommand{\ca}{\mathcal}
+ \newcommand{\mitta}{d\mu_{\bb{C}}(\Psi)}
+ \newcommand{\mittab}{d\mu_{\bb{C}_{\Lambda}}(\Psi)}
+\newcommand{\cutoff}{\Theta(|\omega|-\Lambda)}
+\newcommand{\prop}{\mathcal{G}_{\Lambda}(\omega)}
+\newcommand{\freeprop}{\mathcal{G}_{0\Lambda}(\omega)}
+\newcommand{\kronecker}{\raisebox{1pt}{\ensuremath{\:\otimes\:}}} 
+
+% 
+ \setlength{\hoffset}{-1in}
+ \setlength{\oddsidemargin}{35mm}
+  \setlength{\evensidemargin}{25mm}
+  \setlength{\textwidth}{15cm}
+% %% Pystysuunnan mitat, �L� KOSKE!
+  \setlength{\voffset}{-1in}
+  \setlength{\headsep}{7mm}
+  \setlength{\headheight}{1em}
+  \setlength{\topmargin}{25mm-\headheight-\headsep}
+  \setlength{\textheight}{23cm}
+
+
+
+\begin{document}
+
+
+\tableofcontents
+
+\newpage
+
+ \cleardoublepage
+% \pagestyle{plain}
+ \storeinipagenumber
+
+
+
+
+ \pagenumbering{arabic}
+ \setcounter{page}{1}
+
+\thispagestyle{empty}
+
+\chapter{Introduction}
+
+\input{intro.tex}
+
+%\chapter{Theory of heat transfer in nanoscale}
+
+%\input{heattransfer.tex}
+%
+\chapter{Methods}
+
+% GREEN'S FUNCTION METHOD
+\input{gfm.tex}
+
+% MOLECULAR DYNAMICS
+\input{md.tex}
+
+\input{observables.tex}
+
+\input{implementation.tex}
+%  BOLTZMANN TRANSPORT EQUATION
+%\input{bte.tex}
+
+\chapter{Results}
+\input{results_phonons.tex}
+
+\input{results_photons.tex}
+
+\chapter{Conclusions}
+
+\input{appendix_gfm.tex}
+
+\bibliography{../bibtex/biblio}{}
+\bibliographystyle{../physrev}
+
+\end{document}

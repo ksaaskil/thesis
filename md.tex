@@ -1,0 +1,55 @@
+\section{Molecular dynamics method}
+
+Molecular dynamics (MD) is perhaps the computational method closest to a true ''computer experiment''. In MD simulation, the classical Newton's equations of motion are integrated for all the atoms or molecules in the system using a finite-difference integrator. Values of macroscopic observables such as heat current are then extracted from the time averages of microscopic quantities. Based on the ergodicity principle, each time average is equal to the statistical average over the corresponding ensemble. 
+
+% One key aspect of the method is the assumption of ergodicity: statistical ensemble average can be calculated from a time average, meaning that  %In a microcanonical simulation, for example, the system should sample all the states that lie on the constant-energy manifold determined by the initial conditions. 
+
+In the following, we briefly go through the most important aspects related to a MD simulation.
+
+%\begin{itemize}
+% \item History in heat transfer (FPU,...)
+% \item Integrator (time-reversibility, symplecticity, okayness of wrong trajectories)
+% \item Equilibrium and non-equilibrium simulations + wave packet dynamics
+% \item Parallelization, domain decomposition
+% \item Interatomic potentials (how to calculate, FPU, Brenner, Tersoff)
+% \item Thermalization (Langevin, Nose-Hoover, energy exchange, Maxwell)
+%\end{itemize}
+
+\textbf{Time integrator}
+%As stated above, the continuous-time equations of motion are integrated numerically using a finite-difference method. The pool of the finite-difference methods includes, e.g., Euler methods, Verlet methods, Runge-Kutta methods, the leap-frog method and predictor-corrector methods. Before discussing the properties of a good integrator, it is necessary to understand that none of the integrators can follow the ''true'' trajectory of a many-particle system with thousands of particles for very long times. Due to the so-called Lyapunov instability related to the chaoticity in a many-particle systems, any two many-particle trajectories with minimal differences in the initial conditions diverge from each other exponentially fast. Because of truncation and round-off errors present in any simulation, one therefore cannot even hope to solve the exact particle trajectories. Fortunately, solving the exact trajectories is not even necessary: it is generally believed that the numerical trajectories (''shadow orbits'') are, in some sense, representative of the true trajectories and can therefore be used for collecting statistics.
+
+%With this remark in mind, the time-integration is anyway expected to satisfy a few requirements. First, the method should be reasonably accurate even at long time steps to ensure that large systems can be simulated efficiently. Second, the method should be time-reversible, meaning that if the velocities were reversed at any time-step, the system would ''rewind'' along its earlier trajectory. The requirement of time-reversibility is closely related to the third requirement: energy conservation. Because the energy conservation is a fundamental property of Newton's equations of motion, the simulation should present as little short-term and long-term energy drift as possible. While some non-time-reversible algorithms can have very small short-term energy drift due their high accuracy, they often exhibit large long-term energy drift. The long-term drift arises from the non-symplecticity of these integrators: the size of the phase space volume element is not conserved in the integration.
+
+As stated above, the Newton's equations of motion 
+\begin{equation}
+ m \ddot{\bb{x}}(t) = \bb{F}[\bb{x}(t)]
+\end{equation}
+for the position vector $\bb{x}(t)$ and force $\bb{F}$ are integrated numerically using a finite-difference method. The pool of the finite-difference methods includes, e.g., Euler methods, Verlet methods, Runge-Kutta methods, the leap-frog method and predictor-corrector methods. In all the simulations of this work, the velocity Verlet algorithm was employed to integrate the equations of motion. While velocity Verlet is not the most accurate integrator and it exhibits moderate short-term energy drift, it is very simple to implement, efficient and it possesses very small long-term energy drift due to its being both time-reversible and symplectic. The velocity Verlet equations for the position vector $\bb{x}$ and velocity $\bb{v}=\dot{\bb{x}}$ are
+\begin{alignat}{2}
+  \bb{x}(t+\Delta t) &= \bb{x}(t) + \bb{v}(t)\Delta t+  \frac{1}{2}\bb{a}(t) \Delta t^2 + \mathrm{O}(\Delta t^4) \\
+  \bb{v}(t+\Delta t) &= \bb{v}(t) + \frac{ \bb{a}(t)+\bb{a}(t+\Delta t)}{2} \Delta t+ \mathrm{O}(\Delta t^2) .
+\end{alignat}
+
+%
+ 
+% \textit{Lyapunov instability}
+
+\textbf{Interatomic potential}
+
+Perhaps the most crucial physical aspect in the MD simulation is the choice of interatomic potential $U(\bb{x})$, from which the forces are extracted as $\bb{F}=-\nabla U(\bb{x})$. Typically, the analytical form of the interatomic potential is inferred from quantum-mechanical calculation and the free parameters are fitted to reproduce experimentally known quantities such as the lattice constant, bulk modulus, atomization energy, etc. For this reason, the interatomic potentials are often called semi-empirical. In chemistry, the term force field is used instead of interatomic potential.
+
+In general, the total many-body interatomic potential is the sum of pair terms $V^{(2)}(|\bb{r}_{i}-\bb{r}_j|)$ and many-body terms, which we assume to only consist of the three-body terms $V^{(3)}(\bb{r}_i,\bb{r}_j,\bb{r}_k)$:
+\begin{equation}
+ U(\bb{x}) = \frac{1}{2}  \sum_{ i,j } V^{(2)}(|\bb{r}_{i}-\bb{r}_j|) + \frac{1}{6} \sum_{i,j,k} V^{(3)}(\bb{r}_i,\bb{r}_j,\bb{r}_k)
+\end{equation}
+The prototypical example of a pair-potential is the Lennard-Jones potential
+\begin{equation}
+ V_{LJ}(r) = 4\varepsilon \left[\left( \frac{\sigma}{r}\right)^{12}-\left( \frac{\sigma}{r}\right)^6  \right],
+\end{equation}
+where $\varepsilon$ sets the energy scale for interactions and $\sigma$ controls the equilibrium distance $r_0$ of atoms ($r_0=2^{1/6}\sigma$ for two particles). The repulsive term $(\sigma/r)^{12}$ models the strong atomic repulsion at short distances, arising from the overlapping of electron clouds. The attractive term $-(\sigma/r)^{6}$ accounts for the weak van der Waals attraction at large distances, arising from the interaction of the fluctuating dipole moments in each atom. Due to its simple form, the Lennard-Jones potential cannot describe chemical bonding, so it is mainly used to describe interactions in noble gases such as argon. The Lennard-Jones potential is, however, often used as a constituent in more complicated potentials to describe the van der Waals attraction.
+
+\subsection{Langevin bath}
+
+\subsection{Spectral heat current formula}
+
+%\subsection{
