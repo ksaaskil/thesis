@@ -1,0 +1,152 @@
+\appendix
+
+\chapter{Lattice dynamics}
+
+\section{Crystal Hamiltonian}
+
+In this appendix, we study the atomic lattice dynamics in a three-dimensional periodically repeating crystal with lattice vectors $\bb{a}_1$, $\bb{a}_2$ and $\bb{a}_3$. In mechanical equilibrium, the atoms are located at their equilibrium positions $\bb{r}^0_l=l_1\bb{a}_1+l_2\bb{a}_2+l_3\bb{a}_3$. For notational simplicity, we assume that each unit cell in the crystal lattice contains only a single atom. We can then write the crystal Hamiltonian as
+\begin{equation}
+ \ca{H} = \sum_{l} \frac{\bb{p}_l^2}{2m} + \ca{V}(\bb{r}_1,\dots,\bb{r}_N).
+\end{equation}
+The interaction energy $\ca{V}$ can be written as a sum over interacting atom pairs, triplets, quadruplets, etc. as
+\begin{equation}
+ \ca{V} = \frac{1}{2} \sum_{l,l'} f(\bb{r}_{l}-\bb{r}_{l'}) + \frac{1}{6} \sum_{l,l',l''} g(\bb{r}_l,\bb{r}_{l'},\bb{r}_{l''}) + \dots,
+\end{equation}
+where the higher-order many-body terms account for, e.g., directional chemical bonding that cannot be captured by a pure two-body potential $f$. %For the purposes of this section, we assume that the pair-potential energy dominates over the many-body terms and we can neglect them.
+
+In a solid, the atoms perform small motion around their equilibrium positions $\bb{r}_0^l$, where the forces on each atom vanish:
+\begin{equation}
+  \left. \frac{\partial \ca{V}}{\partial \bb{r}_l} \right|_{\bb{r}=\bb{r}_0} = 0.
+\end{equation}
+It is then useful to expand the potential energy in terms of the atomic displacement $\bb{u}_l = \bb{r}_l-\bb{r}_l^0$ from the equilibrium position. Noting that the first-order derivative vanishes, one gets the expansion
+\begin{equation}
+ \ca{V} = \ca{V}_0 + \frac{1}{2} \sum_{l,l'} u_l^{\alpha} K_{ll'}^{\alpha\beta}  {u}_{l'}^{\beta} + \frac{1}{6} \sum_{l,l',l''} A^{\alpha \beta \gamma}_{l,l',l''} u^{\alpha}_l u^{\beta}_{l'} u^{\gamma}_{l''} + \dots \label{eq:V_expansion}
+\end{equation}
+where the constant contribution $\ca{V}_0$ can be neglected. The harmonic force constant matrix is defined as
+\begin{equation}
+K_{ll'}^{\alpha\beta} = \left. \frac{\partial^2 \ca{V}}{\partial  u_l^{\alpha}  \partial {u}_{l'}^{\beta}} \right|_0
+\end{equation}
+and the first-order anharmonicity matrix is 
+\begin{equation}
+A^{\alpha \beta \gamma}_{l,l',l''} = \frac{\partial^3 \ca{V}}{\partial u^{\alpha}_l \partial u^{\beta}_{l'} \partial u^{\gamma}_{l''}} 
+\end{equation}
+
+\section{Free phonons}
+
+At sufficiently low temperatures, where the atomic displacements from the equilibrium position are small, the anharmonic terms in Eq. \eqref{eq:V_expansion} can be neglected. The Hamiltonian is then of the quadratic form
+\begin{equation}
+ \ca{H}_{\textrm{free}} = \sum_{\bb{l}} \frac{\bb{p}_l^2}{2m} + \frac{1}{2} \sum_{l,l'} \bb{u}_l^T \bb{K}_{l,l'} \bb{u}_{l'}. \label{eq:H_free}
+\end{equation}
+Our goal is to determine the eigenstates of the Hamiltonian \eqref{eq:H_free}. Because the Hamiltonian bears close resemblance with the harmonic oscillator Hamiltonian, its eigenstates are obtained straightforwardly in terms of the so-called ladder operators \cite{schwabl}. We must, however, first separate the different degrees of freedom by defining so-called normal coordinates. Because we wish to study the propagation of phonons in an infinite crystal, we exploit the translational invariance of the crystal lattice and turn into the Fourier representation. As shown in solid state physics textbooks \cite{ashcroftmermin}, the lattice displacement can be written as 
+\begin{equation}
+ \bb{u}_l = \frac{1}{\sqrt{N}}  \sum_{\bb{q}} \tilde{\bb{u}}_{\bb{q}} e^{-i\bb{q} \cdot\bb{r}_l^0 }, \label{eq:uq_def}
+\end{equation}
+where the spatial Fourier transform is
+\begin{equation}
+ \tilde{\bb{u}}_{\bb{q}} = \frac{1}{\sqrt{N}} \sum_l \bb{u}_l e^{i\bb{q}\cdot \bb{r}_l^0}.
+\end{equation}
+The summation in Eq. \eqref{eq:uq_def} extends over the first Brillouin zone. Substituting \eqref{eq:uq_def} to \eqref{eq:H_free}, we get
+\begin{alignat}{2}
+ \ca{H}_{\textrm{free}} =& \frac{1}{N} \sum_{l} \sum_{\bb{q},\bb{q'}} \frac{\tilde{\bb{p}}_{\bb{q}}^T\tilde{\bb{p}}_{\bb{q'}}}{2m} e^{-i(\bb{q}+\bb{q}')\cdot\bb{r}^0_l} + \frac{1}{2N} \sum_{l,l'} \sum_{\bb{q},\bb{q}'} \bb{u}_{\bb{q}}^T e^{-i\bb{q}\cdot\bb{r}_l^0}\bb{K}_{l,l'}e^{-i\bb{q}'\cdot\bb{r}_{l'}^0} \bb{u}_{q'}. 
+\end{alignat}
+The first term can be straightforwardly simplified by employing the identity $\sum_{l}e^{-i\bb{q}\cdot \bb{r}_0^l} = N\delta_{\bb{q},0}$, where the modified Kronecker delta is defined so that $\hat \delta_{\bb{q},\bb{0}}$ is zero unless $\bb{q}$ differs from zero vector only by a vector $\bb{G}$ belonging to the reciprocal lattice ($e^{i\bb{G}\cdot \bb{r}_l^0}=1$ $\forall l$), in which case the function is unity. The second term can be simplified by redefining $\bb{q}' \to -\bb{q}+\bb{q}'$ and noting that due to the translational invariance, the force constant matrix can only depend on the difference $\bb{r}^0_l - \bb{r}^0_{l'}$. We can therefore set $l=0$ in $\bb{K}_{l,l'}$ and obtain 
+\begin{alignat}{2}
+ \ca{H}_{\textrm{free}} &= \sum_{\bb{q}} \frac{\tilde{\bb{p}}_{\bb{q}} \tilde{\bb{p}}_{-\bb{q}}}{2m} + \frac{1}{2N} \sum_{\bb{q},\bb{q}'} \tilde{\bb{u}}_{\bb{q}}^T \underbrace{ \sum_{l'} e^{-i\bb{q}' \cdot \bb{r}^0_{l'}}}_{N\hat \delta_{\bb{q}',0}} \underbrace{ \sum_{l} e^{-i \bb{q} \cdot (\bb{r}^0_l-\bb{r}^0_{l'})} \bb{K}_{l,l'}}_{\equiv \tilde{\bb{K}}(\bb{q})}  \tilde{\bb{u}}_{-\bb{q}+\bb{q}'} \\
+ &=   \sum_{\bb{q}} \frac{\tilde{\bb{p}}_{\bb{q}} \tilde{\bb{p}}_{-\bb{q}}}{2m} +\frac{1}{2} \sum_{\bb{q}} \tilde{\bb{u}}_{\bb{q}}^T \tilde{\bb{K}}(\bb{q}) \tilde{\bb{u}}_{-\bb{q}}.
+\end{alignat}
+We now look for the diagonal eigenvalue matrix $m\Omega^2=\textrm{diag}[m\omega_{\bb{q},1}^2,m\omega_{\bb{q},2}^2,m\omega_{\bb{q},3}^2]$ of $\bb{K}(\bb{q})$ satisfying
+\begin{equation}
+ \bb{K}(\bb{q}) = \bb{E}_{\bb{q}} m\Omega_{\bb{q}}^2 \bb{E}_{\bb{q}}^{\dagger},
+\end{equation}
+where $\bb{E}_{\bb{q}}$ is the matrix containing the \textit{polarization vectors} $\bb{e}_{\bb{q},p}$: $\bb{E}_{\bb{q}}=[\bb{e}_{\bb{q},1},\bb{e}_{\bb{q},2},\bb{e}_{\bb{q},3}]$. The polarization vectors are normalized to unit length. In an isotropic medium, the polarization vectors can be chosen such that $\bb{e}_{\bb{q},1}\parallel \bb{q}$ (longitudinal mode) and $\bb{e}_{\bb{q},2}\perp \bb{q}$, $\bb{e}_{\bb{q},3}\perp \bb{q}$ (two transversal modes).
+
+With the help of the polarization vectors, we define the normal coordinates as
+\begin{equation}
+ \left\{
+\begin{array}{ll}
+  \eta_{\bb{q}} &= \sqrt{m} \bb{E}_{\bb{q}}^{T} \bb{u}_{\bb{q}} \\
+  \pi_{\bb{q}} &= (1/\sqrt{m}) \bb{E}_{\bb{q}}^{\dagger} \bb{p}_{\bb{q}} .
+ \end{array}
+\right.
+\label{eq:normal_coord_def}
+\end{equation}
+It is straigtforward to verify that the normal coordinates satisfy the commutation relation $[\eta_{\bb{q}}^{\alpha}, \pi_{\bb{q}}^{\beta}]=\delta^{\alpha\beta}$, and the Hamiltonian reduces to 
+\begin{equation}
+ \ca{H}_{\textrm{free}} = \frac{1}{2} \sum_{\bb{q},p} \left[ \pi_{\bb{q},p} \pi_{\bb{q},p}^{\dagger} + \omega_{\bb{q,p}}^2 \eta_{\bb{q},p}  \eta_{\bb{q},p}^{\dagger} \right] \label{eq:Hfree_normal}
+\end{equation}
+
+Because the different degrees of freedom are now separated, we are ready to find the eigenstates of the Hamiltonian by defining the bosonic creation and annihilation operators through the relations
+\begin{equation}
+ \left\{
+\begin{array}{ll}
+  \eta_{\bb{q},p} &= \sqrt{\frac{\hbar}{2\omega_{\bb{q},p}}}[a_{\bb{q},p}+a_{-\bb{q},p}^{\dagger}] \\
+  \pi_{\bb{q},p} &= -i \sqrt{\frac{\hbar \omega_{\bb{q},p}}{2}}[a_{-\bb{q},p}-a_{\bb{q},p}^{\dagger}],
+  \end{array}
+\right.
+\label{eq:aa_def}
+\end{equation}
+which can be inverted to give the annihilation and creation operators as
+\begin{equation}
+ \left\{
+\begin{array}{ll}
+  a_{\bb{q},p} &= \frac{\omega}{2\hbar} \left[ \eta_{\bb{q},p} + \frac{i}{\omega} \pi_{-\bb{q},p} \right] \\
+  a_{\bb{q},p}^{\dagger} &= \frac{\omega}{2\hbar} \left[ \eta_{-\bb{q},p} - \frac{i}{\omega} \pi_{\bb{q},p} \right]
+\end{array}
+\right.
+\end{equation}
+Note that even though $\eta_{\bb{-q},p}=\eta_{\bb{q},p}^{\dagger}$, the same does not hold for the creation and annihilation operators: $a_{-\bb{q},p} \neq a_{\bb{q},p}^{\dagger}$.
+
+Substituting Eqs. \eqref{eq:aa_def} to \eqref{eq:Hfree_normal} and utilizing the fact that the operators satisfy the commutation relation $[a_{\bb{q},p}^{\dagger},a_{\bb{q},p}]=1$, the Hamiltonian can be written in the form
+\begin{equation}
+ \ca{H}_{\textrm{free}} = \sum_{\bb{q},p} \hbar \omega_{\bb{q},p} \left[ a_{\bb{q},p}^{\dagger} a_{\bb{q},p} + \frac{1}{2} \right] .
+\end{equation}
+It is well-known that the Fock eigenstates of the Hamiltonian are then
+\begin{equation}
+ \prod_{\bb{q},p} |n_{\bb{q},p} \rangle = \prod_{\bb{q},p} (a_{\bb{q},p}^{\dagger})^{n_{\bb{q},p}} |0 \rangle,
+\end{equation}
+where each state $(\bb{q},p)$ is populated with $n_{\bb{q},p}$ quanta. These quanta of lattice oscillations are called phonons.
+
+% Because we assume that the equilibrium positions define a local minimum for the interatomic potential energy, it follows that $\bb{K}$ is a positive-definite matrix. 
+\section{Phonon-phonon interactions from anharmonicity}
+
+Phonon-phonon interactions are responsible for the non-zero thermal resistance in pristine crystals. We now show that the phonon-phonon interactions arise from the anharmonic terms in Eq. \eqref{eq:V_expansion} and derive a practically useful expression for the perturbation Hamiltonian that can be used to calculate phonon relaxation rates. 
+
+We consider the first-order anharmonic term
+\begin{equation}
+ \ca{V}^{(3)} = \frac{1}{6} \sum_{l,l',l''} A_{l,l',l''}^{\alpha\beta\gamma} u_l^{\alpha} u_{l'}^{\beta} u_{l''}^{\gamma}
+\end{equation}
+that describes three-phonon interactions. We first substitute \eqref{eq:uq_def}, which gives
+\begin{equation}
+ \ca{V}^{(3)} =\frac{1}{6N^{3/2}} \sum_{l,l',l''}\sum_{\bb{q},\bb{q}',\bb{q}''} A_{l,l',l''}^{\alpha\beta\gamma} e^{-i\bb{q}\cdot\bb{r}^0_l-i\bb{q}'\cdot\bb{r}^0_{l'}-i\bb{q}''\cdot\bb{r}^0_{l''}} \tilde{u}_{\bb{q}}^{\alpha} \tilde{u}_{\bb{q}'}^{\beta} \tilde{u}_{\bb{q}''}^{\gamma} . \label{eq:V3_2}
+\end{equation}
+Due to translational invariance, the anharmonicity coefficient $A_{l,l',l''}^{\alpha\beta\gamma}$ only depends on the relative distances $\bb{r}^0_{l}-\bb{r}^0_{l''}$ and $\bb{r}^0_{l'}-\bb{r}^0_{l''}$, so we can define [in analogy with the definition of $\tilde{\bb{K}}(\bb{q})$]
+\begin{equation}
+ \tilde A_{\bb{k},\bb{k}'}^{\alpha\beta\gamma}= \sum_{l,l'} e^{-i \bb{k} \cdot (\bb{r}^0_{l}-\bb{r}^0_{l''})-i\bb{k}'\cdot(\bb{r}^0_{l'}-\bb{r}^0_{l''}) }  A_{l,l',l''}^{\alpha\beta\gamma}.
+\end{equation}
+The choice of index $l''$ is here arbitrary. The inverse transformation reads
+\begin{equation}
+ A_{l,l',l''}^{\alpha\beta\gamma} = \frac{1}{N^2} \sum_{\bb{k},\bb{k}'} e^{i\bb{k} \cdot(\bb{r}_l^0-\bb{r}^0_{l''}) + i\bb{k}' \cdot(\bb{r}_{l'}^0-\bb{r}^0_{l''})} \tilde A_{\bb{k},\bb{k}'}^{\alpha\beta\gamma}. \label{eq:Aq_inv}
+\end{equation}
+Substituting \eqref{eq:Aq_inv} to \eqref{eq:V3_2}, summing over $l$, $l'$ and $l''$ and using $\sum_{\bb{q}}e^{i\bb{q}\cdot \bb{r}^0_{l}}=N \hat\delta_{\bb{q},0}$, we get
+\begin{alignat}{2}
+ \ca{V}^{(3)} &=\frac{1}{6\sqrt{N}} \sum_{\bb{q},\bb{q}',\bb{q}''} \tilde A_{\bb{q},\bb{q}'}^{\alpha\beta\gamma} \tilde u_{\bb{q}}^{\alpha} \tilde {u}_{\bb{q}'}^{\beta} \tilde  {u}_{\bb{q}''}^{\gamma} \hat \delta_{\bb{q}+\bb{q}'+\bb{q}'',\bb{0}} \\
+ &= \frac{1}{6m^{3/2}\sqrt{N}} \sum_{\bb{q},\bb{q}',\bb{q}''} \sum_{\alpha,\beta,\gamma} \sum_{p,p',p''} (e^{\alpha}_{\bb{q},p})^* (e^{\beta}_{\bb{q}',p'})^* (e^{\gamma}_{\bb{q}'',p''})^* \tilde A_{\bb{q},\bb{q}'}^{\alpha\beta\gamma} \eta_{\bb{q},p} \eta_{\bb{q}',p'} \eta_{\bb{q}'',p''} \hat \delta_{\bb{q}+\bb{q}'+\bb{q}'',\bb{0}}.
+\end{alignat}
+In the second line, we switched to the normal coordinates \eqref{eq:normal_coord_def}. Substituting finally the bosonic ladder operators \eqref{eq:aa_def}, we get the perturbation Hamiltonian
+\begin{alignat}{2}
+\ca{V}^{(3)} = & \frac{1}{6\sqrt{N}} \left(\frac{\hbar}{2m} \right)^{3/2} \sum_{\bb{q},\bb{q}',\bb{q}''} \sum_{p,p',p''} \frac{1}{\sqrt{\omega_{\bb{q},p}\omega_{\bb{q}',p'} \omega_{\bb{q}'',p''}}} \tilde{A}^{p,p',p''}_{\bb{q},\bb{q}'} \notag \\
+  & \times \left[a_{\bb{q},p}+a_{-\bb{q},p}^{\dagger} \right] \left[[a_{\bb{q}',p'}+a_{-\bb{q}',p'}^{\dagger}\right] \left[[a_{\bb{q}'',p''}+a_{-\bb{q}'',p''}^{\dagger}\right] \hat \delta_{\bb{q}+\bb{q}'+\bb{q}'',\bb{0}}. \label{eq:V3_3}
+\end{alignat}
+
+Expanding the parenthesis in Eq. \eqref{eq:V3_3} delivers terms of the form $a_{\bb{q},p}a_{\bb{q}',p'}a_{\bb{q}'',p''}$, $a_{-\bb{q},p}^{\dagger} a_{\bb{q}',p'}a_{\bb{q}'',p''}$, \textit{etc}., which can be readily interpreted as phonon-phonon interactions resulting in the annihilation and creation of phonons. In each such processes, the crystal momentum is conserved: $\bb{q}+\bb{q}'+\bb{q}''=\bb{G}$, where $\bb{G}$ is a vector of the reciprocal lattice. Processes with $\bb{G}=\bb{0}$ and $\bb{G}\neq \bb{0}$ are called \textit{normal} and \textit{Umklapp} processes, respectively. It can be shown \cite{ziman} that the total heat current carried by the phonons is conserved in a normal process, meaning that normal processes cannot hinder heat flow, i.e. non-zero thermal resistance is purely due to Umklapp processes. Normal processes play, however, an important role in re-distributing the occupation numbers of different modes.
+
+\chapter{MD methods for thermal conductivity prediction}
+
+\begin{itemize}
+ \item M\"uller-Plathe \cite{mullerplathe97}: exchange the velocities of hot and cold atoms (\textit{fix thermal/conductivity} in LAMMPS), use PBC
+ \item Jund-Jullien \cite{jund99}: scale the velocities of hot and cold regions such that total momentum conserved (\textit{fix heat} in LAMMPS), use PBC. Used also e.g. by Schelling
+ \item Ikeshoji-Hafskjold \cite{ikeshoji94}: Apparently the same kind of scaling as was used by Jund and Jullien later, but applied here for liquids and gases
+ \item Landry \cite{landry08}: Jund-Jullien method without PBC, fixed boundary atoms
+ \item Different methods reviewed by Schelling
+\end{itemize}
+
