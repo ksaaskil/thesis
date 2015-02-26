@@ -16,12 +16,29 @@
 \newcommand{\ud}{\mathrm{d}}
 \newcommand{\bb}{\mathbf}
 \newcommand{\ca}{\mathcal}
- \newcommand{\mitta}{d\mu_{\bb{C}}(\Psi)}
- \newcommand{\mittab}{d\mu_{\bb{C}_{\Lambda}}(\Psi)}
-\newcommand{\cutoff}{\Theta(|\omega|-\Lambda)}
-\newcommand{\prop}{\mathcal{G}_{\Lambda}(\omega)}
-\newcommand{\freeprop}{\mathcal{G}_{0\Lambda}(\omega)}
-\newcommand{\kronecker}{\raisebox{1pt}{\ensuremath{\:\otimes\:}}} 
+
+\newcommand{\fb}{\left[f_B(\omega,T)+\frac{1}{2} \right]}
+\newcommand{\fbbg}{\left[f_B(\omega,\Tenv)+\frac{1}{2} \right]}
+\newcommand{\fbi}{\left[f_B(\omega,T_{i})+\frac{1}{2} \right]}
+\newcommand{\fbj}{\left[f_B(\omega,T_{j})+\frac{1}{2} \right]}
+\newcommand{\mbb}{\mathbb}
+\newcommand{\gem}{\mathbb{G}}
+\newcommand{\gems}{\mathbb{g}}
+\newcommand{\bu}{\bb{u}}
+\newcommand{\bE}{\bb{E}}
+\newcommand{\br}{\bb{r}}
+\newcommand{\bp}{\bb{p}}
+\newcommand{\bG}{\bb{G}}
+\newcommand{\pom}{(\omega)}
+\newcommand{\epsenv}{\varepsilon_{\textrm{env}}}
+\newcommand{\Tenv}{T_{\textrm{env}}}
+\newcommand{\Eenv}{\bb{E}_{\textrm{env}}}
+\newcommand{\Eenvhat}{\hat{\bb{E}}_{\textrm{env}}}
+\newcommand{\gemfull}{{\gem}^{\textrm{CM}}}
+\newcommand{\tildegemfull}{{\gem}^{\textrm{full}}}
+\newcommand{\kw}{k_0}
+\newcommand{\unitdyadic}{\bb{I}_{3 \times 3}}
+
 
 % 
  \setlength{\hoffset}{-1in}
@@ -60,17 +77,37 @@
 
 \input{intro.tex}
 
+\input{theory.tex}
+
 %\chapter{Theory of heat transfer in nanoscale}
 
 %\input{heattransfer.tex}
 %
 \chapter{Methods}
 
-% GREEN'S FUNCTION METHOD
-\input{gfm.tex}
+\begin{quote}
+ \textit{This section is devoted to presenting the computational methods used in this work.}
+\end{quote}
+
+%Studying energy transfer in nanoscale systems typically requires resorting to computational methods, which can be roughly divided into two categories. In the first category, computer is used to calculate numerical values for complicated analytical expressions. In the second category, computer is used to perform a ''numerical experiment'' by simulating the behaviour of the system and calculating observables of interest from the simulation. 
+
+%n the context of this work, the two categories correspond to two different ways of handling the non-linearities in the equations of motion. 
+
+
+%The non-linearities appear, for example, from the anharmonic forces between atoms in a solid, resulting in interactions between vibrational modes (phonon-phonon interactions). If the non-linear terms are neglected or linearized, one can solve the equations of motion analytically in terms of the so-called Green's functions. Observables such as the heat current can then be calculated numerically from the analytical expressions. 
+
+The computational methods used in this thesis fall into two categories, corresponding to different approaches for treating the non-linearities appearing in the equations of motion. If the non-linear terms cannot be neglected or linearized, one cannot directly calculate the observables of interest such as the heat current. One can, however, perform a ''numerical experiment'' by numerically integrating the classical equations of motion and calculating the time-averaged observables of interest from microscopic trajectories. This is the idea of molecular dynamics method. 
+
+If the non-linear terms can be neglected or replaced by an effective linear term, the equations of motion can be solved analytically in terms of the so-called Green's functions. The Green's functions provide analytical expressions for observables such as the heat current. Numerical methods are still required, however, to perform the complicated matrix operations necessary for the evaluation. The Green's function method is used in this thesis for (i) lattice heat transfer using an effective model modeling the dissipative processes and (ii) electromagnetic energy transfer. The non-linearities appear as dissipative terms either in the atomic equations of motion [in case (i)] or Maxwell's equations [case (ii)]. 
+
+While energy transfer coefficients such as the thermal conductivity can be calculated from linear response theory using Green-Kubo relations, we have exclusively used non-equilibrium methods in this work. In both MD and GF method, the temperature difference pushing the system into non-equilibrium is set up by coupling to Langevin heat baths at different temperatures. The imposed non-equilibrium, arising from non-zero temperature differences in the system, mimics the practically relevant experimental case and also allows for more unambiguous separation between bulk and interface quantities. %We therefore start by reviewing the theory of Langevin baths.
+
 
 % MOLECULAR DYNAMICS
 \input{md.tex}
+
+% GREEN'S FUNCTION METHOD
+\input{gfm.tex}
 
 \input{observables.tex}
 
@@ -85,7 +122,11 @@
 
 \chapter{Conclusions}
 
-\input{appendix_gfm.tex}
+\input{appendix_phonons.tex}
+
+
+\input{langevin.tex}
+
 
 \bibliography{../bibtex/biblio}{}
 \bibliographystyle{../physrev}

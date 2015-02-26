@@ -3,17 +3,71 @@
 \section{Background}
 
 \begin{itemize}
- \item Three primary carriers
+ \item General importance
 \end{itemize}
 
-\section{Energy transfer phenomena}
+At nanoscale, theories describing energy transfer in macroscale objects break down and new phenomena emerge. Striking examples are, for example, the observation of thermal conductance quantization \cite{schwab00}, divergence of thermal conductivity in two-dimensional carbon \cite{xu14}, 100-fold reduction in nanowire thermal conductivities compared to the bulk values \cite{} and break-down of the Planck blackbody radiation law in the near-field \cite{}. In addition to leading to new understanding of physics, these phenomena offer new ways to engineer the thermal properties of materials.
+
+%Physically, such phenomena arise from the reduced dimensionality, wave interference effects, increased geometric scattering rates, reduced internal scattering and near-field effects appearing in nanoscale structures. 
 
 \begin{itemize}
- \item Interference, particles versus waves
- \item Boundaries and interfaces
- \item Ballistic versus diffusive, coherence
+ \item Dimensionality
+ \item Wavelength effects, engineering
+ \item Ballistic transport (MFP)
+ \item 
 \end{itemize}
 
+
+\section{Scope and objectives}
+%The second law of thermodynamics essentially dictates that in absence of external agents influencing the system, energy is always transferred from hot to cold, thereby smoothing any temperature differences. 
+
+
+The scope of this work is to investigate and develop new computational methods for (i) thermal conduction by lattice vibrations and electrons in nanoscale structures, and (ii) thermal radiation in inhomogeneous environments such as a mirror cavity. We only consider solid materials and therefore convection, which is a major energy transfer mechanism in fluids and gases containing free atoms or molecules carrying heat, is outside the scope of this work. %Below, we review the mo
+
+% Energy transfer between and inside bodies generally occurs by three mechanisms: conduction, radiation and convection \cite{}. 
+%The energy transfer generally occurs by three mechanisms: conduction, radiation and convection \cite{}. Thermal conduction, which is the dominant mechanism in solids, is energy transfer inside a given body and occurs through (i) the microscopic interactions between the atoms and molecules constituting the body and, in case of metals, (ii) movement of free electrons. In fluids and gases, energy is transferred not only by conduction but also by the net motion of the energy-carrying molecules themselves, a process known as convection. As an example, the familiar law that hot air rises above the cold air is convection. Finally, energy can be transmitted by electromagnetic waves, i.e., thermal radiation. Unlike conduction and convection, thermal radiation does not require any mediating medium to carry energy: this is best exemplified by the thermal radiation from the Sun.
+
+%The scope of this work is to investigate thermal conduction by lattice vibrations and electrons in nanoscale crystalline solids and thermal radiation between nanoparticles. In crystalline solids, lattice vibrations form propagating collective modes, the quanta of which are known as phonons. Below, we briefly review the main phenomena characteristic of thermal conduction in nanoscale. Detailed theory of lattice dynamics is presented in Chap. XXX.
+
+Below, we review the most prominent phenomena appearing in nanoscale thermal conduction and radiation. % when the size of the structure or the scale of observations reaches nanoscale.
+
+%\subsection{Experimental observations of }
+
+%\begin{itemize}
+% \item Interference, particles versus waves
+% \item Boundaries and interfaces
+% \item Ballistic versus diffusive, coherence
+%\end{itemize}
+
+
+\section{Energy transfer in nanoscale systems}
+
+\subsection{Phonon transport}
+
+%\subsection{Anomalous conductivity}
+
+%Thermal conduction in macroscopic systems is traditionally described using Fourier's law \cite{}. The law states that the heat flux at any given point is proportional to the temperature gradient at the same point. The theory is, therefore, completely local and based on the definition of local temperature, whose changes are dictated by the diffusion equation. Diffusion equation predicts, for example, that the information of a temperature perturbation can propagate infinitely fast in the system, which is in direct contradiction to special relativity. Fourier's theory must, therefore, ultimately break down.
+
+Thermal conduction in macroscopic systems is traditionally described using Fourier's law \cite{}, which states that the heat flux at any given point is proportional to the temperature gradient at the same point. The theory leads, however, to the unphysical phenomenon that a local temperature perturbation can propagate infinitely fast \cite{}, in direct contradiction to special relativity. Fourier's theory must, therefore, ultimately break down in nanoscale.
+
+The microscopic theory for thermal conduction was developed by Rudolf Peierls in 1929 \cite{}. He noted that thermal resistivity arises, because the propagating lattice vibrations (phonons), which are responsible for the energy transfer in non-electrically conducting materials, are scattered by the lattice imperfections and other phonons. These scattering mechanisms existing in any non-ideal material at non-zero temperature give rise to a finite phonon mean free path, characterizing the average distance between scattering events. At length scales smaller than the mean free path, phonons can travel ballistically and Fourier's local theory is invalid. At length scales much larger than the mean free path, the heat carriers are expected to diffuse as described by the Fourier's theory.
+
+This expected transition to the ''Fourier limit'' in sufficiently large systems was questioned in 1997 by the simulations of S. Lepri \textit{et al.} \cite{lepri97}, who found that the Fourier limit is never achieved in one-dimensional chains: the thermal conductivity was found to diverge as a function of system length. Later studies have elaborated on the divergence using various methods \cite{narayan02,mai07}. It is, however, unknown if any physical system such as a nanowire can exhibit the divergence. Some experiments have claimed to have observed the divergence in silicon nanowires \cite{yang10}, but the evidence remains inconclusive. In two-dimensional materials such as graphene, similar divergence is expected, and recent experiments and simulations for graphene have suggested this to be the case \cite{xu14}. 
+
+In systems smaller than the phonon mean free path, Fourier's law is automatically invalid due to the scattering-free propagation of heat carriers. Such bullet-like transport of phonons is called ballistic transport, contrasting with diffusive transport of Fourier-like systems. The most striking example of ballistic transport is the thermal conductance quantization, predicted theoretically by Rego and Kirczenow in 1998 \cite{rego98}. Their calculations showed that at sufficiently low temperatures, thermal conductance through a narrow constriction is an integer multiple of the thermal conductance quantum. The thermal conductance quantum, which is analogous to the quantum of electrical conductance, is independent of any material properties and only depends on temperature and Planck's constant. The predicted quantization was observed experimentally in 2000 by Schwab \textit{et al.}, thereby indirectly confirming also the existence of ballistic transport.
+
+In addition to the mean free path, there is another length scale reachable by nanostructuring: the wavelength of lattice vibrations carrying the heat. Building devices with structural variations in lattice vibrations and exploiting interference effects has allowed for building, for example, acoustic cavities for a phonon laser (saser) \cite{maryam13}. Wavelength-related effects are also useful in thermal engineering: as an example, \textit{et al.} reduced the thermal conductivity of alloys (which naturally scatter short-wavelength phonons due to point defects) by introducing nanoparticles acting as scatterers for long-wavelength phonons \cite{}. 
+
+
+% Superlattices, phonon mirrors
+
+% While there is convincing evidence from numerical simulations that the Fourier limit is always achieved in three-dimensional systems \cite{saito10,wang10}, this seems not to be the case in one- or two-dimensional systems. Numerical simulations \cite{lepri97,mai07} and hydrodynamical theory \cite{} suggest that the thermal conductivity in one-dimensional systems diverges in a power-law fashion as a function of system length, but clear experimental demonstration of the divergence has not been achieved so far. In two-dimensional systems, thermal conductivity is expected to diverge logarithmically \cite{}. Recent experiments claim to have observed the divergence in graphene \cite{xu14}.
+
+%\subsection{Thermal boundary resistance}
+
+%\subsection{Thermal engineering}
+
+\subsection{Near-field energy transfer}
 
 \section{Summary of experimental techniques}
 

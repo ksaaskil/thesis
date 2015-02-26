@@ -1,0 +1,75 @@
+\chapter{Theory}
+
+\section{Vibrational heat transfer}
+
+In electrical insulators and semi-conductors, heat is primarily carried by the lattice vibrations. In a periodically arranged crystal, the lattice vibrations form propagating wavepackets carrying the heat. Quanta of such propagating vibrations are known as phonons. 
+
+In a pristine crystal at zero temperature, phonons could travel infinitely far without scattering, resulting in infinite thermal conductivity. Lattice imperfections, material interfaces and phonon-phonon interactions arising from the non-zero temperature all scatter phonons, however, and thereby reduce the thermal conductivity to a finite value. 
+
+The strength of different scattering mechanisms is dictated by the phonon mean free path, characterizing the average distance between scattering events. At length scales much longer than the MFP, phonons perform essentially random walk and the thermal conduction is described by Fourier's classical theory. 
+
+\subsection{Lattice dynamics}
+
+\begin{equation}
+ \ca{H} = \sum_{i} \frac{\bb{p}_i^2}{2m} + \ca{V}(\bb{r}_1,\dots,\bb{r}_N).
+\end{equation}
+
+\subsection{Interatomic interactions}
+
+\subsection{Interatomic potential}
+
+A crucial physical aspect of the MD simulation is the choice of interatomic potential $U$. Typically, the analytical form of the interatomic potential is inferred from quantum-mechanical calculation and the free parameters are fitted to reproduce experimentally known quantities such as the lattice constant, bulk modulus, atomization energy, and so on. For this reason, the interatomic potentials are often called semi-empirical. In chemistry, the term force field is used instead of interatomic potential.
+
+In general, the interatomic potential consists of pair potential terms of the form $V^{(2)}(|\bb{r}_{i}-\bb{r}_j|)$ and many-body terms. 
+%, which we assume to only consist of the three-body terms $V^{(3)}(\bb{r}_i,\bb{r}_j,\bb{r}_k)$:
+%\begin{equation}
+% U(\bb{x}) = \frac{1}{2}  \sum_{ i,j } V^{(2)}(|\bb{r}_{i}-\bb{r}_j|) + \frac{1}{6} \sum_{i,j,k} V^{(3)}(\bb{r}_i,\bb{r}_j,\bb{r}_k)
+%\end{equation}
+The prototypical example of a pure pair-potential is the Lennard-Jones (LJ) potential
+\begin{equation}
+ V_{LJ}(r) = 4\varepsilon \left[\left( \frac{\sigma}{r}\right)^{12}-\left( \frac{\sigma}{r}\right)^6  \right],
+\end{equation}
+where $\varepsilon$ is the interaction energy and $\sigma$ determines the equilibrium distance $r_0$ of atoms ($r_0=2^{1/6}\sigma$ for two particles). The repulsive term $(\sigma/r)^{12}$ models the strong atomic repulsion at short distances, arising from the overlapping of electron clouds. The attractive term $-(\sigma/r)^{6}$ accounts for the weak van der Waals attraction at large distances, arising from the interaction of the fluctuating dipole moments due to, e.g., electron polarization. Because the LJ interaction does not account for the local environment, the LJ potential cannot describe, e.g., covalently bonded crystals. The LJ potential is, however, used to model non-bonded noble gases such as argon or as a constituent in more complicated potentials to describe the van der Waals attractions.
+
+When studying the minimal necessary conditions for thermalization in one-dimensional system, an even simpler model was introduced by Fermi, Pasta and Ulam to study thermalization in one-dimensional systems. In the FPU model, the atoms with displacement $u_i$ are assumed to be connected to their nearest neighbors by anharmonic springs with the energy of the form
+\begin{equation}
+  V_{ij} = \frac{1}{2} k (u_i-u_j)^2 + \frac{\alpha}{3} (u_i-u_j)^3+ \frac{\beta}{4} (u_i-u_j)^4
+\end{equation}
+is referred to as the FPU potential. The FPU potential can be considered as a Taylor expansion of a more realistic potential (such as LJ). The models for $\beta=0$ and $\alpha=0$ are known as $\alpha$-FPU and $\beta$-FPU, respectively, and both have been studied extensively. 
+
+Pure pair-potentials such as the Lennard-Jones potential cannot describe, e.g., covalent bonding, where the strength of local bonding is strongly influenced by the environment. A typical example of a many-body potential is the Tersoff potential
+\begin{equation}
+ V_{ij}(r_{ij}) = f_C(r_{ij}) \left[f_R(r_{ij}) + b_{ij}f_A(r_{ij}) \right],
+\end{equation}
+where 
+\begin{equation}
+ f_C ( r) = \left\{ \begin{array}{ll}
+                     1 & \textrm{for } r<R-D,\\
+		     \frac{1}{2}-\frac{1}{2}\sin\left(\frac{\pi}{2}\frac{r-R}{D} \right) & \textrm{for } R-D < r < R+D, \\
+		     0 & \textrm{for } r>R+D
+                    \end{array}
+ \right.
+\end{equation}
+is the taper function, 
+\begin{equation}
+ f_R(r) = A e^{-\lambda_1 r}
+\end{equation}
+accounts for repulsive interactions, and
+\begin{equation}
+ f_A(r) = -B e^{-\lambda_2 r}
+\end{equation}
+ accounts for attraction. The attraction is modified by the coefficient
+\begin{equation}
+ b_{ij} = \left( 1+\beta^n \zeta_{ij}^n \right)^{-1/(2n)},
+\end{equation}
+where the dependence on the local environment appears in the definition 
+\begin{equation}
+ \zeta_{ij} = \sum_{k\neq i,j} f_C(r_{ik}) g(\Theta_{ijk}) \exp\left[\lambda_3^3(r_{ij}-r_{ik})^3 \right] .
+\end{equation}
+The angle function is defined as 
+\begin{equation}
+ g(\Theta) = 1 + \frac{c^2}{d^2} - \frac{c^2}{d^2 + (\cos \Theta-\cos \Theta_0)^2}
+\end{equation}
+The parameters $R$, $D$, $A$, $\lambda_1$, $B$, $\lambda_2$, $\beta$, $n$, $\lambda_3$, $c$, $d$, and $\Theta_0$ depend on the material under study. The Tersoff parameters for carbon systems were originally fit to the experimentally known cohesive energies of various carbon systems and the lattice constant and bulk modulus of diamond. Recently, Lindsay and Broido suggested an improved set of parameters found by giving more weight to matching the experimentally measured phonon dispersion for graphite. 
+
+\section{Electromagnetic energy transfer}
