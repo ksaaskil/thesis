@@ -9,13 +9,13 @@
 At nanoscale, theories describing energy transfer in macroscale objects break down and new phenomena emerge. Striking examples are, for example, the observation of thermal conductance quantization \cite{schwab00}, divergence of thermal conductivity in two-dimensional carbon \cite{xu14}, 100-fold reduction in nanowire thermal conductivities compared to the bulk values \cite{} and break-down of the Planck blackbody radiation law in the near-field \cite{}. In addition to leading to new understanding of physics, these phenomena offer new ways to engineer the thermal properties of materials.
 
 %Physically, such phenomena arise from the reduced dimensionality, wave interference effects, increased geometric scattering rates, reduced internal scattering and near-field effects appearing in nanoscale structures. 
-
 \begin{itemize}
- \item Dimensionality
- \item Wavelength effects, engineering
- \item Ballistic transport (MFP)
- \item 
+ \item Phase-change memory
+ \item Electronics
+ \item Thermoelectrics
+ \item Thermal therapy
 \end{itemize}
+
 
 
 \section{Scope and objectives}
@@ -42,22 +42,41 @@ Below, we review the most prominent phenomena appearing in nanoscale thermal con
 
 \section{Energy transfer in nanoscale systems}
 
-\subsection{Phonon transport}
+\subsection{Lattice heat transfer}
 
 %\subsection{Anomalous conductivity}
 
 %Thermal conduction in macroscopic systems is traditionally described using Fourier's law \cite{}. The law states that the heat flux at any given point is proportional to the temperature gradient at the same point. The theory is, therefore, completely local and based on the definition of local temperature, whose changes are dictated by the diffusion equation. Diffusion equation predicts, for example, that the information of a temperature perturbation can propagate infinitely fast in the system, which is in direct contradiction to special relativity. Fourier's theory must, therefore, ultimately break down.
 
-Thermal conduction in macroscopic systems is traditionally described using Fourier's law \cite{}, which states that the heat flux at any given point is proportional to the temperature gradient at the same point. The theory leads, however, to the unphysical phenomenon that a local temperature perturbation can propagate infinitely fast \cite{}, in direct contradiction to special relativity. Fourier's theory must, therefore, ultimately break down in nanoscale.
+Thermal conduction in macroscopic systems is traditionally described using Fourier's law \cite{}, which states that the heat flux at any given point is proportional to the temperature gradient at the same point. The theory leads, however, to the unphysical phenomenon that a local temperature perturbation can propagate infinitely fast \cite{chen}, in direct contradiction to special relativity. This indicates that Fourier's theory must ultimately break down in nanoscale.
 
-The microscopic theory for thermal conduction was developed by Rudolf Peierls in 1929 \cite{}. He noted that thermal resistivity arises, because the propagating lattice vibrations (phonons), which are responsible for the energy transfer in non-electrically conducting materials, are scattered by the lattice imperfections and other phonons. These scattering mechanisms existing in any non-ideal material at non-zero temperature give rise to a finite phonon mean free path, characterizing the average distance between scattering events. At length scales smaller than the mean free path, phonons can travel ballistically and Fourier's local theory is invalid. At length scales much larger than the mean free path, the heat carriers are expected to diffuse as described by the Fourier's theory.
+The microscopic theory for thermal conduction was developed by Rudolf Peierls in 1929 \cite{}. Understanding that collective lattice vibrations (phonons) carry heat in crystalline solids, he proposed that thermal resistivity arises from the scattering of phonons from lattice imperfections and other phonons. These scattering mechanisms existing in any non-ideal material at non-zero temperature give rise to a finite phonon mean free path, characterizing the average distance between scattering events. At length scales smaller than the mean free path, phonons can travel without scattering and Fourier's fully local theory must be invalid. At length scales much larger than the mean free path, on the other hand, the heat carriers are expected to propagate diffusively and heat transfer is well described by Fourier's theory.
 
-This expected transition to the ''Fourier limit'' in sufficiently large systems was questioned in 1997 by the simulations of S. Lepri \textit{et al.} \cite{lepri97}, who found that the Fourier limit is never achieved in one-dimensional chains: the thermal conductivity was found to diverge as a function of system length. Later studies have elaborated on the divergence using various methods \cite{narayan02,mai07}. It is, however, unknown if any physical system such as a nanowire can exhibit the divergence. Some experiments have claimed to have observed the divergence in silicon nanowires \cite{yang10}, but the evidence remains inconclusive. In two-dimensional materials such as graphene, similar divergence is expected, and recent experiments and simulations for graphene have suggested this to be the case \cite{xu14}. 
+This expected transition to the ''Fourier limit'' in sufficiently large systems was questioned in 1997 by the simulations of S. Lepri \textit{et al.} \cite{lepri97}, who found that the Fourier limit is never achieved in one-dimensional chains: the thermal conductivity was found to diverge as a function of system length. Later studies have elaborated on the divergence using various methods \cite{narayan02,mai07}. It is, however, still debated \cite{} if any physical system such as a nanowire can be treated as a one-dimensional object and could therefore exhibit the divergence. Some experiments have claimed to have observed the divergence in silicon nanowires \cite{yang10}, but the evidence remains inconclusive. In two-dimensional materials such as graphene, similar divergence is expected, and recent experiments and simulations for graphene have suggested this to be the case \cite{xu14}. 
 
-In systems smaller than the phonon mean free path, Fourier's law is automatically invalid due to the scattering-free propagation of heat carriers. Such bullet-like transport of phonons is called ballistic transport, contrasting with diffusive transport of Fourier-like systems. The most striking example of ballistic transport is the thermal conductance quantization, predicted theoretically by Rego and Kirczenow in 1998 \cite{rego98}. Their calculations showed that at sufficiently low temperatures, thermal conductance through a narrow constriction is an integer multiple of the thermal conductance quantum. The thermal conductance quantum, which is analogous to the quantum of electrical conductance, is independent of any material properties and only depends on temperature and Planck's constant. The predicted quantization was observed experimentally in 2000 by Schwab \textit{et al.}, thereby indirectly confirming also the existence of ballistic transport.
+\begin{figure}
+\begin{center}
+ %\includegraphics[width=8.6cm]{pics/schwab00_fig3.ps}
+ \includegraphics[width=8.6cm]{pics/schwab00_fig3.pdf}
+ \caption{Thermal conductance measured as a function of temperature by Schwab \textit{et al.} \cite{schwab00}. In their experimental setup, heat was transferred through four nanowires with four acoustic modes in each carrying the heat. The measured conductance at low temperature is therefore $G=16g_0$, where $g_0$ is the conductance quantum. Reprinted with permission from Ref. \cite{schwab00}.}
+\label{fig:intro_schwab}
+\end{center}
+\end{figure}
 
-In addition to the mean free path, there is another length scale reachable by nanostructuring: the wavelength of lattice vibrations carrying the heat. Building devices with structural variations in lattice vibrations and exploiting interference effects has allowed for building, for example, acoustic cavities for a phonon laser (saser) \cite{maryam13}. Wavelength-related effects are also useful in thermal engineering: as an example, \textit{et al.} reduced the thermal conductivity of alloys (which naturally scatter short-wavelength phonons due to point defects) by introducing nanoparticles acting as scatterers for long-wavelength phonons \cite{}. 
+In systems smaller than the phonon mean free path, on the other hand, Fourier's law is automatically invalid due to the scattering-free propagation of heat carriers. Such bullet-like transport of phonons is called ballistic transport, contrasting with the diffusive transport of Fourier-like systems. The most striking example of ballistic transport is the thermal conductance quantization, predicted theoretically by Rego and Kirczenow in 1998 \cite{rego98}. Their calculations showed that at sufficiently low temperatures, where phonon scattering is minimal and only the lowest-frequency phonon modes can be excited, thermal conductance through a narrow constriction is an integer multiple of the thermal conductance quantum. The thermal conductance quantum, which is analogous to the quantum of electrical conductance, is independent of any material properties and only depends on temperature and Planck's constant. The predicted quantization was observed experimentally in 2000 by Schwab \textit{et al.} \cite{schwab00} (see Fig. \ref{fig:intro_schwab}), thereby indirectly confirming also the existence of ballistic transport.
 
+In addition to the mean free path, there is another internal length scale governing heat transfer, the phonon wavelength. In devices smaller than or of the same size as dominant phonon wavelength, interference effects appear. Interference effects have enabled designing acoustic reflectors with novel applications in enhancing the optical-mechanical coupling \cite{fainstein13} and phonon lasing \cite{maryam13}. Wavelength-related effects are also useful in thermal engineering: as an example, Kim \textit{et al.} were able to reduce the thermal conductivity of InGaAs alloy (which naturally scatters short-wavelength phonons due to point defects) by introducing nanoparticles acting as scatterers for mid-to-long-wavelength phonons \cite{kim06}. % Other examples of interference
+
+In a nanoscale system with relatively long internal phonon mean free paths, the material surfaces and interfaces play an important role in thermal conduction. At rough surfaces, for example, phonons are scattered into all directions, which strongly suppresses the heat flow. The resulting reduced thermal conductivity has been noted to be responsible for the moderately high thermoelectric figure of merit of Si nanowires \cite{hochbaum08}. At material interfaces, the mismatch in the acoustic properties of the materials inevitably scatters phonons.  This contact resistance between dissimilar materials can act as a major bottleneck limiting the extraction of heat from electronic devices, thereby hindering their performance \cite{}. Many methods have been suggested to reduce the thermal resistance between materials, including chemical functionalization \cite{hopkins11,kaur14}, external pressure \cite{shen11,chalopin12}, and heat-mediating thin films \cite{}.
+
+%As noted by Kapitza already in 1930s \cite{}, carrier scattering at interfaces between materials also gives rise to thermal resistance. Even in the absence of defects, 
+
+% Point contacts \cite{bartsch12}
+
+% Contact resistance is a bottleneck
+% Material properties increasingly dominated by interfaces
+
+% Interfaces
 
 % Superlattices, phonon mirrors
 
@@ -69,6 +88,47 @@ In addition to the mean free path, there is another length scale reachable by na
 
 \subsection{Near-field energy transfer}
 
+Accelerating charges emit electromagnetic radiation. Because the electrons and nuclei in any solid material undergo thermal (and quantum) fluctuations, all materials therefore emit electromagnetic radiation carrying heat. In 1900, Max Planck \cite{planck00a} studied the radiation emitted by a blackbody and gave birth not only to quantum theory but also to Planck's blackbody radiation law, which has since been observed to describe, for example, the spectrum of cosmic microwave background radiation at the accuracy of XXX.
+
+Planck's law inherently suggests that the total power of the emitted radiation is independent of the distance from the object. This follows from the assumption that only propagating waves contribute to the energy density. Close to the material surface, solution of Maxwell's equations gives, however, also rise to evanescent electromagnetic fields localized at a distance of a few wavelengths from the object \cite{polder71}. One can then envisage placing another object sufficiently close to the radiating body so that the evanescent fields can induce motion of charges in the added object, leading to energy transfer by the evanescent fields. Planck's law therefore breaks down at very small distances. 
+
+The breakdown in Planck's law was first observed by Hargreaves \cite{hargreaves59}, who found an enhancement in the heat transfer rate between two chromium layers as the layers were separated by subwavelength gap. The theoretical calculation for the exact enhancement rate was carried out by Polder and van Hove \cite{polder71}, and consequently near-field enhancement effects were predicted in numerous geometries \cite{loomis94,pendry99,carminati99,shchegrov00,mulet01,volokitin01}. In the last decade, advances in experimental techniques have allowed for very precise measurements of near-field enhancement rates \cite{}, confirming the experimental predictions. Near-field effects are now routinely used in thermal microscopy \cite{majumdar99,muller-hirsch99,kittel05,kittel08}. They are also expected to give rise to engineering applications in, e.g., infrared thermophotovoltaics \cite{dimatteo01,narayanaswamy03,laroche06} and building narrow-band infrared antennas \cite{greffet02}. 
+
+\begin{figure}
+\begin{center}
+ %\includegraphics[width=8.6cm]{pics/schwab00_fig3.ps}
+ \includegraphics[width=8.6cm]{pics/shchegrov00_fig1.pdf}
+ \caption{The spectral energy density of electromagnetic field (arbitrary units) close to a SiC surface at distances of (a) $1$ mm, (b) $2$ $\mu$m, and (c) $100$ nm. At the distance of 100 nm, the spectral energy density is dominated by the surface phonon polariton at frequency $\omega=178.7$ Trad/s, resulting in essentially monochromatic energy emission. Inset show the spectral energy densities plotted in semilogarithmic scale. Reprinted with permission from Ref. \cite{shchegrov00}.}
+\label{fig:intro_shchegrov}
+\end{center}
+\end{figure} 
+
+Near-field effects are particularly strong for materials supporting evanescent surface waves decaying at both sides of the surface \cite{shchegrov00}. The surface waves arise from the coupling between the electromagnetic field and either the free electrons (surface plasmon polaritons) or transverse optical phonons (surface phonon polaritons). While surface plasmon polaritons can only be thermally excited in metals at temperatures much higher than room temperature, surface phonon polaritons can contribute to thermal transfer in polar semiconductors even at room temperature. To demonstrate the large contribution of surface waves, Fig. \ref{fig:intro_shchegrov} shows the theoretically calculated \cite{shchegrov00} spectral energy density of the electromagnetic field at various distances from a SiC surface.
+
+Similarly, near-field effects strongly increase the spectral density of the electromagnetic field in the vicinity of nanoparticles made of a polar material. Consequently, heat transfer between two nanoparticles in vacuum is found to strongly increase at small distances \cite{domingues05}. In practice, however, the required nanoparticle distances for efficient heat transfer may be too small, so for practical applications it would be necessary to engineer the thermal conductance to be higher. From the theory of dipole emission, it is well known that the optical-mechanical coupling can be enhanced by orders of magnitude in an inhomogeneous environment such as in a mirror cavity \cite{}. This raises the question, if the interparticle heat transfer rate between particles could be enhanced by cavity. This question is investigated in Publication XXX.
+
+
+
+
+%Following theoretical developments and advances in experimental techniques, near-field 
+%The theory has since been used to theoretically predict strong near-field enhancements of heat transfer in various geometries \cite{loomis94,pendry99,mulet01,volokitin01}. 
+
+% Surface polaritons
+
+% The theoretical calculation of the exact near-field enhancement was consequently carried out by Polder and van Hove \cite{polder71}, who applied the fluctuational electrodynamics theory developed by Rytov \cite{rytov58}. 
+
+
+
+%The predictions have been explored in more detail also experimentally [13-18]. 
+\iffalse
+Electromagnetic energy transfer between dielectric bodies at different temperatures is commonly described using the fluctuational electrodynamics (FED) approach \cite{joulain05,volokitin07} developed by Rytov \cite{rytov58,rytov} and first applied to condensed matter physics by Lifshitz \cite{lifshitz55,lifshitz56}. According to FED, thermal motion of charged particles in a body creates random currents, which induce electromagnetic fields. Outside the body, the field is then either radiated to free space or absorbed in the near or far-field regime by another body. In the near-field, the heat transfer rate between bodies can surpass the Planckian blackbody limit \cite{planck} by several orders of magnitude, as first suggested theoretically \cite{polder71,pendry99,carminati99,shchegrov00,mulet01,volokitin01} and later confirmed experimentally \cite{kittel05,hu08,rousseau09,shen09,ottens11}. Near-field enhancement of heat transfer is expected to have numerous applications in, e.g., thermal microscopy \cite{majumdar99,muller-hirsch99,kittel05,kittel08}, infrared thermophotovoltaics \cite{dimatteo01,narayanaswamy03,laroche06} and narrow-band infrared antennas \cite{greffet02}.
+\fi
+
+
+%As early as 1884, John Poynting calculated the energy flux carried by propagating electromagnetic waves. 
+
+
+\iffalse
 \section{Summary of experimental techniques}
 
 \subsection{Thermal conductivity}
@@ -112,4 +172,4 @@ Other methods to measure temperature are (see the review by Yue and Wang)
   \item Vary neutron energy, orientation of crystal and detection direction
   \item Gives phonon dispersion relations and broadenings, anharmonic effects mapped recently e.g. in doi:10.1038/nmat3035 and doi:10.1038/nnano.2013.95
  \end{itemize}
-
+\fi

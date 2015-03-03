@@ -1,16 +1,20 @@
-\documentclass[english,a4paper,12pt]{report}
-\usepackage{aaltothesis}
-%\usepackage[latin1]{inputenc}
-\usepackage[T1]{fontenc}
+%\documentclass[english,a4paper,12pt]{report}
+\documentclass[dissertation]{aaltoseries}
+%\documentclass[draft]{aaltoseries}
+%\usepackage{aaltothesis}
+\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{fontenc}
 %\usepackage{pslatex}
-\usepackage{ae,aecompl}
+%\usepackage{ae,aecompl}
 \usepackage[english]{babel}
+%\usepackage{auto-pst-pdf}
 %\usepackage{amssymb}
 %\usepackage{amsmath}
 \usepackage{url}
 \usepackage{psfrag,color,pstricks,pst-grad}
-\usepackage[dvips]{graphicx}
-\usepackage{lipsum}% just to automatically generate text
+%\usepackage{graphicx}
+%\usepackage[pdftex]{graphicx}
+%\usepackage{lipsum}% just to automatically generate text
 \usepackage{amsmath,amsfonts,amssymb,amsbsy}  
 \usepackage{hyperref}
 \newcommand{\ud}{\mathrm{d}}
@@ -40,7 +44,7 @@
 \newcommand{\unitdyadic}{\bb{I}_{3 \times 3}}
 
 
-% 
+\iffalse
  \setlength{\hoffset}{-1in}
  \setlength{\oddsidemargin}{35mm}
   \setlength{\evensidemargin}{25mm}
@@ -52,7 +56,7 @@
   \setlength{\topmargin}{25mm-\headheight-\headsep}
   \setlength{\textheight}{23cm}
 
-
+\fi
 
 \begin{document}
 
@@ -63,7 +67,7 @@
 
  \cleardoublepage
 % \pagestyle{plain}
- \storeinipagenumber
+% \storeinipagenumber
 
 
 
@@ -127,8 +131,12 @@ While energy transfer coefficients such as the thermal conductivity can be calcu
 
 \input{langevin.tex}
 
+%\nocite{*}
+
 
 \bibliography{../bibtex/biblio}{}
+
+%\bibliographystyle{plain}
 \bibliographystyle{../physrev}
 
 \end{document}

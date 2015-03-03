@@ -14,9 +14,9 @@ The strength of different scattering mechanisms is dictated by the phonon mean f
  \ca{H} = \sum_{i} \frac{\bb{p}_i^2}{2m} + \ca{V}(\bb{r}_1,\dots,\bb{r}_N).
 \end{equation}
 
-\subsection{Interatomic interactions}
+% Phonon bandstructure
 
-\subsection{Interatomic potential}
+\subsection{Models for interatomic interactions}
 
 A crucial physical aspect of the MD simulation is the choice of interatomic potential $U$. Typically, the analytical form of the interatomic potential is inferred from quantum-mechanical calculation and the free parameters are fitted to reproduce experimentally known quantities such as the lattice constant, bulk modulus, atomization energy, and so on. For this reason, the interatomic potentials are often called semi-empirical. In chemistry, the term force field is used instead of interatomic potential.
 
@@ -72,4 +72,17 @@ The angle function is defined as
 \end{equation}
 The parameters $R$, $D$, $A$, $\lambda_1$, $B$, $\lambda_2$, $\beta$, $n$, $\lambda_3$, $c$, $d$, and $\Theta_0$ depend on the material under study. The Tersoff parameters for carbon systems were originally fit to the experimentally known cohesive energies of various carbon systems and the lattice constant and bulk modulus of diamond. Recently, Lindsay and Broido suggested an improved set of parameters found by giving more weight to matching the experimentally measured phonon dispersion for graphite. 
 
+\subsection{Lattice heat current}
+
+
+
 \section{Electromagnetic energy transfer}
+
+\begin{itemize}
+ \item Maxwell equations
+ \item Fluctuational electrodynamics
+ \item Electromagnetic Green's function
+\end{itemize}
+
+
+% Loomis and Maris 94: We present a macroscopic, phenomenological theory for the heat flow between two material half-spaces of differing temperatures whose surfaces are separated by a gap of width l. Our calculation parallels Liftshitz's calculation of the van der Waals force between two dielectric slabs. For l sufficiently small, the heat flow is enhanced by a contribution from evanescent waves, and in the limit of a very small gap varies as l^{-2}.
