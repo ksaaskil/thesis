@@ -1,8 +1,7 @@
 \appendix
+\label{app:phonons}
 
-\chapter{Lattice dynamics}
-
-\section{Crystal Hamiltonian}
+\chapter{Phonons and phonon-phonon interactions}
 
 In this appendix, we study the atomic lattice dynamics in a three-dimensional periodically repeating crystal with lattice vectors $\bb{a}_1$, $\bb{a}_2$ and $\bb{a}_3$. In mechanical equilibrium, the atoms are located at their equilibrium positions $\bb{r}^0_l=l_1\bb{a}_1+l_2\bb{a}_2+l_3\bb{a}_3$. For notational simplicity, we assume that each unit cell in the crystal lattice contains only a single atom. We can then write the crystal Hamiltonian as
 \begin{equation}
@@ -140,6 +139,7 @@ In the second line, we switched to the normal coordinates \eqref{eq:normal_coord
 
 Expanding the parenthesis in Eq. \eqref{eq:V3_3} delivers terms of the form $a_{\bb{q},p}a_{\bb{q}',p'}a_{\bb{q}'',p''}$, $a_{-\bb{q},p}^{\dagger} a_{\bb{q}',p'}a_{\bb{q}'',p''}$, \textit{etc}., which can be readily interpreted as phonon-phonon interactions resulting in the annihilation and creation of phonons. In each such processes, the crystal momentum is conserved: $\bb{q}+\bb{q}'+\bb{q}''=\bb{G}$, where $\bb{G}$ is a vector of the reciprocal lattice. Processes with $\bb{G}=\bb{0}$ and $\bb{G}\neq \bb{0}$ are called \textit{normal} and \textit{Umklapp} processes, respectively. It can be shown \cite{ziman} that the total heat current carried by the phonons is conserved in a normal process, meaning that normal processes cannot hinder heat flow, i.e. non-zero thermal resistance is purely due to Umklapp processes. Normal processes play, however, an important role in re-distributing the occupation numbers of different modes.
 
+\iffalse 
 \chapter{MD methods for thermal conductivity prediction}
 
 \begin{itemize}
@@ -149,4 +149,4 @@ Expanding the parenthesis in Eq. \eqref{eq:V3_3} delivers terms of the form $a_{
  \item Landry \cite{landry08}: Jund-Jullien method without PBC, fixed boundary atoms
  \item Different methods reviewed by Schelling
 \end{itemize}
-
+\fi

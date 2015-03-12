@@ -1,4 +1,4 @@
-\section{Molecular dynamics method}
+%\section{Molecular dynamics method}
 
 Molecular dynamics simulations are useful for modeling energy transfer by lattice vibrations. In MD, the classical Newton's equations of motion 
 \begin{equation}
@@ -19,7 +19,7 @@ In the following, we briefly go through the most important aspects related to a 
 % \item Thermalization (Langevin, Nose-Hoover, energy exchange, Maxwell)
 %\end{itemize}
 
-\subsection{Time integration}
+%\subsection{Time integration}
 %As stated above, the continuous-time equations of motion are integrated numerically using a finite-difference method. The pool of the finite-difference methods includes, e.g., Euler methods, Verlet methods, Runge-Kutta methods, the leap-frog method and predictor-corrector methods. Before discussing the properties of a good integrator, it is necessary to understand that none of the integrators can follow the ''true'' trajectory of a many-particle system with thousands of particles for very long times. Due to the so-called Lyapunov instability related to the chaoticity in a many-particle systems, any two many-particle trajectories with minimal differences in the initial conditions diverge from each other exponentially fast. Because of truncation and round-off errors present in any simulation, one therefore cannot even hope to solve the exact particle trajectories. Fortunately, solving the exact trajectories is not even necessary: it is generally believed that the numerical trajectories (''shadow orbits'') are, in some sense, representative of the true trajectories and can therefore be used for collecting statistics.
 
 %With this remark in mind, the time-integration is anyway expected to satisfy a few requirements. First, the method should be reasonably accurate even at long time steps to ensure that large systems can be simulated efficiently. Second, the method should be time-reversible, meaning that if the velocities were reversed at any time-step, the system would ''rewind'' along its earlier trajectory. The requirement of time-reversibility is closely related to the third requirement: energy conservation. Because the energy conservation is a fundamental property of Newton's equations of motion, the simulation should present as little short-term and long-term energy drift as possible. While some non-time-reversible algorithms can have very small short-term energy drift due their high accuracy, they often exhibit large long-term energy drift. The long-term drift arises from the non-symplecticity of these integrators: the size of the phase space volume element is not conserved in the integration.
@@ -38,8 +38,8 @@ for the position vector $\bb{x}(t)$ and force $\bb{F}$ are integrated numericall
 
 
 
-\subsection{Nonequilibrium simulation}
+%\subsection{Nonequilibrium simulation}
 
-\subsection{Observables and the spectral heat current formula}
+%\subsection{Observables and the spectral heat current formula}
 
 %\subsection{

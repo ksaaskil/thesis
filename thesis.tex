@@ -63,19 +63,8 @@
 
 \tableofcontents
 
-\newpage
+\listofpublications
 
- \cleardoublepage
-% \pagestyle{plain}
-% \storeinipagenumber
-
-
-
-
- \pagenumbering{arabic}
- \setcounter{page}{1}
-
-\thispagestyle{empty}
 
 \chapter{Introduction}
 
@@ -87,11 +76,13 @@
 
 %\input{heattransfer.tex}
 %
-\chapter{Methods}
+%\chapter{Methods}
 
-\begin{quote}
- \textit{This section is devoted to presenting the computational methods used in this work.}
-\end{quote}
+%\label{chap:methods}
+
+%\begin{quote}
+% \textit{This section is devoted to presenting the computational methods used in this work.}
+%\end{quote}
 
 %Studying energy transfer in nanoscale systems typically requires resorting to computational methods, which can be roughly divided into two categories. In the first category, computer is used to calculate numerical values for complicated analytical expressions. In the second category, computer is used to perform a ''numerical experiment'' by simulating the behaviour of the system and calculating observables of interest from the simulation. 
 
@@ -100,22 +91,22 @@
 
 %The non-linearities appear, for example, from the anharmonic forces between atoms in a solid, resulting in interactions between vibrational modes (phonon-phonon interactions). If the non-linear terms are neglected or linearized, one can solve the equations of motion analytically in terms of the so-called Green's functions. Observables such as the heat current can then be calculated numerically from the analytical expressions. 
 
-The computational methods used in this thesis fall into two categories, corresponding to different approaches for treating the non-linearities appearing in the equations of motion. If the non-linear terms cannot be neglected or linearized, one cannot directly calculate the observables of interest such as the heat current. One can, however, perform a ''numerical experiment'' by numerically integrating the classical equations of motion and calculating the time-averaged observables of interest from microscopic trajectories. This is the idea of molecular dynamics method. 
+%The computational methods used in this thesis fall into two categories, corresponding to different approaches for treating the non-linearities appearing in the equations of motion. If the non-linear terms cannot be neglected or linearized, one cannot directly calculate the observables of interest such as the heat current. One can, however, perform a ''numerical experiment'' by numerically integrating the classical equations of motion and calculating the time-averaged observables of interest from microscopic trajectories. This is the idea of molecular dynamics method. 
 
-If the non-linear terms can be neglected or replaced by an effective linear term, the equations of motion can be solved analytically in terms of the so-called Green's functions. The Green's functions provide analytical expressions for observables such as the heat current. Numerical methods are still required, however, to perform the complicated matrix operations necessary for the evaluation. The Green's function method is used in this thesis for (i) lattice heat transfer using an effective model modeling the dissipative processes and (ii) electromagnetic energy transfer. The non-linearities appear as dissipative terms either in the atomic equations of motion [in case (i)] or Maxwell's equations [case (ii)]. 
+%If the non-linear terms can be neglected or replaced by an effective linear term, the equations of motion can be solved analytically in terms of the so-called Green's functions. The Green's functions provide analytical expressions for observables such as the heat current. Numerical methods are still required, however, to perform the complicated matrix operations necessary for the evaluation. The Green's function method is used in this thesis for (i) lattice heat transfer using an effective model modeling the dissipative processes and (ii) electromagnetic energy transfer. The non-linearities appear as dissipative terms either in the atomic equations of motion [in case (i)] or Maxwell's equations [case (ii)]. 
 
-While energy transfer coefficients such as the thermal conductivity can be calculated from linear response theory using Green-Kubo relations, we have exclusively used non-equilibrium methods in this work. In both MD and GF method, the temperature difference pushing the system into non-equilibrium is set up by coupling to Langevin heat baths at different temperatures. The imposed non-equilibrium, arising from non-zero temperature differences in the system, mimics the practically relevant experimental case and also allows for more unambiguous separation between bulk and interface quantities. %We therefore start by reviewing the theory of Langevin baths.
+%While energy transfer coefficients such as the thermal conductivity can be calculated from linear response theory using Green-Kubo relations, we have exclusively used non-equilibrium methods in this work. In both MD and GF method, the temperature difference pushing the system into non-equilibrium is set up by coupling to Langevin heat baths at different temperatures. The imposed non-equilibrium, arising from non-zero temperature differences in the system, mimics the practically relevant experimental case and also allows for more unambiguous separation between bulk and interface quantities. %We therefore start by reviewing the theory of Langevin baths.
 
 
 % MOLECULAR DYNAMICS
-\input{md.tex}
+%\input{md.tex}
 
 % GREEN'S FUNCTION METHOD
-\input{gfm.tex}
+%\input{gfm.tex}
 
-\input{observables.tex}
+%\input{observables.tex}
 
-\input{implementation.tex}
+%\input{implementation.tex}
 %  BOLTZMANN TRANSPORT EQUATION
 %\input{bte.tex}
 
@@ -138,5 +129,64 @@ While energy transfer coefficients such as the thermal conductivity can be calcu
 
 %\bibliographystyle{plain}
 \bibliographystyle{../physrev}
+
+
+\addpublication{K. S\"a\"askilahti, J. Oksanen, R.~P. Linna, and J. Tulkki}{Thermal conduction and interface effects in nanoscale Fermi-Pasta-Ulam conductors}{Phys. Rev. E}{Vol. 86, pp. 031107}{September}{2012}{American Physical Society}{fpu}
+% Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
+\addcontribution{The author made the coffee.}
+% Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
+%\adderrata{This is wrong}
+% Add the publication pdf file, the filename is the parameter (must be the last).
+%\addpublicationpdf{articles/fpu_article.pdf}
+
+\addpublication{K. S\"a\"askilahti, J. Oksanen, R.~P. Linna, and J. Tulkki}{Phonon interference and anharmonicity effects in nanoconstrictions}{AIP Conf. Proc.}{Vol. 1506, pp. 15}{December}{2012}{American Physical Society}{fpu2}
+% Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
+%\addcontribution{The author made the coffee.}
+% Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
+%\adderrata{This is wrong}
+% Add the publication pdf file, the filename is the parameter (must be the last).
+%\addpublicationpdf{articles/fpu_article.pdf}
+
+\addpublication{K. S\"a\"askilahti, J. Oksanen, and J. Tulkki}{Role of anharmonic phonon scattering in the spectrally decomposed thermal conductance at planar interfaces}{Phys. Rev. B}{90, 134312}{October}{2014}{American Physical Society}{spectral}
+% Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
+%\addcontribution{The author did this and that}
+% Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
+%\adderrata{This is wrong}
+% Add the publication pdf file, the filename is the parameter (must be the last).
+%\addpublicationpdf{articles/spectral_article.pdf}
+
+\addpublication{K. S\"a\"askilahti, J. Oksanen, S. Volz, and J. Tulkki}{Frequency-dependent phonon mean free path in carbon nanotubes from non-equilibrium molecular dynamics}{arXiv}{1411.2838}{}{2014}{}{cnt}
+% Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
+%\addcontribution{The author did this and that}
+% Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
+%\adderrata{This is wrong}
+% Add the publication pdf file, the filename is the parameter (must be the last).
+%\addpublicationpdf{articles/cnt_article.pdf}
+
+
+\addpublication{Shiyun Xiong, Yuriy A. Kosevich, K. S\"a\"askilahti, Yuxiang Ni, and Sebastian Volz}{Tunable thermal conductivity in silicon twinning superlattice nanowires}{Phys. Rev. B}{90, 195439}{November}{2014}{American Physical Society}{twinning}
+% Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
+%\addcontribution{The author did this and that}
+% Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
+%\adderrata{This is wrong}
+% Add the publication pdf file, the filename is the parameter (must be the last).
+%\addpublicationpdf{articles/twinning_article.pdf}
+
+\addpublication{K. S\"a\"askilahti, J. Oksanen, and J. Tulkki}{Thermal balance and quantum heat transport in nanostructures thermalized by local Langevin heat baths}{Phys. Rev. E}{88, 012128}{July}{2013}{American Physical Society}{gf}
+% Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
+%\addcontribution{The author did this and that}
+% Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
+%\adderrata{This is wrong}
+% Add the publication pdf file, the filename is the parameter (must be the last).
+%\addpublicationpdf{articles/gf_article.pdf}
+
+\addpublication{K. S\"a\"askilahti, J. Oksanen, and J. Tulkki}{Quantum Langevin equation approach to electromagnetic energy transfer between dielectric bodies in an inhomogeneous environment}{Phys. Rev. B}{89, 134301}{April}{2014}{American Physical Society}{dipole}
+% Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
+%\addcontribution{The author did this and that}
+% Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
+%\adderrata{This is wrong}
+% Add the publication pdf file, the filename is the parameter (must be the last).
+%\addpublicationpdf{articles/dipole_article.pdf}
+
 
 \end{document}
