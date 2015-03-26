@@ -2,26 +2,31 @@
 
 \section{Background}
 
-\begin{itemize}
- \item General importance
-\end{itemize}
+With the steady rise in Earth's population and the consumption of natural resources, it has become essential to consider energy sustainability. The ever-increasing demand for energy accelerates, for example, the burning of fossil fuels, which not only contributes to the climate change but also rules out sustainability: the oil reserves are expected to run out in approximately 40 years with the present production rate \cite{}. Sustainable energy production therefore requires turning to more sustainable energy resources such as sun, wind, hydro- and, eventually, fusion power.
 
-At nanoscale, theories describing energy transfer in macroscale objects break down and new phenomena emerge. Striking examples are, for example, the observation of thermal conductance quantization \cite{schwab00}, divergence of thermal conductivity in two-dimensional carbon \cite{xu14}, 100-fold reduction in nanowire thermal conductivities compared to the bulk values \cite{} and break-down of the Planck blackbody radiation law in the near-field \cite{}. In addition to leading to new understanding of physics, these phenomena offer new ways to engineer the thermal properties of materials.
+Sustainability cannot be reached, however, only by developing more efficient ways to produce energy: the efficiency of energy use should increase as well. At present, approximately half the energy produced in the world is wasted as heat \cite{}, and efficient reclaiming of even a small part of the waste heat using, e.g., thermoelectric modules could cover the electricity needs of the planet alone \cite{}. Inefficiency also limits the technological development: in modern microprocessors, for example, the heating arising from energy dissipation is currently the most serious bottleneck limiting the performance \cite{}. 
+
+Designing more efficient thermoelectrics and electronic devices requires thorough understanding of how heat travels in the structures. Efficient thermoelectric generation requires, for example, designing materials with a low thermal conductivity but good electronic conduction properties \cite{chen}. Reducing the heating in electronic devices, on the other hand, can be achieved by reducing the thermal resistance of interfaces acting as heat bottlenecks and finding the optimal high thermal conductivity materials for heat sinks \cite{pop10}. 
+
+Such ''thermal engineering'' is often synonymous to nanostructuring. For example, ever since Hicks and Dresselhaus \cite{hicks93} suggested over 20 years ago that a superlattice of quantum dots can act as an efficient thermoelectric, new studies have appeared reporting high thermoelectric figures of merit in nanostructured materials (see, e.g., Refs. \cite{vineis10,kanatzidis10,shakouri11} for review). Similarly, interfacial resistance between dissimilar materials has been reduced by the addition of atomic-scale structures such as functional molecules \cite{hopkins11,kaur14} acting as heat bridges between materials. Heat extraction from electronic and optoelectronic devices could be enhanced \cite{ghosh08,yan12} by new low-dimensional nanomaterials such as graphene or carbon nanotubes, both having thermal conductivities higher than diamond \cite{balandin11}. 
+
+The importance of nanostructures in thermal engineering is rooted in the break-down of classical heat transfer laws such as Fourier's law of thermal conduction \cite{fourier} or Planck's law of thermal radiation \cite{planck00a} in such small structures. Striking examples of break-down are, for example, the observation of thermal conductance quantization \cite{rego98,schwab00}, divergence of thermal conductivity in low-dimensional structures \cite{lepri97,lepri03,dhar08,xu14}, 100-fold reduction in nanowire's thermal conductivity compared to the bulk value \cite{hochbaum08} and the strong dependence of near-field electromagnetic energy density on the distance from the object \cite{}. In addition to the applications in thermoelectricity and electronics mentioned above, the efficient exploitation of such novel heat transfer phenomena of nanoscale structures is also expected to give rise to completely new technologies such as phase-change memory \cite{lankhorst05}, heat-assisted magnetic recording \cite{pan09}, tumor therapy based on nanoparticle laser heating \cite{avedisian09}, and information processing using temperature \cite{li12_rmp}.  %In addition to leading to new understanding of physics, these phenomena offer new ways to engineer the thermal properties of materials.
 
 %Physically, such phenomena arise from the reduced dimensionality, wave interference effects, increased geometric scattering rates, reduced internal scattering and near-field effects appearing in nanoscale structures. 
-\begin{itemize}
- \item Phase-change memory
- \item Electronics
- \item Thermoelectrics
- \item Thermal therapy
-\end{itemize}
+%\begin{itemize}
+ %\item Phase-change memory, heat-assisted magnetic recording
+ %\item Thermal management of high-power electronic and optoelectronic devices
+ %\item Thermoelectrics (Shiyun's citations \cite{hicks93}, \cite{Zhao2014})
+ %\item Thermal therapy (intensely heated nanoparticles) \cite{jain08}
+ %\item Biological applications (thermophoresis, DNA) \cite{jain11}
+%\end{itemize}
 
-\begin{itemize}
- \item Half the world energy production is wasted as heat ($\sim 10^{13}$ TW), efficient reclaiming would 
- \item Thermal rectifiers could act as energy harvesters
- \item Half the power consumed by data centers is spent on cooling, most limiting factor in performance
- \item Race to increase operating frequency stopped as local energy dissipation hit 100 W/cm$^2$, hotter than a hot plate
-\end{itemize}
+%\begin{itemize}
+% \item Half the world energy production is wasted as heat ($\sim 10^{13}$ TW), efficient reclaiming would cover the electricity demand
+% \item Thermal rectifiers could act as energy harvesters
+% \item Half the power consumed by data centers is spent on cooling, most limiting factor in performance
+% \item Race to increase operating frequency stopped as local energy dissipation hit 100 W/cm$^2$, hotter than a hot plate
+%\end{itemize}
 
 
 
@@ -95,7 +100,7 @@ In systems smaller than the phonon mean free path, on the other hand, Fourier's 
 
 In addition to the mean free path, there is another internal length scale governing heat transfer, the phonon wavelength. In devices smaller than or of the same size as dominant phonon wavelength, interference effects appear. Interference effects have enabled designing acoustic reflectors with novel applications in enhancing the optical-mechanical coupling \cite{fainstein13} and phonon lasing \cite{maryam13}. Wavelength-related effects are also useful in thermal engineering: as an example, Kim \textit{et al.} were able to reduce the thermal conductivity of InGaAs alloy (which naturally scatters short-wavelength phonons due to point defects) by introducing nanoparticles acting as scatterers for mid-to-long-wavelength phonons \cite{kim06}. %\citepub{fpu}\citepub{fpu2}\citepub{gf} % Other examples of interference
 
-In a nanoscale system with relatively long internal phonon mean free paths, the material surfaces and interfaces play an important role in thermal conduction. At rough surfaces, for example, phonons are scattered into all directions, which strongly suppresses the heat flow. The resulting reduced thermal conductivity has been noted to be responsible for the moderately high thermoelectric figure of merit of Si nanowires \cite{hochbaum08}. At material interfaces, the mismatch in the acoustic properties of the materials inevitably scatters phonons.  This contact resistance between dissimilar materials can act as a major bottleneck limiting the extraction of heat from electronic devices, thereby hindering their performance \cite{}. Many methods have been suggested to reduce the thermal resistance between materials, including chemical functionalization \cite{hopkins11,kaur14}, external pressure \cite{shen11,chalopin12}, and heat-mediating thin films \cite{}. %\citepub{spectral}\citepub{twinning}
+In a nanoscale system with relatively long internal phonon mean free paths, the material surfaces and interfaces play an important role in thermal conduction. At rough surfaces, for example, phonons are scattered into all directions, which strongly suppresses the heat flow. The resulting reduced thermal conductivity has been noted to be responsible for the moderately high thermoelectric figure of merit of Si nanowires \cite{hochbaum08}. At material interfaces, the mismatch in the acoustic properties of the materials inevitably scatters phonons.  This contact resistance between dissimilar materials can act as a major bottleneck limiting the extraction of heat from electronic devices, thereby hindering their performance \cite{pop10}. Many methods have been suggested to reduce the thermal resistance between materials, including chemical functionalization \cite{hopkins11,kaur14}, external pressure \cite{shen11,chalopin12}, and heat-mediating thin films \cite{english12}. %\citepub{spectral}\citepub{twinning}
 
 % Relation to the thesis
 Concepts such as phonon interference, ballistic transport, mean free paths, and interface scattering appear throughout this thesis. In Publications \cp{fpu}, \cp{fpu2}, and \cp{gf}, we explore the interference effects exhibited in thermal conduction through nanoscale constrictions and reveal intricate interference patterns in local nonequilibrium temperature profiles. We also show how such patterns vanish at higher temperatures due to increased scattering. In Publication \cp{spectral}, we present detailed maps of the contributions of different vibrational frequencies to thermal conduction across a mass-mismatched interface, improving thereby the understanding of heat transfer mechanisms at interfaces and presenting guidelines for future thermal engineering of high-conductance interfaces. Publication \cp{cnt} presents a non-equilibrium method for determining the mean free paths of phonons in carbon nanotubes, supplying a theoretical description of the ballistic-diffusive crossover in one-dimensional systems. In Publication \cp{twinning}, we perform ''thermal engineering'' and demonstrate the existence of minimun thermal conductivity at a certain twinning period length in a silicon nanowire. The minimun arises from the maximal blocking of bulk-like scattering-free propagation of phonons through the nanowire by the periodically repeating twinning boundaries.
