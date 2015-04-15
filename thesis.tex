@@ -17,6 +17,7 @@
 %\usepackage{lipsum}% just to automatically generate text
 \usepackage{amsmath,amsfonts,amssymb,amsbsy}  
 \usepackage{hyperref}
+\usepackage{enumitem}
 \newcommand{\ud}{\mathrm{d}}
 \newcommand{\bb}{\mathbf}
 \newcommand{\ca}{\mathcal}
@@ -43,7 +44,9 @@
 \newcommand{\kw}{k_0}
 \newcommand{\unitdyadic}{\bb{I}_{3 \times 3}}
 
-
+\newcommand{\listofsymbols}{%
+  \chapter*{Symbols and abbreviations}%
+}
 \iffalse
  \setlength{\hoffset}{-1in}
  \setlength{\oddsidemargin}{35mm}
@@ -59,15 +62,25 @@
 \fi
 
 \begin{document}
-
+\pagenumbering{roman}
 
 \tableofcontents
 
 \listofpublications
 
 
-\chapter{Introduction}
+\listofsymbols
+\setlist[description]{style=multiline,topsep=10pt,leftmargin=3cm,font=\normalfont\normalfont\space,align=parleft}
 
+\begin{description} \itemsep2pt
+  \item[First] The first item
+  \item[$\int$ Second] The second item
+  \item[Third] The third etc \ldots
+\end{description}
+
+\chapter{Introduction}
+\setcounter{page}{1}
+\pagenumbering{arabic}
 \input{intro.tex}
 
 \input{theory.tex}
@@ -140,6 +153,7 @@
 %\addpublicationpdf{articles/fpu_article.pdf}
 
 \addpublication{K. S\"a\"askilahti, J. Oksanen, R.~P. Linna, and J. Tulkki}{Phonon interference and anharmonicity effects in nanoconstrictions}{AIP Conf. Proc.}{Vol. 1506, pp. 15}{December}{2012}{American Physical Society}{fpu2}
+\addcontribution{The author made the coffee.}.
 % Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
 %\addcontribution{The author made the coffee.}
 % Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
