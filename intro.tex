@@ -2,15 +2,20 @@
 
 \section{Motivation}
 
+% More straightforward start?
+
 With the steady rise in Earth's population and the consumption of natural resources, it has become essential to consider energy sustainability. The ever-increasing demand for energy accelerates, for example, the burning of fossil fuels, which not only contributes to the climate change but also rules out sustainability: the oil reserves are expected to run out in approximately 40 years with the present production rate \cite{}. Sustainable energy production therefore requires turning to more sustainable energy resources such as sun, wind, hydro- and, eventually, fusion power.
 
 Sustainability cannot be reached, however, only by developing more efficient ways to produce energy: the efficiency of energy use should increase as well. At present, approximately half the energy produced in the world is wasted as heat \cite{}, and efficient reclaiming of even a small part of the waste heat using, e.g., thermoelectric modules could cover the electricity needs of the planet alone \cite{}. Inefficiency also hinders the technological development: in modern microprocessors, for example, the heating arising from energy dissipation is currently the most serious bottleneck limiting the performance \cite{}. 
 
-Achieving more efficient thermoelectrics and reducing the detrimental heating in electronic devices calls for engineering of new materials. Practically feasible thermoelectric generation requires, for example, designing materials with a low thermal conductivity but good electronic conduction properties \cite{chen}. Reducing the heating in electronic devices, on the other hand, can be achieved by reducing the thermal resistance of interfaces acting as heat bottlenecks and finding the optimal high thermal conductivity materials for heat sinks \cite{pop10}. 
+Achieving more efficient thermoelectric modules and reducing the detrimental heating in electronic devices calls for engineering of new materials. Practically feasible thermoelectric generation requires, for example, materials with a low thermal conductivity but good electronic conduction properties \cite{chen}. Reducing the heating in electronic devices, on the other hand, can be achieved by reducing the thermal resistance of interfaces acting as heat bottlenecks and finding the optimal high thermal conductivity materials for heat sinks \cite{pop10}. 
 
-Such thermal engineering often goes hand in hand with nanostructuring. Allowing for separate tuning of thermal and electronic conductivity, nanostructuring has been reported to significantly increase the thermoelectric figures of merit in numerous materials (see, e.g., Refs. \cite{vineis10,kanatzidis10,shakouri11} for review). Similarly, interfacial resistance between dissimilar materials has been reduced by the addition of functional molecules \cite{hopkins11,kaur14} acting as heat bridges between materials. Efficient extraction of heat from electronic and optoelectronic devices has been suggested \cite{ghosh08,yan12} to be enabled by low-dimensional nanomaterials such as graphene or carbon nanotubes, both having thermal conductivities higher than diamond \cite{balandin11}. 
+Such thermal engineering has been largely enabled by the significant advancements in the field of nanophysics in recent decades. By allowing for the creation of new metamaterials with tailored thermal and electronic properties, nanostructuring has been shown to enable increasing the thermoelectric figures of merit in numerous materials (see, e.g., Refs. \cite{vineis10,kanatzidis10,shakouri11} for review). Similarly, interfacial resistance between dissimilar materials can be reduced by designing high thermal conductance interfaces by the addition of, e.g., functional molecules \cite{hopkins11,kaur14}, nanoscale thin films, and XXX between materials. Efficient extraction of heat from electronic and optoelectronic devices has been suggested \cite{ghosh08,yan12} to be enabled by low-dimensional nanomaterials such as graphene or carbon nanotubes, both having thermal conductivities higher than diamond \cite{balandin11}. 
 
 The importance of nanostructures in thermal engineering is rooted in the break-down of classical heat transfer laws such as Fourier's law of thermal conduction \cite{fourier} or Planck's law of thermal radiation \cite{planck00a} in such small structures. Striking examples of break-down are, for example, the observation of thermal conductance quantization \cite{rego98,schwab00}, divergence of thermal conductivity in low-dimensional structures \cite{lepri97,lepri03,dhar08,xu14}, 100-fold reduction in nanowire's thermal conductivity compared to the bulk value \cite{hochbaum08} and the nearly monochromatic electromagnetic field close to a polar surface \cite{carminati99,shchegrov00}. In addition to the applications in thermoelectricity and electronics mentioned above, such novel heat transfer phenomena play an essential role also in completely new technologies such as phase-change memory \cite{lankhorst05}, heat-assisted magnetic recording \cite{pan09}, tumor therapy based on nanoparticle laser heating \cite{avedisian09}, and information processing using temperature \cite{li12_rmp}.  %In addition to leading to new understanding of physics, these phenomena offer new ways to engineer the thermal properties of materials.
+
+Microscopically, energy transfer between materials is mediated by three primary energy carriers: photons, phonons, and electrons, which are responsible for electromagnetic, vibrational and electronic energy transfer, respectively \cite{chen}. While the contributions of different carriers to energy transfer between macroscopic bodies can typically be calculated independently from each other, this procedure breaks down as the separations between materials are in the nanometer range. For example, the correct description of the smooth transition from photon-dominated energy transfer at large separations to phonon-dominated transfer at small separations \cite{xiong14,chiloyan15} requires accounting both for electromagnetic fields and lattice vibrations in a single model. 
+
 
 %Physically, such phenomena arise from the reduced dimensionality, wave interference effects, increased geometric scattering rates, reduced internal scattering and near-field effects appearing in nanoscale structures. 
 %\begin{itemize}
@@ -31,33 +36,35 @@ The importance of nanostructures in thermal engineering is rooted in the break-d
 
 
 \section{Scope and objectives}
-%The second law of thermodynamics essentially dictates that in absence of external agents influencing the system, energy is always transferred from hot to cold, thereby smoothing any temperature differences. 
-This doctoral thesis aims at (i) presenting new insight into energy transfer mechanisms in nanoscale structures, and (ii) developing new computational methods for theoretical description of thermal transfer in atomic scale systems. We limit our scope to heat transfer by lattice vibrations and electromagnetic radiation, thereby excluding both electronic conduction and convection.
+% Smooth transition to scope and objectives, explain how different carriers play together at small scales
+% Mapping of possibilities
+% New computational methods
+% Combining phononic, photonic and eventually electronic transport into a single model
 
-%The scope of this work is to investigate and develop new computational methods for (i) thermal conduction by lattice vibrations and electrons in nanoscale structures, and (ii) thermal radiation in inhomogeneous environments such as a mirror cavity. We only consider solid materials and therefore convection, which is a major energy transfer mechanism in fluids and gases containing free atoms or molecules carrying heat, is outside the scope of this work. %Below, we review the mo
+This doctoral thesis aims at (i) developing new computational methods for investigating phononic energy transfer in nanoscale systems and applying the methods to create new understanding, and (ii) developing methods for describing phononic, photonic as well as electronic energy transfer in a single theoretical framework to eventually enable the combination of the models. In all our studies, we only consider solid state systems, thereby excluding convection from the considered list of energy transfer mechanisms. %We limit our scope to heat transfer by lattice vibrations and electromagnetic radiation, thereby excluding both electronic conduction and convection.
 
-\begin{figure}
-\begin{center}
+The two objectives listed above roughly divide the publications included in this thesis into two parts. In the first part, we use classical molecular dynamics (MD) simulations to model energy transfer by lattice vibrations (phonons) in nanoscale systems. While MD neglects all quantum effects, it accounts both for wave interference and detailed scattering phonon scattering without any approximations (except for typically using a semi-empirical potential for describing interatomic interactions). Using MD, we (1) study how interference and anharmonic scattering manifest in thermal transfer through a point contact, (2) investigate the detailed role of anharmonic scattering in energy transfer across a planar interface between two materials of different masses, and (3) develop a method for determining phonon scattering lengths from non-equilibrium MD (NEMD) simulations and use the method to determine scattering lengths in carbon nanotubes, and (4) demonstrate tunable thermal conductivity in twinning superlattice silicon nanowires.
+
+In the second part, we pave the way for the unified theoretical description of phononic, photonic and electronic energy transfer. Our results show that Langevin theory \cite{langevin,zwanzig} combined with the linearization of equations of motion allows for calculating energy transfer rates for the three primary carriers in a unified manner. The solution of the Langevin equations of motion naturally gives rise to Green's functions, which act as response functions translating local stochastic fluctuations in carrier number into carrier propagation. Dissipative effects are mimicked by the coupling of the microscopic degrees of freedom such as atomic displacement or local dipole moment to the Langevin baths, giving rise to non-zero carrier relaxation times.
+
+To put these research topics in the general context of nanoscale heat transfer, we briefly review the most prominent nanoscale energy transfer phenomena below and discuss their relation to each of the publications included in this thesis. 
+
+%\begin{figure}
+%\begin{center}
  %\includegraphics[width=8.6cm]{pics/schwab00_fig3.ps}
- \includegraphics[width=.99\columnwidth]{pics/systems.pdf}
- \caption{Schematic illustration of some of the systems studied in this thesis. (a) Constriction in graphene. (b) Planar interface between two mass-mismatched face-centered cubic lattices. (c) Carbon nanotube. (d) Oscillating dipoles in a cavity.}
-\label{fig:intro_systems}
-\end{center}
-\end{figure}
+% \includegraphics[width=.99\columnwidth]{pics/systems.pdf}
+% \caption{Schematic illustration of some of the systems studied in this thesis. (a) Constriction in graphene. (b) Planar interface between two mass-mismatched face-centered cubic lattices. (c) Carbon nanotube. (d) Oscillating dipoles in a cavity.}
+%\label{fig:intro_systems}
+%\end{center}
+%\end{figure}
 
-Some of the systems studied in this work are illustrated in Fig. \ref{fig:intro_systems}. First, we investigate interference effects and the effect of temperature on energy transfer and non-equilibrium temperature profiles in constrictions in two-dimensional lattices such as graphene, depicted in Fig. \ref{fig:intro_systems}(a). Interference effects are shown to give rise to intricately shaped temperature profiles in small constrictions, with increasing anharmonic scattering washing out the profiles. The work also clarifies the role played by the bulk reservoirs in heat transfer through low-dimensional systems. 
+%Some of the systems studied in this work are illustrated in Fig. \ref{fig:intro_systems}. First, we investigate interference effects and the effect of temperature on energy transfer and non-equilibrium temperature profiles in constrictions in two-dimensional lattices such as graphene, depicted in Fig. \ref{fig:intro_systems}(a). Interference effects are shown to give rise to intricately shaped temperature profiles in small constrictions, with increasing anharmonic scattering washing out the profiles. The work also clarifies the role played by the bulk reservoirs in heat transfer through low-dimensional systems. 
 
-We develop a computational method to determine the heat current carried by each vibrational frequency and apply the method to investigate the role of anharmonic phonon scattering on the thermal conductance of a planar interface depicted in Fig. \ref{fig:intro_systems}(b). The results show that anharmonic scattering can contribute to interfacial heat transfer both by presenting a dissipation mechanism for evanescent modes localized close to the interface and enabling three-phonon frequency-halving and frequency-doubling energy transfer processes at the interface. The same computational method is used to determine the phonon mean free paths in carbon nanotubes [Fig. \ref{fig:intro_systems}(c)] from non-equilibrium simulations, offering a novel method of determining the non-equilibrium scattering lengths in nanostructures and showing that mean free paths of energy carriers in carbon nanotubes can exceed 10 $\mu$m. In another work, we show that twinning Si nanowires could act as efficient thermoelectric materials due to their small thermal conductivity at a specific twinning period.
+%We develop a computational method to determine the heat current carried by each vibrational frequency and apply the method to investigate the role of anharmonic phonon scattering on the thermal conductance of a planar interface depicted in Fig. \ref{fig:intro_systems}(b). The results show that anharmonic scattering can contribute to interfacial heat transfer both by presenting a dissipation mechanism for evanescent modes localized close to the interface and enabling three-phonon frequency-halving and frequency-doubling energy transfer processes at the interface. The same computational method is used to determine the phonon mean free paths in carbon nanotubes [Fig. \ref{fig:intro_systems}(c)] from non-equilibrium simulations, offering a novel method of determining the non-equilibrium scattering lengths in nanostructures and showing that mean free paths of energy carriers in carbon nanotubes can exceed 10 $\mu$m. In another work, we show that twinning Si nanowires could act as efficient thermoelectric materials due to their small thermal conductivity at a specific twinning period.
 
-Finally, we present a quantum Langevin equation-based approach on calculating electromagnetic energy transfer rates between oscillating dipoles and apply the theory to investigate the role of an inhomogeneous environment on electromagnetic energy transfer between nanoparticles. In addition to providing a new microscopic theory of electromagnetic energy transfer, we show that the confinement of electromagnetic modes in the mirror cavity [illustrated in Fig. \ref{fig:intro_systems}(d)] gives rise to oscillations in the heat transfer rates between polar nanoparticles as a function of particle distance. Heat transfer rate between nanoparticles is shown to be enhanced also close to a surface supporting surface phonon polaritons.
+%Finally, we present a quantum Langevin equation-based approach on calculating electromagnetic energy transfer rates between oscillating dipoles and apply the theory to investigate the role of an inhomogeneous environment on electromagnetic energy transfer between nanoparticles. In addition to providing a new microscopic theory of electromagnetic energy transfer, we show that the confinement of electromagnetic modes in the mirror cavity [illustrated in Fig. \ref{fig:intro_systems}(d)] gives rise to oscillations in the heat transfer rates between polar nanoparticles as a function of particle distance. Heat transfer rate between nanoparticles is shown to be enhanced also close to a surface supporting surface phonon polaritons.
 
-%\begin{itemize}
-% \item Interference and anharmonicity effects in constrictions
-% \item Energy transfer mechanisms and the role of anharmonicity in interfacial energy transfer
-% \item 
-%end{itemize}
 
-To put the research topics in the general context of nanoscale heat transfer, we briefly review the most prominent nanoscale energy transfer phenomena below and discuss their relation to each of the publications included in this thesis.
 
 % Energy transfer between and inside bodies generally occurs by three mechanisms: conduction, radiation and convection \cite{}. 
 %The energy transfer generally occurs by three mechanisms: conduction, radiation and convection \cite{}. Thermal conduction, which is the dominant mechanism in solids, is energy transfer inside a given body and occurs through (i) the microscopic interactions between the atoms and molecules constituting the body and, in case of metals, (ii) movement of free electrons. In fluids and gases, energy is transferred not only by conduction but also by the net motion of the energy-carrying molecules themselves, a process known as convection. As an example, the familiar law that hot air rises above the cold air is convection. Finally, energy can be transmitted by electromagnetic waves, i.e., thermal radiation. Unlike conduction and convection, thermal radiation does not require any mediating medium to carry energy: this is best exemplified by the thermal radiation from the Sun.
@@ -75,19 +82,34 @@ To put the research topics in the general context of nanoscale heat transfer, we
 %\end{itemize}
 
 
-\section{Vibrational energy transfer in nanoscale systems}
+\section{Energy transfer in nanoscale systems}
+\begin{itemize}
+ \item Phonon, photon, electron transport overlap
+\end{itemize}
+This Section reviews the prominent energy transfer phenomena of nanoscale systems. Vibrational energy transfer is reviewed in Subsection \ref{sec:intro_vib}. Emphasis is placed on the violations of the classical Fourier's law of heat transfer and defining the various length scales emerging in the microscopic scale. The mathematical theory underlying vibrational energy transfer is presented in detail in Chap. \ref{chap:theory}. 
 
-\subsection{Nanoscale phenomena}
+% Because this thesis mainly focuses on phonon and photon transport, more emphasis is placed on these transfer mechanisms. 
 
-%\subsection{Anomalous conductivity}
+Electromagnetic energy transfer phenomena in nanoscale are reviewed in Subsection \ref{sec:intro_em}. In electromagnetic energy transfer, the macroscopic laws of thermal radiation such as Planck's radiation law break down when the separation between bodies becomes similar to the wavelengths of thermally excited electromagnetic fields. At such small separations, evanescent near-fields localized close to the material surfaces can couple the materials and thereby strongly increase energy transfer rates. %The near-field energy transfer is reviewed in Subsection \ref{sec:intro_em}.
 
-%Thermal conduction in macroscopic systems is traditionally described using Fourier's law \cite{}. The law states that the heat flux at any given point is proportional to the temperature gradient at the same point. The theory is, therefore, completely local and based on the definition of local temperature, whose changes are dictated by the diffusion equation. Diffusion equation predicts, for example, that the information of a temperature perturbation can propagate infinitely fast in the system, which is in direct contradiction to special relativity. Fourier's theory must, therefore, ultimately break down.
+Subsection \ref{sec:intro_electrons} reviews electronic conduction of heat in metallic and semi-conducting nanostructures. Because electron transport topics such as electron conductance quantization, Coulomb blockade, localization etc. are outside the scope of this thesis, Subsection \ref{sec:intro_electrons} is only devoted to the discussion of electronic heating in nanostructures. %These effects include the generation of hot spots and the possibility to measure thermal conductivity from local heating. %detrimental electronic heating has been suggested to be reduced by low-dimensional, high thermal conductivity materials
 
-Thermal conduction in macroscopic systems is traditionally described using Fourier's law \cite{fourier}, stating that the heat flux at any given point is proportional to the temperature gradient at the same point. The theory leads, however, to the unphysical phenomenon that a local temperature perturbation can propagate infinitely fast \cite{chen}, in direct contradiction to the finiteness of the speed of sound and also special relativity. This indicates that Fourier's theory must ultimately break down in nanoscale.
+% Hot spots
+% Graphene quilts etc.
+% Measurement of thermal conductivity from Joule heating 
+% Conductance at metal-dielectric interfaces
+% Current induced forces?
 
-The microscopic theory for thermal conduction was developed by Rudolf Peierls in 1929 \cite{peierls29}. Understanding that collective lattice vibrations (phonons) carry heat in crystalline solids, he proposed that thermal resistivity arises from the scattering of phonons from lattice imperfections and other phonons. These scattering mechanisms existing in any non-ideal material at non-zero temperature give rise to a finite phonon mean free path, characterizing the average distance between scattering events. At length scales smaller than the mean free path, phonons can travel without scattering and Fourier's fully local theory must be invalid. At length scales much larger than the mean free path, on the other hand, the heat carriers are expected to propagate diffusively and heat transfer is well described by Fourier's theory.
+% Similarity of phonon, photon systems (interference, scattering, Green's function methods,...)
 
-This expected transition to the Fourier limit in sufficiently large systems was questioned in 1997 by the simulations of S. Lepri \textit{et al.} \cite{lepri97}, who found that the Fourier limit is never achieved in one-dimensional chains: the thermal conductivity was found to diverge as a function of system length. Later studies have elaborated on the divergence using various methods \cite{narayan02,mai07}. It is, however, still debated \cite{marconnet13} if any physical system such as a nanowire can be treated as a one-dimensional object and could therefore exhibit the divergence. Some experiments have claimed to have observed the divergence in silicon nanowires \cite{yang10}, but the evidence remains inconclusive. In two-dimensional materials such as graphene, similar divergence is expected, and recent experiments and simulations for graphene have suggested this to be the case \cite{xu14}. %\citepub{cnt}
+\subsection{Vibrational energy transfer in nanoscale}
+\label{sec:intro_vib}
+% Start from Peierls's theory
+The microscopic theory for thermal conduction was developed by Rudolf Peierls in 1929 \cite{peierls29}. Understanding that collective lattice vibrations (phonons) carry heat in crystalline solids, he proposed that thermal resistivity arises from the scattering of phonons from lattice imperfections and other phonons. These scattering mechanisms existing in any non-ideal material at non-zero temperature give rise to a finite phonon mean free path, characterizing the average distance between scattering events. At length scales much larger than the mean free path, the heat carriers are expected to essentially perform a random walk with constant drift along the temperature gradient and heat transfer is well described by Fourier's local theory. At length scales smaller than the mean free path, on the other hand, phonons can travel without scattering and Fourier's theory must be invalid. 
+
+% Thermal conduction in macroscopic systems is traditionally described using Fourier's law \cite{fourier}, stating that the heat flux at any given point is proportional to the temperature gradient at the same point. The theory leads, however, to the unphysical phenomenon that a local temperature perturbation can propagate infinitely fast \cite{chen}, in direct contradiction to the finiteness of the speed of sound and also special relativity. This indicates that Fourier's theory must ultimately break down in nanoscale.
+
+This expected transition to the Fourier limit in sufficiently large systems has been questioned in recent decades by computer simulations \cite{lepri97,lepri03,mai07,dhar08} and heat transfer experiments \cite{yang10,xu14} indicating that the Fourier limit may never be reached in low-dimensional systems. In one-dimensional oscillator chains, for example, it is now widely accepted \cite{dhar08} that the thermal conductivity diverges as a function of system length following a power-law \cite{mai07}. It is, however, still debated \cite{marconnet13} if any physical system such as a nanowire can be treated as a one-dimensional object and could therefore exhibit the divergence. %Some experiments have claimed to have observed such anomalous thermal conduction in silicon nanowires \cite{yang10}, but the evidence remains inconclusive. % In two-dimensional materials such as graphene, similar divergence is expected, and recent experiments and simulations for graphene have suggested this to be the case \cite{xu14}. %\citepub{cnt}
 
 \begin{figure}
 \begin{center}
@@ -108,62 +130,6 @@ In a nanoscale system with relatively long internal phonon mean free paths, the 
 Concepts such as phonon interference, ballistic transport, mean free paths, and interface scattering appear throughout this thesis. In Publications \cp{fpu}, \cp{fpu2}, and \cp{gf}, we explore the interference effects exhibited in thermal conduction through nanoscale constrictions and reveal intricate interference patterns in local nonequilibrium temperature profiles. We also show how such patterns vanish at higher temperatures due to increased scattering. In Publication \cp{spectral}, we present detailed maps of the contributions of different vibrational frequencies to thermal conduction across a mass-mismatched interface, improving thereby the understanding of heat transfer mechanisms at interfaces and presenting guidelines for future thermal engineering of high-conductance interfaces. Publication \cp{cnt} presents a non-equilibrium method for determining the mean free paths of phonons in carbon nanotubes, supplying a theoretical description of the ballistic-diffusive crossover in one-dimensional systems. In Publication \cp{twinning}, we perform ''thermal engineering'' and demonstrate the existence of minimun thermal conductivity at a certain twinning period length in a silicon nanowire. The minimun arises from the maximal blocking of bulk-like scattering-free propagation of phonons through the nanowire by the periodically repeating twinning boundaries.
 
 
-\subsection{Theoretical background}
-\label{sec:intro_vibtheory}
-%As discussed in Chap. 1, propagating lattice vibrations carry heat in crystalline solids, and the quanta of such propagating vibrations are called phonons. The theoretical description is based essentially on the equations of motion for the atoms in the solid. Because fully quantum description does not easily allow for accounting for non-linear dynamics, which play an essential role in any system with non-negligible phonon-phonon interactions, the discussion below treats the atomic dynamics classically. 
-
-%\begin{itemize}
-% \item The goals of this work
-%\end{itemize}
-The theoretical description of lattice heat transfer is based on the dynamical equations of motion for the atoms constituting the lattice. The equations of motion are generally dictated by the Hamiltonian \cite{ziman}
-\begin{equation}
- \ca{H} = \sum_{i=1}^N \frac{\bb{p}_i^2}{2m_i} + \ca{V}(\bb{r}_1,\dots,\bb{r}_N). \label{eq:th_hamiltonian}
-\end{equation}
-Here $\br_i$, $\bp_i$, and $m_i$ are the position, momentum and mass of atom $i$, respectively. The total number of atoms (which can also be infinite) is denoted by $N$. The first term of Eq. \eqref{eq:th_hamiltonian} is the total kinetic energy of the atoms and the second term $\ca{V}$ is the interatomic potential energy responsible for the interatomic interactions. The choice of the potential energy function $\ca{V}$ is crucial for an accurate description of the lattice dynamics and, consequently, of energy transfer. Models for $\ca{V}$ used in this work are explained in detail in Sec. \ref{sec:th_interatomicpotential}.
-
-Applying Hamilton's equations of motion $\dot{\br}_i=\partial H/\partial \bp_i$ and $\dot{\bp}_i=-\partial \ca{H}/\partial \br_i$ \cite{fetter} gives Newton's law
-\begin{equation}
- m_i \ddot{\br}_i = \bb{F}_i, \label{eq:th_eom}
-\end{equation}
-where the force acting on atom $i$ is
-\begin{equation}
- \bb{F}_i = - \frac{\partial \ca{V}}{\partial \bb{r}_i}. \label{eq:th_force}
-\end{equation}
-For given initial conditions $\br_i(0)$ and $\dot{\br}_i(0)$, Eq. \eqref{eq:th_eom} determines the time evolution of atomic trajectories. To model energy transfer, the equations of motion are supplemented by terms accounting for coupling to external heat baths. In this work, we mostly employ Langevin heat baths that turn the equations of motion into stochastic equations and ensure that the long-term atomic trajectories correctly sample the non-equilibrium statistical ensemble. Langevin theory is presented in Sec. \ref{sec:th_langevin}.
-
-Equation \eqref{eq:th_eom} generally describes the motions of atoms and molecules in solid, gas, and liquid systems. In solids, the atoms vibrate close to their equilibrium positions $\br_i^0$ and one can gain more insight into the lattice dynamics by only considering small displacements from the equilibrium. The positions $\br_i^0$ are defined by the condition of zero force:
-\begin{equation}
- \left. \frac{\partial \ca{V}}{\partial \br_i} \right|_{\br_j=\br_j^0 \quad \forall j} = 0. \label{eq:th_zeroforce}
-\end{equation}
-Assuming that the atoms remain close to the equilibrium positions, one can expand the potential energy in Taylor series in terms of the displacements $\bu_i=\br_i-\br_i^0$:
-\begin{equation}
- \ca{V} = \ca{V}_0 + \frac{1}{2} \sum_{i,j} \sum_{\alpha,\beta} u_i^{\alpha} K_{ij}^{\alpha \beta} u_j^{\beta}  + \ca{O}(u^3). \label{eq:th_V_taylor}
-\end{equation}
-Here the Cartesian coordinate directions $\alpha,\beta \in \{x,y,z\}$ have been written explicitly for clarity and the second-order term is proportional to the ''force constant''
-\begin{equation}
- K_{ij}^{\alpha\beta} = \left. \frac{\partial^2 \ca{V}}{\partial u_i^{\alpha} \partial u_j^{\beta}} \right|_{\bu=\mathbf{0}}. \label{eq:th_K_def}
-\end{equation}
-The first-order derivative term in \eqref{eq:th_V_taylor} vanished based on Eq. \eqref{eq:th_zeroforce} and the last term is of third order in displacements.
-
-In the case that the third-order term can be neglected, employing Eq. \eqref{eq:th_V_taylor} in the equation of motion \eqref{eq:th_eom} gives the system of linear equations
-\begin{equation}
- m_i \ddot{u}_i^{\alpha} = - \sum_j \sum_{\beta} K_{ij}^{\alpha\beta} u_j^{\beta}.
-\end{equation}
-Following standard eigenmode theory \cite{fetter}, the eigenmodes of the system can be found by diagonalizing the matrix $D_{ij}^{\alpha\beta} = (m_i\omega^2 \delta_{ij}\delta
-^{\alpha\beta}-K_{ij}^{\alpha\beta})$. In a periodically repeating crystal, the eigenmodes can be labeled by the wavevectors $\bb{q}$ belonging to the first Brillouin zone \cite{ziman} and the branch $p \in \{1,\dots,3N_{\textrm{cell}}\}$, where $N_{\textrm{cell}}$ is the number of atoms in the unit cell. The eigenmodes are called phonon modes, while phonons are the discrete quanta of eigenmode occupation. The eigenfrequencies $\omega(\bb{q},p)$ form the phonon bandstructure, specifying the relation between the wavevectors and frequencies supporting propagating phonon modes. As an example, Fig. \ref{fig:th_nika} shows the phonon bandstructure of graphene, a single monolayer of graphite.
-
-\begin{figure}
-\begin{center}
- \includegraphics[width=8.6cm]{pics/nika09_fig3.pdf}
- \caption{Phonon bandstructure of graphene, calculated using the valence force field method \cite{nika09}. The two-dimensional bandstructure is plotted along one-dimensional lines between special points in graphene reciprocal lattice, denoted by $\Gamma$, $M$ and $K$. Because graphene has two atoms per unit cell, there are altogether six phonon branches. The three branches that have vanishing frequencies at the $\Gamma$ point are called longitudinal acoustic (LA), transverse acoustic (TA) and out-of-plane acoustic (ZA). The optical modes LO, TO and ZO are labeled similarly. Reprinted with permission from Ref. \cite{nika09}.}
-\label{fig:th_nika}
-\end{center}
-\end{figure} 
-
-When the anharmonic part in Eq. \eqref{eq:th_V_taylor} is neglected, the phonon eigenmodes are exact eigenmodes of the system and cannot dissipate their energy, giving rise to infinite thermal conductivity \cite{ziman}. The anharmonic terms give rise to phonon-phonon scattering \cite{ziman}, which is the primary phonon decay mechanism in crystalline solids at high temperatures. In Publications \cp{fpu}, \cp{fpu2}, \cp{spectral}, \cp{cnt}, and \cp{twinning}, we have employed classical molecular dynamics simulations fully accounting for anharmonic scattering. In \citepub{gf}, anharmonic effects are mimicked by the self-consistent heat bath model \cite{bolsterli70}, allowing for the inclusion of quantum statistics as well. These methods are explained in more detail below in Chap. XXX.
-
-
-
 %As noted by Kapitza already in 1930s \cite{}, carrier scattering at interfaces between materials also gives rise to thermal resistance. Even in the absence of defects, 
 
 % Point contacts \cite{bartsch12}
@@ -181,9 +147,8 @@ When the anharmonic part in Eq. \eqref{eq:th_V_taylor} is neglected, the phonon 
 
 %\subsection{Thermal engineering}
 
-\section{Electromagnetic energy transfer in nanoscale}
-
-\subsection{Near-field energy transfer}
+\subsection{Electromagnetic energy transfer in the near-field}
+\label{sec:intro_em}
 Accelerating charges are known to emit electromagnetic radiation \cite{}. Because the electrons and nuclei in any solid material undergo thermal (and quantum) fluctuations, all materials therefore emit electromagnetic radiation carrying heat. In 1900, Max Planck \cite{planck00a} studied the radiation emitted by a blackbody and gave birth not only to quantum theory but also to Planck's blackbody radiation law, which has since been observed to describe, for example, the spectrum of cosmic microwave background radiation at the accuracy of XXX.
 
 Planck's law inherently suggests that the total power of the emitted radiation is independent of the distance from the object. This follows from the assumption that only propagating waves contribute to the energy density. Close to the material surface, solution of Maxwell's equations gives, however, also rise to evanescent electromagnetic fields localized at a distance of a few wavelengths from the object \cite{polder71}. One can then envisage placing another object sufficiently close to the radiating body so that the evanescent fields can induce motion of charges in the added object, leading to energy transfer by the evanescent fields. Planck's law therefore breaks down at very small distances. 
@@ -203,52 +168,7 @@ Near-field effects are particularly strong for materials supporting evanescent s
 
 Similarly, near-field effects strongly increase the spectral density of the electromagnetic field in the vicinity of nanoparticles made of a polar material. Consequently, heat transfer between two nanoparticles in vacuum is found to strongly increase at small distances \cite{domingues05}. In practice, however, the required nanoparticle distances for efficient heat transfer may be too small, so for practical applications it would be necessary to engineer the thermal conductance to be higher. From the theory of dipole emission, it is well known that the optical-mechanical coupling can be enhanced by orders of magnitude in an inhomogeneous environment such as in a mirror cavity \cite{novotny}. This raises the question, if the interparticle heat transfer rate between particles could be enhanced by cavity. This question was investigated and answered in positive in \citepub{dipole}.
 
-\subsection{Theoretical background}
 
-\label{sec:intro_emtheory}
-
-\subsubsection{Field due to an oscillating dipole}
-
-The theoretical description of electromagnetic energy transfer between oscillating dipoles is based on Maxwell equations \cite{novotny}. In the non-magnetic materials with no free charges that are considered in this work, the electromagnetic fields arise from the fluctuating electric polarization fields inside the bodies, and the Maxwell equations for the electric field $\bE(\br,t)$ and magnetic field $\bb{H}(\br,t)$ read \cite{novotny}
-\begin{subequations}
-\begin{align}
-  \nabla \times \bE(\br,t) &= - \mu_0 \frac{\partial \bb{H}(\br,t)}{\partial t}, \label{eq:th_maxwell1} \\
-  \nabla \times \bb{H}(\br,t) &= \varepsilon_0 \frac{\partial \bb{E}(\br,t)}{\partial t} + \frac{\partial \bb{P}(\br,t)}{\partial t}, \label{eq:th_maxwell2} \\
-   \nabla \cdot \bb{H}(\br,t) &= 0, \\
-   \nabla \cdot \bb{E}(\br,t) &= 0.
-\end{align}
-\end{subequations}
-Equation \eqref{eq:th_maxwell2} shows that a temporal change in the polarization density $\bb{P}(\br,t)$ gives rise to a magnetic field, which in turn induces an electric field according to Eq. \eqref{eq:th_maxwell1}. The induced electromagnetic field carries energy flux, whose magnitude and direction are given by the Poynting vector $\bb{S}(\br,t)=\bb{E}(\br,t)\times \bb{H}(\br,t)$ \cite{novotny}.
-
-To determine the amount of energy radiated by a fluctuating dipole, one needs to solve for the electric and magnetic fields emitted by the dipole current density distribution $\bb{j}(\br',t)=\partial \bb{P}(\br,t)/\partial t$. As shown in detail in Ref. \cite{novotny}, the electric field is given in frequency-domain by 
-\begin{equation}
- \tilde \bE(\br,\omega) = \tilde \bE_0(\br,\omega) + i \omega \mu_0 \int_V d\mathbf{r}' \mathbb{G}(\br,\br';\omega) \tilde{\bb{j}}(\br',\omega). \label{eq:th_Etilde}
-\end{equation}
-Here $\tilde{\bE}_0(\br,\omega)$ is the electric field arising from sources other than the oscillating dipoles, volume $V$ encloses the dipoles and $\mathbb{G}(\br,\br';\omega)$ is the electromagnetic Green's dyadic found by solving the Helmholtz equation \cite{novotny}
- \begin{equation}
- \nabla \times \nabla \times \gem(\bb{r},\br';\omega) - (\omega^2/c^2) \epsenv(\br,\omega)\gem(\bb{r},\br';\omega)  =  \delta(\bb{r}-\br')\unitdyadic. \label{eq:intro_gemdef}
-\end{equation}
-Here $c$ is the speed of light and $\epsenv(\br,\omega)$ is the relative dielectric constant of the environment. The Green's dyadic can generally be decomposed into the free-space and scattered parts as
-\begin{equation}
- \mathbb{G}(\br,\br';\omega ) = \mathbb{G}_0(\br,\br';\omega ) + \mathbb{G}_s(\br,\br';\omega ). \label{eq:th_G_decomp}
-\end{equation}
-The first term, which corresponds to the field radiated by the dipole in absence of any scattering events, is \cite{novotny}
-\begin{equation}
- \mathbb{G}_0(\br,\br';\omega) = \left[\mathbf{I}_{3\times 3} + \frac{1}{k_0^2} \nabla \nabla \right] \frac{e^{ik_0|\br-\br'|}}{4\pi|\br-\br'|}.
-\end{equation}
-Here $k_0=\omega/c$ is the wavevector in vacuum and $\mathbf{I}_{3\times 3}$ is the $3\times 3$ identity matrix. The second term $\mathbb{G}_s(\br,\br';\omega)$ accounts for the scattering of the emitted field by the inhomogeneities in the environment such as reflecting walls. The decomposition \eqref{eq:th_G_decomp} is useful, because the two terms behave differently for $\br\to \br'$: the dyadic $\mathbb{G}_0$ diverges for $\br\to \br'$, but the scattering part $\mathbb{G}_s$ is smooth \cite{novotny}. Having the expression \eqref{eq:th_Etilde} for the electric field, the magnetic field $\tilde{\bb{H}}(\br,\omega)$ can be solved from the first Maxwell equation \eqref{eq:th_maxwell1}, and one can calculate the Poynting vector $\bb{S}$.
-
-\subsubsection{Fluctuational electrodynamics}
-
-To calculate the energy transfer between bodies, we need an equation specifying the relation between the fluctuations in dipole moments and the material's optical properties and temperature. The traditional approach is the fluctuational electrodynamics (FED) theory pioneered by Rytov \cite{rytov} and Lifshitz \cite{lifshitz55}. The core of FED is the fluctuation-dissipation relation \cite{novotny,agarwal75_1}
-\begin{equation}
- \langle \tilde{\bp}(\omega)\tilde{\bp}(\omega')^T\rangle = 4\pi \hbar \delta(\omega+\omega')  \textrm{Im}[\alpha(\omega)] \left[f_B(\omega,T)+\frac{1}{2} \right], \label{eq:th_fed_fdt}
-\end{equation}
-which is used to relate the stochastic fluctuations in the local dipole moment $\tilde{\bp}(\omega)$ (which is the local dipole density integrated over a small volume) to the imaginary part of the dipole polarizability dyadic $\alpha(\omega)$ and dipole temperature $T$. 
-
-While Eq. \eqref{eq:th_fed_fdt} has been used to successfully calculate energy transfer rates in various situations \cite{}, there are two arguments supporting a more microscopic approach. First, because FED relies on an effective medium property, the local polarizability, applying the theory to very small systems requires great care. It was noted only recently by Manjavacas and Abajo de Carc\'ia \cite{manjavacas12} that the fluctuation-dissipation relation connecting the polarization to the polarizability must be modified when local radiative corrections become important to ensure that non-absorbing particles do not emit thermal radiation. Starting from a more microscopic theory would make it possible to avoid resorting to effective medium parameters in the formulation. Second, one can envision  when the optical phonons responsible for electromagnetic radiation cannot be considered to be decoupled from the acoustic phonons responsible for ''phonon radiation''. In such cases, it is necessary to describe the full lattice dynamics and its coupling to the electromagnetic field microscopically. 
-
-In Publication \cp{dipole}, we developed such a microscopic generalization of fluctuational electrodynamics, basing the description of thermal fluctuations on writing quantum Langevin equations for the microscopic dipole oscillations. By starting from the microscopic equations of motion, we could straightforwardly derive expressions for heat transfer rates between dipoles in an inhomogeneous environment in full analogy to the phononic case treated in \citepub{gf}, directly accounting also for local radiative corrections. The theory is presented in Sec. \ref{sec:em_methods}.
 
 
  %it has a few problems. First, multiple different microscopic definitions for the polarizability exist, varying on whether the polarizability expresses the response, e.g., to the total electric field consisting of the external field and the internal polarization field or only the external field. This ambiguity is related to the observation of Manjavacas and Garc\'ia de Abajo \cite{manjavacas12} that Eq. \eqref{eq:th_fed_fdt} can be used to predict unphysical fluctuations even in a non-absorbing medium. The imaginary part of polarizability must, after all, be strictly positive even in a non-absorbing medium due to the radiation reaction force, but a non-absorbing medium cannot emit radiation.  % Even in a non-absorbing medium, the imaginary part of the polarizability is non-zero due to the radiation reaction force. Therefore, Eq. \eqref{eq:th_fed_fdt} predicts unphysical fluctuations even in absence of actual dissipation.
