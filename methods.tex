@@ -4,7 +4,7 @@
 \label{chap:methods}
 
 \section{Molecular dynamics}
-\label{sec:md}
+\label{sec:th_md}
 
 Molecular dynamics simulations are a powerful tool for modeling the vibrational energy transfer in atomic scale systems. In MD, the classical Newton's equations of motion \eqref{eq:th_eom} [or more generally the Langevin equation \eqref{eq:th_ohmic} for atoms coupled to heat baths] are integrated numerically. The forces $\bb{F}_i$ are calculated from an analytical expression obtained from the interatomic potential function $\ca{V}$ as $\bb{F}=-\partial \ca{V}/\partial \bb{r}_i$ and therefore include all orders of anharmonic terms. By simulating the steady-state non-equilibrium for sufficiently long times, one can extract values of macroscopic observables such as the heat current accurately by time-averaging. Based on the ergodicity principle, the time averages are expected to equal the statistical average over the corresponding ensemble. In the following, we briefly go through the most important aspects related to a MD simulation.
 
@@ -58,7 +58,7 @@ The correlation function can be calculated by analyzing the force and velocity t
 
 
 \subsection{Self-consistent heat bath model}
-\label{sec:gf}
+\label{sec:th_selfconsistentbaths}
 
 \begin{figure}
 \begin{center}
