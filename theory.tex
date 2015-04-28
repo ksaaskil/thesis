@@ -4,11 +4,286 @@
 % \textit{This chapter discusses the theory of energy transfer.}
 %\end{quote}
 
-This chapter is devoted to the microscopic theory of energy transfer. In Sec. \ref{sec:th_vibtheory}, the theoretical description of atomic vibrations in a lattice is described. 
+This chapter is devoted to the theory and methods used in this thesis. Section \ref{sec:theory} presents the relevant equations for describing phononic, electronic and photonic energy transfer in microscopic scale, aiming at giving a unified, parallel treatment of the three carriers. Because earlier parallel treatments (see, e.g., Ref. \cite{chen}) of the three carriers have mostly stressed the analogies in the energy transfer phenomena, we stress here the similarity of the Langevin equations of motion. The Langevin terms capture both thermal fluctuations and dissipation, necessary in modeling the creation and annihilation of energy carriers. 
+
+METHODS
+ 
+% Methods
+
+% The role of Langevin baths
+
+% 
+
+\section{Theory of energy transfer}
+\label{sec:theory}
+
+This section discusses the theory of lattice vibrations, electromagnetic field, and electron transport. The equations of motion of the three carriers are presented in Sec. \ref{sec:th_eom}. For generality, we include both deterministic terms (derived from microscopic Hamiltonian) and external force terms arising from interaction with stochastic Langevin baths \cite{}. The stochastic fluctuations induced by the baths act as source terms in the equations, driving energy transfer \cite{}. Fluctuation-dissipation theorem requires the fluctuations to be accompanied by friction terms, damping carriers and including thereby dissipation. The properties of the Langevin baths for the three carriers are discussed in detail in Sec. \ref{sec:th_langevin}.  
+
+\subsection{Equations of motion}
+\label{sec:th_eom}
+
+\subsubsection{Phonons}
+
+\label{sec:th_phonons}
+
+The theoretical description of lattice heat transfer is based on the dynamical equations of motion for the atoms constituting the lattice. The equations of motion are generally dictated by the Hamiltonian \cite{ziman}
+\begin{equation}
+ \ca{H}_{\textrm{ph}} = \sum_{i=1}^N \frac{\bb{p}_i^2}{2m_i} + \ca{V}(\bb{r}_1,\dots,\bb{r}_N). \label{eq:th_hamiltonian}
+\end{equation}
+Here $\br_i$, $\bp_i$, and $m_i$ are the position, momentum and mass of atom $i$, respectively. The total number of atoms (which can also be infinite) is denoted by $N$. The first term of Eq. \eqref{eq:th_hamiltonian} is the total kinetic energy of the atoms and the second term $\ca{V}$ is the interatomic potential energy responsible for the interatomic interactions. The choice of the potential energy function $\ca{V}$ is crucial for an accurate description of the lattice dynamics and, consequently, of energy transfer. Models for $\ca{V}$ used in this work are explained in conjunction with the corresponding results.
+
+Applying Hamilton's equations of motion $\dot{\br}_i=\partial H_{\textrm{ph}}/\partial \bp_i$ and $\dot{\bp}_i=-\partial \ca{H}_{\textrm{ph}}/\partial \br_i$ \cite{fetter} accompanied by stochastic Langevin terms (discussed below) gives the equations of motion
+\begin{equation}
+ m_i \ddot{\br}_i(t) = \bb{F}_i(t) + \xi_i(t) - m_i \gamma \dot{\bb{u}}_i(t), \label{eq:th_eom}
+\end{equation}
+where the deterministic force acting on atom $i$ is
+\begin{equation}
+ \bb{F}_i = - \frac{\partial \ca{V}}{\partial \bb{r}_i}. \label{eq:th_force}
+\end{equation}
+The stochastic force $\xi_i$ is a random variable with zero average and arises from the interaction with the external bath accounts for stochastic fluctuations, which can be interpreted as phonon creation \cite{}. The variance of the stochastic force depends both on bath temperature and friction parameter $\gamma$ through the fluctuation-dissipation relation discussed below in Sec. \ref{sec:th_langevin}. The friction term $m\gamma\dot{\bb{u}}_i$ damps oscillations and thereby accounts for phonon annihilation \cite{}. This form of friction, proportional only to instantaneous velocity, is called Ohmic due to its analogoue with a resistor in an electrical circuit \cite{weiss}. In general, the friction term is a time convolution giving rise to frequency-dependent damping \cite{weiss}, but in all publications included in this thesis, only the Ohmic form is used due to its simplicity.
+
+Equation \eqref{eq:th_eom} generally describes the motions of atoms and molecules in solid, gas, and liquid systems. In solids, the atoms vibrate close to their equilibrium positions $\br_i^0$ and one can gain more insight into the lattice dynamics by only considering small displacements from the equilibrium. The positions $\br_i^0$ are defined by the condition of zero force:
+\begin{equation}
+ \left. \frac{\partial \ca{V}}{\partial \br_i} \right|_{\br_j=\br_j^0 \quad \forall j} = 0. \label{eq:th_zeroforce}
+\end{equation}
+Assuming that the atoms remain close to the equilibrium positions, one can expand the potential energy in Taylor series in terms of the displacements $\bu_i=\br_i-\br_i^0$:
+\begin{equation}
+ \ca{V} = \ca{V}_0 + \frac{1}{2} \sum_{i,j} \sum_{\alpha,\beta} u_i^{\alpha} K_{ij}^{\alpha \beta} u_j^{\beta}  + \ca{O}(u^3). \label{eq:th_V_taylor}
+\end{equation}
+Here the Cartesian coordinate directions $\alpha,\beta \in \{x,y,z\}$ have been written explicitly for clarity, the constant term $\ca{V}_0$ can be neglected, and the second-order term is proportional to the ''force constant''
+\begin{equation}
+ K_{ij}^{\alpha\beta} = \left. \frac{\partial^2 \ca{V}}{\partial u_i^{\alpha} \partial u_j^{\beta}} \right|_{\bu=\mathbf{0}}. \label{eq:th_K_def}
+\end{equation}
+The first-order derivative term in \eqref{eq:th_V_taylor} vanished based on Eq. \eqref{eq:th_zeroforce} and the last term is of third order in displacements.
+
+In the case that the third-order term can be neglected, employing Eq. \eqref{eq:th_V_taylor} in the equation of motion \eqref{eq:th_eom} gives the system of linear equations, written here for each component $\alpha$:
+\begin{equation}
+ m_i \ddot{u}_i^{\alpha}(t) = - \sum_j \sum_{\beta} K_{ij}^{\alpha\beta} u_j^{\beta}(t) + \xi_i^{\alpha}(t) -m_i \gamma \dot{u}_i^{\alpha}(t). \label{eq:th_eom_phonon}
+\end{equation}
+
+Steady-state behaviour of the system, independent of initial conditions, can be analyzed by moving to frequency domain \cite{chaikin}. We define Fourier transformation of function $f(t)$, as usual, as
+\begin{equation}
+ \tilde f(\omega) = \int_{-\infty}^{\infty} dt e^{i\omega t} f(t)
+\end{equation}
+and the corresponding inverse transformation as
+\begin{equation}
+ f(t) = \int_{-\infty}^{\infty} \frac{d\omega}{2\pi} e^{-i\omega t}\tilde f(\omega).
+\end{equation}
+Applying the Fourier transformation and rearranging, the equations of motion \eqref{eq:th_eom_phonon} reduce to a linear system of equations:
+\begin{equation}
+ - \sum_{j,\beta}  [m_i (\omega^2+i\gamma \omega) \delta_{ij}\delta^{\alpha\beta} - K_{ij}^{\alpha\beta}] \tilde{u}_j^{\beta}(\omega) = \tilde \xi_i^{\alpha}(\omega) \label{eq:th_eom_phonon_fourier}
+\end{equation}
+This linear equation can be straightforwardly solved in terms of the Green's function, defined as the inverse of the coefficient matrix multiplying $\tilde{u}_j^{\beta}(\omega)$. This procedure and the calculation of observables is discussed below in Sec. \ref{sec:th_gf}.
+
+In absence of dissipation ($\gamma=0$), the coefficient matrix of the system \eqref{eq:th_eom_phonon_fourier} is singular at frequencies corresponding to the system's eigenmodes, found by diagonalizing the matrix $D_{ij}^{\alpha\beta} = (m_i\omega^2 \delta_{ij}\delta^{\alpha\beta}-K_{ij}^{\alpha\beta})$. In a periodically repeating crystal, the eigenmodes can be labeled by the wavevectors $\bb{q}$ belonging to the first Brillouin zone \cite{ziman} and the branch $p \in \{1,\dots,3N_{\textrm{cell}}\}$, where $N_{\textrm{cell}}$ is the number of atoms in the unit cell. The eigenmodes are called phonon modes, while phonons are the discrete quanta of eigenmode occupation \cite{ziman}. The eigenfrequencies $\omega(\bb{q},p)$ form the phonon bandstructure, specifying the relation between the wavevectors and frequencies supporting propagating phonon modes. As an example, Fig. \ref{fig:th_nika} shows the phonon bandstructure of graphene, a single monolayer of graphite.
+
+\begin{figure}
+\begin{center}
+ \includegraphics[width=8.6cm]{pics/nika09_fig3.pdf}
+ \caption{Phonon bandstructure of graphene, calculated using the valence force field method \cite{nika09}. The two-dimensional bandstructure is plotted along one-dimensional lines between special points in graphene reciprocal lattice, denoted by $\Gamma$, $M$ and $K$. Because graphene has two atoms per unit cell, there are altogether six phonon branches. The three branches that have vanishing frequencies at the $\Gamma$ point are called longitudinal acoustic (LA), transverse acoustic (TA) and out-of-plane acoustic (ZA). The optical modes LO, TO and ZO are labeled similarly. Reprinted with permission from Ref. \cite{nika09}.}
+\label{fig:th_nika}
+\end{center}
+\end{figure} 
+
+% When both the anharmonic part in Eq. \eqref{eq:th_V_taylor} and the friction term proportional to $\gamma$ are neglected, the phonon eigenmodes are exact eigenmodes of the system and cannot dissipate their energy, giving rise to infinite thermal conductivity \cite{ziman}. In this thesis, we have included the important dissipative processes either by including the full anharmonic interactions or by including the friction term $\gamma$. In Publications \cp{fpu}, \cp{fpu2}, \cp{spectral}, \cp{cnt}, and \cp{twinning}, we have employed classical molecular dynamics simulations to account for anharmonic scattering, and therefore only the atoms coupled to ''hot'' and ''cold'' reservoirs are coupled to Langevin baths. In \citepub{gf}, on the other hand, anharmonic effects are mimicked by the interaction of all atoms with local Langevin baths. The linearity of the equations of motion then allows for, for example, accounting for quantum statistics. With the additional requirement of current conservation, this model is the so-called self-consistent heat bath model \cite{bolsterli70}. Molecular dynamics and the self-consistent heat bath model are explained in more detail below in Secs. XXX and XXX, respectively.
+
+
+\subsubsection{Electrons}
+
+Microscopic dynamics of electrons is described by the quantum-mechanical Schr\"odinger equation \cite{ballentine}. Schr\"odinger's wavefunction formalism is, however, best suitable for a fixed number of particles. Because we want to model electron creation and annihilation arising from fluctuations and dissipation, respectively, the second-quantization formalism based on electron annihilation and creation operators \cite{ballentine} is more convenient. 
+
+We use the tight-binding formalism \cite{datta} and assume, for simplicity, that each atom hosts only a single electron orbital. Excluding electron-electron and electron-phonon interactions, the tight-binding Hamiltonian for electrons can then be written as \cite{datta}
+\begin{equation}
+ \ca{H}_{\textrm{el}} = - \sum_{i,j} c_i^{\dagger} t_{ij} c_j.
+\end{equation}
+Here, electron creation operator $c_i^{\dagger}$ creates and annihilation operator $c_j$ annihilate electrons at electron orbitals localized at sites $i$ and $j$, respectively. The hopping constant $t_{ij}$ between electron orbitals at atoms $i$ and $j$ can be calculated from the Hamiltonian matrix element between the orbitals \cite{}. For graphene, the hopping constant between nearest-neighbor carbon atoms is approximately $2.7$ eV \cite{}.
+
+The Heisenberg equation of motion $i\hbar \dot{c}_i = - \left[\ca{H}_{\textrm{el}},c_i \right]$ \cite{ballentine} accompanied by the stochastic Langevin force $\eta_i$ and Ohmic damping $-i\hbar \gamma_e c_i(t)$ \cite{dhar03} gives the equation of motion
+\begin{equation}
+ i \hbar \dot{c}_i(t) = - \sum_{j} t_{ij} c_j(t) + \eta_i(t) - i\hbar \gamma_e c_i(t). \label{eq:th_eom_electron_t}
+\end{equation}
+Fourier transformation and rearranging leads to the system of equations:
+\begin{equation}
+ \sum_{j} \left[\hbar (\omega+i\gamma_e) \delta_{ij} + t_{ij} \right] \tilde c_j(\omega) = \tilde \eta_i(\omega) . \label{eq:th_eom_electron}
+\end{equation}
+The Langevin terms in Eq. \eqref{eq:th_eom_electron_t} are responsible for creating and annihilating electrons and thereby act essentially as additional scattering channels. The idea of modeling inelastic effects by additional scattering channels is due to B\"uttiker \cite{buttiker86}. B\"uttiker's voltage probe model is, in turn, closely related to the self-consistent heat bath model introduced earlier by Bolsterli, Rich and Visscher \cite{bolsterli70}.
+
+Equation \eqref{eq:th_eom_electron} is analogous to the phonon system \eqref{eq:th_eom_phonon_fourier}. In both cases, the stochastic Langevin terms appear as source terms on the right-hand side of the equation and the friction term shifts the eigenfrequencies away from the real axis by introducing dissipation. The interatomic force constant $K_{ij}^{\alpha\beta}$ plays the same role in coupling atomic vibrations as the coupling constant $t_{ij}$ does in allowing electron hopping. 
+
+%The Langevin coupling introduced in Eq. \eqref{eq:th_eom_electron_t} is closely related to the B\"uttiker voltage probe \cite{nazarov}, introduced by B\"uttiker \cite{buttiker86} to investigate the effects of inelastic scattering and dephasing on quantum transport. 
+
+
+% Analogy with \eqref{eq:th_eom_phonon_fourier}
+
+\subsubsection{Photons}
+
+Energy transfer by electromagnetic waves is described by Maxwell equations \cite{jackson}. In the non-magnetic materials with no free charges that are considered in this work, the electromagnetic fields arise from the fluctuating electric polarization fields inside the bodies, and the Maxwell equations for the electric field $\bE(\br,t)$ and magnetic field $\bb{H}(\br,t)$ read \cite{novotny}
+\begin{subequations}
+\begin{align}
+  \nabla \times \bE(\br,t) &= - \mu_0 \frac{\partial \bb{H}(\br,t)}{\partial t}, \label{eq:th_maxwell1} \\
+  \nabla \times \bb{H}(\br,t) &= \varepsilon_0 \frac{\partial \bb{E}(\br,t)}{\partial t} + \bb{j}(\br,t) , \label{eq:th_maxwell2} \\
+   \nabla \cdot \bb{H}(\br,t) &= 0, \\
+   \nabla \cdot \left[\varepsilon_0 \bb{E}(\br,t)+\bb{P}(\br,t)\right] &= 0.
+\end{align}
+\end{subequations}
+Here, $\mu_0$ and $\varepsilon_0$ are the magnetic permeability and permittivity of vacuum, respectively. The written equations are so-called macroscopic Maxwell equations \cite{novotny}, where the microscopic nature of matter is neglected and all fields are averaged over atomic scale variations. Equation \eqref{eq:th_maxwell2} shows that a polarization current $\bb{j}(\br,t)=\partial \bb{P}(\br,t)/\partial t$, where $\bb{P}$ is the polarization density, gives rise to a magnetic field. As discussed below, the polarization density consists of the stochastic and electrically induced contributions \cite{benabdallah11}. The magnetic field induced by the polarization current is accompanied by an electric field according to Eq. \eqref{eq:th_maxwell1}. The induced electromagnetic field carries energy flux, whose magnitude and direction are given by the Poynting vector $\bb{S}(\br,t)=\bb{E}(\br,t)\times \bb{H}(\br,t)$ \cite{novotny}.
+
+To derive an equation of motion for the electric field alone, let us calculate the curl of Eq. \eqref{eq:th_maxwell1}:
+\begin{alignat}{2}
+ \nabla \times \nabla \times \bE(\br,t) &= - \mu_0 \frac{\partial}{\partial t} \left[\nabla \times \bb{H}(\br,t) \right] \\
+  &= - \mu_0 \varepsilon_0 \frac{\partial ^2\bb{E}(\br,t)}{\partial t^2} - \mu_0 \frac{\partial \bb{j}(\br,t)}{\partial t}. \label{eq:th_curlcurlE}
+ \end{alignat}
+Using the vector calculus identity $\nabla \times \nabla \times \bE(\br,t)=\nabla [\nabla \cdot \bE(\br,t)]-\nabla ^2\bE(\br,t)$ and defining the speed of light as $c=1/\sqrt{\varepsilon_0 \mu_0}$, the equation becomes
+\begin{equation}
+\frac{1}{c^2} \frac{\partial ^2\bb{E}(\br,t)}{\partial t^2} = \nabla^2 \bE(\br,t) -\nabla (\nabla \cdot \bE)  - \mu_0 \frac{\partial^2 \bb{P}(\br,t)}{\partial t^2} \label{eq:th_eom_photons}
+\end{equation}
+
+This equation can be compared with the equation of elasticity for an isotropic continuum \cite{fetter}:
+\begin{equation}
+  \rho \frac{\partial^2 \bu(\br,t)}{\partial t^2} = \mu \nabla^2 \bu(\br,t) + \left(K+\frac{1}{3}\mu \right) \nabla[\nabla \cdot \bu(\br,t)] + \rho \bb{f}(\br,t). \label{eq:th_eom_ph_continuum}
+\end{equation}
+Here $\rho$ is the mass density, $\mu$ is the Lame coefficient, $K$ is the bulk modulus and, in contrast to Subsection \ref{sec:th_phonons}, the displacement $\bu(\br,t)$ is defined in continuum instead of lattice to make the analogy clear. The force $\bb{f}(\br,t)$ per unit mass, corresponding to Langevin fluctuations and dissipation in absence of external forces, plays a similar role in Eq. \eqref{eq:th_eom_ph_continuum} as a source of lattice vibrations as the second time derivative of polarization density $\bb{P}(\br,t)$ as a source of electromagnetic fields in Eq. \eqref{eq:th_eom_photons}.
+
+To separate the Langevin terms in the polarization density $\bb{P}(\br,t)$ in Eq. \eqref{eq:th_eom_photons}, let us divide the polarization density into the induced and fluctuating parts as $\bb{P}(\br,t)=\bb{P}_{\textrm{ind}}(\br,t)+ \bb{P}_{\textrm{fluc}}(\br,t)$. In the linear and local approximation, the induced part is proportional to the electric field in the frequency domain \cite{novotny}:
+\begin{equation}
+ \tilde{\bb{P}}_{\textrm{ind}}(\br,\omega)= \varepsilon_0 \chi(\br,\omega) \tilde{\bb{E}}(\br,\omega), \label{eq:th_P_chi}
+\end{equation}
+where $\chi(\br,\omega)$ is the susceptibility. The imaginary part of $\chi(\br,\omega)$ is responsible for dissipation arising from, e.g., microscopic electron-phonon and phonon-phonon interactions \cite{}. The fluctuating polarization density $\bb{P}_{\textrm{fluc}}(\br,t)$ is the analogue of the Langevin force and its variance in frequency-domain is proportional to the imaginary part of $\chi(\br,\omega)$ through the fluctuation-dissipation theorem discussed below.
+
+Equation \eqref{eq:th_P_chi} lumps the complex response of the medium to the local electric field into a single, macroscopic parameter $\chi(\br,\omega)$. Such a macroscopic description disregards the microscopic origins of the response (interaction of optical phonons with the electric field \cite{bornhuang}) and does not allow for simultaneous coupling of optical and acoustic phonons as required, e.g., in the description of piezoelectric media \cite{}. 
+
+These inadequacies are accounted for by a more microscopic model for polarization introduced by Rosa \textit{et al.,} \cite{rosa10,rosa11} for the purpose of quantizing electromagnetic fields in lossy media. They modeled the polarization as a collection of dipoles, corresponding to the dipole density
+\begin{equation}
+ \bb{P}(\br,t) = \sum_i \bp_i(t) \delta(\br-\br_i).
+\end{equation}
+Here $\bp_i$ is the dipole moment of the dipole $i$ located at position $\br_i$. Each dipole was modeled as an independent harmonic oscillator with mass $m$ and resonance angular frequency $\omega_0$ so that the equation of motion for the dipole displacement $\bd_i=\bp_i/q$ reads ($q$ is the dipole charge) \cite{rosa10,rosa11}
+\begin{equation}
+ m\ddot{\bd}_i + m\omega_0^2 \bd_i = q\bE(\br_i,t) + \xi_i - m\gamma \dot{\bd}_i. \label{eq:th_photon_rosa}
+\end{equation}
+The stochastic Langeving force $\xi_i$ and friction $m\gamma \dot{\bd}_i$ account for thermal fluctuations and dissipation, respectively, and are equivalent to the corresponding Langevin terms in the phonon equation of motion \eqref{eq:th_eom}. In a fully optics-based treatment, the microscopic parameters $q$, $m$, and $\gamma$ do not need to be specified, because they can be absorbed into the definition of the local polarizability in the final results \cite{rosa10}.
+
+The local electric field $\bE(\br_i,t)$ acting as a force term in Eq. \eqref{eq:th_photon_rosa} can be written in frequency-domain as \cite{novotny,rosa11}
+\begin{equation}
+ %\tilde \bE(\br,\omega) = \tilde \bE_0(\br,\omega) + i \omega \mu_0 \int_V d\mathbf{r}' \mathbb{G}(\br,\br';\omega) \tilde{\bb{j}}(\br',\omega). \label{eq:th_Etilde}
+\tilde \bE(\br_i,\omega) = \tilde \bE_0(\br_i,\omega) + \omega^2 \mu_0 \sum_j \mathbb{G}(\br_i,\br_j;\omega) \tilde{\bb{p}}_j(\omega). \label{eq:th_Etilde}
+\end{equation}
+Here $\tilde{\bE}_0(\br,\omega)$ is the electric field arising from sources other than the oscillating dipole and $\mathbb{G}(\br,\br';\omega)$ is the electromagnetic Green's dyadic found by solving the Helmholtz equation \cite{novotny}
+ \begin{equation}
+ \nabla \times \nabla \times \gem(\bb{r},\br';\omega) - (\omega^2/c^2) \epsenv(\br,\omega)\gem(\bb{r},\br';\omega)  =  \delta(\bb{r}-\br')\unitdyadic. \label{eq:intro_gemdef}
+\end{equation}
+Solving Eq. \eqref{eq:intro_gemdef} is equivalent to solving Eq. \eqref{eq:th_curlcurlE} for the electric field, when a single dipole located at $\br'$ is immersed in a environment with dielectric constant $\epsenv(\br,\omega)$. An inhomogeneous background with a spatially varying dielectric constant $\epsenv(\br,\omega)$ is assumed here to allow for modeling dipole-dipole energy transfer in a mirror cavity as in \citepub{dipole}.
+
+By Fourier transforming Eq. \eqref{eq:th_photon_rosa}, substituting Eq. \eqref{eq:th_Etilde} and rearranging leads to the system of equations for the dipole displacements:
+\begin{alignat}{2}
+ - & \sum_{j,\beta} \left[m(\omega^2-\omega_0^2+i\gamma\omega) \delta_{ij}\delta_{\alpha\beta} +q^2 \omega^2 \mu_0 \mathbb{G}^{\alpha\beta}(\br_i,\br_j;\omega) \right]\tilde d_j^{\beta}(\omega) \notag \\
+  &\qquad = q\tilde{\bE}_0^{\alpha}(\br_i,\omega) + \tilde{\xi}_i^{\alpha}(\omega) \label{eq:th_eom_dipoles}
+\end{alignat}
+Equation \eqref{eq:th_eom_dipoles} constitutes a closed set of linear equations that can be solved for the dipole displacements $\bd_i=\bp_i/q$ and is analogous to Eqs. \eqref{eq:th_eom_phonon_fourier} and \eqref{eq:th_eom_electron}. Electromagnetic interactions between dipoles are captured by the Green's dyadic $\mathbb{G}^{\alpha\beta}(\br_i,\br_j;\omega)$, which plays the same role in electromagnetic energy transfer as the force constants $K_{ij}^{\alpha\beta}$ and hopping constants $t_{ij}$ play in vibrational and electron transfer, respectively. The Green's dyadic also accounts for the scattering of the electromagnetic field from the inhomogeneous environment, characterized by the dielectric constant $\epsenv(\br,\omega)$ appearing in Eq. \eqref{eq:intro_gemdef}.
+
+\subsubsection{Recap}
+
+To recap the linearized Langevin equations of motion, the equations for atomic displacements $\bu_i$, electron annihilation operators $c_i$, and dipole moments $\bd_i$ are:
+\begin{subequations}
+\begin{align}
+   - & \sum_{j,\beta}  [m_i (\omega^2+i\gamma \omega) \delta_{ij}\delta^{\alpha\beta} - K_{ij}^{\alpha\beta}] \tilde{u}_j^{\beta}(\omega) = \tilde \xi_i^{\alpha}(\omega)  \\
+  &  \sum_{j} \left[\hbar (\omega+i\gamma_e) \delta_{ij} + t_{ij} \right] \tilde c_j(\omega) = \tilde \eta_i(\omega) \\
+  - & \sum_{j,\beta} \left[m(\omega^2-\omega_0^2+i\gamma\omega) \delta_{ij}\delta_{\alpha\beta} +q^2 \omega^2 \mu_0 \mathbb{G}^{\alpha\beta}(\br_i,\br_j;\omega) \right]\tilde{d}_j^{\beta}(\omega) \notag \\
+  & \qquad = q\tilde{\bE}_0^{\alpha}(\br_i,\omega) + \tilde{\xi}^{\alpha}_i(\omega)
+\end{align}
+\end{subequations}
+The solution of these equations in terms of the Green's functions and the calculation of observables such as heat currents is described in Sec. \ref{sec:methods}.
+
+For atomic displacements $\bu_i$, we also employ the full equation of motion \eqref{eq:th_eom} to capture non-linearitites corresponding to phonon-phonon interactions in vibrational energy transfer. The non-linearities prevent a direct solution of the equations of motion, so classical molecular dynamics simulations \cite{allentildesley} are used to calculate heat currents. MD simulations are discussed below in Sec. \ref{sec:methods}
+
+\subsection{Langevin theory}
+\label{sec:th_langevin}
+Langevin equations of motion must be accompanied by the fluctuation-dissipation theorem specifying the strength of fluctuations $\xi_i$ (for phonons) and $\eta_i$ (for electrons). In Langevin theory, the system under study is imagined to interact with a collection of harmonic oscillators at a prescribed temperature (and chemical potential in case of electrons). The bath degrees of freedom are ''integrated out'' so that their interactions with the system under study are effectively described by the Langevin fluctuations and dissipation \cite{weiss}. 
+
+In case of Ohmic coupling assumed in Eqs. \eqref{eq:th_eom} and \eqref{eq:th_photon_rosa}, the Langevin force $\xi_i$ is related to the friction parameter $\gamma$ and bath temperature $T_i$ through the fluctuation-dissipation theorem (FDT) \cite{weiss,dhar06}
+\begin{equation}
+ \langle \tilde \xi_i(\omega) \tilde \xi_i(\omega')^T \rangle = 4\pi \delta(\omega+\omega') \hbar \omega \gamma \left[f_{\textrm{BE}}(\omega,T_i)+ \frac{1}{2} \right] \bb{I}_{3\times 3}. \label{eq:th_xixiom_ohmic_qm}
+\end{equation}
+Here the angular brackets stand for statistical ensemble average, and 
+\begin{equation}
+ f_{\textrm{BE}}(\omega,T)=\left[\exp(\hbar \omega/k_BT)-1\right]^{-1}
+\end{equation}
+is the Bose-Einstein function. In the classical high-temperature limit ($k_B T \gg \hbar \omega$) relevant in molecular dynamics, FDT \eqref{eq:th_xixiom_ohmic_qm} reduces to the classical FDT
+\begin{equation}
+ \langle \tilde \xi_i(\omega) \tilde \xi_i(\omega')^T \rangle = 4\pi \delta(\omega+\omega') k_B T \gamma \bb{I}_{3\times 3}. \label{eq:th_xixiom_ohmic_qm}
+\end{equation}
+
+For coupling to an electron bath, the derivation of the FDT is similar as for mechanical electron degrees of freedom. The variance of the ''force'' $\eta_i$ appearing as a source term in Eq. \eqref{eq:th_eom_electron} is \cite{dhar03}
+\begin{equation}
+ \langle \tilde \eta_{i}^{\dagger}(\omega) \tilde \eta_{j}(\omega') \rangle = 4\pi\delta(\omega-\omega') \gamma f_{\textrm{FD}}(\omega;\mu_{i},T_{i}) \delta_{ij},
+\end{equation}
+where $\mu_i$ is the bath chemical potential and 
+\begin{equation}
+ f_{\textrm{FD}}(\omega;T,\mu)=\left\{\exp\left[(\hbar \omega-\mu)/k_BT\right]+1\right\}^{-1}
+\end{equation}
+is the Fermi-Dirac function.
+
+% Fluctuation dissipation theorem for the fluctuating polarization
+For completeness, the fluctuation-dissipation theorem for the fluctuating polarization density $\bb{P}_{\textrm{fluc}}$ appearing through the relation $\bb{P}=\bb{P}_{\textrm{ind}}+\bb{P}_{\textrm{fluc}}$ in Eq. \eqref{eq:th_eom_photons} reads \cite{novotny}
+\begin{alignat}{2}
+ & \left\langle \tilde{\bb{P}}_{\textrm{fluc}}(\br,\omega) \tilde{\bb{P}}_{\textrm{fluc}}(\br',\omega')^T\right\rangle \notag \\
+ &\qquad = 4\pi \delta(\omega+\omega') \hbar \varepsilon_0 \textrm{Im}\left[ \chi(\br,\omega)\right] \left[f_{\textrm{BE}}(\omega,T)+\frac{1}{2}\right] \delta(\br-\br') \unitdyadic, \label{eq:th_PflucPfluc}
+\end{alignat}
+where $\chi(\br,\omega)$ is the local susceptibility. Equation \eqref{eq:th_PflucPfluc} forms the basis of fluctuational electrodynamics \cite{rytov,lifshitz55} (FED) approach to modeling thermal fluctuations generating electromagnetic waves. While FED has been successfully applied to calculate electromagnetic energy transfer in various geometries (see Refs. \cite{polder71,loomis94,pendry99,volokitin01} for early works and Refs. \cite{joulain05,volokitin07} for reviews), there are arguments supporting the more microscopic approach based on coupled dipole equations of motion \eqref{eq:th_photon_rosa}. First, as noted in Sec. \ref{sec:th_eom}, a more microscopic approach would allow for coupling of optical vibrations to other degrees of freedom such as acoustic vibrations. Such a combined model would be very fruitful in modeling energy transfer in, e.g., piezoelectric media where the interaction of acoustic modes with the electromagnetic field cannot be neglected \cite{prunnila10}. 
+
+Second, because FED relies on the effective medium property $\chi(\br,\omega)$, applying the theory to very small systems requires great care. Manjavacas and Abajo de Carc\'ia \cite{manjavacas12} noted recently that Eq. \eqref{eq:th_PflucPfluc} predicts thermal fluctuations even in non-absorbing media, because $\textrm{Im}\left[ \chi(\br,\omega)\right]$ is always strictly positive due to the radiation reaction force \cite{jackson}. To ensure energy conservation, they suggested a modification to Eq. \eqref{eq:th_PflucPfluc}. Such intricacies are easy to overlook in FED, but they are completely avoided by using a more microscopic approach that transparently separates dissipative and reaction reaction terms in the equations of motion.
+
+
+% we have used the microscopic dipole equations of motion \eqref{} in this work. 
+
+%there are two arguments supporting a more microscopic approach. First, because FED relies on an effective medium property, the local polarizability, applying the theory to very small systems requires great care. It was noted only recently by Manjavacas and Abajo de Carc\'ia \cite{manjavacas12} that the fluctuation-dissipation relation connecting the polarization to the polarizability must be modified when local radiative corrections become important to ensure that non-absorbing particles do not emit thermal radiation. Starting from a more microscopic theory would make it possible to avoid resorting to effective medium parameters in the formulation. Second, one can envision  when the optical phonons responsible for electromagnetic radiation cannot be considered to be decoupled from the acoustic phonons responsible for ''phonon radiation''. In such cases, it is necessary to describe the full lattice dynamics and its coupling to the electromagnetic field microscopically. 
+
+% Fluctuational electrodynamics
+
+\section{Methods}
+
+This section presents the methods used in this thesis to solve the equations of motion presented in Sec. \ref{sec:theory}. We start by introducing molecular dynamics (MD) method used for solving the non-linear lattice dynamics equations \eqref{eq:th_eom} in Sec. \ref{sec:methods_md}. Molecular dynamics simulation is limited to classical statistics, but it automatically accounts for phonon-phonon scattering arising from anharmonic terms in the interatomic potential and is suitable for simulating systems with millions of atoms. As multiple text-books have been written about MD simulations \cite{allentildesley,frenkelsmit}, we only discuss the most important aspects in this section.
+
+After the brief introduction to MD, we present the solution of linearized Langevin equations of motion in terms of the Green's function in Sec. \ref{sec:methods_gf}. While the linearization of the equations excludes detailed modeling of non-linear interactions, it allows for including quantum statistics, full wave properties, and dissipation through effective relaxation rates. The inclusion of dissipation by effective parameters allows for simulating larger systems than when using perturbative approaches such as Keldysh Green's function methods \cite{jauho}. We also highlight the similarities in the mathematical solution of the Langevin equations and the calculation of observables such as heat currents to appreciate the analogies in phononic, photonic, and electronic transport. 
+
+
+\subsection{Molecular dynamics}
+\label{sec:methods_md}
+
+Molecular dynamics simulations are a powerful tool for modeling the vibrational energy transfer in atomic scale systems. In MD, the classical Newton's equations of motion \eqref{eq:th_eom}  are integrated numerically. The forces $\bb{F}_i$ are calculated from an analytical expression obtained from the interatomic potential function $\ca{V}$ as $\bb{F}=-\partial \ca{V}/\partial \bb{r}_i$ and they therefore include all orders of anharmonic terms. Langevin forces are included for atoms coupled to heat baths to enable energy transfer.  By simulating the steady-state non-equilibrium for sufficiently long times, one can extract values of macroscopic observables such as the heat current accurately by time-averaging. Based on the ergodicity principle, the time averages are expected to equal the statistical average over the corresponding ensemble. In the following, we briefly go through the most important aspects related to a MD simulation.
+
+% One key aspect of the method is the assumption of ergodicity: statistical ensemble average can be calculated from a time average, meaning that  %In a microcanonical simulation, for example, the system should sample all the states that lie on the constant-energy manifold determined by the initial conditions. 
+
+In MD, the equations of motion are integrated numerically using a finite-difference method. The pool of the finite-difference methods includes, e.g., Euler methods, Verlet methods, Runge-Kutta methods, the leap-frog method and predictor-corrector methods \cite{allentildesley}. In all the simulations of this work, the velocity Verlet algorithm was employed to integrate the equations of motion. While velocity Verlet exhibits moderate short-term energy drift, it is very simple to implement, efficient and it possesses very small long-term energy drift due to its being both time-reversible and symplectic \cite{frenkelsmit}. The velocity Verlet update equations for the positions $\bb{r}_i$ and velocities $\bb{v}_i=\dot{\bb{r}}_i$ are \cite{allentildesley}
+\begin{alignat}{2}
+  \bb{r}_i(t+\Delta t) &= \bb{r}_i(t) + \bb{v}_i(t)\Delta t+  \frac{1}{2}\bb{a}_i(t) \Delta t^2 + \mathrm{O}(\Delta t^4) \\
+  \bb{v}_i(t+\Delta t) &= \bb{v}_i(t) + \frac{ \bb{a}_i(t)+\bb{a}_i(t+\Delta t)}{2} \Delta t+ \mathrm{O}(\Delta t^2) ,
+\end{alignat}
+where $\Delta t$ is the time step and $\bb{a}_i(t)=\bb{F}_i(t)/m_i$ is the acceleration.
+
+\begin{figure}[tb]
+ \begin{center}
+  \includegraphics[width=.59\columnwidth]{pics/nemd_fig2a_2.pdf} 
+  \includegraphics[width=.59\columnwidth]{pics/nemd_fig2b_2.pdf}
+  \caption{(a) Simulation geometry used in \citepub{spectral} for investigating the role of anharmonic effects on vibrational energy transfer at mass-mismatched interfaces. (b) Steady-state temperature profile for a specific set of parameters. For details, see \citepub{spectral}.}  
+\label{fig:th_spectral_geom}
+ \end{center}
+\end{figure}
+
+
+To outline the typical steps involved in a non-equilibrium simulation, consider the example setup of Fig. \ref{fig:th_spectral_geom}(a) used to investigate the anharmonic effects in interfacial heat transfer in \citepub{spectral}. First the whole structure is equilibrated by running a zero-pressure simulation at prescribed temperature using a combination of a Nose-Hoover barostat and thermostat, allowing the structure to conform to zero-stress state. Typical equilibration period consists of a few hundreds of thousands of time steps. After the initial equilibration, the size of the simulation box is fixed, as are atoms located at the left- and right-most unit cells in the system. This prevents atomic sublimation at the free surfaces. Particles in the ''hot'' and ''cold'' regions, illustrated by the red and cyan coloured atoms in Fig. \ref{fig:th_spectral_geom}, are coupled to heat baths at temperatures $T_{\textrm{L}}$ and $T_{\textrm{R}}$. The system is then allowed to reach non-equilibrium steady state by running MD until the temperature profile shown in Fig. \ref{fig:th_spectral_geom}(b) and the heat current flowing through the system fluctuate around constant values. After this initial period, simulation is continued typically for millions of time steps, and the values of the observables of interest are collected from the run. The statistical error in the collected observables can be estimated by using standard methods described, e.g., in \citepub{fpu}.
+
+% LAMMPS, house-made code
+
+\subsection{Green's function methods}
+\label{sec:methods_gf}
+
+%This chapter is devoted to the microscopic theory of energy transfer. In Sec. \ref{sec:th_vibtheory}, the theoretical description of atomic vibrations in a lattice is described. 
 
 % In the publications included in this thesis, we have employed molecular dynamics (MD) simulations and Green's function (GF) calculations to model vibrational heat transfer in nanostructures. It is common to both of these methods that one needs to choose how to describe interatomic interactions and the coupling to external heat baths. Before describing MD and GF calculations in Secs. \ref{sec:md} and \ref{sec:gf}, we therefore briefly review the chosen interatomic potentials and the theory of Langevin heat baths below in Secs. \ref{sec:th_interatomicpotential} and \ref{sec:th_langevin}. When discussing the MD method, we also present the recently developed expression for the spectral heat current distribution.
 
 % For electromagnetic energy transfer, we have employed the same Langevin theory as in vibrational heat transfer to describe the microscopic dipolar thermal fluctuations. This theory is presented in Sec. \ref{sec:em_methods}
+
+\iffalse
 
 \section{Vibrational heat transfer}
 \label{sec:th_vibtheory}
@@ -436,3 +711,4 @@ For $\omega_c\to \infty$, Eq. (XXX) tends to the Dirac Delta function and the fr
 \fi
 %\section{Langevin theory}
 
+\fi
