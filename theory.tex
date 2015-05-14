@@ -1,10 +1,10 @@
-\chapter{Theory}
+\chapter{Theory and methods}
 \label{chap:theory}
 %\begin{quote}
 % \textit{This chapter discusses the theory of energy transfer.}
 %\end{quote}
 
-This chapter is devoted to the theory and methods used in this thesis. Section \ref{sec:theory} presents the relevant equations for describing phononic, electronic and photonic energy transfer in microscopic scale, aiming at giving a unified, parallel treatment of the three carriers. 
+This chapter reviews the theory and methods used in this thesis. Section \ref{sec:theory} presents the relevant equations governing phononic, electronic and photonic energy transfer in microscopic scale. Because the minimal equations of motion governing energy transfer are very similar for the three carriers, we start by postulating the linear Langevin equations for the three carriers before moving to more in-depth derivations. We use Langevin theory \cite{langevin08} throughout this thesis to mathematically describe thermal fluctuations and the related dissipation. % After the minimal equations, the different carriers are discussed in more detail and 
 
 %Because earlier parallel treatments (see, e.g., Ref. \cite{chen}) of the three carriers have mostly stressed the analogies in the energy transfer phenomena, we stress here the similarity of the Langevin equations of motion. The Langevin terms capture both thermal fluctuations and dissipation, necessary in modeling the creation and annihilation of energy carriers. 
 
@@ -21,8 +21,8 @@ Section \ref{sec:methods} discusses the methods used for solving the equations o
 \section{Theory of energy transfer}
 \label{sec:theory}
 
-This section discusses the theory of lattice vibrations, electromagnetic field, and electron transport. The equations of motion of the three carriers are introduced in Sec. \ref{sec:th_eom}, starting from linearized Langevin equations of motion constituting a minimal (and often sufficient) model for energy transfer. In-depth discussion of the equations is  postponed to Sec. \ref{sec:th_eom2}. The presented equations of motion generally consist of deterministic terms derivable from microscopic Hamiltonians and Langevin force terms. The Langevin terms describe both the creation and annihilation of carriers necessary in transport modeling. The properties of the Langevin baths for the three carriers are discussed in detail in Sec. \ref{sec:th_langevin}.  
-
+This section discusses the theory of lattice vibrations, electromagnetic field, and electron transport. The equations of motion of the three carriers are introduced in Sec. \ref{sec:th_eom}, starting from linearized Langevin equations of motion constituting a minimal (and often sufficient) model for energy transfer. In-depth discussion of the equations is  postponed to Sec. \ref{sec:th_eom2}. The Langevin terms describe both the creation and annihilation of carriers necessary in transport modeling. The properties of the Langevin baths for the three carriers are discussed in detail in Sec. \ref{sec:th_langevin}.  
+% 
 % For generality, we include both deterministic terms derivable from microscopic Hamiltonians and external force terms arising from interaction with stochastic Langevin baths. The stochastic fluctuations induced by the baths act as source terms in the equations, driving energy transfer. Fluctuation-dissipation theorem requires the fluctuations to be accompanied by friction terms, damping carriers and thereby introducing dissipation. 
 
 \subsection{Equations of motion: parallel treatment}
@@ -35,7 +35,7 @@ This section discusses the theory of lattice vibrations, electromagnetic field, 
  \label{fig:mechanisms}
 \end{figure}
 
-This subsection summarizes the minimal equations of motion governing vibrational, electromagnetic and electronic energy transfer. These stochastic equations of motion allow for fully quantum-mechanical derivation of energy transfer rates and account for wave effects and also for dissipation at the level of one-particle relaxation rates. These microscopic, Langevin equations of motion for vibrational, electromagnetic and electronic energy transfer originate, respectively, from the works of Bolsterli, Rich and Visscher \cite{bolsterli70}, Rosa, Dalvit and Milonni \cite{rosa10,rosa11}, and Dhar and Roy \cite{dhar03}. In this thesis, we show how these, so far unconnected, equations allow for calculation of spectral energy transfer rates in terms of Green's functions. More general equations are presented below in Sec. \ref{sec:th_eom2}, where also the steps leading to the minimal equations are presented and more references are given.
+This subsection summarizes stochastic equations of motion governing vibrational, electromagnetic and electronic energy transfer. These equations allow for fully quantum-mechanical derivation of energy transfer rates, account for wave effects and also capture dissipation at the level of one-particle relaxation rates. The presented equations for vibrational, electromagnetic and electronic energy transfer originate, respectively, from the works of Bolsterli, Rich and Visscher \cite{bolsterli70}, Rosa, Dalvit and Milonni \cite{rosa10,rosa11}, and Dhar and Roy \cite{dhar03}. We show how these seemingly unrelated equations allow for calculating energy transfer rates using very similar equations. The general equations, not limited by the linear approximation, are presented in Sec. \ref{sec:th_eom2}, where also the steps leading to the minimal equations are presented.
 
 Different energy transfer mechanisms and the relevant degrees of freedom are schematically illustrated in Fig. \ref{fig:mechanisms}. Vibrational heat transfer in solids arises from the displacements $\bu_i$ of atoms from their equilibrium positions. The displaced atoms exerts forces on other atoms, thereby leading to energy transfer. Similarly, electromagnetic energy transfer is intervowen with the dynamics of local dipole moments $\bp_i=q\bd_i$, where $q$ is the dipole charge and $\bd_i$ the dipole displacement. An oscillating dipole radiates electromagnetic energy, which is absorbed by other dipoles. Electron dynamics can be described in the tight-binding picture \cite{} by electrons hopping between orbitals. Mathematically, the dynamics of a fixed number of electrons is described by the Schr\"odinger equation for electron wavefunction \cite{griffiths_qm}, but to capture fluctuations and dissipation leading to  electron creation and annihilation, it is more practical to consider the dynamics of Fock operators $c_i^{\dagger}$ and $c_i$ \cite{ballentine} creating and and annihilating electrons at orbital $i$, respectively (spin indices are suppressed throughout). For notational simplicity, the same subindex $i$ is used for different degrees of freedom, but they are not necessarily related. 
 
@@ -43,13 +43,13 @@ In the linear approximation, the equations of motion for the three degrees of fr
 \begin{subequations}
 \begin{align}
  m_i \ddot{\bu}_i(t) &=  - \sum_j \bb{K}_{ij}\bb{u}_j(t) + \xi_i(t) - m_i \gamma \dot{\bu}_i, \label{eq:th_eom1} \\
- m \ddot{\bb{d}}_i(t) &= - m\omega_0^2 \bb{d}_i(t) + q\sum_{j} \bb{E}_{ij}(t)+\xi_i(t) - m_i \gamma \dot{\bu}_i(t), \label{eq:th_eom2}\\
+ m \ddot{\bb{d}}_i(t) &= - m\omega_0^2 \bb{d}_i(t) + q\bb{E}_0(\br_i,t)+q\sum_{j} \bb{E}_{ij}(t)+\xi_i(t) - m_i \gamma \dot{\bu}_i(t), \label{eq:th_eom2}\\
  i\hbar \dot{c}_i(t) &= -\sum_j t_{ij} c_j(t) +\eta_i(t) - i\hbar \gamma_e c_i(t) \label{eq:th_eom3}.
 \end{align}
 \end{subequations}
 The approximations leading to these equations are discussed in detail below in Sec. \ref{sec:th_eom2}, where also all the quantities are defined and the relevant references for these equations are given. These equations can, however, be easily understood intuitively. As an example, Eq. \eqref{eq:th_eom1} states that the acceleration of atom $i$ is proportional to the sum of (i) the forces exerted by other atoms $j$, proportional for each atom pair $i,j$ to the force constant matrix $\bb{K}_{ij}$ defined below, (ii) stochastic Langevin force $\xi_i$ generating thermal fluctuations, and (iii) Langevin friction $m_i \gamma \dot{\bu}_i$ responsible for dissipation. The assumption of a linear interparticle force is relaxed below in Sec. \ref{sec:th_eom2} to allow for more exact treatment of non-linear forces, necessary in the calculation of, e.g., frequency-dependent mean free paths. The variance of the fluctuating force $\xi_i$ and the friction constant $\gamma$ are related by the fluctuation-dissipation theorem presented in Sec. \ref{sec:th_langevin}. 
 
-Equation of motion \eqref{eq:th_eom2} for the dipole moment $\bb{d}_i$ is similar to Eq. \eqref{eq:th_eom1}, but here the force exerted by other dipoles $j$ is mediated by the electric fields $\bE_{ij}$. The relation of this dipole equation of motion to the more commonly used fluctuating electrodynamics \cite{} is discussed in Sec. \ref{sec:th_eom2}. In the Heisenberg equation of motion \eqref{eq:th_eom3} for electron annihilation operator, on the other hand, the dynamics of different orbitals are coupled by the tight-binding hopping constant $t_{ij}$ allowing for electron hopping between orbitals.
+Equation of motion \eqref{eq:th_eom2} for the dipole moment $\bb{d}_i$ is similar to Eq. \eqref{eq:th_eom1}, but here the force exerted by other dipoles $j$ is proportional to the electric fields $\bE_{ij}$, which is in turn linearly proportional to the dipole moment $\bp_j$. The background field $\bE_0$ is also included here for generality. The relation of this dipole equation of motion to the more commonly used fluctuating electrodynamics \cite{} is discussed in Sec. \ref{sec:th_eom2}. In the Heisenberg equation of motion \eqref{eq:th_eom3} for electron annihilation operator, on the other hand, the dynamics of different orbitals are coupled by the tight-binding hopping constant $t_{ij}$ allowing for electron hopping between orbitals.
 
 Steady-state solution of Eqs. \eqref{eq:th_eom1}-\eqref{eq:th_eom3}, independent of initial conditions, can be found \cite{chaikin} by Fourier transforming the equations. We define Fourier transformation for any function $f(t)$, as usual, as \cite{chaikin}
 \begin{equation}
@@ -106,7 +106,7 @@ Equation \eqref{eq:th_caroli} is the well-known Caroli form for the transmission
 \subsection{Equations of motion: separate treatment}
 \label{sec:th_eom2}
 
-This subsection reviews the equations of motion for different carriers in more depth. While the linearized Langevin equations of motion \eqref{eq:th_eom1}-\eqref{eq:th_eom3} act as a good starting point for energy transfer calculations, more sophisticated modeling is needed if the microscopic dynamics is to be treated more accurately. For the calculation of phonon mean free paths, for example, the detailed anharmonic interactions must be included in the model. % The non-linearity of the equations of motion then forbids the direct solution of the equations of motion, so one has to resort to molecular dynamics simulations \cite{allentildesley} or perturbative first-principles calculations \cite{ziman}. 
+This subsection reviews the equations of motion for different carriers in more depth. While the linearized Langevin equations of motion \eqref{eq:th_eom1}-\eqref{eq:th_eom3} act as a good starting point for energy transfer calculations, more sophisticated modeling is needed if the microscopic dynamics is to be treated more accurately. For the calculation of phonon mean free paths, for example, the detailed anharmonic interactions must be included in the model. In this case, Langevin terms only feed and remove energy at the system boundaries. % The non-linearity of the equations of motion then forbids the direct solution of the equations of motion, so one has to resort to molecular dynamics simulations \cite{allentildesley} or perturbative first-principles calculations \cite{ziman}. 
 
 We start the discussion with vibrational heat transfer, where the general equations of motion, linearization of the equations and the definition of a phonon are introduced. We then continue to the electronic transport, where the tight-binding model is introduced. Because electronic transport plays a small role in this thesis, we only consider non-interacting electrons in order to keep the discussion brief. 
 
@@ -181,7 +181,7 @@ In absence of dissipation ($\gamma=0$), the coefficient matrix of the system \eq
 
 Let us now assume that the leads in Fig. \ref{fig:graphene_geom} are at different chemical potentials instead of temperatures. In this case, electrons travel through the point contact. In graphene, the dynamics of valence electrons occupying the $2p_z$ orbitals can be described using the tight-binding model \cite{wallace47}. Because we want to model electron creation and annihilation arising from fluctuations and dissipation, respectively, we formulate the model in terms of electron creation and annihilation operators \cite{ballentine}. 
 
-Excluding electron-electron and electron-phonon interactions, the tight-binding Hamiltonian for electrons can be written as \cite{datta}
+Excluding electron-electron, electron-phonon and electron-electron interactions, the tight-binding Hamiltonian for electrons can be written as \cite{datta}
 \begin{equation}
  \ca{H}_{\textrm{el}} = - \sum_{i,j} c_i^{\dagger} t_{ij} c_j.
 \end{equation}
@@ -251,13 +251,9 @@ These inadequacies are accounted for by a more microscopic model for polarizatio
 \begin{equation}
  \bb{P}(\br,t) = \sum_i \bp_i(t) \delta(\br-\br_i).
 \end{equation}
-Here $\bp_i$ is the dipole moment of the dipole $i$ located at position $\br_i$. Each dipole was modeled as an independent harmonic oscillator with mass $m$ and resonance angular frequency $\omega_0$ so that the equation of motion for the dipole displacement $\bd_i=\bp_i/q$ reads ($q$ is the dipole charge) \cite{rosa10,rosa11}
-\begin{equation}
- m\ddot{\bd}_i + m\omega_0^2 \bd_i = q\bE(\br_i,t) + \xi_i - m\gamma \dot{\bd}_i. \label{eq:th_photon_rosa}
-\end{equation}
-The stochastic Langeving force $\xi_i$ and friction $m\gamma \dot{\bd}_i$ account for thermal fluctuations and dissipation, respectively, and are equivalent to the corresponding Langevin terms in the phonon equation of motion \eqref{eq:th_eom}. In a fully optics-based treatment, the microscopic parameters $q$, $m$, and $\gamma$ do not need to be specified, because they can be absorbed into the definition of the local polarizability in the final results \cite{rosa10}.
+Here $\bp_i$ is the dipole moment of the dipole $i$ located at position $\br_i$. Each dipole was modeled as an independent harmonic oscillator with mass $m$ and resonance angular frequency $\omega_0$ so that the equation of motion for the dipole displacement $\bd_i=\bp_i/q$ ($q$ is the dipole charge) becomes Eq. \eqref{eq:th_eom2} \cite{rosa10,rosa11}. The stochastic Langeving force $\xi_i$ and friction $m\gamma \dot{\bd}_i$ account for thermal fluctuations and dissipation, respectively, and are equivalent to the corresponding Langevin terms in the phonon equation of motion \eqref{eq:th_eom}. In a fully optics-based treatment, the microscopic parameters $q$, $m$, and $\gamma$ do not need to be specified, because they can be absorbed into the definition of the local polarizability in the final results \cite{rosa10}.
 
-The local electric field $\bE(\br_i,t)$ acting as a force term in Eq. \eqref{eq:th_photon_rosa} can be written in frequency-domain as \cite{novotny,rosa11}
+The local electric field $\bE(\br_i,t)$ acting as a force term in Eq. \eqref{eq:th_eom2} can be written in frequency-domain as \cite{novotny,rosa11}
 \begin{equation}
  %\tilde \bE(\br,\omega) = \tilde \bE_0(\br,\omega) + i \omega \mu_0 \int_V d\mathbf{r}' \mathbb{G}(\br,\br';\omega) \tilde{\bb{j}}(\br',\omega). \label{eq:th_Etilde}
 \tilde \bE(\br_i,\omega) = \tilde \bE_0(\br_i,\omega) + \omega^2 \mu_0 \sum_j \mathbb{G}(\br_i,\br_j;\omega) \tilde{\bb{p}}_j(\omega). \label{eq:th_Etilde}
@@ -268,12 +264,12 @@ Here $\tilde{\bE}_0(\br,\omega)$ is the electric field arising from sources othe
 \end{equation}
 Solving Eq. \eqref{eq:intro_gemdef} is equivalent to solving Eq. \eqref{eq:th_curlcurlE} for the electric field, when a single dipole located at $\br'$ is immersed in a environment with dielectric constant $\epsenv(\br,\omega)$. An inhomogeneous background with a spatially varying dielectric constant $\epsenv(\br,\omega)$ is assumed here to allow for modeling dipole-dipole energy transfer in a mirror cavity as in \citepub{dipole}.
 
-By Fourier transforming Eq. \eqref{eq:th_photon_rosa}, substituting Eq. \eqref{eq:th_Etilde} and rearranging leads to the system of equations for the dipole displacements:
-\begin{alignat}{2}
- - & \sum_{j,\beta} \left[m(\omega^2-\omega_0^2+i\gamma\omega) \delta_{ij}\delta_{\alpha\beta} +q^2 \omega^2 \mu_0 \mathbb{G}^{\alpha\beta}(\br_i,\br_j;\omega) \right]\tilde d_j^{\beta}(\omega) \notag \\
-  &\qquad = q\tilde{\bE}_0^{\alpha}(\br_i,\omega) + \tilde{\xi}_i^{\alpha}(\omega) \label{eq:th_eom_dipoles}
-\end{alignat}
-Equation \eqref{eq:th_eom_dipoles} constitutes a closed set of linear equations that can be solved for the dipole displacements $\bd_i=\bp_i/q$ and is analogous to Eqs. \eqref{eq:th_eom_fourier_phonon} and \eqref{eq:th_eom_electron}. Electromagnetic interactions between dipoles are captured by the Green's dyadic $\mathbb{G}^{\alpha\beta}(\br_i,\br_j;\omega)$, which plays the same role in electromagnetic energy transfer as the force constants $K_{ij}^{\alpha\beta}$ and hopping constants $t_{ij}$ play in vibrational and electron transfer, respectively. The Green's dyadic also accounts for the scattering of the electromagnetic field from the inhomogeneous environment, characterized by the dielectric constant $\epsenv(\br,\omega)$ appearing in Eq. \eqref{eq:intro_gemdef}.
+By Fourier transforming Eq. \eqref{eq:th_eom2}, substituting Eq. \eqref{eq:th_Etilde} and rearranging one gets the linear system of equations \eqref{eq:th_eom_fourier_photon} for the dipole displacements.
+%\begin{alignat}{2}
+% - & \sum_{j,\beta} \left[m(\omega^2-\omega_0^2+i\gamma\omega) \delta_{ij}\delta_{\alpha\beta} +q^2 \omega^2 \mu_0 \mathbb{G}^{\alpha\beta}(\br_i,\br_j;\omega) \right]\tilde d_j^{\beta}(\omega) \notag \\
+%  &\qquad = q\tilde{\bE}_0^{\alpha}(\br_i,\omega) + \tilde{\xi}_i^{\alpha}(\omega) \label{eq:th_eom_dipoles}
+%\end{alignat}
+Equation \eqref{eq:th_eom_fourier_photon} constitutes a closed set of linear equations that can be solved for the dipole displacements $\bd_i=\bp_i/q$ and is analogous to Eqs. \eqref{eq:th_eom_fourier_phonon} and \eqref{eq:th_eom_fourier_electron}. Electromagnetic interactions between dipoles are captured by the Green's dyadic $\mathbb{G}^{\alpha\beta}(\br_i,\br_j;\omega)$, which plays the same role in electromagnetic energy transfer as the force constants $K_{ij}^{\alpha\beta}$ and hopping constants $t_{ij}$ play in vibrational and electron transfer, respectively. The Green's dyadic also accounts for the scattering of the electromagnetic field from the inhomogeneous environment, characterized by the dielectric constant $\epsenv(\br,\omega)$ appearing in Eq. \eqref{eq:intro_gemdef}.
 
 
 %The solution of these equations in terms of the Green's functions and the calculation of observables such as heat currents is described in Sec. \ref{sec:methods}.
@@ -313,7 +309,7 @@ where $\mu_i$ is the bath chemical potential and
 \end{equation}
 is the Fermi-Dirac function.
 
-Finally, if the external field $\tilde{\bE}_0(\omega)$ appearing as a force term in Eq. \eqref{eq:th_eom_dipoles} is assumed to be a thermal field arising from the environment with dielectric constant $\epsenv(\br,\omega)$ and temperature $\Tenv$, the field satisfies the FDT \cite{novotny}
+Finally, if the external field $\tilde{\bE}_0(\omega)$ appearing as a force term in Eq. \eqref{eq:th_eom2} is assumed to be a thermal field arising from the environment with dielectric constant $\epsenv(\br,\omega)$ and temperature $\Tenv$, the field satisfies the FDT \cite{novotny}
 \begin{equation}
  \langle \tilde \bE^0(\br,\omega) \tilde \bE^0(\br',\omega') \rangle = 4\pi \delta(\omega+\omega') \hbar \omega^2 \mu_0 \textrm{Im}[\mathbb{G}(\br,\br';\omega)] \left[f_{\textrm{BE}}(\omega,\Tenv)+ \frac{1}{2} \right],
 \end{equation}
@@ -325,7 +321,7 @@ For completeness, the fluctuation-dissipation theorem for the fluctuating polari
  & \left\langle \tilde{\bb{P}}_{\textrm{fluc}}(\br,\omega) \tilde{\bb{P}}_{\textrm{fluc}}(\br',\omega')^T\right\rangle \notag \\
  &\qquad = 4\pi \delta(\omega+\omega') \hbar \varepsilon_0 \textrm{Im}\left[ \chi(\br,\omega)\right] \left[f_{\textrm{BE}}(\omega,T)+\frac{1}{2}\right] \delta(\br-\br') \unitdyadic, \label{eq:th_PflucPfluc}
 \end{alignat}
-where $\chi(\br,\omega)$ is the local susceptibility. Equation \eqref{eq:th_PflucPfluc} forms the basis of fluctuational electrodynamics \cite{rytov,lifshitz55} (FED) approach to modeling thermal fluctuations generating electromagnetic waves. While FED has been successfully applied to calculate electromagnetic energy transfer in various geometries (see Refs. \cite{polder71,loomis94,pendry99,volokitin01} for early works and Refs. \cite{joulain05,volokitin07} for reviews), there are arguments supporting the more microscopic approach based on coupled dipole equations of motion \eqref{eq:th_photon_rosa}. First, as noted in Sec. \ref{sec:th_eom}, a more microscopic approach would allow for coupling of optical vibrations to other degrees of freedom such as acoustic vibrations. Such a combined model would be very fruitful in modeling energy transfer in, e.g., piezoelectric media where the interaction of acoustic modes with the electromagnetic field cannot be neglected \cite{prunnila10}. 
+where $\chi(\br,\omega)$ is the local susceptibility. Equation \eqref{eq:th_PflucPfluc} forms the basis of fluctuational electrodynamics \cite{rytov,lifshitz55} (FED) approach to modeling thermal fluctuations generating electromagnetic waves. While FED has been successfully applied to calculate electromagnetic energy transfer in various geometries (see Refs. \cite{polder71,loomis94,pendry99,volokitin01} for early works and Refs. \cite{joulain05,volokitin07} for reviews), there are arguments supporting the more microscopic approach based on coupled dipole equations of motion \eqref{eq:th_eom2}. First, as noted in Sec. \ref{sec:th_eom}, a more microscopic approach would allow for coupling of optical vibrations to other degrees of freedom such as acoustic vibrations. Such a combined model would be very fruitful in modeling energy transfer in, e.g., piezoelectric media where the interaction of acoustic modes with the electromagnetic field cannot be neglected \cite{prunnila10}. 
 
 Second, because FED relies on the effective medium property $\chi(\br,\omega)$, applying the theory to very small systems requires great care. Manjavacas and Abajo de Carc\'ia \cite{manjavacas12} noted recently that Eq. \eqref{eq:th_PflucPfluc} predicts thermal fluctuations even in non-absorbing media, because $\textrm{Im}\left[ \chi(\br,\omega)\right]$ is always strictly positive due to the radiation reaction force \cite{jackson}. To ensure energy conservation, they suggested a modification to Eq. \eqref{eq:th_PflucPfluc}. Such intricacies are easy to overlook in FED, but they are completely avoided by using a more microscopic approach that transparently separates dissipative and reaction reaction terms in the equations of motion.
 
