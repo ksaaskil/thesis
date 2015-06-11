@@ -4,10 +4,9 @@
 % \textit{This chapter discusses the theory of energy transfer.}
 %\end{quote}
 
-This chapter reviews the theory and methods used in this thesis. Sections \ref{sec:th_eom1} and \ref{sec:th_eom2} present the relevant equations governing phononic, electronic and photonic energy transfer in microscopic scale. To highlight the common features in the modeling of different carriers, we start by postulating the linearized equations for the three carriers in Sec. \ref{sec:th_eom1}. Carrier-specific details and more general equations are presented in \ref{sec:th_eom2}. 
+This chapter reviews the theory and methods used in this thesis. Sections \ref{sec:th_eom1} and \ref{sec:th_eom2} present the relevant equations governing phononic, electronic and photonic energy transfer in microscopic scale. To highlight the common features in the modeling of different carriers, we start by postulating the Langevin equations of motion for the three carriers in Sec. \ref{sec:th_eom1}. Carrier-specific details and the derivation of the presented linearized equations are presented in \ref{sec:th_eom2}. 
 
-Langevin theory is used throughout the thesis to model thermal fluctuations and dissipation, and this theory and the fluctuation-dissipation theorem are discussed in Sec. \ref{sec:th_langevin}. All calculations in the thesis aim at computing energy flow in the system, so the corresponding definitions and their evaluation are reviewed in Sec. \ref{sec:th_currents}. Section \ref{sec:th_currents} also presents the spectral analysis methods developed in Publications \cp{spectral} and \cp{cnt} for determining mode-wise contributions to interatomic energy transfer. The spectral contributions to energy current are given in terms of correlation functions, which can be determined for non-linear systems with classical molecular dynamics method, presented in Sec. \ref{sec:methods_md}.
-
+Langevin theory is used throughout the thesis to model thermal fluctuations and dissipation, and this theory and the fluctuation-dissipation theorem are discussed in Sec. \ref{sec:th_langevin}. All calculations in the thesis aim at computing energy flow in the system, so the corresponding definitions of energy currents and their evaluation are reviewed in Sec. \ref{sec:th_currents}. Section \ref{sec:th_currents} also presents the spectral analysis methods developed in Publications \cp{spectral} and \cp{cnt} for determining frequency-wise contributions to interatomic energy transfer. The spectral contributions to energy current are given in terms of correlation functions, which can be determined for non-linear systems with classical molecular dynamics method, presented in Sec. \ref{sec:methods_md}.
 
 
 % Section \ref{sec:theory} presents the relevant equations governing phononic, electronic and photonic energy transfer in microscopic scale. We start by postulating the linear Langevin equations for the three carriers before moving to more in-depth derivations. We use Langevin theory \cite{langevin08} throughout this thesis to mathematically describe thermal fluctuations and the related dissipation. % After the minimal equations, the different carriers are discussed in more detail and 
@@ -26,7 +25,7 @@ Langevin theory is used throughout the thesis to model thermal fluctuations and 
 
 % 
 
-\section{Linearized Langevin equations for phonon, photon and electron systems}
+\section{Langevin equations for phonon, photon and electron systems}
 \label{sec:th_eom1}
 
 \begin{figure}
@@ -36,11 +35,11 @@ Langevin theory is used throughout the thesis to model thermal fluctuations and 
  \label{fig:mechanisms}
 \end{figure}
 
-This section reviews the general features of the linearized Langevin equations of motion governing energy transfer by lattice vibrations, electromagnetic field, and electrons. These equations account for both wave dynamics and dissipation in carrier propagation, allowing for simple but powerful modeling of energy transfer. The equations for vibrational, electromagnetic and electronic energy transfer originate, respectively, from the works of Bolsterli, Rich and Visscher \cite{bolsterli70}, Rosa, Dalvit and Milonni \cite{rosa10,rosa11}, and Dhar, Sriram Shastry and Sen \cite{dhar03,dhar06b}. These equations are applied in this thesis for quantum-mechanical Green's function calculations of vibrational energy transfer through a point contact (\citepub{gf}) and electromagnetic energy transfer between nanoparticles in a microcavity (\citepub{dipole}). The derivation of the linearized equations from more general equations and the precise definitions of parameters are presented in Sec. \ref{sec:th_eom2}.
+This section reviews the general features of the Langevin equations of motion governing energy transfer by lattice vibrations, electromagnetic field, and electrons. These equations account for both wave dynamics and dissipation in carrier propagation, allowing for simple but powerful modeling of energy transfer. The presented linearized equations for vibrational, electromagnetic and electronic energy transfer originate, respectively, from the works of Bolsterli, Rich and Visscher \cite{bolsterli70}, Rosa, Dalvit and Milonni \cite{rosa10,rosa11}, and Dhar, Sriram Shastry and Sen \cite{dhar03,dhar06b}. These equations are applied in this thesis for quantum-mechanical Green's function calculations of vibrational energy transfer through a point contact (\citepub{gf}) and electromagnetic energy transfer between nanoparticles in a microcavity (\citepub{dipole}). The derivation of the linearized equations from more general equations and the precise definitions of parameters are presented in Sec. \ref{sec:th_eom2}.
 
-Before writing down the equations of motion, we define the relevant degrees of freedom. Different energy transfer mechanisms and their corresponding degrees of freedom are schematically illustrated in Fig. \ref{fig:mechanisms}. Vibrational heat transfer in solids arises from the three-dimensional displacements $\bu_i$ of atoms from their equilibrium positions. An atom displaced from its equilibrium position exerts a force on other atoms, thereby leading to the propagation of displacement and transfer of energy. Similarly, electromagnetic energy transfer arises from fluctuations in local dipole moments $\bp_i=q\bd_i$, where $q$ is the dipole charge and $\bd_i$ the dipole displacement. An oscillating dipole radiates electromagnetic energy, scattered and absorbed by other dipoles. 
+Before writing down the equations of motion, we define the relevant degrees of freedom. Different energy transfer mechanisms and their corresponding degrees of freedom are schematically illustrated in Fig. \ref{fig:mechanisms}. Vibrational heat transfer in solids arises from the displacements $u_i^{\alpha}$ of each atom $i$ from their equilibrium positions to co-ordinate directions $\alpha\in\{x,y,z\}$. An atom displaced from its equilibrium position exerts a net force on other atoms, thereby leading to the propagation of displacement and transfer of energy. Similarly, electromagnetic energy transfer arises from fluctuations in local dipole moments $p_i^{\alpha}=qd_i^{\alpha}$, where $q$ is the dipole charge and $d_i^{\alpha}$ the dipole displacement in direction $\alpha$ \cite{rosa10}. An oscillating dipole radiates electromagnetic energy according to the Maxwell equations \cite{novotny}, scattered and absorbed by other dipoles. 
 
-Quantum-mechanical electron transport in solids can be intuitively described by the tight-binding model \cite{}, in which electrons are imagined to move by hopping between electron orbitals localized at individual atoms. Mathematically, the dynamics of a single electron is governed by the one-particle Schr\"odinger equation \cite{griffiths_qm}, but to capture fluctuations and dissipation acting as electron creation and annihilation, it is more practical to formulate the dynamical equations for Fock operators $c_i^{\dagger}$ and $c_i$ \cite{ballentine} creating and and annihilating electrons at an orbital localized at atom $i$, respectively\footnote{Electron spin indices are suppressed throughout and each atom is assumed to host only a single atomic orbital.}. For notational simplicity, the same subindex $i$ is used for different degrees of freedom, but they are not necessarily related. 
+Quantum-mechanical electron transport in solids can be intuitively described by the tight-binding model \cite{ashcroftmermin}, in which electrons move by ''hopping'' between electron orbitals localized at individual atoms. Mathematically, the dynamics of a single electron is governed by the one-particle Schr\"odinger equation \cite{griffiths_qm}, but to capture fluctuations and dissipation acting as electron creation and annihilation, it is more practical to formulate the dynamical equations for Fock operators $c_i^{\sigma\dagger}$ and $c_i^{\sigma}$ \cite{ballentine} creating and and annihilating electrons at an orbital $\sigma$ localized at atom $i$, respectively\footnote{The label $\sigma$ is a composite index containing both the orbital wave function and electron spin.}. For notational simplicity, the same subindex $i$ is used for each carrier to label the different degrees of freedom. 
 
 \begin{figure}
  \begin{center}
@@ -50,9 +49,7 @@ Quantum-mechanical electron transport in solids can be intuitively described by 
   \end{center}
 \end{figure}
 
-Modeling of energy transfer requires coupling at least some of the degrees of freedom to external reservoirs acting as sources and sinks for energy. With the exception of \citepub{twinning}, where Nos\'e-Hoover thermostats \cite{nose84} are used, we employ Langevin baths as reservoirs in all works included in this thesis. 
-
-The coupling of an atomic chain to Langevin baths is illustrated by a one-dimensional example in Fig. \ref{fig:langevin_chain}. In this case, the baths serve two purposes: The baths colored in red and blue act as external heat sources and sinks, respectively, and are used to drive energy through the system. The baths colored in green, on the other hand, mimic internal fluctuations and dissipation arising from anharmonic scattering \cite{bolsterli70}, allowing for capturing non-linear effects in terms of effective relaxation rates \cite{bolsterli70}. This allows for a quantum-mechanical treatment of much larger systems than the more rigourous but computationally heavy Keldysh Green's function method \cite{haugjauho}, as discussed in more detail in \citepub{gf}. % In Publications \cp{fpu}, \cp{fpu2}, \cp{spectral}, \cp{cnt} and \cp{twinning}, non-linearities are captured by the molecular dynamics simulation and local heat baths are not used.
+Modeling of energy transfer requires coupling at least some of the degrees of freedom to external reservoirs acting as sources and sinks for energy. With the exception of \citepub{twinning}, where Nos\'e-Hoover thermostats \cite{nose84} are used, we employ Langevin baths as reservoirs in all works included in this thesis. The coupling of an atomic chain to Langevin baths is illustrated by a one-dimensional example in Fig. \ref{fig:langevin_chain}. In this case, the baths serve two purposes: The baths colored in red and blue act as external heat sources and sinks, respectively, and are used to drive energy through the system. The baths colored in green, on the other hand, mimic internal fluctuations and dissipation arising from anharmonic scattering \cite{bolsterli70}, allowing for capturing non-linear effects in terms of effective relaxation rates \cite{bolsterli70}. This allows for a quantum-mechanical treatment of much larger systems than the more rigourous but computationally heavy Keldysh Green's function method \cite{haugjauho}, as discussed in more detail in \citepub{gf}. % In Publications \cp{fpu}, \cp{fpu2}, \cp{spectral}, \cp{cnt} and \cp{twinning}, non-linearities are captured by the molecular dynamics simulation and local heat baths are not used.
 
 % For compact introduction, the linearized Langevin equation of motion governing each heat transfer mechanism is presented in Sec. \ref{sec:th_eom}. These equations for vibrational, electromagnetic and electronic energy transfer originate, respectively, from the works of Bolsterli, Rich and Visscher \cite{bolsterli70}, Rosa, Dalvit and Milonni \cite{rosa10,rosa11}, and Dhar, Sriram Shastry and Roy \cite{dhar03,roy07}. The derivation of the linearized equations from more general equations and their more detailed parameters are presented in Sec. \ref{sec:th_eom2}. The properties of the Langevin baths are discussed in Sec. \ref{sec:th_langevin}, where the fluctuation-dissipation theorems used for the calculation of expectation values are presented. The calculation of heat currents and its spectral decomposition into different frequency contributions are presented in Sec. \ref{sec:th_currents}.
 
@@ -64,28 +61,53 @@ The coupling of an atomic chain to Langevin baths is illustrated by a one-dimens
 % Linearized stochastic equations of motion presented below allow for fully quantum-mechanical derivation of energy transfer rates and account for both wave effects and dissipation at the level of one-particle relaxation rates. These microscopic, Langevin equations of motion for vibrational, electromagnetic and electronic energy transfer originate, respectively, from the works of Bolsterli, Rich and Visscher \cite{bolsterli70}, Rosa, Dalvit and Milonni \cite{rosa10,rosa11}, and Dhar and Roy \cite{dhar03,dhar07}. All of these equations can be solved in a similar fashion, yielding frequency-resolved energy transfer rates in terms of Green's functions. Each of the equations is discussed in more detail in Sec. \ref{sec:th_eom2}, where also the steps leading to the linearized equations are presented and more references are given. % These equations have not been presented side-by-side in earlier literature. 
 % This subsection presents the linearized Langevin equations of motion for phonon, photon, and electron systems and their respective degrees of freedom $\bu_i$, $\bb{d}_i$, and $c_i$. The compact form of these equations allows for highlighting the similarities in different transfer mechanisms and also gives a good overview of relevant quantities in each system. These Langevin equations are applied in this thesis for the Green's function calculations of vibrational energy transfer through a point contact and electromagnetic energy transfer in a microcavity, carried out in Publications \cp{gf} and \cp{dipole}, respectively.
 
-Equations of motion for the three degrees of freedom $\bu_i$, $\bb{d}_i$, and $c_i$ are all connected through the Langevin physics describing fluctuations and dissipation, leading to a similar solution methods and phenomenology despite involving different energy carriers. In the linear approximation, to be discussed in more detail in Sec. \ref{sec:th_eom2}, the Langevin equations of motion are \cite{bolsterli70,rosa10,rosa11,dhar03}
+Equations of motion for the three degrees of freedom $\bu_i$, $\bb{d}_i$, and $c_i^{\sigma}$ are all connected through the Langevin physics describing fluctuations and dissipation, leading to a similar solution methods and phenomenology despite involving different energy carriers. Formally, the equations are of the form
+\begin{equation}
+ \left\{ \begin{array}{c}
+          \textrm{Rate of} \\
+	  \textrm{change} 
+         \end{array}
+\right\} \propto  \left\{ \begin{array}{c}
+          \textrm{Coupling } \\
+	  \textrm{terms} 
+         \end{array}
+\right\}+
+\left\{ \begin{array}{c}
+          \textrm{Thermal} \\
+	  \textrm{fluctuation} 
+         \end{array}
+\right\}+
+\left\{ \begin{array}{c}
+          \textrm{Dissipation} % \\
+	    % as
+         \end{array}
+\right\}
+\end{equation}
+Explicitly, the equations of motion for each carrier read (details are given below in Sec. \ref{sec:th_eom2}) \cite{bolsterli70,rosa10,rosa11,dhar03}
 \begin{subequations}
 \begin{align}
  m_i \ddot{\bu}_i(t) &=  - \sum_j \bb{K}_{ij}\bb{u}_j(t) + \xi_i(t) - m_i \gamma \dot{\bu}_i, \label{eq:th_eom1} \\
- m_i \ddot{\bb{d}}_i(t) &= - m\omega_0^2 \bb{d}_i(t) + q\Eenv(\br_i,t)+q\sum_{j} \bb{E}_{ij}(t)+\xi_i(t) - m_i \gamma \dot{\bd}_i(t), \label{eq:th_eom2}\\
- i\hbar \dot{c}_i(t) &= -\sum_j t_{ij} c_j(t) +\eta_i(t) - i\hbar \gamma_e c_i(t) \label{eq:th_eom3}.
+ m_i \ddot{\bb{d}}_i(t) &= - \bb{K}_{ii} \bb{d}_i(t) +q\sum_{j} \bb{E}_{ij}(t)+\xi_i(t)+ q\Eenv(\br_i,t) - m_i \gamma \dot{\bd}_i(t), \label{eq:th_eom2}\\
+ i\hbar \dot{c}_i^{\sigma}(t) &= -\sum_{j,\sigma'} t_{ij}^{\sigma\sigma'} c_j^{\sigma'}(t) +\eta_i^{\sigma}(t) - i\hbar \gamma_e c_i^{\sigma}(t) \label{eq:th_eom3}.
 \end{align}
 \end{subequations}
 %The approximations leading to these equations are discussed in detail below in Sec. \ref{sec:th_eom2}, where also all the quantities are defined and the relevant references for these equations are given. 
-These equations contain, generally speaking, four different kinds of parameters: atom or dipole mass $m_i$, damping coefficients $\gamma$ and $\gamma_e$, Langevin noises $\xi_i$, $\eta_i$, and $\Eenv$, and coupling terms $\bb{K}_{ij}$, $\bE_{ij}$ and $t_{ij}$ coupling the dynamics of different atoms, dipoles or orbitals, respectively.  Different symbols $\xi_i$ and $\eta_i$ are used for Langevin noises, because they model fluctuations with different statistical distributions as detailed in Sec. \ref{sec:th_langevin}. The thermal background electric field $\Eenv(\br_i,t)$ is also included in Eq. \eqref{eq:th_eom2} for generality.
+Here $\bu_i=[u_i^{x},u_i^y,u_i^z]^T]$ and $\bd_i=[d_i^x,d_i^y,d_i^z]^T$ are written as three-dimensional vectors. Equations \eqref{eq:th_eom1}, \eqref{eq:th_eom2} and \eqref{eq:th_eom3} contain, generally speaking, four different kinds of parameters: inertial mass $m_i$ of atom or dipole $i$, coupling coefficients $\bb{K}_{ij}$, $\bE_{ij}$ and $t_{ij}^{\sigma\sigma'}$ coupling different degrees of freedom, Langevin noise terms $\xi_i$, $\eta_i$, and $\Eenv$ responsible for thermal fluctuations, and damping coefficients $\gamma$ and $\gamma_e$ accompanying the fluctuations according to the fluctuation-dissipation theorem (Sec. \ref{sec:th_langevin}). Different symbol $\eta_i$ is used for electronic fluctuations than mechanical fluctuations $\xi_i$, because they model fluctuations with different statistical distributions as detailed in Sec. \ref{sec:th_langevin}. The dipole equation of motion contains an additional noise term $q\Eenv(\br_i,t)$ arising from the thermal background electric field $\Eenv(\br_i,t)$, which must be included to ensure balance between electromagnetic absorption and emission in thermal equilibrium \cite{rosa10}.
 
 % Formally, Eqs. \eqref{eq:th_eom1}, \eqref{eq:th_eom2} and \eqref{eq:th_eom3}
 
-Equations \eqref{eq:th_eom1}, \eqref{eq:th_eom2} and \eqref{eq:th_eom3} can be easily understood intuitively. As an example, Eq. \eqref{eq:th_eom1} declares that the acceleration of atom $i$ is proportional to the sum of (i) the forces exerted by other atoms $j$, proportional for each atom pair $i,j$ to the force constant matrix $\bb{K}_{ij}$ calculated from interatomic potential energy as discussed in Sec. \ref{sec:th_eom2}, (ii) stochastic Langevin force $\xi_i$ generating thermal fluctuations discussed in Sec. \ref{sec:th_langevin}, and (iii) Langevin friction $m_i \gamma \dot{\bu}_i$ responsible for energy dissipation at rate $\gamma$ \cite{li09jap}. The assumption of a linear interparticle force is relaxed below in Sec. \ref{sec:th_eom2} to allow for more exact treatment of non-linear forces, necessary in the calculation of, e.g., frequency-dependent mean free paths (\citepub{cnt}) and the thermal conductivity of twinning nanowires (\citepub{twinning}). %The variance of the fluctuating force $\xi_i$ and the friction constant $\gamma$ are related by the fluctuation-dissipation theorem presented in Sec. \ref{sec:th_langevin}. 
+Equations \eqref{eq:th_eom1}, \eqref{eq:th_eom2} and \eqref{eq:th_eom3} can be easily understood intuitively. As an example, Eq. \eqref{eq:th_eom1} declares that the acceleration of atom $i$ is proportional to the sum of (i) the forces exerted by other atoms $j$, proportional for each atom pair $i,j$ to the force constant matrix $\bb{K}_{ij}$ calculated from interatomic potential energy as discussed in Sec. \ref{sec:th_eom2}, (ii) stochastic Langevin force $\xi_i$ modeling local thermal fluctuations as discussed in Sec. \ref{sec:th_langevin}, and (iii) friction term $m_i \gamma \dot{\bu}_i$ responsible for energy dissipation at rate $\gamma$. To highlight the similarities between different carriers, we have used the linear approximation for the interparticle force in equation \eqref{eq:th_eom1}, allowing for the direct solution of the equation of motion (see below). This assumption is relaxed in Sec. \ref{sec:th_eom2} to allow for more exact treatment of non-linear forces, which are responsible for microscopic phonon-phonon interactions and therefore necessary in the calculation of, e.g., frequency-dependent mean free paths (\citepub{cnt}) and the thermal conductivity of twinning nanowires (\citepub{twinning}). %The variance of the fluctuating force $\xi_i$ and the friction constant $\gamma$ are related by the fluctuation-dissipation theorem presented in Sec. \ref{sec:th_langevin}. 
+
+The detailed parameters of Eqs. \eqref{eq:th_eom1}, \eqref{eq:th_eom2} and \eqref{eq:th_eom3} are presented in Sec. \ref{sec:th_eom2}. It is worth noting that whereas equations \eqref{eq:th_eom1} and \eqref{eq:th_eom2} are purely real and possess two time-derivatives in the left-hand side, Eq. \eqref{eq:th_eom3} for the electron annihilation operator $c_i^{\sigma}$ contains the imaginary unit $i$ and contains only a single time-derivative. This difference is rooted in the fundamental property of quantum mechanics that time evolution is modeled by diffusion equation in imaginary time (Schr\"odinger equation), allowing for wave-like solutions in real time \cite{ballentine}.
+
 
 % Detailed parameters and differences in Eqs. \eqref{eq:th_eom1}, \eqref{eq:th_eom2} and \eqref{eq:th_eom3} are presented in Sec. \ref{sec:th_eom2}.
 
-Equation of motion \eqref{eq:th_eom2} for the dipole moment $\bb{d}_i$ is similar to Eq. \eqref{eq:th_eom1}, but here the force exerted by dipoles $j$ is proportional to the electric fields $\bE_{ij}$, which is in turn linearly proportional to the dipole moment $\bp_j$. The local term $\bE_{ii}$ accounts for readiation reaction as discussed in Refs. \cite{rosa10,rosa11} and the oscillation parameter $\omega_0$ defines the resonance frequency. The relation of the Langevin equation of motion \eqref{eq:th_eom2} to the more commonly used fluctuating electrodynamics \cite{joulain05} is discussed in Sec. \ref{sec:th_eom2}. 
+% Equation of motion \eqref{eq:th_eom2} for the dipole moment $\bb{d}_i$ is similar to Eq. \eqref{eq:th_eom1}, but here the force exerted by dipoles $j$ is proportional to the electric fields $\bE_{ij}$, which is in turn linearly proportional to the dipole moment $\bp_j$. The local term $\bE_{ii}$ accounts for readiation reaction as discussed in Refs. \cite{rosa10,rosa11} and the oscillation parameter $\omega_0$ defines the resonance frequency. The relation of the Langevin equation of motion \eqref{eq:th_eom2} to the more commonly used fluctuating electrodynamics \cite{joulain05} is discussed in Sec. \ref{sec:th_eom2}. 
 
-In the Heisenberg equation of motion \eqref{eq:th_eom3} for electron annihilation operator, the dynamics of different orbitals are coupled by the tight-binding hopping constant $t_{ij}$ allowing for electron hopping between orbitals. The equation for the creation operator $c_i^{\dagger}(t)$ is obtained by taking the Hermitian conjugate of Eq. \eqref{eq:th_eom3}. In contrast to Eqs. \eqref{eq:th_eom1} and \eqref{eq:th_eom2}, dynamical equation \eqref{eq:th_eom3} for $c_i(t)$ contains only a single time derivative, which is related to the factor of $i$ on the left-hand side. The imaginary unit \eqref{eq:th_eom3} enables wave-like solutions even without a second time-derivative, as in Schr\"odinger's equation \cite{ballentine}.
+% In the Heisenberg equation of motion \eqref{eq:th_eom3} for electron annihilation operator, the dynamics of different orbitals are coupled by the tight-binding hopping constant $t_{ij}$ allowing for electron hopping between orbitals. The equation for the creation operator $c_i^{\dagger}(t)$ is obtained by taking the Hermitian conjugate of Eq. \eqref{eq:th_eom3}. 
 
-\subsection{Solution of the linear equations in terms of Green's functions}
+\subsection{Solution of the Langevin equations in terms of Green's functions}
 
 The similarity of Eqs. \eqref{eq:th_eom1}, \eqref{eq:th_eom2}, and \eqref{eq:th_eom3} allows for solving the equations in a similar fashion. The differential equations are first turned in to algebraic equations by Fourier transforming the equations\footnote{We define Fourier transformation $\tilde f(\omega)$ for any function $f(t)$, as usual, as
 \begin{equation}
@@ -95,16 +117,20 @@ and the corresponding inverse transformation as
 \begin{equation}
  f(t) = \int_{-\infty}^{\infty} \frac{d\omega}{2\pi} e^{-i\omega t}\tilde f(\omega). \label{eq:th_fourier_inv}
 \end{equation}}.
-Fourier transformation and rearrangement leads to three linear systems of equations:
+With small rearrangement, one then gets three linear systems of equations:
 \begin{subequations}
 \begin{align}
    - & \sum_{j,\beta}  [m_i (\omega^2+i\gamma \omega) \delta_{ij}\delta^{\alpha\beta} - K_{ij}^{\alpha\beta}] \tilde{u}_j^{\beta}(\omega) = \tilde \xi_i^{\alpha}(\omega) \label{eq:th_eom_fourier_phonon} \\
   - &  \sum_{j,\beta} \left[m(\omega^2-\omega_0^2+i\gamma\omega) \delta_{ij}\delta_{\alpha\beta} +q^2 \omega^2 \mu_0 \mathbb{G}^{\alpha\beta}(\br_i,\br_j;\omega) \right]\tilde{d}_j^{\beta}(\omega) \notag \\
   & \qquad = q\tilde{E}_{\textrm{env}}^{\alpha}(\br_i,\omega) + \tilde{\xi}^{\alpha}_i(\omega) \label{eq:th_eom_fourier_photon} \\ 
-  &  \sum_{j} \left[\hbar (\omega+i\gamma_e) \delta_{ij} + t_{ij} \right] \tilde c_j(\omega) = \tilde \eta_i(\omega)   \label{eq:th_eom_fourier_electron}
+  &  \sum_{j,\sigma'} \left[\hbar (\omega+i\gamma_e) \delta_{ij}\delta_{\sigma\sigma'} + t_{ij}^{\sigma\sigma'} \right] \tilde c_j^{\sigma'}(\omega) = \tilde \eta_i^{\sigma}(\omega)   \label{eq:th_eom_fourier_electron}
 \end{align}
 \end{subequations}
-Here $\omega$ is the angular frequency and the Greek indices $\alpha,\beta \in \{x,y,z\}$ stand for co-ordinate directions in Eqs. \eqref{eq:th_eom_fourier_phonon} and \eqref{eq:th_eom_fourier_photon}. Equation \eqref{eq:th_eom_fourier_electron} for electrons does not contain additional indices, as we assumed each atom $i$ to host only a single electron orbital. The electric field term $\bE_{ij}$ in Eq. \eqref{eq:th_eom2} has been expanded in terms of the the electromagnetic Green's dyadic $\mathbb{G}^{\alpha\beta}(\br_i,\br_j;\omega)$ \cite{novotny} as described in Sec. \ref{sec:th_eom2_photon}. % In Eq. \eqref{eq:th_eom_fourier_photon}, the electromagnetic Green's dyadic $\mathbb{G}^{\alpha\beta}(\br_i,\br_j;\omega)$ \cite{novotny} describes the electromagnetic coupling of dipoles and is defined in \ref{sec:th_eom2_photon}. 
+Here $\omega$ is the angular frequency, Kronecker symbol $\delta_{ij}$ is zero for $i\neq j$ and equal to unity for $i=j$, and the co-ordinate directions $\alpha,\beta \in \{x,y,z\}$ are written explicitly in Eqs. \eqref{eq:th_eom_fourier_phonon} and \eqref{eq:th_eom_fourier_photon}. In Eq. \eqref{eq:th_eom_fourier_photon}, the electric field $\tilde{\bE}_{ij}(\omega)$ was written in terms of the the electromagnetic Green's dyadic $\mathbb{G}^{\alpha\beta}(\br_i,\br_j;\omega)$ as \cite{novotny}
+\begin{equation}
+ \tilde{\bE}_{ij}^{\alpha}(\omega) = q\omega^2 \mu_0 \sum_{\beta} \mathbb{G}^{\alpha\beta}(\br_i,\br_j;\omega)\tilde{d}_j^{\beta}, 
+\end{equation}
+where $\mu_0$ is the vacuum permittivity. The Green's dyadic $\mathbb{G}^{\alpha\beta}(\br_i,\br_j;\omega)$ is defined in Sec. \ref{sec:th_eom2_photon}. % In Eq. \eqref{eq:th_eom_fourier_photon}, the electromagnetic Green's dyadic $\mathbb{G}^{\alpha\beta}(\br_i,\br_j;\omega)$ \cite{novotny} describes the electromagnetic coupling of dipoles and is defined in \ref{sec:th_eom2_photon}. 
 
 Each of the equations \eqref{eq:th_eom_fourier_phonon}, \eqref{eq:th_eom_fourier_photon}, and \eqref{eq:th_eom_fourier_electron} can be written in the matrix form
 %he equations of motion \eqref{eq:th_eom_phonon_fourier}, \eqref{eq:th_eom_electron} and \eqref{eq:th_eom_dipoles} generally reduce to the matrix form
@@ -127,21 +153,19 @@ The matrix Green's function $\bb{G}(\omega)$ is generally of the form
 \end{equation}
 where $\bb{G}^0(\omega)$ is the Green's function in absence of dissipation (i.e., Langevin baths) and bath self-energy matrices $\Sigma^J(\omega)$ describe the dissipation and energy level renormalization arising from the interaction with each bath $J$. For example, the self-energy corresponding to the friction term $m_i\gamma \dot{\bu}_k$ is $[\Sigma^J(\omega)]_{ij}=-im_i\gamma \omega \delta_{ij} \delta_{ik}$. 
 
-
-
-With the fluctuation-dissipation theorem for the force variances $\langle \zeta^J(\omega) \zeta^J(\omega')^T \rangle$ presented in Sec. \ref{sec:th_langevin} and the solution \eqref{eq:th_gf_solution} available, one can calculate the thermal averages of any observable of interest. The calculation of vibrational heat current $ Q_I^{\textrm{bath}}$ to bath $I$, which could represent the locally dissipated power or the heat current flowing to external reservoirs, is outlined in Sec. \ref{sec:th_currents} and carried out in detail in \citepub{gf}. The final result is the Landauer-B\"uttiker-like expression \cite{landauer57,buttiker92} % (see, e.g., Refs. \cite{dhar03} and \cite{dhar06})
-\begin{equation}
-  Q_I^{\textrm{bath}} = \int_0^{\infty} \frac{d\omega}{2\pi} \hbar \omega  \sum_J \ca{T}_{IJ}(\omega) \left[ f_{\textrm{BE}}(\omega,T_J)- f_{\textrm{BE}}(\omega,T_I)\right], \label{eq:th_QI}
-\end{equation}
-where the Bose-Einstein function is defined as
-\begin{equation}
- f_{\textrm{BE}}(\omega,T)=\left[\exp(\hbar \omega/k_BT)-1\right]^{-1}, \label{eq:th_fBE}
-\end{equation}
-$T_I$ and $T_J$ are the temperatures of baths $I$ and $J$, and the transmission function between baths is defined as
-\begin{equation}
- \ca{T}_{IJ}(\omega) = \textrm{Tr}\left[\Gamma^I(\omega) \bb{G}(\omega) \Gamma^J(\omega) \bb{G}(\omega)^{\dagger} \right]. \label{eq:th_caroli}
-\end{equation}
-Here $\Gamma^I(\omega)=-2\textrm{Im}[\Sigma^I(\omega)]$ is known as the bath coupling function \cite{datta}. Equation \eqref{eq:th_caroli} is the well-known Caroli form for the transmission function \cite{caroli71}, originally derived for ballistic two-terminal electron transport and later for phonons \cite{mingo06,yamamoto06}. In \citepub{dipole}, Eq. \eqref{eq:th_caroli} was shown to be valid also for electromagnetic energy transfer between a collection of dipoles. % The use of Eqs. \eqref{eq:th_QI} and \eqref{eq:th_caroli} for energy transfer calculations in different geometries is illustrated in Sec. \ref{sec:methods_gf}.
+With the fluctuation-dissipation theorem for the force variances $\langle \zeta^J(\omega) \zeta^J(\omega')^T \rangle$ presented in Sec. \ref{sec:th_langevin} and the solution \eqref{eq:th_gf_solution} available, one can calculate the thermal averages of any observable of interest. The calculation of vibrational heat current $ Q_I^{\textrm{bath}}$ to bath $I$, which could represent the locally dissipated power or the heat current flowing to external reservoirs, is outlined in Sec. \ref{sec:th_currents} and carried out in detail in \citepub{gf}. The final result is the Landauer-B\"uttiker-like expression \cite{landauer57,buttiker92}. % (see, e.g., Refs. \cite{dhar03} and \cite{dhar06})
+% \begin{equation}
+%   Q_I^{\textrm{bath}} = \int_0^{\infty} \frac{d\omega}{2\pi} \hbar \omega  \sum_J \ca{T}_{IJ}(\omega) \left[ f_{\textrm{BE}}(\omega,T_J)- f_{\textrm{BE}}(\omega,T_I)\right], \label{eq:th_QI}
+% \end{equation}
+% where the Bose-Einstein function is defined as
+% \begin{equation}
+%  f_{\textrm{BE}}(\omega,T)=\left[\exp(\hbar \omega/k_BT)-1\right]^{-1}, \label{eq:th_fBE}
+% \end{equation}
+% $T_I$ and $T_J$ are the temperatures of baths $I$ and $J$, and the transmission function between baths is defined as
+% \begin{equation}
+%  \ca{T}_{IJ}(\omega) = \textrm{Tr}\left[\Gamma^I(\omega) \bb{G}(\omega) \Gamma^J(\omega) \bb{G}(\omega)^{\dagger} \right]. \label{eq:th_caroli}
+% \end{equation}
+% Here $\Gamma^I(\omega)=-2\textrm{Im}[\Sigma^I(\omega)]$ is known as the bath coupling function \cite{datta}. Equation \eqref{eq:th_caroli} is the well-known Caroli form for the transmission function \cite{caroli71}, originally derived for ballistic two-terminal electron transport and later for phonons \cite{mingo06,yamamoto06}. In \citepub{dipole}, Eq. \eqref{eq:th_caroli} was shown to be valid also for electromagnetic energy transfer between a collection of dipoles. % The use of Eqs. \eqref{eq:th_QI} and \eqref{eq:th_caroli} for energy transfer calculations in different geometries is illustrated in Sec. \ref{sec:methods_gf}.
 %  (corresponding to carrier annihilation) 
 %\begin{subequations}
 %\begin{align}
@@ -398,7 +422,11 @@ For Ohmic coupling to a bath of harmonic oscillators, assumed for atomic displac
 \begin{equation}
  \langle \tilde \xi_i(\omega) \tilde \xi_i(\omega')^T \rangle = 4\pi \delta(\omega+\omega') \hbar \omega m_i \gamma \left[f_{\textrm{BE}}(\omega,T_i)+ \frac{1}{2} \right] \bb{I}_{3\times 3}. \label{eq:th_xixiom_ohmic_qm}
 \end{equation}
-Here the angular brackets stand for statistical ensemble average, the Bose-Einstein function was defined in Eq. \eqref{eq:th_fBE} and the unit matrix $\unitdyadic$ ensures that fluctuations in different coordinate directions are independent. Equation \eqref{eq:th_xixiom_ohmic_qm} was used in the quantum-mechanical Green's function calculations of Publications \cp{gf} and \cp{dipole} for the noise variances. 
+Here the angular brackets stand for statistical ensemble average, the Bose-Einstein function is defined as
+\begin{equation}
+ f_{\textrm{BE}}(\omega,T)=\left[\exp(\hbar \omega/k_BT)-1\right]^{-1}, \label{eq:th_fBE}
+\end{equation}
+and and the unit matrix $\unitdyadic$ reflects the independence of fluctuations in different coordinate directions. Equation \eqref{eq:th_xixiom_ohmic_qm} was used in the quantum-mechanical Green's function calculations of Publications \cp{gf} and \cp{dipole} for the noise variances. 
 
 In the classical high-temperature limit ($k_B T \gg \hbar \omega$) relevant in the molecular dynamics simulations of Publications \cp{fpu}, \cp{fpu2}, \cp{spectral}, \cp{cnt}, FDT \eqref{eq:th_xixiom_ohmic_qm} reduces to the classical FDT
 \begin{equation}
@@ -445,11 +473,13 @@ where $\chi(\br,\omega)$ is the local susceptibility. %FED has been successfully
 
 \section{Energy currents and spectral analysis}
 \label{sec:th_currents}
-This section discusses the energy currents and their calculation in more detail. The most relevant energy currents in the models considered this thesis are (i) the energy currents flowing to local baths or to left and right leads, corresponding to the locally dissipated power or total energy current, respectively, and (ii) interatomic heat current in vibrational heat transfer, corresponding to thermal conduction. Microscopic expressions for these energy currents are derived from local energy balance as shown in Sec. \ref{sec:th_energybalance}.
+Energy currents and their calculation are discussed in detail in this section. For the brevity of discussion, we focus on energy transfer by phonons and comment on the (small) differences to photonic and electronic energy transfer when relevant. 
 
-The thermal average of bath heat currents in linear systems is generally given by the Landauer-B\"uttiker-like expression \eqref{eq:th_QI}, and this derivation is briefly outlined in Sec. \ref{sec:th_bathcurrents}. This expression is used to (i) determine self-consistent temperature profiles and thermal conductances in the self-consistent heat bath model considered in \citepub{gf}, and (ii) calculating the locally absorbed power by dipoles in a microcavity, considered in \citepub{dipole}. The requirement of vanishing heat current to local baths can also be shown to give rise to an intuitive quantum-mechanical definition for local temperature, as discussed in \citepub{gf}.
+In the applications of this thesis, we calculate either (i) energy currents flowing to local baths, corresponding to the locally dissipated power by atomic vibrations or dipole moments,  or (ii) interatomic heat currents in phononic heat transfer. Microscopic expressions for these energy currents are generally derived from local energy balance as discussed in Sec. \ref{sec:th_energybalance}. The calculation of the bath currents generally leads to a Landauer-B\"uttiker-like expression, and this derivation is briefly outlined in Sec. \ref{sec:th_bathcurrents}. Section \ref{sec:th_spectral_curr} presents spectral analysis methods for interatomic phonon heat currents. This spectral analysis method, developed in \citepub{spectral}, gives a detailed picture of the contributions of different vibrational frequencies to thermal conduction in solids and is especially useful in non-linear systems, where phonon-phonon interactions redistribute energy between different modes. The spectral analysis relies on calculating statistical cross-correlations between atomic trajectories determined from the molecular dynamics method presented in Sec. \ref{sec:methods_md}. % Spectral analysis was applied for investigating the role of anharmonic effects in interfacial thermal conduction in \citepub{spectral} and determinining frequency-dependent phonon mean free paths in carbon nanotubes in \citepub{cnt}.  % This expression is used to (i) determine self-consistent temperature profiles and thermal conductances in the self-consistent heat bath model considered in \citepub{gf}, and (ii) calculating the locally absorbed power by dipoles in a microcavity, considered in \citepub{dipole}. The requirement of vanishing heat current to local baths can also be shown to give rise to an intuitive quantum-mechanical definition for local temperature, as discussed in \citepub{gf}.
 
-Section \ref{sec:th_spectral_curr} presents spectral analysis methods for interatomic heat currents, giving a detailed picture of the contributions of different vibrational frequencies to thermal conduction in solids. This spectral analysis method, developed in \citepub{spectral}, is especially useful in non-linear systems, where phonon-phonon interactions redistribute energy between different modes. The analysis relies on calculating statistical cross-correlations between atomic trajectories determined from molecular dynamics method. Spectral analysis was applied for investigating the role of anharmonic effects in interfacial thermal conduction in \citepub{spectral} and determinining frequency-dependent phonon mean free paths in carbon nanotubes in \citepub{cnt}. Molecular dynamics method is presented in Sec. \ref{sec:methods_md}.
+% \eqref{eq:th_QI
+
+
 
 %One of the main goals of this thesis was to develop spectral analysis methods for interatomic currents in non-linear systems, and this was carried out in Publications \cp{spectral} and \cp{cnt}. This spectral analysis is briefly presented in Sec. \ref{sec:th_spectral_curr}. Such an analysis is especially useful in non-linear systems, where phonon-phonon interactions redistribute energy between different modes. The applications  simulation of non-linear systems 
 
@@ -477,6 +507,8 @@ The second term on the right-hand side of Eq. \eqref{eq:th_ei_dot} is the curren
 \end{equation}
 The energy flow between neighboring atoms and to the baths in the Langevin bath model is depicted in Fig. \ref{fig:vib_currents}. The bath current term is present in Eq. \eqref{eq:th_ei_dot} for all atoms in the self-consistent heat bath model (\citepub{gf}), as all particles are coupled to heat baths mimicking scattering events driving the system to local thermal equilibrium. In the MD simulations of Publications \cp{fpu},\cp{fpu2},\cp{spectral},\cp{cnt}, on the other hand, only atoms in the heat source and sink regions are coupled to heat baths, so the $Q_i^{\textrm{bath}}$ term is absent for most atoms. 
 
+Equation \eqref{eq:th_Qibath} is also valid for the locally dissipated power by dipoles, when the atomic displacement $\bb{u}_i$ is replaced by the dipole displacement $\bb{d}_i$. The derivation is based on calculating the rates of change in local electromagnetic and mechanical energy and is presented in \citepub{dipole}. One can similarly calculate microscopic expressions for electron currents from the rate of change in the local electron number \cite{roy07}. 
+
 \begin{figure}
  \begin{center}
  \end{center}
@@ -488,20 +520,48 @@ The energy flow between neighboring atoms and to the baths in the Langevin bath 
 
 \subsection{Green's function calculation of bath currents}
 \label{sec:th_bathcurrents}
-Let us first outline the calculation of the thermal average for the bath heat current \eqref{eq:th_Qibath}. In this thesis, this average is required in the self-consistent heat bath model and fluctuating dipole model, which rely on linear equations of motion \eqref{eq:th_eom1} and \eqref{eq:th_eom2}, respectively. We therefore assume that the solution is given by Eq. \eqref{eq:th_gf_solution} in terms of the Green's function matrix $\bb{G}(\omega)$. The thermal average of $Q_i^{\textrm{bath}}$ can then be calculated by substituting the Fourier transforms \eqref{eq:th_fourier} of $\bu_i$ and $\xi_i$ evaluated at time $t=0$ to Eq. \eqref{eq:th_Qibath} (thermal average of the current is time-independent). Noting that the Fourier transform of velocity $\dot{u}_i^{\alpha}(t)$ is given by $-i\omega \tilde{u}^{\alpha}_i(\omega)$, this procedure gives (see \citepub{gf})
+% In this thesis, this average is required in the self-consistent heat bath model and fluctuating dipole model, which rely on linear equations of motion \eqref{eq:th_eom1} and \eqref{eq:th_eom2}, respectively.
+
+Let us outline the calculation of the thermal average for the bath heat current \eqref{eq:th_Qibath} in phonon thermal conduction. The solution for the atomic displacements $\tilde{\bu}_i(\omega)$ at each site $i$ is given in terms of the Green's function matrix $\bb{G}(\omega)$ as
+\begin{equation}
+ \tilde{\bu}_i(\omega) = \sum_{j} \bb{G}_{ij}(\omega) \tilde{\xi}_j(\omega).
+\end{equation}
+The thermal average of $Q_i^{\textrm{bath}}$ can then be calculated by substituting the Fourier transforms \eqref{eq:th_fourier} of $\bu_i$ and $\xi_i$ evaluated at time $t=0$ to Eq. \eqref{eq:th_Qibath} (thermal average of the current is time-independent). Noting that the Fourier transform of velocity $\dot{u}_i^{\alpha}(t)$ is given by $-i\omega \tilde{u}^{\alpha}_i(\omega)$, this procedure gives (see \citepub{gf})
 \begin{alignat}{2}
  Q_i^{\textrm{bath}}  &= \int_{-\infty}^{\infty} \frac{d\omega}{2\pi} \int_{-\infty}^{\infty} \frac{d\omega'}{2\pi} \sum_{\alpha} \langle  [ -im\gamma\omega \tilde u_i^{\alpha}(\omega)-\tilde \xi_i(\omega)][-i\omega' \tilde u_i^{\alpha}(\omega')] \rangle \\
   &= \int_{-\infty}^{\infty} \frac{d\omega}{2\pi} \int_{-\infty}^{\infty} \frac{d\omega'}{2\pi} \sum_{j,k} \sum_{\beta,\gamma} \left\langle \left[ -im\gamma\omega G_{ij}^{\alpha\beta}(\omega)\tilde \xi_j^{\beta}(\omega)-\tilde \xi_i^{\alpha}(\omega) \right] \right. \notag \\
   &\qquad \times \left.\left[-i\omega' G_{ik}^{\alpha\gamma}(\omega') \tilde \xi_k^{\gamma}(\omega') \right]  \right\rangle
 \end{alignat}
-At this point, one can use the fluctuation-dissipation theorem \eqref{eq:th_xixiom_ohmic_qm} for correlations of the form $\langle \xi_j^{\beta}(\omega)\tilde \xi_k^{\gamma}(\omega') \rangle$, which eliminates one of the frequency integrals. Substituting Eq. \eqref{eq:th_xixiom_ohmic_qm}, rearranging and using the definition of the local bath coupling function $[\Gamma_i(\omega)]_{jk}^{\alpha\beta}=2m_i\gamma\omega \delta_{\alpha\beta}\delta_{ij} \delta_{ik}$ finally leads to the Landauer-B\"uttiker-like expression \eqref{eq:th_QI}. The detailed derivation is presented in \citepub{gf}.
+At this point, one can use the fluctuation-dissipation theorem \eqref{eq:th_xixiom_ohmic_qm} for correlations of the form $\langle \xi_j^{\beta}(\omega)\tilde \xi_k^{\gamma}(\omega') \rangle$, which eliminates one of the frequency integrals. Substituting Eq. \eqref{eq:th_xixiom_ohmic_qm}, rearranging and using the definition of the local bath coupling function $[\Gamma^i(\omega)]_{jk}^{\alpha\beta}=2m_i\gamma\omega \delta_{\alpha\beta}\delta_{ij} \delta_{ik}$, one finally gets the Landauer-B\"uttiker-like \cite{landauer57,buttiker92} expression (see \citepub{gf})
+\begin{equation}
+  Q_i^{\textrm{bath}} = \int_0^{\infty} \frac{d\omega}{2\pi} \hbar \omega  \sum_J \ca{T}_{ij}(\omega) \left[ f_{\textrm{BE}}(\omega,T_j)- f_{\textrm{BE}}(\omega,T_i)\right]. \label{eq:th_QI}
+\end{equation}
+Here $T_i$ and $T_j$ are the temperatures of the baths at sites $i$ and $j$, and the transmission function between baths is defined as
+\begin{equation}
+ \ca{T}_{ij}(\omega) = \textrm{Tr}\left[\Gamma^i(\omega) \bb{G}(\omega) \Gamma^j(\omega) \bb{G}(\omega)^{\dagger} \right]. \label{eq:th_caroli}
+\end{equation}
+Equation \eqref{eq:th_caroli} is the well-known Caroli form for the transmission function \cite{caroli71}, originally derived for ballistic two-terminal electron transport and later for phonons \cite{mingo06,yamamoto06}. In the form written in Eq. \eqref{eq:th_caroli}, the expression for the transmission function remains valid also when the baths are non-Ohmic (see \citepub{gf}). 
+
+In \citepub{dipole}, an expression similar to Eq. \eqref{eq:th_QI} was derived for the locally dissipated power by fluctuating dipole moments:
+\begin{alignat}{2}
+ Q_i^{\textrm{bath}} &= \int_0^{\infty}\frac{d\omega}{2\pi} \hbar\omega \sum_{j} \ca{T}_{ij}(\omega) \left[f_B(\omega,T_j)-f_B(\omega,T_i ) \right] \notag \\
+  & \quad + \int_0^{\infty} \frac{d\omega}{2\pi} \hbar \omega \ca{T}_{i,\textrm{rad}}(\omega)\left[ f_B(\omega,\Tenv)-f_B(\omega,T_i)\right].
+\end{alignat}
+The dipole-dipole transmission function $\ca{T}_{ij}(\omega)$ and dipole-environment transmission $\ca{T}_{i,\textrm{rad}}(\omega)$ are given by expressions analogous to Eq. \eqref{eq:th_caroli}. The microscopic oscillator parameters $m$ $q$, $\omega_0$ and $\gamma$ appear, however, explicitly in these expressions through the Green's function $\bb{G}(\omega)$ and the bath coupling functions $\Gamma^i(\omega)$. When only the optical properties of the system are of interest and microscopic details of dipole dynamics are irrelevant, one can eliminate these parameters in terms of the dipole polarizabilities \cite{rosa10,rosa11}. In this case, the energy transfer rates become identical with the fluctuational electrodynamics results \cite{benabdallah11,messina13}. This elimination procedure and the final expressions for transmission functions are presented in detail in \citepub{dipole}. 
+
+
+% The dipole-dipole transmission function $\ca{T}_{ij}(\omega)$ and the dipole-environment transmission $\ca{T}_{i,\textrm{rad}}(\omega)$ are given by the Caroli equation \eqref{eq:th_caroli}, where .
+
+
+
+% -like expression \eqref{eq:th_QI}. The detailed derivation is presented in \citepub{gf}.
 
 
 \subsection{Spectral analysis of interatomic lattice heat current}
 \label{sec:th_spectral_curr}
-Equation \eqref{eq:th_Qij} gives the total heat current between atoms $i$ and $j$, but does not directly give any insight to the actual energy transfer mechanism. The contributions of different frequencies to vibrational energy transfer can be determined by determining the spectral decomposition of $Q_{i\to j}$ as shown in \citepub{spectral}. Because this analysis is most useful for non-linear systems, we do not assume an analytical solution of the form \eqref{eq:th_gf_solution} to the equations of motion. The expression for the spectral heat current is given in terms of a correlation function that can be determined from MD simulations.
+Equation \eqref{eq:th_Qij} gives the total phononic heat current between atoms $i$ and $j$, but does not directly give any insight to the actual energy transfer mechanism. The contributions of different frequencies to vibrational energy transfer can be determined by determining the spectral decomposition of $Q_{i\to j}$ as shown below and in detail in \citepub{spectral}. Because this analysis is most useful for non-linear systems, we do not assume an analytical solution of the form \eqref{eq:th_gf_solution} to the equations of motion. The expression for the spectral heat current is given in terms of a correlation function that can be determined from MD simulations.
 
-The spectral decomposition of interparticle heat current $Q_{i\to j}$ is achieved by substituting the Fourier transforms \eqref{eq:th_fourier} of $\bu_i$ evaluated at time $t=0$ in Eq. \eqref{eq:th_Qij}. One then gets
+The spectral decomposition of interparticle heat current $Q_{i\to j}$ is found  by substituting the Fourier transforms \eqref{eq:th_fourier} of $\bu_i$ evaluated at time $t=0$ in Eq. \eqref{eq:th_Qij}. One then gets
 \begin{alignat}{2}
  Q_{i\to j} &= \frac{1}{2} \int_{-\infty}^{\infty} \frac{d\omega}{2\pi} \frac{d\omega'}{2\pi} \sum_{\alpha,\beta} K_{ij}^{\alpha\beta} (-i\omega+i\omega') \underbrace{\langle u_i^{\alpha}(\omega) u_j^{\beta}(\omega') \rangle}_{2\pi \delta(\omega+\omega')\tilde C_{ij}^{\alpha\beta}(\omega)} \label{eq:th_spectral_curr_line1} \\
   &= -i   \int_{-\infty}^{\infty} \frac{d\omega}{2\pi} \omega \sum_{\alpha,\beta} K_{ij}^{\alpha\beta} \tilde C_{ij}^{\alpha\beta}(\omega) \label{eq:th_spectral_curr_line2} \\
@@ -519,7 +579,7 @@ Equation \eqref{eq:th_def_Cij} only depends on the time-difference due to the as
 
 The correlation function \eqref{eq:th_def_Cij} and the spectral heat current \eqref{eq:th_spectral_curr} can be determined for non-linear systems from non-equilibrium molecular dynamics simulations. Because harmonic approximation was used for the interatomic potential energy in Eq. \eqref{eq:th_ei}, Eq. \eqref{eq:th_spectral_curr} is only the first-order approximation to the total spectral heat current, corresponding to elastic energy transfer (see \citepub{spectral}). This first-order term strongly dominates in rigid lattices such as carbon nanotubes considered in \citepub{cnt}. It is important to emphasize that all anharmonic terms are included in the molecular dynamics simulation through the interatomic potential energy function, and the simplifying harmonic approximation is only used in the calculation of the spectral heat current from atomic trajectories. % This  as explained in more detail in \citepub{cnt}.
 
-Including anharmonic terms in the local energy gives rise to additional terms in the spectral heat current, corresponding to higher-order processes such as three-phonon energy transfer. The spectral analysis of these higher-order terms is straightforward but more complicated. Details are given in \citepub{spectral}, where the anharmonic contributions to interfacial energy transfer were investigated. 
+Including anharmonic terms in the local energy \eqref{eq:th_ei} gives rise to additional terms in the spectral heat current, corresponding to higher-order processes such as three-phonon energy transfer. The spectral analysis of these higher-order terms is straightforward but more complicated. Details are given in \citepub{spectral}, where the contributions of three-phonon processes to interfacial energy transfer were investigated. 
 
 % As shown in Publications \cp{spectral} and \cp{cnt}, the interparticle heat current $J_{ij}$ can be spectrally decomposed as
 % \begin{alignat}{2}
@@ -571,9 +631,9 @@ where $\Delta t$ is the time step and $\bb{a}_i(t)=\bb{F}_i(t)/m_i$ is the accel
  \end{center}
 \end{figure}
 
-To outline the typical steps involved in a non-equilibrium simulation, consider the example setup of Fig. \ref{fig:th_spectral_geom}(a) used to investigate the anharmonic effects in interfacial heat transfer in \citepub{spectral}. The whole structure is first allowed to conform to zero-stress state by controlling atomic dynamics using a combination of a Nose-Hoover barostat and thermostat \cite{allentildesley}. Typical equilibration period consists of a few hundreds of thousands of time steps. After the initial equilibration, the size of the simulation box is fixed, and the positions of atoms located at the left- and right-most unit cells are frozen, preventing atomic sublimation at the free surfaces. Particles in the ''hot'' and ''cold'' regions, illustrated by the red and cyan coloured atoms in Fig. \ref{fig:th_spectral_geom}, are coupled to heat baths at temperatures $T_{\textrm{L}}$ and $T_{\textrm{R}}$ by including Langevin or Nos\'e-Hoover terms in their equations of motion. The system is then allowed to reach non-equilibrium steady state by integrating the equations of motion until the temperature profile shown in Fig. \ref{fig:th_spectral_geom}(b) and the heat current flowing through the system fluctuate around constant values. After this transient period, simulation is continued typically for millions of time steps, and the values of observables such as temperature jump $\Delta T$ at the interface or the heat currents are determined from the trajectories. The statistical error in the determined quantities can be estimated by using standard methods described, e.g., in \cite{allentildesley}.
+To outline the typical steps involved in a non-equilibrium simulation, consider the example setup of Fig. \ref{fig:th_spectral_geom}(a) used to investigate the anharmonic effects in interfacial heat transfer in \citepub{spectral}. The whole structure is first allowed to conform to zero-stress state by controlling atomic dynamics using a combination of a Nose-Hoover barostat and thermostat \cite{allentildesley}. Typical equilibration period consists of a few hundreds of thousands of time steps. After the initial equilibration, the size of the simulation box is fixed, and the positions of atoms located at the left- and right-most unit cells are frozen, preventing atomic sublimation at the free surfaces. Particles in the ''hot'' and ''cold'' regions, illustrated by the red and cyan coloured atoms in Fig. \ref{fig:th_spectral_geom}, are coupled to heat baths at temperatures $T_{\textrm{L}}$ and $T_{\textrm{R}}$ by including Langevin or Nos\'e-Hoover terms in their equations of motion. The system is then allowed to reach non-equilibrium steady state by integrating the equations of motion until the kinetic temperature profile shown in Fig. \ref{fig:th_spectral_geom}(b) and the heat current flowing through the system fluctuate around constant values. After this transient period, simulation is continued typically for millions of time steps, and the values of observables such as temperature jump $\Delta T$ at the interface or the heat currents are determined from the trajectories. The statistical error in the determined quantities can be estimated by using standard methods described, e.g., in \cite{allentildesley}.
 
-LAMMPS simulation package is used in Publications \cp{spectral}, \cp{cnt} and \cp{twinning} for integrating the equations of motion. The simulations of Publications \cp{fpu} and \cp{fpu2} are carried out using a house-made molecular dynamics code. 
+LAMMPS simulation package \cite{plimpton95,lammps_website} is used in Publications \cp{spectral}, \cp{cnt} and \cp{twinning} for integrating the equations of motion. The simulations of Publications \cp{fpu} and \cp{fpu2} are carried out using a house-made molecular dynamics code. 
 
 % LAMMPS, house-made code
 
