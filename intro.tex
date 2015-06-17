@@ -1,64 +1,17 @@
 %\chapter{Introduction}
-
+\label{chap:intro}
 \section{Motivation}
 
-% More straightforward start?
-% Cleaner energy sources, conserving energy, capturing carbon dioxide
+Significant advancements in the fields of micro and nanotechnology in recent decades have enabled the engineering of new materials with improved electrical, thermal and optical properties \cite{}. This miniaturization has drawn considerable attention into thermal effects, which are crucial for, e.g., designing more efficient thermoelectrics \cite{vineis10,kanatzidis10,shakouri11} and tackling the problem of overheating in microprocessors \cite{pop06_ieee}. Thermal effects play the main role also in completely new technologies such as phase-change memory \cite{lankhorst05}, heat-assisted magnetic recording \cite{pan09}, tumor therapy based on nanoparticle laser heating \cite{avedisian09}, and information processing using temperature \cite{li12_rmp}. For all such applications, a solid understanding of energy transfer processes in nanoscale is necessary. %To tackle the power problem and to enable efficient thermal engineering, thorough understanding of heat transfer mechanisms are required. 
+%  temperature-related 
 
-% With the steady rise in Earth's population and the consumption of natural resources, reaching energy sustainability has become the key in determining the fate of the human race (LOL). Energy sustainability requires not only increasing the relative share of renewable energy sources in energy production but also using the produced energy more efficiently.  
+% Nanoscale physics richer in nanoscale
 
-% With the on-going rise in Earth's population, consumption of natural resources, and global temperature \cite{}, sustainable and clean energy production has become perhaps the most important goal for humanity. Sustainable energy strategy requires not only replacing fossil fuels by clean energy sources but also reducing the energy demand by (i) permanent life-style changes and (ii) increasing the energy efficiency. In the U.S., for example, more than half of the produced energy is wasted as heat \cite{llnl13}. Efficient reclaiming of even a small part of the waste heat using, e.g., thermoelectric modules could notably reduce the share of coal and natural gas as a source of electricity. Inefficiency also hinders the technological development: for example, the performance of CPUs has been improving slower than predicted by Moore's law in the last decade due to the power problem: modern microprocessors dissipate more heat than a hot plate \cite{pop06_ieee}. %
+Theoretically, energy is transferred in solid-state systems by lattice vibrations, electromagnetic fields, and electrons \cite{chen}. Compared to macroscale, where thermal transfer is often characterized by a few constitutive material parameters, heat transfer in nanoscale is enriched by the presence of various length scales comparable to the system size \cite{chen}. As a consequence, classical heat transfer laws such as Fourier's law of conduction \cite{fourier} and Planck's law of radiation \cite{planck00a} break down, giving rise to exotic phenomena such as thermal conductance quantization \cite{rego98,schwab00} and monochromatic thermal radiation \cite{carminati99,shchegrov00}. In addition, the microscopic coupling of energy carriers in nanoscale can prohibit their separate treatment and require unified models accounting for energy conversion from one form to other. 
 
-% in modern microprocessors, for example, the heating arising from energy dissipation is currently the most serious bottleneck limiting the performance \cite{pop10}. %The steady increase in the clock frequencies has stopped as the power densities reached values higher than a hot plate \cite{pop10}. 
+% Accounting for such phenomena requires sophisticated models. Second, microscopic coupling of energy carriers in nanostructures prohibits their separate treatment as in macroscale. For example, the smooth transition from radiation-dominated energy transfer at large material separations to vibration-dominated at small separations was only recently described theoretically by including both electromagnetic fields and lattice vibrations in a single model \cite{xiong14,chiloyan15}. 
 
-
-%The ever-increasing demand for energy accelerates, for example, the burning of fossil fuels, which not only contributes to the climate change but also rules out sustainability: the oil reserves are expected to run out in approximately 40 years with the present production rate \cite{}. Sustainable energy production therefore requires turning to more sustainable energy resources such as sun, wind, hydro- and, eventually, fusion power.
-
-%Sustainability cannot be reached, however, only by developing more efficient ways to produce energy: the efficiency of energy use should increase as well. 
-
-% The development of more efficient thermoelectric modules and reducing the detrimental heating in electronic devices can be achieved by thermal engineering. For example, to make thermoelectric generation of electricity feasible, materials with low thermal conductivities and good electronic conduction properties are required \cite{chen}. Heating in electronic devices can be reduced by reducing the thermal resistance of material interfaces and finding high thermal conductivity materials for extracting the heat \cite{pop10}. 
-
-Significant advancements in the fields of micro and nanotechnology in recent decades have enabled the engineering of new materials with improved electrical, thermal and optical properties \cite{}. This miniaturization has turned a lot of attention into thermal effects, which play a crucial role in, e.g., designing more efficient thermoelectrics \cite{vineis10,kanatzidis10,shakouri11} and tackling the so-called power problem in microprocessors, which dissipate more heat than a hot plate \cite{pop06_ieee}. Thermal effects play the main role also in completely new temperature-related technologies such as phase-change memory \cite{lankhorst05}, heat-assisted magnetic recording \cite{pan09}, tumor therapy based on nanoparticle laser heating \cite{avedisian09}, and information processing using temperature \cite{li12_rmp}. For all such technologies, a solid understanding of energy transfer processes in nanoscale is necessary. %To tackle the power problem and to enable efficient thermal engineering, thorough understanding of heat transfer mechanisms are required. 
-
-% For example, new records in thermoelectric efficiency \cite{vineis10,kanatzidis10,shakouri11} have been achieved by ''thermal engineering'' employing nanostructures. 
-
-% Such engineering of new materials and devices has been enabled by the significant advancements in the fields of micro and nanotechnology in recent decades. Nanostructuring has allowed for designing new metamaterials with tailored thermal and electronic properties, resulting in new records in thermoelectric efficiency (see, e.g., Refs. \cite{vineis10,kanatzidis10,shakouri11} for review) and the discovery of low-dimensional, high thermal conductivity materials \cite{}. Thermal engineering plays an important role also in completely new temperature-related technologies such as phase-change memory \cite{lankhorst05}, heat-assisted magnetic recording \cite{pan09}, tumor therapy based on nanoparticle laser heating \cite{avedisian09}, and information processing using temperature \cite{li12_rmp}. 
-
-Theoretically, energy is transferred by lattice vibrations, electromagnetic fields, and electrons \cite{chen}. Compared to macroscale, the theoretical description of these energy carriers is complicated by two factors. First, classical heat transfer laws such as Fourier's law of conduction \cite{fourier} and Planck's law of radiation \cite{planck00a} break down at nanoscale, giving rise to exotic phenomena such as thermal conductance quantization \cite{rego98,schwab00} and monochromatic thermal radiation \cite{carminati99,shchegrov00}. Accounting for such phenomena requires sophisticated models. Second, the borderline between different energy transfer mechanisms becomes blurred in nanostructures, prohibiting the separate treatment of electromagnetic, vibrational and electronic energy transfer as in macroscale. For example, the smooth transition from radiation-dominated energy transfer at large material separations to vibration-dominated at small separations was only recently described theoretically by including both electromagnetic fields and lattice vibrations in a single model \cite{xiong14,chiloyan15}. 
-
-% Challenges?
-
-% These carriers are photons, phonons, and electrons, each responsible for electromagnetic, vibrational and electronic energy transfer, respectively \cite{chen}. Theoretical understanding of energy transfer in nanoscale is complicated by two factors. First, with the break-down of classical laws such as Fourier's law of thermal conduction and Planck's law of thermal radiation, new challenges have emerged in the description of each carrier. Second,
-
-% Entering the nanoscale has raised new challenges in energy transfer theory. In nanoscale, classical heat transfer laws such as Fourier's law of thermal conduction \cite{fourier} or Planck's law of thermal radiation \cite{planck00a} break down, giving rise to exotic phenomena such as thermal conductance quantization \cite{rego98,schwab00} and monochromatic thermal radiation \cite{carminati99,shchegrov00}. To tackle the theoretical challenges, new computational models are required.
-
-%  in order to understand, e.g., the role played by non-linearities, carrier confinement, interference, etc. 
-
-
-%. Similarly, interfacial resistance between dissimilar materials has been reduced by designing high thermal conductance interfaces by the addition of, e.g., functional molecules \cite{hopkins11,kaur14}, nanoscale thin films, and XXX between materials. Efficient extraction of heat from electronic and optoelectronic devices has been suggested \cite{ghosh08,yan12} to be enabled by low-dimensional nanomaterials such as graphene or carbon nanotubes, both having thermal conductivities higher than diamond \cite{balandin11}. 
-
-% The vast possibilities offered by nanostructures in thermal engineering are intimately linked with the break-down of classical heat transfer laws such as Fourier's law of thermal conduction \cite{fourier} or Planck's law of thermal radiation \cite{planck00a} in such small structures. Striking examples of such break-down are, respectively, the observation of thermal conductance quantization at low temperatures \cite{rego98,schwab00} and the nearly monochromatic electromagnetic field close to a polar surface \cite{carminati99,shchegrov00}. 
-
-% , divergence of thermal conductivity in low-dimensional structures \cite{lepri97,lepri03,dhar08,xu14}, 100-fold reduction in nanowire's thermal conductivity compared to the bulk value \cite{hochbaum08}
-
-% The vast possibilities offered by nanostructures also present new challenges that can only be tackled with full understanding of energy transfer processes in such structures. For example,...
-
-% Challenges in phonon theory?
-
-% Microscopically, energy transfer between materials is mediated by three primary energy carriers: photons, phonons, and electrons, which are responsible for electromagnetic, vibrational and electronic energy transfer, respectively \cite{chen}. In macroscopic bodies at large separations, the contributions of different carriers to energy transfer can typically be calculated independently from each other, but at nanoscale, the borderline between the contributions of different carriers becomes blurred and unified models must be developed. 
-
-%In this thesis, we develop new physical insight and computational models for energy transfer in nanoscale structures. 
-
-%Physically, such phenomena arise from the reduced dimensionality, wave interference effects, increased geometric scattering rates, reduced internal scattering and near-field effects appearing in nanoscale structures. 
-%\begin{itemize}
- %\item Phase-change memory, heat-assisted magnetic recording
- %\item Thermal management of high-power electronic and optoelectronic devices
- %\item Thermoelectrics (Shiyun's citations \cite{hicks93}, \cite{Zhao2014})
- %\item Thermal therapy (intensely heated nanoparticles) \cite{jain08}
- %\item Biological applications (thermophoresis, DNA) \cite{jain11}
-%\end{itemize}
-
-
+\textbf{One more binding paragraph before the objectives...}
 
 \section{Scope and objectives}
 % Smooth transition to scope and objectives, explain how different carriers play together at small scales
@@ -66,26 +19,42 @@ Theoretically, energy is transferred by lattice vibrations, electromagnetic fiel
 % New computational methods
 % Combining phononic, photonic and eventually electronic transport into a single model
 
-This doctoral thesis aims at (i) creating new physical insight into the vibrational energy transfer mechanisms in atomic scale, and (ii) developing computational methods for describing vibrational, electromagnetic as well as electronic energy transfer in a single theoretical framework to eventually enable the combination of the models. In all our studies, we only consider solid state systems, thereby excluding convection from the considered list of energy transfer mechanisms. %We limit our scope to heat transfer by lattice vibrations and electromagnetic radiation, thereby excluding both electronic conduction and convection.
+This doctoral thesis aims at creating physical insight into heat transfer in nanoscale systems by atomic scale simulations accompanied by the development of new computational tools and methods. The main focus areas of the thesis are (i) modeling energy transfer by phonons \footnote{Throughout the thesis, we refer to lattice vibrations loosely as phonons, which are the quanta of normal mode oscillations \cite{ziman}.} in various geometries using classical methods, and (ii) developing quantum-mechanical computational methods for describing vibrational, electromagnetic as well as electronic energy transfer in a single theoretical framework to eventually enable the combination of the models. In all our studies, we only consider solid state systems, thereby excluding convection from the considered list of energy transfer mechanisms. %We limit our scope to heat transfer by lattice vibrations and electromagnetic radiation, thereby excluding both electronic conduction and convection.
 
-The two objectives listed above roughly divide the publications included in this thesis into two parts. First part of the thesis is devoted to lattice vibrations (loosely referred to as phonons), because they are the dominant heat transfer mechanism in insulators and typical semiconductors \cite{chen}. To deliver new insight into phononic energy transfer processes, we use classical molecular dynamics (MD) simulations. While MD neglects all quantum effects, it accounts both for wave interference and detailed scattering phonon scattering without any approximations (except for typically using a semi-empirical potential for describing interatomic interactions). Using MD, we investigate the following questions:
-\begin{itemize}
- \item Does the interplay of interference and dissipative effects manifest in structures smaller than phonon wavelength and mean free path?
- \item What is the role of anharmonic effects in energy transfer at material interfaces?
- \item What are the limits of ballistic heat transfer in low-dimensional structures such as carbon nanotubes?
-\end{itemize}
+For the first focus area, we employed classical molecular dynamics simulations to model lattice heat transfer in different systems. While MD neglects quantum effects, it can flexibly account for atomic-scale geometries, wave interference effects and so-called anharmonic scattering between lattice waves. Using MD, we answer the following questions: 
+ \begin{itemize}
+  \item How does anharmonic scattering manifest in energy transfer at material interfaces?
+  \item What role do interference and dissipative effects play in thermal conduction through nanoscale point contacts smaller than phonon wavelength and mean free path?
+  \item How far can phonons travel in carbon nanotubes without being damped by anharmonic scattering?
+  \item How does so-called twinning affect the thermal conductivity of silicon nanowires?
+ \end{itemize}
+
+% \begin{itemize}
+%   \item Anharmonic scattering assists energy transfer between dissimilar materials by (i) enabling dissipation of evanescent waves and (ii) allowing for multi-phonon energy transfer across the interface
+% \end{itemize}
+
+In the second area of focus, we pave the way for the unified theoretical description of phononic, photonic (electromagnetic) and electronic energy transfer. We show that Langevin theory \cite{langevin,zwanzig} combined with the linearization of equations of motion allows for calculating energy transfer rates for the three primary carriers in a unified manner, fully accounting for both wave properties and carrier relaxation and also allowing for simulations of relatively large systems. Since such a unified mathematical picture of energy transfer for the three carriers has not been presented earlier, this compilation part of the thesis is taken as an opportunity to highlight the opportunities presented by such a treatment.
+
+To put these research topics in the general context of nanoscale heat transfer, we briefly review the most prominent nanoscale energy transfer phenomena below and also discuss their relation to each of the publications included in this thesis. 
+
+% The two focus areas listed above roughly divide the publications included in this thesis into two parts. First part of the thesis is devoted to lattice vibrations (loosely referred to as phonons), because they are the dominant heat transfer mechanism in insulators and typical semiconductors \cite{chen}. To deliver new insight into phononic energy transfer processes, we use classical molecular dynamics (MD) simulations. While MD neglects all quantum effects, it accounts both for wave interference and detailed scattering phonon scattering without any approximations \footnote{Except for assuming classical wave dynamics and employing a semi-empirical potential for describing interatomic interactions.}. Using MD, we investigate the following questions:
+% \begin{itemize}
+%  \item Does the interplay of interference and dissipative effects manifest in structures smaller than phonon wavelength and mean free path?
+%  \item What is the role of anharmonic effects in energy transfer at material interfaces?
+%  \item What are the limits of ballistic heat transfer in low-dimensional structures such as carbon nanotubes?
+% \end{itemize}
 
 %(1) study how interference and anharmonic scattering manifest in thermal transfer through a point contact, (2) investigate the detailed role of anharmonic scattering in energy transfer across a planar interface between two materials of different masses, and (3) calculate phonon scattering lengths in carbon nanotubes from non-equilibrium MD simulations, and (4) demonstrate tunable thermal conductivity in twinning superlattice silicon nanowires.
 
-In the second part, we pave the way for the unified theoretical description of phononic, photonic and electronic energy transfer.
-\begin{itemize}
- \item Is there a unified way to describe energy transfer of phonons, photons, and electrons using simple computational models?
-\end{itemize}
-Our results show that Langevin theory \cite{langevin,zwanzig} combined with the linearization of equations of motion allows fo calculating energy transfer rates for the three primary carriers in a unified manner, fully accounting for both wave properties and carrier relaxation and also allowing for simulations of relatively large systems. Since such a unified, mathematical picture of energy transfer for the three carriers cannot be found in literature, this compilation part of the thesis is taken as an opportunity to highlight the opportunities presented by such a treatment.
+% In the second part, we pave the way for the unified theoretical description of phononic, photonic and electronic energy transfer.
+% \begin{itemize}
+%  \item Is there a unified way to describe energy transfer of phonons, photons, and electrons using simple computational models?
+% \end{itemize}
+% Our results show that Langevin theory \cite{langevin,zwanzig} combined with the linearization of equations of motion allows fo calculating energy transfer rates for the three primary carriers in a unified manner, fully accounting for both wave properties and carrier relaxation and also allowing for simulations of relatively large systems. Since such a unified, mathematical picture of energy transfer for the three carriers cannot be found in literature, this compilation part of the thesis is taken as an opportunity to highlight the opportunities presented by such a treatment.
 
 % The solution of the Langevin equations of motion naturally gives rise to Green's functions, which act as response functions translating local stochastic fluctuations in carrier number into carrier propagation. Dissipative effects are mimicked by the coupling of the microscopic degrees of freedom such as atomic displacement or local dipole moment to the Langevin baths, giving rise to non-zero carrier relaxation times.
 
-To put these research topics in the general context of nanoscale heat transfer, we briefly review the most prominent nanoscale energy transfer phenomena below and also discuss their relation to each of the publications included in this thesis. 
+
 
 
 %\begin{itemize}
@@ -99,19 +68,19 @@ To put these research topics in the general context of nanoscale heat transfer, 
 %\begin{itemize}
 % \item Phonon, photon, electron transport overlap
 %\end{itemize}
-This Section reviews the prominent energy transfer phenomena of nanoscale systems, with the focus on relevant concepts. Discussion of the microscopic equations of motion governing energy transfer is postponed to Chap. \ref{chap:theory}. Energy transfer phenomena in phonon, photon and electron transport are first discussed separately before discussing their interplay in nanoscale systems.
+Nanoscale phenomena in phonon, photon and electron transport are discussed separately below, with the detailed mathematical theory presented in Chap. \ref{chap:theory}. Electronic transport is not considered in any of the publications included in this thesis but is included in this compilation part to highlight the similarities in the theoretical description of different carriers and to provide the basis for possible future works aiming at the coupling of models. % Therefore, the discussion of electronic effects is kept brief throughout.  
 
-We begin with vibrational energy transfer phenomena in Subsection \ref{sec:intro_vib}. Emphasis is placed on the microscale violations of the classical Fourier's heat equation \cite{fetter}
-\begin{equation}
- \rho c_p \frac{\partial T(\mathbf{r},t)}{\partial t} =  \nabla \cdot [\kappa \nabla T(\mathbf{r},t)] + q(\mathbf{r},t), \label{eq:fourier}
-\end{equation}
-which accurately describes energy transfer in macroscopic media. In Eq. \eqref{eq:fourier}, $\rho$ is mass density, $c_p$ is the constant-pressure heat capacity per unit mass, $T(\mathbf{r},t)$ is local temperature at position $\mathbf{r}$ at time $t$, $\kappa$ is the sum of electronic and phononic thermal conductivities and $q(\mathbf{r},t)$ is the rate of heat generated by, e.g., Joule heating. Section. \ref{sec:intro_vib} defines the various length scales emerging in the microscopic scale, relevant in understanding when Fourier's heat equation can be safely applied. 
+% We begin with vibrational energy transfer phenomena in Subsection \ref{sec:intro_vib}. Emphasis is placed on the microscale violations of the classical Fourier's heat equation \cite{fetter}
+% \begin{equation}
+%  \rho c_p \frac{\partial T(\mathbf{r},t)}{\partial t} =  \nabla \cdot [\kappa \nabla T(\mathbf{r},t)] + q(\mathbf{r},t), \label{eq:fourier}
+% \end{equation}
+% which accurately describes energy transfer in macroscopic media. In Eq. \eqref{eq:fourier}, $\rho$ is mass density, $c_p$ is the constant-pressure heat capacity per unit mass, $T(\mathbf{r},t)$ is local temperature at position $\mathbf{r}$ at time $t$, $\kappa$ is the sum of electronic and phononic thermal conductivities and $q(\mathbf{r},t)$ is the rate of heat generated by, e.g., Joule heating. Section. \ref{sec:intro_vib} defines the various length scales emerging in the microscopic scale, relevant in understanding when Fourier's heat equation can be safely applied. 
 
-Electromagnetic energy transfer phenomena in nanoscale are discussed in Subsection \ref{sec:intro_em}. In electromagnetic energy transfer, the macroscopic laws of thermal radiation such as Planck's radiation law break down when the separation between bodies becomes similar to the wavelengths of thermally excited electromagnetic fields. At such small separations, evanescent near-fields localized close to the material surfaces can couple the materials and thereby strongly increase energy transfer rates. 
+% Electromagnetic energy transfer phenomena in nanoscale are discussed in Subsection \ref{sec:intro_em}. In electromagnetic energy transfer, the macroscopic laws of thermal radiation such as Planck's radiation law break down when the separation between bodies becomes similar to the wavelengths of thermally excited electromagnetic fields. At such small separations, evanescent near-fields localized close to the material surfaces can couple the materials and thereby strongly increase energy transfer rates. 
 
-Subsection \ref{sec:intro_electrons} reviews the problem of self-heating in electronic devices. The discussion of electron transport is included in this compilation part of the thesis only to suggest a unified framework for modeling electron, phonon, and photon transport and, e.g., electron-phonon energy transfer, so the review is kept brief. Detailed electron transport topics such as the microscopic calculation of carrier scattering rates \cite{ziman} are outside the scope of this thesis.  % electron conductance quantization \cite{landauer57} and 
+% Subsection \ref{sec:intro_electrons} reviews the problem of self-heating in electronic devices. The discussion of electron transport is included in this compilation part of the thesis only to suggest a unified framework for modeling electron, phonon, and photon transport and, e.g., electron-phonon energy transfer, so the review is kept brief. Detailed electron transport topics such as the microscopic calculation of carrier scattering rates \cite{ziman} are outside the scope of this thesis.  % electron conductance quantization \cite{landauer57} and 
 
-Finally, Subsection \ref{sec:intro_coupling} is devoted to discussing the interplay of carriers at nanoscale, relevant to understanding, e.g., heat transfer at metal-dielectric interfaces, heat spreading in laser heating, and radiation-conduction crossover at vacuum-gaps.
+% Finally, Subsection \ref{sec:intro_coupling} is devoted to discussing the interplay of carriers at nanoscale, relevant to understanding, e.g., heat transfer at metal-dielectric interfaces, heat spreading in laser heating, and radiation-conduction crossover at vacuum-gaps.
 
 % Hot spots
 % Graphene quilts etc.
@@ -121,51 +90,83 @@ Finally, Subsection \ref{sec:intro_coupling} is devoted to discussing the interp
 
 % Similarity of phonon, photon systems (interference, scattering, Green's function methods,...)
 
-\subsection{Vibrational energy transfer in nanoscale}
+\subsection{Phononic energy transfer in nanoscale}
 \label{sec:intro_vib}
 % Start from Peierls's theory
-Classical heat equation \eqref{eq:fourier} follows from the conservation of energy accompanied by Fourier's law of diffusion \cite{fourier}
-\begin{equation}
- \mathbf{q} = -\kappa \nabla T(\mathbf{r},t),
-\end{equation}
-stating that local heat flux $\bb{q}$ is proportional to the negative temperature gradient. Fourier's law is built on the assumption that the local temperature $T(\bf{r},t)$ can be sensibly defined. Because temperature is a statistical quantity properly defined only for large systems \cite{}, the law must break down at small enough length scales. 
+% \begin{itemize}
+%  \item Size effects: boundaries, interfaces
+%  \item Reduction of thermal conductivity (twinning nanowires)
+%  \item Ballistic thermal conduction in carbon nanotubes
+%  \item Wave interferences (phononic crystals, two-path interference,\dots)
+% \end{itemize}
 
-The microscopic theory of thermal conduction was developed by Rudolf Peierls in 1929 \cite{peierls29}. Understanding that collective lattice vibrations (phonons) carry heat in crystalline solids, he proposed that thermal resistivity arises from the scattering of phonons from lattice imperfections and other phonons. These scattering mechanisms existing in any non-ideal material at non-zero temperature give rise to a finite phonon mean free path, characterizing the average distance between scattering events. At length scales much larger than the mean free path, the heat carriers are expected to essentially perform a random walk with constant drift along the temperature gradient and heat transfer is well described by Fourier's local theory. At length scales smaller than the mean free path, on the other hand, phonons can travel without scattering and Fourier's theory must be invalid. Phonon mean free paths depend strongly on the material, vibrational frequency and temperature \cite{}, but a typical value for bulk silicon is around $\sim 300$ nm at room temperature \cite{ju99}. 
+
+
+As conjenctured by Debye in 1914 \cite{}, heat is carried in semiconductors and insulators\footnote{In metals and heavily doped semiconductors, the electronic contribution often overwhelms the phononic contribution to thermal conductivity.} by propagating lattice waves called phonons. The resistance to heat flow arises microscopically from the scattering of phonons from material impurities, interfaces, and boundaries as well as other phonons and charge carriers \cite{peierls29,ziman}. These scattering mechanisms are depicted in Fig. \ref{fig:intro_scattering}. 
+
+\begin{figure}
+\begin{center}
+ %\includegraphics[width=8.6cm]{pics/schwab00_fig3.ps}
+ \includegraphics[width=.80\columnwidth]{inkscape/interface.pdf}
+ \caption{(a) Schematic illustration of microscopic scattering mechanisms in phononic thermal conduction: (1) Boundary scattering, (2) interface scattering, (3) impurity scattering, (4) phonon-phonon scattering. (b) Schematic of phonon propagation in a material, with scattering events at averages distances of mean free path $\Lambda$. \textbf{SCHEMATIC TO BE FINISHED}}
+\label{fig:intro_scattering}
+\end{center}
+\end{figure}
+
+The characteristic distance between phonon scattering events is called the phonon mean free path. While phonon mean free paths depend strongly on the material, temperature, and the type of scattering (elastic versus inelastic), a typical value for bulk silicon is around $\sim 300$ nm at room temperature \cite{ju99}. At length scales smaller than the mean free path, scattering events are too infrequent to drive phonon gas to local thermal equilibrium. Consequently, the classical Fourier's law of diffusion \cite{fourier} based on the concept of a well-defined local temperature breaks down. 
+
+Because of the relatively long intrinsic phonon mean free paths and the high surface-to-volume ratio typical to nanostructures, material interfaces and surfaces often have a dominant contribution to thermal resistance. Microscopically, phonon scattering at the interface between dissimilar materials arises both from atomic disorder at the interface and from the mismatch in the acoustic properties of the materials \cite{}. Thermal resistance at interfaces can prevent the efficient extraction of heat from electronic devices, thereby limiting their performance \cite{pop10}. Many methods have been suggested to reduce the thermal resistance between materials, including chemical functionalization \cite{hopkins11,kaur14}, external pressure \cite{shen11,chalopin12}, and heat-mediating thin films \cite{english12}. 
+
+In a similar way, boundary scattering from material surfaces can strongly reduce the thermal conductivity in nanowires and thin films. Because such reduction is expected to increase the thermoelectric figure of merit \cite{chen}, low-dimensional materials such as silicon nanowires have been suggested to be attractive alternatives for thermoelectric conversion \cite{hochbaum08}. To reduce the thermal conductivity of nanowires even further, one can apply other thermal conductivity reduction mechanisms such as alloying \cite{} or partial amorphization \cite{}. % , but with care so that electrical conduction is not too strongly hindered. % depicted in Fig. \ref{fig:intro_hochbaum}. %\citepub{spectral}\citepub{twinning} % The diffusive scattering from the atomically rough surfaces reduces the thermal conductivity of silicon nanowires by two orders of magnitude compared to the bulk value  \cite{hochbaum08}.
+
+Efficient extraction of heat from electronic devices requires not only small interfacial resistances but also bulk materials with high thermal conductivities \cite{pop10}. Nanomaterials with long phonon mean free paths have been suggested to be good candidates for such thermal management. For example, the rigid sp$^2$ bonding of carbon atoms in carbon nanotubes \cite{iijima91} gives rise to a thermal conductivity in the range of 500-5000 W/mK \cite{}. Because of the very long mean free paths, however, the measured thermal conductivities depend on the tube length \cite{chang08}, with size-dependent variations observed even in millimeter-long nanotubes \cite{chang_personal}. It is even possible that the thermal conductivity of pristine carbon nanotubes diverges as a function of tube length, a signature of anomalous thermal conduction observed in computer simulations for one-dimensional atomic chains \cite{lepri03,mai07,dhar08}. Indications of anomalous thermal conduction were recently observed experimentally \cite{xu14} for graphene \cite{}, the two-dimensional allotrope of carbon.
+
+% Classical heat equation \eqref{eq:fourier} follows from the conservation of energy accompanied by Fourier's law of diffusion \cite{fourier}
+% \begin{equation}
+%  \mathbf{q} = -\kappa \nabla T(\mathbf{r},t),
+% \end{equation}
+% stating that local heat flux $\bb{q}$ is proportional to the negative temperature gradient. Fourier's law is built on the assumption that the local temperature $T(\bf{r},t)$ can be sensibly defined. Because temperature is a statistical quantity properly defined only for large systems \cite{}, the law must break down at small enough length scales. 
+
+% The microscopic theory of thermal conduction was developed by Rudolf Peierls in 1929 \cite{peierls29}. Understanding that collective lattice vibrations (phonons) carry heat in crystalline solids, he proposed that thermal resistivity arises from the scattering of phonons from lattice imperfections and other phonons. These scattering mechanisms existing in any non-ideal material at non-zero temperature give rise to a finite phonon mean free path, characterizing the average distance between scattering events. At length scales much larger than the mean free path, the heat carriers are expected to essentially perform a random walk with constant drift along the temperature gradient and heat transfer is well described by Fourier's local theory. At length scales smaller than the mean free path, on the other hand, phonons can travel without scattering and Fourier's theory must be invalid. Phonon mean free paths depend strongly on the material, vibrational frequency and temperature \cite{}, but a typical value for bulk silicon is around $\sim 300$ nm at room temperature \cite{ju99}. 
 
 % Thermal conduction in macroscopic systems is traditionally described using Fourier's law \cite{fourier}, stating that the heat flux at any given point is proportional to the temperature gradient at the same point. The theory leads, however, to the unphysical phenomenon that a local temperature perturbation can propagate infinitely fast \cite{chen}, in direct contradiction to the finiteness of the speed of sound and also special relativity. This indicates that Fourier's theory must ultimately break down in nanoscale.
 
  %Some experiments have claimed to have observed such anomalous thermal conduction in silicon nanowires \cite{yang10}, but the evidence remains inconclusive. % In two-dimensional materials such as graphene, similar divergence is expected, and recent experiments and simulations for graphene have suggested this to be the case \cite{xu14}. %\citepub{cnt}
 
-\begin{figure}
-\begin{center}
- %\includegraphics[width=8.6cm]{pics/schwab00_fig3.ps}
- \includegraphics[width=8.6cm]{pics/schwab_fig3.pdf}
- \caption{Thermal conductance measured as a function of temperature by Schwab \textit{et al.} \cite{schwab00}. In their experimental setup, heat was transferred through four nanowires with four acoustic modes in each carrying the heat. The measured conductance at low temperature is therefore $G=16g_0$, where $g_0$ is the conductance quantum. Reprinted with permission from Ref. \cite{schwab00}.}
-\label{fig:intro_schwab}
-\end{center}
-\end{figure}
+% \begin{figure}
+% \begin{center}
+%  %\includegraphics[width=8.6cm]{pics/schwab00_fig3.ps}
+%  \includegraphics[width=8.6cm]{pics/schwab_fig3.pdf}
+%  \caption{Thermal conductance measured as a function of temperature by Schwab \textit{et al.} \cite{schwab00}. In their experimental setup, heat was transferred through four nanowires with four acoustic modes in each carrying the heat. The measured conductance at low temperature is therefore $G=16g_0$, where $g_0$ is the conductance quantum. Reprinted with permission from Ref. \cite{schwab00}.}
+% \label{fig:intro_schwab}
+% \end{center}
+% \end{figure}
 
-In systems smaller than the phonon mean free path, the scattering-free propagation of phonons is called ballistic transport, contrasting with the diffusive transport of Fourier-like systems. The most striking example of ballistic transport is the thermal conductance quantization, predicted theoretically by Rego and Kirczenow in 1998 \cite{rego98} and observed experimentally in 2000 by Schwab \textit{et al.} \cite{schwab00} (see Fig. \ref{fig:intro_schwab}), thereby indirectly confirming also the existence of ballistic transport. 
+% In systems smaller than the phonon mean free path, the scattering-free propagation of phonons is called ballistic transport, contrasting with the diffusive transport of Fourier-like systems. The most striking example of ballistic transport is the thermal conductance quantization, predicted theoretically by Rego and Kirczenow in 1998 \cite{rego98} and observed experimentally in 2000 by Schwab \textit{et al.} \cite{schwab00} (see Fig. \ref{fig:intro_schwab}), thereby indirectly confirming also the existence of ballistic transport. 
 
 % The thermal conductance quantum, which is analogous to the quantum of electrical conductance, is independent of any material properties and only depends on temperature and Planck's constant.  Their calculations showed that at sufficiently low temperatures, where phonon scattering is minimal and only the lowest-frequency phonon modes can be excited, thermal conductance through a narrow constriction is an integer multiple of the thermal conductance quantum. 
 
 % As noted above, heat transfer is expected to be well described by Fourier's law in sufficiently large system. This ballistic-diffusive transition has been observed in bulk-like three-dimensional systems using computer simulations \cite{saito10}. In low-dimensional systems, on the other hand, computer simulations \cite{lepri97,lepri03,mai07,dhar08} and heat transfer experiments \cite{yang10,xu14} have indicated that the Fourier limit may never be reached. In one-dimensional oscillator chains, for example, it is now widely accepted \cite{dhar08} that the thermal conductivity diverges as a function of system length following a power-law \cite{mai07}, called anomalous thermal conduction \cite{dhar08}. It is, however, still debated \cite{marconnet13} if any physical system such as a nanowire can be treated as a one-dimensional object and could therefore exhibit the divergence.
 
-In addition to the mean free path, there is another important length scale governing heat transfer in microscopic scale: the phonon wavelength. In bulk silicon, the characteristic wavelength of thermally excited phonons is around 10 nm at room temperature \cite{ju99}. In structures with characteristic dimensions in the range of the phonon wavelength, the wave properties of phonons cannot be neglected and interference effects appear. Interference effects have enabled, for example, designing acoustic reflectors with novel applications in phonon lasing \cite{maryam13}, enhancing the optical-mechanical coupling \cite{fainstein13}, and phonon nanocapacitors \cite{han15}. Wavelength-related effects are also exploited in thermal engineering: as an example, Kim \textit{et al.} were able to reduce the thermal conductivity of InGaAs alloy (which naturally scatters short-wavelength phonons due to point defects) by introducing nanoparticles acting as scatterers for mid-to-long-wavelength phonons \cite{kim06}. %\citepub{fpu}\citepub{fpu2}\citepub{gf} % Other examples of interference
+% Nanostructure
 
-\begin{figure}
-\begin{center}
- %\includegraphics[width=8.6cm]{pics/schwab00_fig3.ps}
- \includegraphics[width=.80\columnwidth]{pics/hochbaum_fig1.pdf}
- \caption{(a) Scanning electron microscope image of a silicon nanowire array. (b) Transmission electron microscope image of a single nanowire, showing the prominent edge roughness responsible for strong phonon scattering. The low thermal conductivity gives rise to a high thermoelectric figure of merit. The electron diffraction pattern in the inset shows that the wire single crystalline along its length. Reprinted with permission from Ref. \cite{hochbaum08}.}
-\label{fig:intro_hochbaum}
-\end{center}
-\end{figure}
+In addition to the mean free path, there is another important length scale governing heat transfer in microscopic scale: the phonon wavelength. In bulk silicon, the characteristic wavelength of thermally excited phonons is around 10 nm at room temperature \cite{ju99}. In structures with characteristic dimensions in the range of the phonon wavelength, the wave properties of phonons cannot be neglected and interference effects appear. Interference effects have enabled, for example, designing acoustic reflectors with novel applications in phonon lasing \cite{maryam13}, enhancing the optical-mechanical coupling \cite{fainstein13}, and phonon nanocapacitors \cite{han15}. 
 
-In a nanoscale system with relatively long internal phonon mean free paths, the material surfaces and interfaces play an important role in thermal conduction. At rough surfaces, for example, phonons are scattered into all directions, which strongly suppresses the heat flow. The resulting reduced thermal conductivity has been noted to be responsible for the moderately high thermoelectric figure of merit of Si nanowires \cite{hochbaum08} depicted in Fig. \ref{fig:intro_hochbaum}. At material interfaces, the mismatch in the acoustic properties of the materials inevitably scatters phonons.  This contact resistance between dissimilar materials can act as a major bottleneck limiting the extraction of heat from electronic devices, thereby hindering their performance \cite{pop10}. Many methods have been suggested to reduce the thermal resistance between materials, including chemical functionalization \cite{hopkins11,kaur14}, external pressure \cite{shen11,chalopin12}, and heat-mediating thin films \cite{english12}. %\citepub{spectral}\citepub{twinning}
+% Wavelength-related effects are also exploited in thermal engineering: as an example, Kim \textit{et al.} were able to reduce the thermal conductivity of InGaAs alloy, which naturally scatters short-wavelength phonons due to point defects, by introducing nanoparticles acting as scatterers for mid-to-long-wavelength phonons \cite{kim06}. %\citepub{fpu}\citepub{fpu2}\citepub{gf} % Other examples of interference
+
+% \begin{figure}
+% \begin{center}
+%  %\includegraphics[width=8.6cm]{pics/schwab00_fig3.ps}
+%  \includegraphics[width=.80\columnwidth]{pics/hochbaum_fig1.pdf}
+%  \caption{(a) Scanning electron microscope image of a silicon nanowire array. (b) Transmission electron microscope image of a single nanowire, showing the prominent edge roughness responsible for strong phonon scattering. The low thermal conductivity gives rise to a high thermoelectric figure of merit. The electron diffraction pattern in the inset shows that the wire single crystalline along its length. Reprinted with permission from Ref. \cite{hochbaum08}.}
+% \label{fig:intro_hochbaum}
+% \end{center}
+% \end{figure}
+
+
 
 % Relation to the thesis
-Concepts such as phonon interference, ballistic transport, mean free paths, and interface scattering appear throughout this thesis. In Publications \cp{fpu}, \cp{fpu2}, and \cp{gf}, we explore the interference effects exhibited in thermal conduction through nanoscale constrictions and reveal intricate interference patterns in local nonequilibrium temperature profiles. We also show how such patterns vanish at higher temperatures due to increased scattering. In Publication \cp{spectral}, we present detailed maps of the contributions of different vibrational frequencies to thermal conduction across a mass-mismatched interface, improving thereby the understanding of heat transfer mechanisms at interfaces and presenting guidelines for future thermal engineering of high-conductance interfaces. Publication \cp{cnt} presents a non-equilibrium method for determining the mean free paths of phonons in carbon nanotubes, supplying a theoretical description of the ballistic-diffusive crossover in one-dimensional systems. In Publication \cp{twinning}, we perform ''thermal engineering'' and demonstrate the existence of minimun thermal conductivity at a certain twinning period length in a silicon nanowire. The minimun arises from the maximal blocking of bulk-like scattering-free propagation of phonons through the nanowire by the periodically repeating twinning boundaries.
+% Concepts such as phonon interference, ballistic transport, mean free paths, and interface scattering appear throughout this thesis. In Publications \cp{fpu}, \cp{fpu2}, and \cp{gf}, we explore the interference effects exhibited in thermal conduction through nanoscale constrictions and reveal intricate interference patterns in local nonequilibrium temperature profiles. We also show how such patterns vanish at higher temperatures due to increased scattering. In Publication \cp{spectral}, we present detailed maps of the contributions of different vibrational frequencies to thermal conduction across a mass-mismatched interface, improving thereby the understanding of heat transfer mechanisms at interfaces and presenting guidelines for future thermal engineering of high-conductance interfaces. Publication \cp{cnt} presents a non-equilibrium method for determining the mean free paths of phonons in carbon nanotubes, supplying a theoretical description of the ballistic-diffusive crossover in one-dimensional systems. In Publication \cp{twinning}, we perform ''thermal engineering'' and demonstrate the existence of minimun thermal conductivity at a certain twinning period length in a silicon nanowire. The minimun arises from the maximal blocking of bulk-like scattering-free propagation of phonons through the nanowire by the periodically repeating twinning boundaries.
 
 
 %As noted by Kapitza already in 1930s \cite{}, carrier scattering at interfaces between materials also gives rise to thermal resistance. Even in the absence of defects, 
@@ -185,41 +186,63 @@ Concepts such as phonon interference, ballistic transport, mean free paths, and 
 
 %\subsection{Thermal engineering}
 
-\subsection{Electromagnetic energy transfer in the near-field}
+\subsection{Photonic energy transfer in the near-field}
 \label{sec:intro_em}
-Accelerating charges are known to emit electromagnetic radiation \cite{jackson}. Because the electrons and nuclei in any solid material undergo thermal (and quantum) fluctuations, all materials therefore emit electromagnetic radiation carrying heat. Accurate theoretical description of the emitted electromagnetic spectrum was achieved by Max Planck in 1900 \cite{planck00a}. His blackbody radiation law played a key role in the development of quantum theory and describes, for example, the spectrum of cosmic microwave background radiation at the accuracy of XXX.
 
+Unlike lattice vibrations, electromagnetic fields can propagate and transfer heat even in vacuum. This phenomenon is best observed on a sunny day when the electromagnetic radiation emitted from the Sun heats the skin. Like all thermal radiation, the radiation from the Sun originates from accelerating charges. Because the electrons and nuclei in any matter undergo accelerating motion due to thermal fluctuations, all matter radiates heat like a miniature Sun. 
+
+% While lattice vibrations cannot transfer heat without a medium, electromagnetic fields can propagate even in vacuum. Because all materials emit electromagnetic radiation due to the microscopic fluctuations of electrons and nuclei, 
 
 \begin{figure}
 \begin{center}
  %\includegraphics[width=8.6cm]{pics/schwab00_fig3.ps}
- \includegraphics[width=8.6cm]{pics/kittel_fig1.pdf}
- \caption{(a) Electric field lines close to a polar surface with positive (green) and negative (red) charges. (b) The strength of electric field as a function of distance from the surface, showing the localization close to the surface. Reprinted with permission from Ref. \cite{kittel09}.}
-\label{fig:intro_kittel}
+ % \includegraphics[width=.80\columnwidth]{inkscape/interface.pdf}
+ \caption{Due to microscopic thermal fluctuations, an object at non-zero temperature emits thermal radiation in the form of propagating electromagnetic waves (blue). Close to the object, there are, however, also evanescent waves (green) invisible far from the object. If another object is placed in the near-field, the contribution of evanescent waves can overwhelm the propagating wave contribution.  \textbf{SCHEMATIC TO BE FINISHED}}
+\label{fig:intro_em}
 \end{center}
 \end{figure}
+
+Thermal radiation emitted from an object typically contains a wide range of photon wavelengths, with the distribution governed by the Planck distribution \cite{planck00a} and the wavelength-dependent emissivity of the object \cite{}. For objects at room temperature, the emitted propagating waves have typically wavelengths in the micrometer-range \cite{}. At distances smaller than the dominant wavelength from the object, there are, however, also evanescent waves localized close to the object as depicted in Fig. \ref{fig:intro_em}. While these evanescent waves are ''invisible'' and cannot carry energy far from the object \cite{}, they can contribute to energy transfer close to the object. Therefore, energy transfer between materials is expected to be enhanced at submicrometer separation compared to the far-field value. 
+
+The near-field enhancement of energy transfer was first observed by Hargreaves \cite{hargreaves69}, who measured the thermal conductance between two chromium layers separated by a micrometer-scale gap. The theoretical calculation for the exact enhancement rate was carried out by Polder and van Hove \cite{polder71}, and consequently near-field enhancement effects were predicted in numerous geometries \cite{loomis94,pendry99,carminati99,shchegrov00,mulet01,volokitin01}. In the last decade, advances in experimental techniques have allowed for very precise measurements of near-field enhancement rates \cite{kittel05,hu08,shen09,ottens11}, confirming theoretical predictions. Near-field effects are now routinely used in thermal microscopy \cite{majumdar99,muller-hirsch99,kittel05,kittel08} and they are also expected to give rise to engineering applications in, e.g., infrared thermophotovoltaics \cite{dimatteo01,narayanaswamy03,laroche06} and designing narrow-band infrared antennas \cite{greffet02}. 
+
+% The near-field enhancement of energy transfer was first observed experimentally by Hargreaves in 1969 \cite{hargreaves69} and described theoretically by Polder and van Hove in 1971 \cite{polder71} using Rytov's theory \cite{rytov} of fluctuational electrodynamics. 
+
+% Far from a thermally radiating object, only the propagating electromagnetic waves emitted by the object carry energy. At wavelengths smaller than the dominant wavelength in thermal radiation, which is typically in the micrometer range at room temperature \cite{},   % the amount of energy radiated by a solid is given by the radiative heat transfer theory \cite{}, based on Max Planck's work \cite{planck00a} on blackbody radiation. 
+
+% Accelerating charges are known to emit electromagnetic radiation \cite{jackson}. Because the electrons and nuclei in any solid material undergo thermal (and quantum) fluctuations, all materials therefore emit electromagnetic radiation carrying heat. Accurate theoretical description of the emitted electromagnetic spectrum was achieved by Max Planck in 1900 \cite{planck00a}. His blackbody radiation law played a key role in the development of quantum theory and describes, for example, the spectrum of cosmic microwave background radiation at the accuracy of XXX.
+
+
+% \begin{figure}
+% \begin{center}
+%  %\includegraphics[width=8.6cm]{pics/schwab00_fig3.ps}
+%  \includegraphics[width=8.6cm]{pics/kittel_fig1.pdf}
+%  \caption{(a) Electric field lines close to a polar surface with positive (green) and negative (red) charges. (b) The strength of electric field as a function of distance from the surface, showing the localization close to the surface. Reprinted with permission from Ref. \cite{kittel09}.}
+% \label{fig:intro_kittel}
+% \end{center}
+% \end{figure}
 % In 1900, Max Planck \cite{planck00a} studied the radiation emitted by a perfectly absorbing medium and gave birth not only to quantum theory but also to Planck's blackbody radiation law, which has since been observed to describe, for example, the spectrum of cosmic microwave background radiation at the accuracy of XXX.
 % 
 
-Planck's law inherently suggests that the total power of the emitted radiation is independent of the distance from the object. This follows from the assumption that only propagating electromagnetic waves contribute to the energy density. Close to the material surface, solution of Maxwell's equations gives, however, also rise to evanescent electromagnetic fields localized at a distance of a few wavelengths from the object \cite{polder71} as depicted in Fig. \ref{fig:intro_kittel}. One can then envisage placing another object sufficiently close to the radiating body so that the evanescent fields can induce motion of charges in the added object, leading to energy transfer by the evanescent fields. Planck's law therefore breaks down at very small distances. 
-
-The breakdown in Planck's law was first observed by Hargreaves \cite{hargreaves69}, who found an enhancement in the heat transfer rate between two chromium layers as the layers were separated by subwavelength gap. The theoretical calculation for the exact enhancement rate was carried out by Polder and van Hove \cite{polder71}, and consequently near-field enhancement effects were predicted in numerous geometries \cite{loomis94,pendry99,carminati99,shchegrov00,mulet01,volokitin01}. In the last decade, advances in experimental techniques have allowed for very precise measurements of near-field enhancement rates \cite{kittel05,hu08,shen09,ottens11}, confirming theoretical predictions. Near-field effects are now routinely used in thermal microscopy \cite{majumdar99,muller-hirsch99,kittel05,kittel08} and they are also expected to give rise to engineering applications in, e.g., infrared thermophotovoltaics \cite{dimatteo01,narayanaswamy03,laroche06} and designing narrow-band infrared antennas \cite{greffet02}. 
-
-\begin{figure}
-\begin{center}
- %\includegraphics[width=8.6cm]{pics/schwab00_fig3.ps}
- \includegraphics[width=8.6cm]{pics/shchegrov00_fig1.pdf}
- \caption{The spectral energy density of electromagnetic field (arbitrary units) close to a SiC surface at distances of (a) $1$ mm, (b) $2$ $\mu$m, and (c) $100$ nm. At the distance of 100 nm, the spectral energy density is dominated by the surface phonon polariton at frequency $\omega=178.7$ Trad/s, resulting in essentially monochromatic energy emission. Inset show the spectral energy densities plotted in semilogarithmic scale. Reprinted with permission from Ref. \cite{shchegrov00}.}
-\label{fig:intro_shchegrov}
-\end{center}
-\end{figure} 
-
-Near-field effects are particularly strong for materials supporting evanescent surface waves decaying at both sides of the surface \cite{shchegrov00}. The surface waves arise from the coupling between the electromagnetic field and either the free electrons (surface plasmon polaritons) or transverse optical phonons (surface phonon polaritons). While surface plasmon polaritons can only be thermally excited in metals at temperatures much higher than room temperature, surface phonon polaritons can contribute to thermal transfer in polar semiconductors even at room temperature. To demonstrate the large contribution of surface waves, Fig. \ref{fig:intro_shchegrov} shows the theoretically calculated \cite{shchegrov00} spectral energy density of the electromagnetic field at various distances from a SiC surface.
-
-Similarly, near-field effects strongly increase the spectral density of the electromagnetic field in the vicinity of nanoparticles made of a polar material. Consequently, heat transfer between two nanoparticles in vacuum is found to strongly increase at small distances \cite{domingues05}. In practice, however, the required nanoparticle distances for efficient heat transfer may be too small, so for practical applications it would be necessary to engineer the thermal conductance to be higher. From the theory of dipole emission, it is well known that the optical-mechanical coupling can be enhanced by orders of magnitude in an inhomogeneous environment such as in a mirror cavity \cite{novotny}. This raises the question, if the interparticle heat transfer rate between particles could be enhanced by cavity. This question was investigated and answered in positive in \citepub{dipole}.
+% Planck's law inherently suggests that the total power of the emitted radiation is independent of the distance from the object. This follows from the assumption that only propagating electromagnetic waves contribute to the energy density. Close to the material surface, solution of Maxwell's equations gives, however, also rise to evanescent electromagnetic fields localized at a distance of a few wavelengths from the object \cite{polder71} as depicted in Fig. \ref{fig:intro_kittel}. One can then envisage placing another object sufficiently close to the radiating body so that the evanescent fields can induce motion of charges in the added object, leading to energy transfer by the evanescent fields. Planck's law therefore breaks down at very small distances. 
 
 
-\subsection{Electronic self-heating and energy transfer in nanostructures}
+
+% \begin{figure}
+% \begin{center}
+%  %\includegraphics[width=8.6cm]{pics/schwab00_fig3.ps}
+%  \includegraphics[width=8.6cm]{pics/shchegrov00_fig1.pdf}
+%  \caption{The spectral energy density of electromagnetic field (arbitrary units) close to a SiC surface at distances of (a) $1$ mm, (b) $2$ $\mu$m, and (c) $100$ nm. At the distance of 100 nm, the spectral energy density is dominated by the surface phonon polariton at frequency $\omega=178.7$ Trad/s, resulting in essentially monochromatic energy emission. Inset show the spectral energy densities plotted in semilogarithmic scale. Reprinted with permission from Ref. \cite{shchegrov00}.}
+% \label{fig:intro_shchegrov}
+% \end{center}
+% \end{figure} 
+
+% Near-field effects are particularly strong for materials supporting evanescent surface waves decaying at both sides of the surface \cite{shchegrov00}. The surface waves arise from the coupling between the electromagnetic field and either the free electrons (surface plasmon polaritons) or transverse optical phonons (surface phonon polaritons). While surface plasmon polaritons can only be thermally excited in metals at temperatures much higher than room temperature, surface phonon polaritons can contribute to thermal transfer in polar semiconductors even at room temperature. To demonstrate the large contribution of surface waves, Fig. \ref{fig:intro_shchegrov} shows the theoretically calculated \cite{shchegrov00} spectral energy density of the electromagnetic field at various distances from a SiC surface.
+
+% Similarly, near-field effects strongly increase the spectral density of the electromagnetic field in the vicinity of nanoparticles made of a polar material. Consequently, heat transfer between two nanoparticles in vacuum is found to strongly increase at small distances \cite{domingues05}. In practice, however, the required nanoparticle distances for efficient heat transfer may be too small, so for practical applications it would be necessary to engineer the thermal conductance to be higher. From the theory of dipole emission, it is well known that the optical-mechanical coupling can be enhanced by orders of magnitude in an inhomogeneous environment such as in a mirror cavity \cite{novotny}. This raises the question, if the interparticle heat transfer rate between particles could be enhanced by cavity. This question was investigated and answered in positive in \citepub{dipole}.
+
+
+\subsection{Electronic effects in energy transfer}
 \label{sec:intro_electrons}
 
 With the ever-going miniaturization of electronics, the number of transistors in a microchip has increased exponentially for the last XXX decades \cite{}. The increase in transistor density has strongly increased the dissipated power density as well, exceeding 100 W/cm$^2$ around 2005 \cite{pop10}. For comparison, power density of a typical hot plate is around 10 W/cm$^2$. Proper management of the unwanted heat at both chip and individual transistor level has become an essential ingredient of modern electronics design \cite{pop06_ieee}.
@@ -229,16 +252,16 @@ Electronic self-heating arises from the interactions between high-energy electro
 
 % As an example of microscopic heating effects, consider electron transport in the silicon-on-insulator (SOI) transistor depicted in Fig. \ref{fig:soi}. The strong electric field close to the drain accelerates electrons, giving rise to so-called hot electrons \cite{}. As these electrons collide with phonons and thereby give their energy to the lattice at distances of multiple inelastic electron mean free paths, lattice temperature increases and reduces electron mobility close to the drain, decreasing the device performance. 
 
-\begin{figure}
-\begin{center}
- %\includegraphics[width=8.6cm]{pics/schwab00_fig3.ps}
- \includegraphics[width=8.6cm]{pics/grosse_fig1.pdf}
- \caption{(a) Optical image of a two-grain graphene flake (dark gray) between Pd electrodes (bright). The grain boundary (GB) is shown by the dashed line. (b) Measured surface expansion $\Delta h$ (color) overlaid on the device topography. The surface expansion is proportional to the local temperature rise, revealing Joule heating at the grain boundary. Reprinted with permission from Ref. \cite{grosse14}.}
-\label{fig:intro_grosse}
-\end{center}
-\end{figure} 
+% \begin{figure}
+% \begin{center}
+%  %\includegraphics[width=8.6cm]{pics/schwab00_fig3.ps}
+%  \includegraphics[width=8.6cm]{pics/grosse_fig1.pdf}
+%  \caption{(a) Optical image of a two-grain graphene flake (dark gray) between Pd electrodes (bright). The grain boundary (GB) is shown by the dashed line. (b) Measured surface expansion $\Delta h$ (color) overlaid on the device topography. The surface expansion is proportional to the local temperature rise, revealing Joule heating at the grain boundary. Reprinted with permission from Ref. \cite{grosse14}.}
+% \label{fig:intro_grosse}
+% \end{center}
+% \end{figure} 
 
-Self-heating is not, however, only a nuisance, as the local temperature profiles affected by self-heating give quantitative information of the microscopic electron transport in the device under study. Local temperature profiles can be probed, for example, by scanning Joule expansion microscopy \cite{varesi98}, Raman scattering spectroscopy \cite{calizo07} or by measuring the local infrared emission \cite{bae10}. These methods have been used to produce detailed temperature maps in biased low-dimensional nanomaterials such as carbon nanotubes \cite{estrada11,xie12} and graphene \cite{bae10,freitag09,chae10,freitag10}. As an example, Fig. \ref{fig:intro_grosse} shows the local surface expansion profile, proportional to the local temperature, measured using scanning Joule expansion microscopy at a graphene grain boundary \cite{grosse14}.
+Self-heating is not, however, only a nuisance, as the local temperature profiles affected by self-heating give quantitative information of the microscopic electron transport in the device under study. Local temperature profiles can be probed, for example, by scanning Joule expansion microscopy \cite{varesi98}, Raman scattering spectroscopy \cite{calizo07} or by measuring the local infrared emission \cite{bae10}. These methods have been used to produce detailed temperature maps in biased low-dimensional nanomaterials such as carbon nanotubes \cite{estrada11,xie12} and graphene \cite{bae10,freitag09,chae10,freitag10}. % As an example, Fig. \ref{fig:intro_grosse} shows the local surface expansion profile, proportional to the local temperature, measured using scanning Joule expansion microscopy at a graphene grain boundary \cite{grosse14}.
 
 Theoretical description of electron transport in nanoscale is similar to phonon transport: interference effects and ballistic transport appear at length scales dictated by the carrier wavelength and mean free path, respectively. \cite{} It is also often the case that the electron mean free path is in the range of device's characteristic dimensions, implying that electron transport cannot be modeled as fully ballistic or diffusive \cite{}. In such cases, models accounting for both wave-like behaviour and partially ballistic transport are required. 
 
