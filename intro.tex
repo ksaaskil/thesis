@@ -68,7 +68,7 @@ To put these research topics in the general context of nanoscale heat transfer, 
 %\begin{itemize}
 % \item Phonon, photon, electron transport overlap
 %\end{itemize}
-Nanoscale phenomena in phonon, photon and electron transport are discussed separately below, with the detailed mathematical theory presented in Chap. \ref{chap:theory}. Electronic transport is not considered in any of the publications included in this thesis but is included in this compilation part to highlight the similarities in the theoretical description of different carriers and to provide the basis for possible future works aiming at the coupling of models. % Therefore, the discussion of electronic effects is kept brief throughout.  
+Nanoscale phenomena in phonon, photon and electron transport are discussed separately below, with the detailed mathematical theories governing each carrier presented in a more unified manner in Chap. \ref{chap:theory}. Electronic transport is not considered in any of the publications included in this thesis but is included in this compilation part to highlight the similarities in the theoretical description of different carriers and to provide the basis for possible future works aiming at the coupling of models. Therefore, the discussion of electron transport only considers the electron-phonon and electron-photon interactions.  % Therefore, the discussion of electronic effects is kept brief throughout.  
 
 % We begin with vibrational energy transfer phenomena in Subsection \ref{sec:intro_vib}. Emphasis is placed on the microscale violations of the classical Fourier's heat equation \cite{fetter}
 % \begin{equation}
@@ -90,7 +90,7 @@ Nanoscale phenomena in phonon, photon and electron transport are discussed separ
 
 % Similarity of phonon, photon systems (interference, scattering, Green's function methods,...)
 
-\subsection{Phononic energy transfer in nanoscale}
+\subsection{Phononic thermal conduction in nanoscale}
 \label{sec:intro_vib}
 % Start from Peierls's theory
 % \begin{itemize}
@@ -107,8 +107,8 @@ As conjenctured by Debye in 1914 \cite{}, heat is carried in semiconductors and 
 \begin{figure}
 \begin{center}
  %\includegraphics[width=8.6cm]{pics/schwab00_fig3.ps}
- \includegraphics[width=.80\columnwidth]{inkscape/interface.pdf}
- \caption{(a) Schematic illustration of microscopic scattering mechanisms in phononic thermal conduction: (1) Boundary scattering, (2) interface scattering, (3) impurity scattering, (4) phonon-phonon scattering. (b) Schematic of phonon propagation in a material, with scattering events at averages distances of mean free path $\Lambda$. \textbf{SCHEMATIC TO BE FINISHED}}
+ \includegraphics[width=.99\columnwidth]{inkscape/scattering.pdf}
+ \caption{(a) Schematic illustration of microscopic scattering mechanisms in phononic thermal conduction: (1) Boundary scattering, (2) interface scattering, (3) phonon-phonon scattering. (b) Schematic of phonon propagation in a material, with scattering events at averages distances of mean free path $\Lambda$. \textbf{SCHEMATIC TO BE FINISHED, PERHAPS DRAW IN 2D FOR CLARITY}}
 \label{fig:intro_scattering}
 \end{center}
 \end{figure}
@@ -150,7 +150,7 @@ Efficient extraction of heat from electronic devices requires not only small int
 
 % Nanostructure
 
-In addition to the mean free path, there is another important length scale governing heat transfer in microscopic scale: the phonon wavelength. In bulk silicon, the characteristic wavelength of thermally excited phonons is around 10 nm at room temperature \cite{ju99}. In structures with characteristic dimensions in the range of the phonon wavelength, the wave properties of phonons cannot be neglected and interference effects appear. Interference effects have enabled, for example, designing acoustic reflectors with novel applications in phonon lasing \cite{maryam13}, enhancing the optical-mechanical coupling \cite{fainstein13}, and phonon nanocapacitors \cite{han15}. 
+In addition to the mean free path, there is another important length scale governing heat transfer in microscopic scale: the phonon wavelength. In bulk silicon, the characteristic wavelength of thermally excited phonons is around 10 nm at room temperature \cite{ju99}. In structures with characteristic dimensions in the range of the phonon wavelength, the wave properties of phonons cannot be neglected and interference effects appear. Interference effects have enabled, for example, designing acoustic reflectors with novel applications in phonon lasing \cite{maryam13}, enhancing the optical-mechanical coupling \cite{fainstein13}, and phonon nanocapacitors \cite{han15}. \textbf{ADD SHORT DISCUSSION OF POINT CONTACTS AS THERMAL BARIERS, PERHAPS BEGIN THE PARAGRAPH FROM POINT CONTACTS?}
 
 % Wavelength-related effects are also exploited in thermal engineering: as an example, Kim \textit{et al.} were able to reduce the thermal conductivity of InGaAs alloy, which naturally scatters short-wavelength phonons due to point defects, by introducing nanoparticles acting as scatterers for mid-to-long-wavelength phonons \cite{kim06}. %\citepub{fpu}\citepub{fpu2}\citepub{gf} % Other examples of interference
 
@@ -196,15 +196,21 @@ Unlike lattice vibrations, electromagnetic fields can propagate and transfer hea
 \begin{figure}
 \begin{center}
  %\includegraphics[width=8.6cm]{pics/schwab00_fig3.ps}
- % \includegraphics[width=.80\columnwidth]{inkscape/interface.pdf}
- \caption{Due to microscopic thermal fluctuations, an object at non-zero temperature emits thermal radiation in the form of propagating electromagnetic waves (blue). Close to the object, there are, however, also evanescent waves (green) invisible far from the object. If another object is placed in the near-field, the contribution of evanescent waves can overwhelm the propagating wave contribution.  \textbf{SCHEMATIC TO BE FINISHED}}
+ \includegraphics[width=.80\columnwidth]{inkscape/thermal_radiation.pdf}
+ \caption{Due to microscopic thermal fluctuations, an object at non-zero temperature emits thermal radiation in the form of propagating electromagnetic waves (red). Close to the object, there are, however, also evanescent waves (orange) with zero propagation velocity. If another object is placed in the near-field, the contribution of evanescent waves to energy transfer between the bodies can dominate over the propagating wave contribution. \textbf{SCHEMATIC TO BE FINISHED}}
 \label{fig:intro_em}
 \end{center}
 \end{figure}
 
-Thermal radiation emitted from an object typically contains a wide range of photon wavelengths, with the distribution governed by the Planck distribution \cite{planck00a} and the wavelength-dependent emissivity of the object \cite{}. For objects at room temperature, the emitted propagating waves have typically wavelengths in the micrometer-range \cite{}. At distances smaller than the dominant wavelength from the object, there are, however, also evanescent waves localized close to the object as depicted in Fig. \ref{fig:intro_em}. While these evanescent waves are ''invisible'' and cannot carry energy far from the object \cite{}, they can contribute to energy transfer close to the object. Therefore, energy transfer between materials is expected to be enhanced at submicrometer separation compared to the far-field value. 
+Thermal radiation emitted from an object typically contains a wide range of photon wavelengths, with the distribution governed by the Planck distribution \cite{planck00a} and the wavelength-dependent emissivity of the object \cite{}. For objects at room temperature, the wavelength of emitted propagating waves are typically in the micrometer-range \cite{}. At distances smaller than the dominant wavelength from the object, there are, however, also evanescent waves localized close to the object as depicted in Fig. \ref{fig:intro_em}. While these evanescent waves are ''invisible'' and cannot carry energy far from the object \cite{}, they can contribute to energy transfer close to the object. Therefore, energy transfer between materials is expected to be enhanced at submicrometer separation compared to the far-field value. 
 
-The near-field enhancement of energy transfer was first observed by Hargreaves \cite{hargreaves69}, who measured the thermal conductance between two chromium layers separated by a micrometer-scale gap. The theoretical calculation for the exact enhancement rate was carried out by Polder and van Hove \cite{polder71}, and consequently near-field enhancement effects were predicted in numerous geometries \cite{loomis94,pendry99,carminati99,shchegrov00,mulet01,volokitin01}. In the last decade, advances in experimental techniques have allowed for very precise measurements of near-field enhancement rates \cite{kittel05,hu08,shen09,ottens11}, confirming theoretical predictions. Near-field effects are now routinely used in thermal microscopy \cite{majumdar99,muller-hirsch99,kittel05,kittel08} and they are also expected to give rise to engineering applications in, e.g., infrared thermophotovoltaics \cite{dimatteo01,narayanaswamy03,laroche06} and designing narrow-band infrared antennas \cite{greffet02}. 
+The near-field enhancement of energy transfer was first observed by Hargreaves \cite{hargreaves69}, who measured the thermal conductance between two chromium layers separated by a micrometer-scale gap. The theoretical calculation for the exact enhancement rate was carried out by Polder and van Hove \cite{polder71}, and consequently near-field enhancement effects were predicted in numerous geometries \cite{loomis94,pendry99,carminati99,shchegrov00,mulet01,volokitin01}. In the last decade, advances in experimental techniques have allowed for very precise measurements of near-field enhancement rates \cite{kittel05,hu08,shen09,ottens11}, confirming theoretical predictions. 
+
+In addition to existing applications in, e.g., thermal microscopy \cite{majumdar99,muller-hirsch99,kittel05,kittel08} and infrared thermophotovoltaics \cite{dimatteo01,narayanaswamy03,laroche06}, near-field effects are expected to be exploitable also in nanoscale thermal management, with possible applications in heat-assisted chemistry \cite{cao07,adleman09} and hyperthermic treatment of cancer \cite{vanderzee02}. The strong near-field interaction allows, for example, for the quick dissipation of heat from a heated nanoparticle to its near surroundings \cite{mulet01,domingues05}. Because of the short-ranged nature of the near-field, the enhanced coupling is, however, limited to very small distances. It has been suggested that thermal coupling between bodies could be further enhanced by the introduction of additional nanoparticles  \cite{benabdallah11,messina13} or heat-mediating thin films \cite{zheng11,messina12}. 
+
+% and they are also expected to give rise to engineering applications in, e.g., infrared thermophotovoltaics \cite{dimatteo01,narayanaswamy03,laroche06} and designing narrow-band infrared antennas \cite{greffet02}. 
+
+
 
 % The near-field enhancement of energy transfer was first observed experimentally by Hargreaves in 1969 \cite{hargreaves69} and described theoretically by Polder and van Hove in 1971 \cite{polder71} using Rytov's theory \cite{rytov} of fluctuational electrodynamics. 
 
@@ -248,7 +254,15 @@ The near-field enhancement of energy transfer was first observed by Hargreaves \
 With the ever-going miniaturization of electronics, the number of transistors in a microchip has increased exponentially for the last XXX decades \cite{}. The increase in transistor density has strongly increased the dissipated power density as well, exceeding 100 W/cm$^2$ around 2005 \cite{pop10}. For comparison, power density of a typical hot plate is around 10 W/cm$^2$. Proper management of the unwanted heat at both chip and individual transistor level has become an essential ingredient of modern electronics design \cite{pop06_ieee}.
 
 % What is electronic self-heating?
-Electronic self-heating arises from the interactions between high-energy electrons and phonons. In silicon-on-insulator transistors, for example, the electric field is known to be particularly strong close to the drain \cite{pop06_ieee}. As electrons accelerated by the strong electric field lose their energy by colliding with lattice vibrations, the excess energy is absorbed by the lattice. The resulting incrase in temperature gives rise to nanoscale hot spots with low electron mobilities \cite{pop06_ieee}, hindering the device performance. % silicon-on-insulator (SOI) transistors.
+Electronic self-heating arises from the interactions between high-energy electrons and phonons. In silicon-on-insulator transistors, for example, the electric field is known to be particularly strong close to the drain \cite{pop06_ieee}. As electrons accelerated by the strong electric field lose their energy by colliding with lattice vibrations, the excess energy is absorbed by the lattice. The resulting increase in lattice temperature gives rise to nanoscale hot spots with low electron mobilities \cite{pop06_ieee}, interfering with the device performance.  % silicon-on-insulator (SOI) transistors.
+
+Self-heating is not, however, only a nuisance, as the local temperature profiles modified by self-heating give quantitative information of the microscopic electron transport in the device under study. Local temperature profiles can be probed, for example, by scanning Joule expansion microscopy \cite{varesi98}, Raman scattering spectroscopy \cite{calizo07} or by measuring the local infrared emission \cite{bae10}. These methods have been used to produce detailed temperature maps in biased low-dimensional nanomaterials such as carbon nanotubes \cite{estrada11,xie12} and graphene \cite{bae10,freitag09,chae10,freitag10}.
+
+While electron-phonon interaction reduces the mobility of charge carriers and is therefore detrimental in applications, electron-photon interaction drives all optoelectronic applications such as light-emitting diodes, lasers and solar cells. \textbf{WRITE SOMETHING ABOUT THE NEEDS OF MICROSCOPIC ELECTRO-OPTICAL MODELS...}
+
+\textbf{HOW TO TIE THIS ALL TO THE THESIS?}
+
+% Self-heating is not, however, only a nuisance, as the local temperature profiles affected by self-heating give quantitative information of the microscopic electron transport in the device under study. Local temperature profiles can be probed, for example, by scanning Joule expansion microscopy \cite{varesi98}, Raman scattering spectroscopy \cite{calizo07} or by measuring the local infrared emission \cite{bae10}. These methods have been used to produce detailed temperature maps in biased low-dimensional nanomaterials such as carbon nanotubes \cite{estrada11,xie12} and graphene \cite{bae10,freitag09,chae10,freitag10}.
 
 % As an example of microscopic heating effects, consider electron transport in the silicon-on-insulator (SOI) transistor depicted in Fig. \ref{fig:soi}. The strong electric field close to the drain accelerates electrons, giving rise to so-called hot electrons \cite{}. As these electrons collide with phonons and thereby give their energy to the lattice at distances of multiple inelastic electron mean free paths, lattice temperature increases and reduces electron mobility close to the drain, decreasing the device performance. 
 
@@ -261,37 +275,56 @@ Electronic self-heating arises from the interactions between high-energy electro
 % \end{center}
 % \end{figure} 
 
-Self-heating is not, however, only a nuisance, as the local temperature profiles affected by self-heating give quantitative information of the microscopic electron transport in the device under study. Local temperature profiles can be probed, for example, by scanning Joule expansion microscopy \cite{varesi98}, Raman scattering spectroscopy \cite{calizo07} or by measuring the local infrared emission \cite{bae10}. These methods have been used to produce detailed temperature maps in biased low-dimensional nanomaterials such as carbon nanotubes \cite{estrada11,xie12} and graphene \cite{bae10,freitag09,chae10,freitag10}. % As an example, Fig. \ref{fig:intro_grosse} shows the local surface expansion profile, proportional to the local temperature, measured using scanning Joule expansion microscopy at a graphene grain boundary \cite{grosse14}.
+ % As an example, Fig. \ref{fig:intro_grosse} shows the local surface expansion profile, proportional to the local temperature, measured using scanning Joule expansion microscopy at a graphene grain boundary \cite{grosse14}.
 
-Theoretical description of electron transport in nanoscale is similar to phonon transport: interference effects and ballistic transport appear at length scales dictated by the carrier wavelength and mean free path, respectively. \cite{} It is also often the case that the electron mean free path is in the range of device's characteristic dimensions, implying that electron transport cannot be modeled as fully ballistic or diffusive \cite{}. In such cases, models accounting for both wave-like behaviour and partially ballistic transport are required. 
+% Theoretical description of electron transport in nanoscale is similar to phonon transport: interference effects and ballistic transport appear at length scales dictated by the carrier wavelength and mean free path, respectively. \cite{} It is also often the case that the electron mean free path is in the range of device's characteristic dimensions, implying that electron transport cannot be modeled as fully ballistic or diffusive \cite{}. In such cases, models accounting for both wave-like behaviour and partially ballistic transport are required. 
 
-\begin{itemize}
- \item LITERATURE OF ELECTRON INTERFERENCE EFFECTS IN SUPERLATTICES? (no Aharonov-Bohm or weak localization...)
-\end{itemize}
+% \begin{itemize}
+%  \item LITERATURE OF ELECTRON INTERFERENCE EFFECTS IN SUPERLATTICES? (no Aharonov-Bohm or weak localization...)
+% \end{itemize}
 
 
 % In materials with electrostatically tunable Fermi levels such as graphene, electron wavelength can exceed $xXX$ nm \cite{}, requiring full wave picture of carrier transport in nanoscale graphene devices. 
 
-\subsection{Interplay of carriers in nanoscale}
-\label{sec:intro_coupling}
-\begin{itemize}
- \item Electron-phonon effects on dielectric-metal interface and in laser heating, two-temperature models, necessity of more microscopic models
- \item Photon-phonon effects at vacuum gaps, Green's function models, correct description of radiation-conduction crossover, acoustic phonon tunneling, two-temperature models?
- \item Electron-photon models (situation where including an electromagnetic field in tight-binding Hamiltonian is necessary?)
- \item Envisage the inclusion of all carriers, three-temperature models?
-\end{itemize}
+% \subsection{Interplay of carriers in nanoscale}
+% \label{sec:intro_coupling}
+% \begin{itemize}
+%  \item Electron-phonon effects on dielectric-metal interface and in laser heating, two-temperature models, necessity of more microscopic models
+%  \item Photon-phonon effects at vacuum gaps, Green's function models, correct description of radiation-conduction crossover, acoustic phonon tunneling, two-temperature models?
+%  \item Electron-photon models (situation where including an electromagnetic field in tight-binding Hamiltonian is necessary?)
+%  \item Envisage the inclusion of all carriers, three-temperature models?
+% \end{itemize}
 
 
 
 \section{Studied structures}
 
-\subsection{Interfaces}
+\begin{figure}
+\begin{center}
+ %\includegraphics[width=8.6cm]{pics/schwab00_fig3.ps}
+ \includegraphics[width=.99\columnwidth]{inkscape/systems.pdf}
+ \caption{Schematic illustration of the structures investigated in this work. (a) Interface between two crystals with different masses, (b) carbon nanotube, (c) silicon nanowire with periodic twinning, (d) point contact connecting bulk materials, and (e) cavity-enhancement of electromagnetic energy transfer between nanoparticles. \textbf{ATOMISTIC ILLUSTRATIONS TO BE FINISHED}}
+\label{fig:intro_structures}
+\end{center}
+\end{figure}
 
-\subsection{Quasi-one-dimensional nanowires}
+The structures investigated in the publications of this thesis are depicted in Fig. \ref{fig:intro_structures}. The broad topics concerning each depicted structure were, corresponding to figure labeling, (a) interfacial thermal resistance, (b) phonon mean free paths in nanotubes, (c) thermal conductivity engineering in nanowires, (d) phonon interference effects in point contacts, and (e) electromagnetic energy transfer in cavity. % Each of the structures and the main results are briefly reviewed below. 
 
-\subsection{Point contacts}
+\citepub{spectral} studies the role of phonon-phonon scattering in interfacial thermal resistance between bulk crystals with different masses, illustrated in Fig. \ref{fig:intro_scattering}(a). The results show that phonon-phonon scattering can reduce the resistance via two mechanisms, namely (1) dissipation of evanescent vibrational modes localized close to the interface, and (2) energy-doubling and energy-halving three-phonon scattering processes carrying energy across the interface.  % Energy transfer mechanisms at the interface are identified by determining the spectral decomposition of energy current at the interface using the spectral analysis methods developed in \citepub{spectral}. T
 
-\subsection{Nanoparticles in a mirror cavity}
+In \citepub{cnt}, phonon mean free paths in carbon nanotubes were determined by utilizing the spectral analysis methods developed in \citepub{spectral}. The results indicated that mean free paths in carbon nanotubes can exceed 0.01 mm at low frequencies, with possibly even longer mean free paths at lower frequencies. The results indicate that very long, millimeter-scale nanotubes can be even better thermal conductors than expected. % The results also indicated that the relaxation times determined from the decay of non-equilibrium heat current differ, in general, from the relaxation times determined from the mode decay in equilibrium.
+ 
+\citepub{twinning} investigated the thermal conductivity reduction in silicon nanowires by periodic variations in the geometry. The variations arise from so-called twinning interfaces, where the stacking order of the crystal lattice is periodically reversed. The results showed that twinning can reduce the thermal conductivity by 65 \% compared to the straight wire at room temperature, suggesting that the twinning geometry could boost the thermoelectric efficiency of silicon nanowires, especially when applied in conjunction with other known scattering mechanisms.
+
+Thermal conduction through small point contacts was the topic of Publications \cp{fpu}, \cp{fpu2}, and \cp{gf}.
+
+%\subsection{Interfaces}
+
+%\subsection{Carbon nanotubes and twinning nanowires}
+
+%\subsection{Point contacts}
+
+% \subsection{Nanoparticles in a mirror cavity}
 
 %In bulk silicon, electron mean free path at room temperature is around 5--10 nm \cite{}, necessitating the accounting for ballistic electron transport in modern transistor designs with characteristic dimensions around 10 nm \cite{}. 
 

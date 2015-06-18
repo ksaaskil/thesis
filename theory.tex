@@ -369,19 +369,19 @@ The localized solutions of Eq. \eqref{eq:th_schrode} are centered around $\bb{R}
 \end{equation}
 Assuming for simplicity that the overlap matrix element $\langle \phi_i^{\sigma}| \phi_j^{\sigma'} \rangle$ is negligible compared to unity for $i\neq j$, one can calculate the Hamiltonian matrix elements of the basis functions to be
 \begin{equation}
- \langle \phi_i^{\sigma} | \ca{H}_{\textrm{el}} | \phi_j^{\sigma'} \rangle = E_i^{\sigma} \delta_{ij}\delta_{\sigma\sigma'}  - t_{ij}^{\sigma\sigma'}, \label{eq:th_Helements}
+ \langle \phi_i^{\sigma} | \ca{H}_{\textrm{el}} | \phi_j^{\sigma'} \rangle = E_i^{\sigma} \delta_{ij}\delta_{\sigma\sigma'}  - \tilde t_{ij}^{\sigma\sigma'}, \label{eq:th_Helements}
 \end{equation}
 where the ''hopping'' matrix element is 
 \begin{equation}
-  t_{ij}^{\sigma\sigma'} = - \int d\bb{r} \phi_i^{\sigma}(\br)^*  \sum_{k\neq j} V(\br-\bb{R}_k)   \phi_j^{\sigma'}(\br).
+  \tilde t_{ij}^{\sigma\sigma'} = - \int d\bb{r} \phi_i^{\sigma}(\br)^*  \sum_{k\neq j} V(\br-\bb{R}_k)   \phi_j^{\sigma'}(\br).
 \end{equation}
 Using Eq. \eqref{eq:th_Helements}, one can write the tight-binding Hamiltonian in the braket notation \cite{schwabl} as 
 \begin{equation}
- \ca{H}_{\textrm{el}}^{\textrm{tb}} = \sum_{i,j} \sum_{\sigma,\sigma'} (E_i^{\sigma} \delta_{ij}\delta_{\sigma\sigma'}  - t_{ij}^{\sigma\sigma'})|\phi_i^{\sigma} \rangle \langle \phi_j^{\sigma'} | \label{eq:th_Hel_tb}
+ \ca{H}_{\textrm{el}}^{\textrm{tb}} = \sum_{i,j} \sum_{\sigma,\sigma'} (E_i^{\sigma} \delta_{ij}\delta_{\sigma\sigma'}  - \tilde t_{ij}^{\sigma\sigma'})|\phi_i^{\sigma} \rangle \langle \phi_j^{\sigma'} | \label{eq:th_Hel_tb}
 \end{equation}
-The equivalent second-quantized form \cite{schwabl} for Eq. \eqref{eq:th_Hel_tb} is 
+The equivalent second-quantized form \cite{schwabl} for the Hamiltonian \eqref{eq:th_Hel_tb} is
 \begin{equation}
- \ca{H}_{\textrm{el}}^{\textrm{tb}} = \sum_{i,j} \sum_{\sigma,\sigma'} (E_i^{\sigma} \delta_{ij}\delta_{\sigma\sigma'}  - t_{ij}^{\sigma\sigma'}) c_i^{\sigma\dagger} c_j^{\sigma'} \label{eq:th_Hel_tb_final}
+ \ca{H}_{\textrm{el}}^{\textrm{tb}} = \sum_{i,j} \sum_{\sigma,\sigma'} (E_i^{\sigma} \delta_{ij}\delta_{\sigma\sigma'}  - \tilde t_{ij}^{\sigma\sigma'}) c_i^{\sigma\dagger} c_j^{\sigma'} \label{eq:th_Hel_tb_final}
 \end{equation}
 where the electron creation operator $c_i^{\sigma\dagger}$ creates an electron in orbital $\phi_i^{\sigma}$ and annihilation operator $c_j^{\sigma'}$ annihilates electrons at orbital $\phi_j^{\sigma'}$:
  \begin{subequations}
@@ -390,7 +390,9 @@ where the electron creation operator $c_i^{\sigma\dagger}$ creates an electron i
      c_j^{\sigma'} |\phi_j^{\sigma'} \rangle = | 0 \rangle.
   \end{align}
  \end{subequations}
-Here $|0\rangle$ is the vacuum state with no electrons. The tight-binding Hamiltonian \eqref{eq:th_Hel_tb_final} can also be derived from spatial discretization of the one-particle Schr\"odinger equation \eqref{eq:th_Hel}, in which case the index $i$ labels the discretization grid points \cite{datta}. 
+Here $|0\rangle$ is the vacuum state with no electrons. 
+
+The tight-binding Hamiltonian \eqref{eq:th_Hel_tb_final} can also be derived from spatial discretization of the one-particle Schr\"odinger equation \eqref{eq:th_schrode}, in which case the index $i$ labels the discretization grid points \cite{datta}. \textbf{CLARIFY}
 
 
 % The hopping constant $t_{ij}$ allows for electron hopping between orbitals $i$ and $j$ and can be calculated from the Hamiltonian matrix element \cite{ashcroft}
@@ -401,10 +403,15 @@ Here $|0\rangle$ is the vacuum state with no electrons. The tight-binding Hamilt
 
 % The local term $t_{ii}$ in Eq. \eqref{eq:th_Hel} accounts for variations in the local potential created by, e.g., external electric fields \cite{datta}. %For graphene, the hopping constant between nearest-neighbor carbon atoms is approximately $2.5$ eV \cite{dassarma11}.
 
-With the Hamiltonian of Eq. \eqref{eq:th_Hel_tb_final}, the Heisenberg equation of motion $i\hbar \dot{c}_i^{\sigma} = - \left[\ca{H}_{\textrm{el}}^{\textrm{tb}},c_i^{\sigma} \right]$ \cite{ballentine} accompanied by the stochastic Langevin force $\eta_i^{\sigma}$ and Ohmic damping $-i\hbar \gamma_e c_i^{\sigma}(t)$ \cite{dhar03} leads to the equation of motion \eqref{eq:th_eom3}: 
+With the Hamiltonian of Eq. \eqref{eq:th_Hel_tb_final}, the Heisenberg equation of motion $i\hbar \dot{c}_i^{\sigma} = - \left[\ca{H}_{\textrm{el}}^{\textrm{tb}},c_i^{\sigma} \right]$ \cite{ballentine} accompanied by the stochastic Langevin force $\eta_i^{\sigma}$ and Ohmic damping $-i\hbar \gamma_e c_i^{\sigma}(t)$ \cite{dhar03} leads to the equation of motion \eqref{eq:th_eom3} 
 \begin{equation}
- i\hbar \dot{c}_i^{\sigma}(t) = -\sum_{j,\sigma'} t_{ij}^{\sigma\sigma'} c_j^{\sigma'}(t) +\eta_i^{\sigma}(t) - i\hbar \gamma_e c_i^{\sigma}(t) \tag{\ref{eq:th_eom3}}.
+ i\hbar \dot{c}_i^{\sigma}(t) = -\sum_{j,\sigma'} t_{ij}^{\sigma\sigma'} c_j^{\sigma'}(t) +\eta_i^{\sigma}(t) - i\hbar \gamma_e c_i^{\sigma}(t) \tag{\ref{eq:th_eom3}},
 \end{equation}
+where the orbital energy $E_i^{\sigma}$ was absorbed to the hopping constant through the definition 
+\begin{equation}
+ t_{ij}^{\sigma\sigma'}=\tilde t_{ij}^{\sigma\sigma'}-E_{i}\delta_{ij}\delta_{\sigma\sigma'}.
+\end{equation}
+
 % Fourier transform and rearranging gives the linear system of equations \eqref{eq:th_eom_fourier_electron}. 
 
 The Langevin terms in Eq. \eqref{eq:th_eom3} are responsible for creating and annihilating electrons and thereby act essentially as additional scattering channels. This idea of modeling inelastic effects by additional scattering channels is due to B\"uttiker \cite{buttiker86} and d'Amato and Pastawski \cite{damato90}, and it greatly simplifies the modeling of dephasing and dissipation events in quantum transport compared to the more rigorous but computationally demanding perturbative Keldysh Green's function techniques \cite{haugjauho}. % The relation between scattering channels and Langevin dynamics was noted by Dhar and Sriram Shastry \cite{dhar03}. % B\"uttiker's voltage probe model is, in turn, closely related to the self-consistent heat bath model introduced 15 years earlier by Bolsterli, Rich and Visscher \cite{bolsterli70}. 
