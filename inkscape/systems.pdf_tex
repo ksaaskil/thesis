@@ -48,11 +48,12 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.44597505)%
+  \begin{picture}(1,0.72903015)%
     \put(0,0){\includegraphics[width=\unitlength]{systems.pdf}}%
-    \put(0.09213785,0.41304233){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.10375459\unitlength}\raggedright (a)\end{minipage}}}%
-    \put(0.57510772,0.41198926){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.10375459\unitlength}\raggedright (b)\end{minipage}}}%
-    \put(0.08400268,0.189658){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.10375459\unitlength}\raggedright (c)\end{minipage}}}%
-    \put(0.57510772,0.19262242){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.10375459\unitlength}\raggedright (d)\end{minipage}}}%
+    \put(0.09213785,0.6725095){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.10375459\unitlength}\raggedright (a)\end{minipage}}}%
+    \put(0.57510772,0.67145643){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.10375459\unitlength}\raggedright (b)\end{minipage}}}%
+    \put(0.08400268,0.44912517){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.10375459\unitlength}\raggedright (c)\end{minipage}}}%
+    \put(0.57510772,0.4520896){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.10375459\unitlength}\raggedright (d)\end{minipage}}}%
+    \put(0.28420718,0.26838073){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.10375459\unitlength}\raggedright (e)\end{minipage}}}%
   \end{picture}%
 \endgroup%
