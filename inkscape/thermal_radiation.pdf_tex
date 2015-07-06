@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{347.44470703bp}%
+    \setlength{\unitlength}{348.24bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,7 +48,9 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.65038679)%
+  \begin{picture}(1,0.76355868)%
     \put(0,0){\includegraphics[width=\unitlength]{thermal_radiation.pdf}}%
+    \put(0.51359774,0.34705487){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0.52303485,0.6389839){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{1}}}%
   \end{picture}%
 \endgroup%
