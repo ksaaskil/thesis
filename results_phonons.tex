@@ -22,11 +22,11 @@ The role of anharmonic phonon scattering in interfacial thermal conduction was i
  % \includegraphics[width=.99\columnwidth]{/Users/saaskilak/Documents/latex/pics/240114_fcc_final.ps}
   \includegraphics[width=.49\columnwidth]{pics/nemd_fig4a.pdf}
   \includegraphics[width=.49\columnwidth]{pics/nemd_fig4b.pdf}
-  \caption{Elastic thermal conductance $g^{\textrm{el}}(\omega)=q(\omega)/\Delta T_b$ through the acoustically mismatched interface as a function of frequency at various temperatures.  At $T=1$ K, the elastic conductance agrees with the Landauer-B\"uttiker conductance calculated using the Green's function (GF) method. At high temperatures, anharmonic scattering in the bulk enables energy transfer even above the cut-off frequency of the heavier solid, located at 1 THz.  Inset: Local density of vibrational states (LDOS, arbitrary units) at the interface. Although phonons cannot propagate in the heavier bulk above 1 THz, there are evanescent wave states extending up to 1.5 THz at the vicinity of the interface. (b) The sum $g^{\textrm{el}}(\omega)+ g^{\textrm{inel}}(\omega)$ of elastic and inelastic spectral conductance as a function of frequency. The inelastic conductance describes energy transfer by phonon-phonon interactions across the interface and is defined in detail in \citepub{spectral}. At high temperatures, the anharmonic energy transfer processes strongly enhance interfacial heat transfer at $f\approx 0.5$ THz and above the cut-off of the heavier material (1 THz). Figure reprinted with publisher's permission from \citepub{spectral}.} 
+  \caption{Elastic thermal conductance $g^{\textrm{el}}(\omega)=q(\omega)/\Delta T_b$ through the acoustically mismatched interface as a function of frequency at various temperatures.  At $T=1$ K, the elastic conductance agrees with the Landauer-B\"uttiker conductance calculated using the Green's function (GF) method. At high temperatures, anharmonic scattering in the bulk enables energy transfer even above the cut-off frequency of the heavier solid, located at 1 THz.  Inset: Local density of vibrational states (LDOS, arbitrary units) at the interface. (b) The sum $g^{\textrm{el}}(\omega)+ g^{\textrm{inel}}(\omega)$ of elastic and inelastic spectral conductance as a function of frequency. The inelastic conductance describes energy transfer by phonon-phonon interactions across the interface and is defined in detail in \citepub{spectral}. At high temperatures, the anharmonic energy transfer processes strongly enhance interfacial heat transfer at $f\approx 0.5$ THz and above the cut-off of the heavier material (1 THz). Figure reprinted with publisher's permission from \citepub{spectral}.} 
  \label{fig:nemd_fig2}
  \end{center}
 \end{figure}
-
+% Although phonons cannot propagate in the heavier bulk above 1 THz, there are evanescent wave states extending up to 1.5 THz at the vicinity of the interface. 
 %Interfacial heat transfer mechanisms were investigated by calculating the spectral heat current \eqref{eq:th_spectral_curr} summed over all atomic pairs interacting across the planar interface. By varying the mean temperature $T$, one can investigate the role of anharmonic effects. 
 
 Figure \ref{fig:nemd_fig2}(a) shows the elastic spectral conductance $g^{\textrm{el}}(\omega)=q(\omega)/\Delta T_b$, defined as the first-order contribution to the spectral current $q(\omega)$ [Eq. \eqref{eq:th_spectral_curr}] calculated at the interface divided by the temperature jump $\Delta T_b$. Conductance $g^{\textrm{el}}(\omega)$ is referred to as elastic, because it \change{is calculated from the coupling of vibrations at the same frequency $\omega$ at different sides of the interface, allowing for interpreting the energy transfer elastic. The first-order conductance accounts, however, also for inelastic effects through the non-linear phonon dynamics calculated from nonequilibrium molecular dynamics with all orders of interactions.} % Elastic conductance accounts, however, for the contributions of inelastic effects occurring \textit{in the bulk}. 
@@ -56,9 +56,9 @@ Figure \ref{fig:cnt_fig1} shows the schematic illustration of the nonequilibrium
 
 \begin{figure}[tb]
  \begin{center}
-  \includegraphics[width=.49\columnwidth]{pics/cnt_fig2.pdf} 
-  \includegraphics[width=.49\columnwidth]{pics/cnt_fig4.pdf} 
-  \caption{(a) Generalized phonon transmission function $\ca{T}(\omega)=q(\omega)/(k_B\Delta T)$ for different tube lengths at $T=300$ K. Increasing the tube length reduces the transmission due to anharmonic scattering. For $L=0.5$ nm, phonon transmission is nearly equal to the ballistic value determined by counting the number of propagating modes in the nanotube. (b) Log-log plot of the mean free path $\Lambda(\omega)$ at $T=300$ K, determined from the slope of the inverse transmission function as a function of tube length $L$ as illustrated by the dashed lines in the inset. The shaded regions in the main figure correspond to the 92.5\% confidence interval for the slope. Below 0.25 THz, the confidence interval is large due to numerical uncertainties, preventing the determination of mean free paths at the lowest frequencies. Figure reprinted with publisher's permission from \citepub{cnt}. \textbf{ADD (A) AND (B)}}  
+  \includegraphics[width=.49\columnwidth]{pics/cnt_fig2_mod.pdf} 
+  \includegraphics[width=.49\columnwidth]{pics/cnt_fig4_new.pdf} 
+  \caption{(a) Generalized phonon transmission function $\ca{T}(\omega)=q(\omega)/(k_B\Delta T)$ for different tube lengths at $T=300$ K. Increasing the tube length reduces the transmission due to anharmonic scattering. For $L=0.5$ nm, phonon transmission is nearly equal to the ballistic value determined by counting the number of propagating modes in the nanotube. (b) Log-log plot of the mean free path $\Lambda(\omega)$ at $T=300$ K, determined from the slope of the inverse transmission function as a function of tube length $L$ as illustrated by the dashed lines in the inset. The shaded regions in the main figure correspond to the 92.5\% confidence interval for the slope. Below 0.25 THz, the confidence interval is large due to numerical uncertainties, preventing the determination of mean free paths at the lowest frequencies. Figure reprinted with publisher's permission from \citepub{cnt}.}  
 \label{fig:cnt_fig2}
  \end{center}
 \end{figure}
@@ -97,8 +97,8 @@ The computational NEMD setup of \citepub{twinning} was similar as for the carbon
 
 \begin{figure}[tb]
  \begin{center}
-  \includegraphics[width=.89\columnwidth]{pics/twinning_fig2a.pdf} 
-  \caption{Thermal conductivity of silicon twinning nanowires at $T=300$ K as a function of period length $L_p$ for different diameters $D$. For each diameter $D$, there is a corresponding minimum in the thermal conductivity as a function of period length. The minimum arises from the competition between geometric and anharmonic effects as shown in \citepub{twinning}. Figure reprinted with publisher's permission from \citepub{twinning}. \textbf{REMOVE (A)}}  
+   \includegraphics[width=.89\columnwidth]{pics/twinning_fig2a_mod.pdf} 
+  \caption{Thermal conductivity of silicon twinning nanowires at $T=300$ K as a function of period length $L_p$ for different diameters $D$. For each diameter $D$, there is a corresponding minimum in the thermal conductivity as a function of period length. The minimum arises from the competition between geometric and anharmonic effects as shown in \citepub{twinning}. Figure reprinted with publisher's permission from \citepub{twinning}.}  
 \label{fig:twinning_fig2}
  \end{center}
 \end{figure}
@@ -124,8 +124,8 @@ Thermal conductivity of the twinning nanowires as a function of period $L_p$ are
 \begin{figure}
 \begin{center}
  %\includegraphics[width=8.6cm]{../scbaths_paper_re_resubmission/pic1.ps}
- \includegraphics[width=.85\columnwidth]{pics/fpu_fig1.pdf}
- \caption{Schematic illustration of the simulation setup for a point contact in a two-dimensional square lattice. Figure reprinted with publisher's permission from \citepub{fpu}. \textbf{(b) TO BE REMOVED.}}
+ \includegraphics[width=.85\columnwidth]{pics/fpu_fig1_mod.pdf}
+ \caption{Schematic illustration of the simulation setup for a point contact in a two-dimensional square lattice. Figure reprinted with publisher's permission from \citepub{fpu}.}
 \label{fig:fpu_fig1}
 \end{center}
 \end{figure}
@@ -153,9 +153,9 @@ Figure \ref{fig:fpu_fig2} shows the kinetic temperature $T_i^{\textrm{kin}}=\lan
 \begin{center}
  %\includegraphics[width=8.6cm]{../scbaths_paper_re_resubmission/pic1.ps}
  \includegraphics[width=.49\columnwidth]{pics/aip_fig5a.pdf}
- \includegraphics[width=.49\columnwidth]{pics/aip_fig6a.pdf}
+ \includegraphics[width=.49\columnwidth]{pics/aip_fig6a_mod.pdf}
  %\includegraphics[width=.49\columnwidth]{pics/aip_fig5b.pdf}
- \caption{Kinetic temperature profile in (a) triangular and (b) discoidal contacts at low temperature. Figure reprinted with publisher's permission from \citepub{fpu2}. \textbf{FIX ANNOTATION IN B}}
+ \caption{Kinetic temperature profile in (a) triangular and (b) discoidal contacts at low temperature. Figure reprinted with publisher's permission from \citepub{fpu2}.}
 \label{fig:aip_figs56}
 \end{center}
 \end{figure}
@@ -249,8 +249,8 @@ The same principles as outlined here for phonon transport can be directly applie
 
 \begin{figure}
  \includegraphics[width=.55\columnwidth]{pics/dipole_fig2.pdf}
- \includegraphics[width=.44\columnwidth]{pics/dipole_fig3a.pdf}
- \caption{(a) Schematic illustration of two nanoparticles located in a mirror cavity of length $L$. One of the particles is located at the middle of the cavity and the position of the second particle is defined by parameters $a$ and $b$ as shown in the figure. The refractive index of the cavity walls is denoted by $n_2$. (b) Electromagnetic density of states as a function of position and energy for a cavity with $L=16$ $\upmu$m and $n_2=2+20i$. The lowest-frequency standing waves have cut-off energies 37.6 meV, 76.3 meV, and 115.1 meV. These modes can couple to the absorption resonance of SiC nanoparticles at $\hbar\omega_r=115.6$ meV. Figure reprinted with publisher's permission from \citepub{dipole}. \textbf{FIX A AND B}}
+ \includegraphics[width=.44\columnwidth]{pics/dipole_fig3a_mod.pdf}
+ \caption{(a) Schematic illustration of two nanoparticles located in a mirror cavity of length $L$. One of the particles is located at the middle of the cavity and the position of the second particle is defined by parameters $a$ and $b$ as shown in the figure. The refractive index of the cavity walls is denoted by $n_2$. (b) Electromagnetic density of states as a function of position and energy for a cavity with $L=16$ $\upmu$m and $n_2=2+20i$. The lowest-frequency standing waves have cut-off energies 37.6 meV, 76.3 meV, and 115.1 meV. These modes can couple to the absorption resonance of SiC nanoparticles at $\hbar\omega_r=115.6$ meV. Figure reprinted with publisher's permission from \citepub{dipole}.}
 \label{fig:gfm_dipole_system}
 \end{figure}
 
