@@ -707,8 +707,41 @@ To outline the typical steps involved in a non-equilibrium simulation, consider 
 
 LAMMPS simulation package \cite{plimpton95,lammps_website} is used in Publications \cp{spectral}, \cp{cnt} and \cp{twinning} for integrating the equations of motion. The simulations of Publications \cp{fpu} and \cp{fpu2} are carried out using a house-made molecular dynamics code. 
 
-\section{Limitations of models}
+\section{Limitations of models in phononic energy transfer}
 
+% MD: neglects quantum effects (valid at temperatures larger than the Debye temperature), but captures wave effects, all orders of anharmonic interactions, and atomic-scale geometry
+% Green's function: captures dissipative effects only at single relaxation time level, but captures quantum effects and wave effects
+% Boltzmann transport equation: neglects wave effects but captures quantum statistics and allows for first-principles determination of scattering rates
+
+
+
+\change{Molecular dynamics (MD) and Green's function (GF) methods presented in the above sections are used in this thesis to investigate (phononic) energy transfer. Because MD is fully classical and therefore neglects all quantum effects, the method is strictly valid only at temperatures higher than the Debye temperature $T_D$ of the material under study}\footnote{Debye temperature is defined here as $T_D=\hbar \omega_{max}/k_B$, where $\omega_{max}$ is the frequency of the highest-energy phonon mode.}. \change{Despite this limitation, MD is still widely used \cite{cahill14} also at lower temperatures due to its ability to capture complex atomistic dynamics of solids, liquids, and gases, inherently including also non-linear effects through the anharmonic terms in the interatomic potential. Therefore, MD can deliver strong physical insight into the energy transfer processes taking place in nanosystems.}
+
+\change{In contrast to MD, the GF method can fully capture quantum statistics. Being based on the algebraic solution of the linearized Langevin equations of motion, the method also straightforwardly delivers the spectrally decomposed thermal current [Eq. \eqref{eq:th_caroli}], which is only indirectly available from MD [Eq. \eqref{eq:th_spectral_curr}]. The close correspondence of the Langevin equations for phonons, electrons, and photons is also expected to allow for multi-carrier modeling of energy transfer, with energy conversion modeled as energy exchange between the Langevin baths coupled to different carriers.} %  similarly to the two-temperature model \cite{chen01}s
+
+\change{The drawback of the GF method is that it can only account for dissipative effects in terms of a single frequency-independent relaxation time given as an input parameter. The method is therefore not suitable for calculating, e.g., the thermal conductivity of materials. In addition, the method assumes small displacements of atoms from their equilibrium positions and cannot therefore be applied for the modeling of liquids, gases, or soft solids.}
+
+\change{In addition to MD and GF methods, energy transfer in nanoscale can also be modeled using the Boltzmann transport equation \cite{ziman}. Boltzmann equation treats phonons as point particles and therefore neglects wave effects such as interference. The power of the method lies, however, in its applicability to large systems and its ability to straightforwardly capture various different scattering mechanisms in terms of phonon scattering rates calculated semi-empirically or from first principles methods. Recent advances in computational methods have allowed for a numerically exact solution of the Boltzmann equation in non-equilibrium}, \change{enabling first-principles determination of thermal conductivity \cite{}. The applicability of the Boltzmann equation to the nanoscale structures considered in this thesis is, however, questionable, so only atomistic simulation methods are used in this thesis.}
+% \footnote{Exact solution of the Boltzmann equation was deemed hopelessly complicated in the 1960s textbook by Ziman \cite{ziman}.}
+\begin{table}
+\begin{center}
+\begin{tabularx}{\textwidth}{| X | X | X  | X | } 
+\hline
+Method & Captures & Neglects & Strictly valid \\ 
+\hline
+Molecular dynamics & Wave effects, Detailed ph-ph scattering & Quantum effects & $T>T_D$ \\ 
+\hline
+Green's function & Wave and quantum effects & Detailed anharmonic effects & $L \lesssim \Lambda$ (ballistic modeling) \\ 
+\hline
+Boltzmann transport equation & Quantum statistics, detailed scattering & Wave effects, High-order anharmonic effects & $L \gg \lambda$\\ 
+\hline
+\end{tabularx}
+\end{center}
+\caption{Comparison of different methods for modeling phononic thermal conduction.}
+\end{table}
+
+% GF shows 
+% While quantum effects are expected to modify quantitative predictions such as the value of thermal conductivity
 % LAMMPS, house-made code
 
 \iffalse
