@@ -142,7 +142,7 @@ With small rearrangement, one then gets three linear systems of equations:
 \begin{equation}
  \tilde{E}_{ij}^{\alpha}(\omega) = q\omega^2 \mu_0 \sum_{\beta} \mathbb{G}^{\alpha\beta}(\br_i,\br_j;\omega)\tilde{d}_j^{\beta}(\omega), \label{eq:th_Eij}
 \end{equation}
-where $\mu_0$ is the vacuum permittivity. The Green's dyadic $\mathbb{G}^{\alpha\beta}(\br_i,\br_j;\omega)$ is defined in Sec. \ref{sec:th_eom2_photon}. % In Eq. \eqref{eq:th_eom_fourier_photon}, the electromagnetic Green's dyadic $\mathbb{G}^{\alpha\beta}(\br_i,\br_j;\omega)$ \cite{novotny} describes the electromagnetic coupling of dipoles and is defined in \ref{sec:th_eom2_photon}. 
+where $\mu_0$ is the vacuum permeability. The Green's dyadic $\mathbb{G}^{\alpha\beta}(\br_i,\br_j;\omega)$ is defined in Sec. \ref{sec:th_eom2_photon}. % In Eq. \eqref{eq:th_eom_fourier_photon}, the electromagnetic Green's dyadic $\mathbb{G}^{\alpha\beta}(\br_i,\br_j;\omega)$ \cite{novotny} describes the electromagnetic coupling of dipoles and is defined in \ref{sec:th_eom2_photon}. 
 
 The linear systems of equations \eqref{eq:th_eom_fourier_phonon}, \eqref{eq:th_eom_fourier_photon} and \eqref{eq:th_eom_fourier_electron} can be written in matrix form by combining all degrees of freedom into single composite vectors by defining $\tilde{\bu}(\omega)=[u_1^x(\omega),u_1^y(\omega),u_1^z(\omega),u_2^x(\omega),u_2^y(\omega),u_2^z(\omega),\dots]^T$ and defining vectors $\tilde{\bd}(\omega)$ and $\tilde{\bb{c}}(\omega)$ similarly. The Langevin terms appearing on the right-hand sides of Eqs. \eqref{eq:th_eom_fourier_phonon}, \eqref{eq:th_eom_fourier_photon} and \eqref{eq:th_eom_fourier_electron} can be similarly written in vector form by accounting for the contribution of each bath $J$ on each degree of freedom. The bath label $J$ corresponds to either local baths, which contribute to the fluctuating force only at a single site, or the environment field $\tilde{E}_{\textrm{env}}^{\alpha}(\br,\omega)$. More details of the labeling are given, e.g., in \citepub{gf}.
 
@@ -513,7 +513,7 @@ where the electric Green's dyadic was defined by Eq. \eqref{eq:intro_gemdef}. % 
 % With the general solution \eqref{eq:th_gf_solution} in terms of the Green's function and the FDTs \eqref{eq:th_xixiom_ohmic_qm}, \eqref{eq:th_etaetaom}, and \eqref{eq:th_e0e0om}, one can calculate the energy transfer to any Langevin bath, leading to Eq. \eqref{eq:th_QI}. 
 
 % Fluctuation dissipation theorem for the fluctuating polarization
-For completeness, let us finally present the FDT for the fluctuating polarization density $\bb{P}_{\textrm{fluc}}$ appearing through the relation $\bb{P}=\bb{P}_{\textrm{ind}}+\bb{P}_{\textrm{fluc}}$ in Eq. \eqref{eq:th_eom_photons}, because it acts as the basis of fluctuational electrodynamics \cite{rytov,lifshitz55} (FED) often used for the modeling of electromagnetic energy transfer \cite{joulain05,volokitin07}. In the local and isotropic approximation, the FDT reads \cite{novotny}
+For completeness, let us finally present the FDT for the fluctuating polarization density $\bb{P}_{\textrm{fluc}}$ appearing through the relation $\bb{P}=\bb{P}_{\textrm{ind}}+\bb{P}_{\textrm{fluc}}$ in Eq. \eqref{eq:th_eom_photons}, because it acts as the basis of fluctuational electrodynamics \cite{rytov,lifshitz56} (FED) often used for the modeling of electromagnetic energy transfer \cite{joulain05,volokitin07}. In the local and isotropic approximation, the FDT reads \cite{novotny}
 \begin{alignat}{2}
  & \left\langle \tilde{\bb{P}}_{\textrm{fluc}}(\br,\omega) \tilde{\bb{P}}_{\textrm{fluc}}(\br',\omega')^T\right\rangle \notag \\
  &\qquad = 4\pi \delta(\omega+\omega') \hbar \varepsilon_0 \textrm{Im}\left[ \chi(\br,\omega)\right] \left[f_{\textrm{BE}}(\omega,T)+\frac{1}{2}\right] \delta(\br-\br') \unitdyadic, \label{eq:th_PflucPfluc}
@@ -601,8 +601,8 @@ Equation \eqref{eq:th_caroli} is the well-known Caroli form for the transmission
 
 In \citepub{dipole}, an expression similar to Eq. \eqref{eq:th_QI} was derived for the locally dissipated power by fluctuating dipole moments:
 \begin{alignat}{2}
- Q_i^{\textrm{bath}} &= \int_0^{\infty}\frac{d\omega}{2\pi} \hbar\omega \sum_{j} \ca{T}_{ij}(\omega) \left[f_B(\omega,T_j)-f_B(\omega,T_i ) \right] \notag \\
-  & \quad + \int_0^{\infty} \frac{d\omega}{2\pi} \hbar \omega \ca{T}_{i,\textrm{rad}}(\omega)\left[ f_B(\omega,\Tenv)-f_B(\omega,T_i)\right].
+ Q_i^{\textrm{bath}} &= \int_0^{\infty}\frac{d\omega}{2\pi} \hbar\omega \sum_{j} \ca{T}_{ij}(\omega) \left[f_{\textrm{BE}}(\omega,T_j)-f_{\textrm{BE}}(\omega,T_i ) \right] \notag \\
+  & \quad + \int_0^{\infty} \frac{d\omega}{2\pi} \hbar \omega \ca{T}_{i,\textrm{rad}}(\omega)\left[ f_{\textrm{BE}}(\omega,\Tenv)-f_{\textrm{BE}}(\omega,T_i)\right].
 \end{alignat}
 The dipole-dipole transmission function $\ca{T}_{ij}(\omega)$ and dipole-environment transmission $\ca{T}_{i,\textrm{rad}}(\omega)$ are given by expressions analogous to Eq. \eqref{eq:th_caroli}. The microscopic oscillator parameters $m$, $q$, $\omega_0$ and $\gamma$ appear, however, explicitly in these expressions through the Green's function $\bb{G}(\omega)$ and the bath coupling functions $\Gamma^i(\omega)$. When only the optical properties of the system are of interest and microscopic details of dipole dynamics are irrelevant, one can eliminate these parameters in terms of the dipole polarizabilities \cite{rosa10,rosa11}. In this case, the energy transfer rates become identical with the fluctuational electrodynamics results \cite{benabdallah11,messina13}. This elimination procedure and the final expressions for transmission functions are presented in detail in \citepub{dipole}. For the evaluation of electron currents flowing to local baths, we refer to Ref. \cite{roy07}.
 
@@ -640,7 +640,7 @@ Comparison of Eqs. \eqref{eq:th_qij_def} and \eqref{eq:th_spectral_curr1} shows 
 \begin{equation}
  q_{i\to j}(\omega) = 2  \omega \sum_{\alpha,\beta} K_{ij}^{\alpha\beta} \textrm{Im}[\tilde C_{ij}^{\alpha\beta}(\omega)]. \label{eq:th_spectral_curr}
 \end{equation}
-Equation \eqref{eq:th_spectral_curr} has been derived in more detail in Publications \cp{spectral} and \cp{cnt}, where slightly different but equivalent forms are given. 
+Equation \eqref{eq:th_spectral_curr} has been derived in more detail in Publications \cp{spectral} and \cp{cnt}, where a slightly different but equivalent form is given. 
 % where $\tilde C_{ij}^{\alpha\beta}(\omega)$ is the Fourier transform of the correlation function
 % \begin{equation}
 %  C_{ij}^{\alpha\beta}(t_1-t_2) = \langle u_i^{\alpha}(t_1)u_j^{\beta}(t_2) \rangle. \label{eq:th_def_Cij} 
@@ -715,12 +715,14 @@ LAMMPS simulation package \cite{plimpton95,lammps_website} is used in Publicatio
 
 
 
-\change{Molecular dynamics (MD) and Green's function (GF) methods presented in the above sections are used in this thesis to investigate phononic energy transfer. Because MD is fully classical and therefore neglects all quantum effects, the method is strictly valid only at temperatures higher than the Debye temperature $T_D$ of the material under study}\footnote{Debye temperature is defined here as $T_D=\hbar \omega_{max}/k_B$, where $\omega_{max}$ is the frequency of the highest-energy phonon mode.}. \change{Despite this limitation, MD is still widely used \cite{cahill14} also at temperatures lower than $T_D$ due to its ability to capture the complex atomistic dynamics of solids, liquids, and gases, inherently including also non-linear effects through the anharmonic terms in the interatomic potential. MD can therefore deliver the best available physical insight into the energy transfer processes taking place in nanosystems.}
+\change{Molecular dynamics (MD) and Green's function (GF) methods presented in the above sections are used in this thesis to investigate phononic energy transfer. Because MD is fully classical and therefore neglects all quantum effects, the method is strictly valid only at temperatures higher than the Debye temperature $T_D$ of the material under study}\footnote{Debye temperature is defined here as $T_D=\hbar \omega_{max}/k_B$, where $\omega_{max}$ is the frequency of the highest-energy phonon mode.}. \change{Despite this limitation, MD is still widely used \cite{cahill14} also at temperatures lower than $T_D$ due to its ability to capture the complex atomistic dynamics of solids, liquids, and gases, inherently including also non-linear effects through the anharmonic terms in the interatomic potential. MD can therefore deliver powerful physical insight into the energy transfer processes taking place in nanosystems.}
 
 \change{In contrast to MD, the GF method fully captures quantum statistics. Being based on the algebraic solution of the linearized Langevin equations of motion, the method also straightforwardly delivers the spectrally decomposed thermal current [Eq. \eqref{eq:th_caroli}], which is only indirectly available from MD [Eq. \eqref{eq:th_spectral_curr}]. The close correspondence of the Langevin equations for phonons, electrons, and photons is also expected to allow for multi-carrier modeling of energy transfer, with energy conversion modeled as energy exchange between the Langevin baths coupled to different carriers.} \change{The drawback of the GF method is that it can only account for dissipative effects in terms of a single frequency-independent relaxation time given as an input parameter. The method is therefore not suitable for calculating, e.g., the thermal conductivity of materials. In addition, the method assumes small displacements of atoms from their equilibrium positions and cannot therefore be applied for the modeling of liquids, gases, or soft solids.}
 
-\change{In addition to MD and GF methods, energy transfer in nanoscale can also be modeled using the Boltzmann transport equation \cite{ziman}. Boltzmann equation treats phonons as point particles and therefore neglects wave effects such as interference. The power of the method lies, however, in its applicability to large systems and its ability to straightforwardly capture various different scattering mechanisms in terms of phonon scattering rates calculated semi-empirically or from first principles methods. Recent advances in computational methods have allowed for a numerically exact solution of the Boltzmann equation in non-equilibrium}, \change{enabling first-principles determination of thermal conductivity \cite{}. The applicability of the Boltzmann equation to the nanoscale structures considered in this thesis is, however, questionable, so only atomistic simulation methods are used in this thesis.}
+\change{In addition to MD and GF methods, energy transfer in nanoscale can also be modeled using the Boltzmann transport equation \cite{ziman}. Boltzmann equation treats phonons as point particles and therefore neglects wave effects such as interference. The power of the method lies, however, in its applicability to large systems and its ability to straightforwardly capture various different scattering mechanisms in terms of phonon scattering rates calculated semi-empirically or from first principles methods. Recent advances in computational methods have allowed for a numerically exact solution of the Boltzmann equation in non-equilibrium}, \change{enabling first-principles determination of thermal conductivity} \cite{broido07,ward09,lindsay13}. \change{The applicability of the Boltzmann equation to the nanoscale structures considered in this thesis is, however, questionable, so only atomistic simulation methods are used in this thesis.}
 % \footnote{Exact solution of the Boltzmann equation was deemed hopelessly complicated in the 1960s textbook by Ziman \cite{ziman}.}
+
+\iffalse
 \begin{table}
 \begin{center}
 \begin{tabularx}{\textwidth}{| X | X | X  | X | } 
@@ -737,6 +739,7 @@ Boltzmann transport equation & Quantum statistics, detailed scattering & Wave ef
 \end{center}
 \caption{Comparison of different methods for modeling phononic thermal conduction. \textbf{POSSIBLY REMOVED UNLESS A BETTER FIGURE COULD BE DRAWN.}}
 \end{table}
+\fi
 
 % GF shows 
 % While quantum effects are expected to modify quantitative predictions such as the value of thermal conductivity

@@ -1,12 +1,13 @@
 %\documentclass[english,a4paper,12pt]{report}
-\documentclass[dissertation]{aaltoseries}
+\documentclass[dissertation,draft*]{aaltoseries}
 %\documentclass[draft]{aaltoseries}
 %\usepackage{aaltothesis}
 \usepackage[utf8]{inputenc}
 %\usepackage[utf8]{fontenc}
 %\usepackage{pslatex}
 %\usepackage{ae,aecompl}
-\usepackage[english]{babel}
+\usepackage[finnish,english]{babel}
+\usepackage{lipsum}
 %\usepackage{auto-pst-pdf}
 %\usepackage{amssymb}
 %\usepackage{amsmath}
@@ -70,7 +71,21 @@
 \fi
 
 \begin{document}
-\pagenumbering{roman}
+%\pagenumbering{roman}
+
+% Use this command!
+\draftabstract{Abstract here (typesetting from the publication platform)}
+% Let's add another one in Finnish
+\draftabstract[finnish]{Tiivistelm\"a}
+% And yet another one in Swedish
+%\draftabstract[swedish]{\lipsum[7-9]}
+
+
+\author{Kimmo S\"a\"askilahti}
+\begin{preface}[Espoo, Finland]
+Preface text
+%...
+\end{preface}
 
 \tableofcontents
 
@@ -94,9 +109,80 @@ The author wrote the first draft, performed all the calculations and analyzed th
 \setlist[description]{style=multiline,topsep=10pt,leftmargin=3cm,font=\normalfont\normalfont\space,align=parleft}
 
 \begin{description} \itemsep2pt
-  \item[First] The first item
-  \item[$\int$ Second] The second item
-  \item[Third] The third etc \ldots
+  \item[$\alpha^{\textrm{CM}}$] Clausius-Mossotti polarizability
+  \item[$c$] Electron annihilation operator 
+  \item[$c^{\dagger}$] Electron creation operator 
+  \item[$C$] Position autocorrelation function
+  \item[$d$] Dipolar displacement 
+  \item[$\delta_{ij}$] Kronecker delta
+   \item[$\delta(x-x')$] Dirac delta function
+  \item[$\Delta T$] Temperature difference
+  \item[$D$] Nanowire diameter
+    \item[$e$] Local vibrational energy
+   \item[$\bE$] Electric field  
+   \item[$\Eenv$] Background electric field
+   \item[$\varepsilon$] Electric permittivity
+   \item[$\varepsilon_{\textrm{env}}$] Electric permittivity of the environment
+   \item[$\varepsilon_0$] Vacuum permittivity
+   \item[$\eta$] Electron Langevin noise operator
+   \item[$f$] Frequency
+   \item[$f_{\textrm{BE}}$] Bose-Einstein function
+    \item[$f_{\textrm{FD}}$] Fermi-Dirac function
+  \item[$\bb{F}$] Force
+  \item[$g$] Spectrally decomposed thermal conductance
+  \item[$\bb{G}$] Green's function matrix
+  \item[$\mathbb{G}$] Electromagnetic Green's dyadic
+  \item[GF] Green's function 
+  \item[$\gamma$] Langevin friction constant
+  \item[$\gamma_e$] Electron Langevin friction constant
+  \item[$\Gamma$] Bath coupling function
+  \item[$\hbar$] Reduced Planck's constant
+  \item[$\bb{H}$] Magnetic field 
+  \item[$\mathcal{H}_\textrm{ph}$] Lattice Hamiltonian
+  \item[$\mathcal{H}_\textrm{el}$] Electron Hamiltonian
+  \item[$\mathcal{H}_\textrm{el}^{\textrm{tb}}$] Electron tight-binding Hamiltonian
+  \item[$\bb{I}$] Unit matrix
+  \item[$j$] Polarization current
+  \item[$k_B$] Boltzmann constant
+  \item[$\bb{K}$] Force constant matrix 
+  \item[$L$] System length
+   \item[$\lambda_{\textrm{max}}$] Thermal wavelength
+  \item[$\Lambda$] Phonon mean free path
+  \item[$m$] Mass of atom or dipole
+  \item[$m_e$] Electron mass
+  \item[$\mu$] Chemical potential
+  \item[$\mu_0$] Vacuum permeability
+   \item[MD] Molecular dynamics
+  \item[$n$] Refractive index
+  \item[$\xi$] Langevin force 
+  \item[$\omega$] Angular frequency
+  \item[$\omega_0$] Oscillator resonance frequency
+  \item[$\bb{p}^{\textrm{kin}}$] Kinetic momentum  
+  \item[$\bb{p}$] Dipole moment
+  \item[$\bb{P}$] Electric polarization
+  \item[$\bb{P}_{\textrm{ind}}$] Induced part of electric polarization
+  \item[$\bb{P}_{\textrm{fluc}}$] Fluctuating part of electric polarization
+  \item[$\phi$] Localized electron eigenstate
+  \item[$q$] Dipole charge
+  \item[$q(\omega)$] Spectrally decomposed heat current
+  \item[$Q$] Heat current
+  \item[$Q^{\textrm{bath}}$] Heat current to bath
+  \item[$\bb{r}$] Atom position
+  \item[$\bb{r}_0$] Equilibrim position of atom 
+  \item[$R$] Nanoparticle radius
+  \item[$\bb{S}$] Poynting vector
+  \item[$\Sigma$] Bath self-energy
+  \item[$\sigma$] Electron orbital index
+  \item[$t_{ij}^{\sigma\sigma'}$] Electron tight-binding hopping constant between orbitals $\sigma$ and $\sigma'$ at atoms $i$ and $j$
+  \item[$T$] Temperature
+   \item[$\mathcal{T}$] Transmission function
+  \item[$u$] Displacement of atom $i$
+  \item[$\Upsilon$] Anharmonic force constant
+  \item[${V}$] Electron potential energy
+  \item[$\mathcal{V}$] Interatomic potential energy function
+  \item[$W$] System width
+  % \item[$\bu_i$] Vector displacement of atom $i$ 
+  \item[$\chi$] Electric susceptibility
 \end{description}
 
 \chapter{Introduction}
@@ -161,11 +247,11 @@ The author wrote the first draft, performed all the calculations and analyzed th
 
 %\nocite{*}
 
-
+\renewcommand{\bibname}{References}
 \bibliography{../bibtex/biblio}{}
 
-%\bibliographystyle{plain}
-\bibliographystyle{../physrev}
+\bibliographystyle{ieeetr}
+%\bibliographystyle{../physrev}
 
 
 
@@ -195,7 +281,7 @@ The author wrote the first draft, performed all the calculations and analyzed th
 % Add the publication pdf file, the filename is the parameter (must be the last).
 %\addpublicationpdf{articles/twinning_article.pdf}
 
-\addpublication{K. S\"a\"askilahti, J. Oksanen, R.~P. Linna, and J. Tulkki}{Thermal conduction and interface effects in nanoscale Fermi-Pasta-Ulam conductors}{Phys. Rev. E}{Vol. 86, pp. 031107}{September}{2012}{American Physical Society}{fpu}
+\addpublication{K. S\"a\"askilahti, J. Oksanen, R.~P. Linna, and J. Tulkki}{Thermal conduction and interface effects in nanoscale Fermi-Pasta-Ulam conductors}{Phys. Rev. E}{86, 031107}{September}{2012}{American Physical Society}{fpu}
 % Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
 \addcontribution{The author made the coffee.}
 % Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
@@ -203,7 +289,7 @@ The author wrote the first draft, performed all the calculations and analyzed th
 % Add the publication pdf file, the filename is the parameter (must be the last).
 %\addpublicationpdf{articles/fpu_article.pdf}
 
-\addpublication{K. S\"a\"askilahti, J. Oksanen, R.~P. Linna, and J. Tulkki}{Phonon interference and anharmonicity effects in nanoconstrictions}{AIP Conf. Proc.}{Vol. 1506, pp. 15}{December}{2012}{American Physical Society}{fpu2}
+\addpublication{K. S\"a\"askilahti, J. Oksanen, R.~P. Linna, and J. Tulkki}{Phonon interference and anharmonicity effects in nanoconstrictions}{AIP Conf. Proc.}{1506, 15}{December}{2012}{American Physical Society}{fpu2}
 \addcontribution{The author made the coffee.}.
 % Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
 %\addcontribution{The author made the coffee.}
