@@ -56,19 +56,11 @@
 \newcommand{\listofsymbols}{%
   \chapter*{Symbols and abbreviations}%
 }
-\iffalse
- \setlength{\hoffset}{-1in}
- \setlength{\oddsidemargin}{35mm}
-  \setlength{\evensidemargin}{25mm}
-  \setlength{\textwidth}{15cm}
-% %% Pystysuunnan mitat, �L� KOSKE!
-  \setlength{\voffset}{-1in}
-  \setlength{\headsep}{7mm}
-  \setlength{\headheight}{1em}
-  \setlength{\topmargin}{25mm-\headheight-\headsep}
-  \setlength{\textheight}{23cm}
 
-\fi
+% The author of the dissertation
+\author{Kimmo S\"a\"askilahti}
+% The title of the thesis
+\title{Energy transfer in nanoscale structures -- Insight from computational modeling and spectral analysis}
 
 \begin{document}
 %\pagenumbering{roman}
@@ -93,16 +85,13 @@ Preface text
 
 \chapter*{Author's contribution}
 \addcontentsline{toc}{chapter}{Author's contribution}
-The author wrote the first draft, performed all the calculations and analyzed the numerical results in \textbf{Publications I, II, IV, V, VI}, and \textbf{VII.}
-\vspace{1cm}
-
-\hspace{-3mm}The author derived the mathematical expressions used for the numerical analysis in \textbf{Publications I, II, VI}, and \textbf{VII}.
+The author wrote the first draft, developed and/or adapted the required theoretical and numerical models and performed all the calculations and numerical analysis in \textbf{Publications I, II, IV, V, VI}, and \textbf{VII}.
 \vspace{1cm}
 
 \hspace{-3mm}The author actively contributed to the writing of the manuscript and participated in the interpretation of numerical results in \textbf{Publication III}.
-\vspace{1cm}
+%\vspace{1cm}
 
-\hspace{-3mm}The author modified an existing molecular dynamics code for the heat transfer simulations of \textbf{Publications IV} and \textbf{V} and also parallelized the code.
+%\hspace{-3mm}The author modified an existing molecular dynamics code for the heat transfer simulations of \textbf{Publications IV} and \textbf{V} and also parallelized the code.
 
 \listofsymbols
 
@@ -175,8 +164,9 @@ The author wrote the first draft, performed all the calculations and analyzed th
   \item[$\sigma$] Electron orbital index
   \item[$t_{ij}^{\sigma\sigma'}$] Electron tight-binding hopping constant between orbitals $\sigma$ and $\sigma'$ at atoms $i$ and $j$
   \item[$T$] Temperature
+   \item[$T_D$] Debye temperature
    \item[$\mathcal{T}$] Transmission function
-  \item[$u$] Displacement of atom $i$
+  \item[$u$] Displacement of atom from equilibrium position
   \item[$\Upsilon$] Anharmonic force constant
   \item[${V}$] Electron potential energy
   \item[$\mathcal{V}$] Interatomic potential energy function
@@ -192,60 +182,14 @@ The author wrote the first draft, performed all the calculations and analyzed th
 
 \input{theory.tex}
 
-% \input{methods.tex}
-%\chapter{Theory of heat transfer in nanoscale}
-
-%\input{heattransfer.tex}
-%
-%\chapter{Methods}
-
-%\label{chap:methods}
-
-%\begin{quote}
-% \textit{This section is devoted to presenting the computational methods used in this work.}
-%\end{quote}
-
-%Studying energy transfer in nanoscale systems typically requires resorting to computational methods, which can be roughly divided into two categories. In the first category, computer is used to calculate numerical values for complicated analytical expressions. In the second category, computer is used to perform a ''numerical experiment'' by simulating the behaviour of the system and calculating observables of interest from the simulation. 
-
-%n the context of this work, the two categories correspond to two different ways of handling the non-linearities in the equations of motion. 
-
-
-%The non-linearities appear, for example, from the anharmonic forces between atoms in a solid, resulting in interactions between vibrational modes (phonon-phonon interactions). If the non-linear terms are neglected or linearized, one can solve the equations of motion analytically in terms of the so-called Green's functions. Observables such as the heat current can then be calculated numerically from the analytical expressions. 
-
-%The computational methods used in this thesis fall into two categories, corresponding to different approaches for treating the non-linearities appearing in the equations of motion. If the non-linear terms cannot be neglected or linearized, one cannot directly calculate the observables of interest such as the heat current. One can, however, perform a ''numerical experiment'' by numerically integrating the classical equations of motion and calculating the time-averaged observables of interest from microscopic trajectories. This is the idea of molecular dynamics method. 
-
-%If the non-linear terms can be neglected or replaced by an effective linear term, the equations of motion can be solved analytically in terms of the so-called Green's functions. The Green's functions provide analytical expressions for observables such as the heat current. Numerical methods are still required, however, to perform the complicated matrix operations necessary for the evaluation. The Green's function method is used in this thesis for (i) lattice heat transfer using an effective model modeling the dissipative processes and (ii) electromagnetic energy transfer. The non-linearities appear as dissipative terms either in the atomic equations of motion [in case (i)] or Maxwell's equations [case (ii)]. 
-
-%While energy transfer coefficients such as the thermal conductivity can be calculated from linear response theory using Green-Kubo relations, we have exclusively used non-equilibrium methods in this work. In both MD and GF method, the temperature difference pushing the system into non-equilibrium is set up by coupling to Langevin heat baths at different temperatures. The imposed non-equilibrium, arising from non-zero temperature differences in the system, mimics the practically relevant experimental case and also allows for more unambiguous separation between bulk and interface quantities. %We therefore start by reviewing the theory of Langevin baths.
-
-
-% MOLECULAR DYNAMICS
-%\input{md.tex}
-
-% GREEN'S FUNCTION METHOD
-%\input{gfm.tex}
-
-%\input{observables.tex}
-
-%\input{implementation.tex}
-%  BOLTZMANN TRANSPORT EQUATION
-%\input{bte.tex}
-
 \chapter{Results and discussion}
 \input{results_phonons.tex}
-
-% \input{results_photons.tex}
 
 \input{discussion.tex}
 
 \chapter{Conclusion and outlook}
 
-% \input{appendix_phonons.tex}
-
-
 \input{conclusion.tex}
-
-%\nocite{*}
 
 \renewcommand{\bibname}{References}
 \bibliography{../bibtex/biblio}{}
