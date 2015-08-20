@@ -1,5 +1,5 @@
-%\documentclass[english,a4paper,12pt]{report}
 \documentclass[dissertation,draft*]{aaltoseries}
+%\documentclass[dissertation,draft*]{aaltoseries}
 %\documentclass[draft]{aaltoseries}
 %\usepackage{aaltothesis}
 \usepackage[utf8]{inputenc}
@@ -63,21 +63,17 @@
 \title{Energy transfer in nanoscale structures -- Insight from computational modeling and spectral analysis}
 
 \begin{document}
-%\pagenumbering{roman}
+\pagenumbering{roman}
 
 % Use this command!
-\draftabstract{Abstract here (typesetting from the publication platform)}
+\draftabstract{Swift progress in the synthesis and processing of materials with nanoscale structures has spawned new ways to control the flow of thermal energy. Mastering the capabilities to engineer new materials and devices with tailored thermal properties is expected to enable, e.g., clean production of energy from waste heat by thermoelectric converters, reducing the energy consumption of digital electronics, and generating novel technologies such as heat-assisted magnetic recording and phase-change memories. As the classical laws of energy transfer do not generally apply in nanoscale, practical realization of such applications calls for new computational methods delivering scientific understanding of nanoscale heat transfer.
 
-% Progress, advances in manufacturing/synthesis/processing/ 
-% Controlling the flow of heat
-% Applications in more efficient TC converters, mitigating heating in digital electronics, new applications in phase-change memory, heat-assisted magnetic recording
+The goal of the thesis is to develop new computational models and methods for nanoscale energy transfer and to apply the methods to generate useful insight into thermal phenomena. The thesis presents, for example, a mathematical expression for the spectral decomposition of lattice heat current, allowing for detailed analysis of thermal transfer in non-linear systems. The results of the thesis underline the role of non-linear processes in thermal conduction across interfaces, provide numerical evidence on non-diffusive thermal conduction in carbon nanotubes as long as 10 $\mu$m, suggest the increase of thermoelectric efficiency in silicon nanowires by the introduction of periodic stacking faults, and demonstrate the possibility to tune electromagnetic energy transfer between nanoparticles by a mirror cavity. Thesis also develops a unified framework for the modeling of energy transfer by lattice vibrations, electromagnetic fields, and electrons. %The model is applied to studying quantum effects in thermal transfer in point contacts and demonstrating the tuning of electromagnetic energy transfer between nanoparticles by a mirror cavity.
 
+The methods and results presented in the thesis contribute to the science of nanoscale heat transfer by creating new understanding of thermal phenomena in small structures and providing researchers with tools for more detailed analysis of numerical simulations.} 
 
 % Let's add another one in Finnish
 \draftabstract[finnish]{Tiivistelm\"a}
-% And yet another one in Swedish
-%\draftabstract[swedish]{\lipsum[7-9]}
-
 
 \author{Kimmo S\"a\"askilahti}
 \begin{preface}[Espoo, Finland]
@@ -89,18 +85,37 @@ Preface text
 
 \listofpublications
 
+\chapter*{Summary of article contents}
+\addcontentsline{toc}{chapter}{Summary of article contents}
+
+\textbf{Publication I} investigates the role of anharmonic phonon scattering in thermal conduction across planar material interfaces. The analysis relies on the newly developed expression for the spectral decomposition of heat current, evaluated numerically from the atomic trajectories extracted from non-equilibrium molecular dynamics simulations. Results show that anharmonic phonon scattering facilitates thermal conduction across the interface by providing a dissipation mechanism for evanescent waves and by enabling multi-phonon energy transfer processes at the interface.
+
+\vspace{1cm}
+\noindent
+\textbf{Publication II} applies the spectral analysis method of \textbf{Publication I} to determine the frequency-dependent phonon mean free paths in carbon nanotubes. The determined mean free paths directly reflect the decay of heat current in non-equilibrium, allowing for straightforwardly assessing the contributions of different vibrational frequencies to thermal conduction in tubes of different length. Room-temperature mean free paths in carbon nanotubes are shown to exceed 10 $\upmu$m at low frequencies, highlighting their potential applications in thermal management. 
+
+\vspace{1cm}
+\noindent
+\textbf{Publication III} studies the effect of periodic twinning stacking faults on the thermal conductivity of silicon nanowires. Molecular dynamics simulations show that the nanowire thermal conductivity can be notably reduced by the periodic twinning, suggesting the possibility to increase the thermoelectric efficiency by such superlattice structures.
+
+\vspace{1cm}
+\noindent
+\textbf{Publications IV, V} and \textbf{VI} focus on thermal conduction in nanoscale point contacts. Simulations for point contacts in a two-dimensional square lattice reveal interference patterns in local temperature profiles, not captured by Fourier's law. Quantum statistics are shown to modify temperature profiles in point contacts at low temperatures, but the effect is shown to be weak for graphene at room temperature.
+
+\vspace{1cm}
+\noindent
+\textbf{Publication VII} presents Langevin theory of electromagnetic energy transfer, providing an alternative description to the traditional fluctuational electrodynamics. Numerical results for nanoparticles in a mirror cavity demonstrate the possibility to tune the rate of electromagnetic energy transfer between dielectric bodies by an inhomogeneous environment.
+
 \chapter*{Author's contribution}
 \addcontentsline{toc}{chapter}{Author's contribution}
 The author wrote the first draft, developed and/or adapted the required theoretical and numerical models and performed all the calculations and numerical analysis in \textbf{Publications I, II, IV, V, VI}, and \textbf{VII}.
+
 \vspace{1cm}
-
-\hspace{-3mm}The author actively contributed to the writing of the manuscript and participated in the interpretation of numerical results in \textbf{Publication III}.
-%\vspace{1cm}
-
-%\hspace{-3mm}The author modified an existing molecular dynamics code for the heat transfer simulations of \textbf{Publications IV} and \textbf{V} and also parallelized the code.
+\noindent
+The author actively contributed to the writing of the manuscript and participated in the interpretation of numerical results in \textbf{Publication III}.
 
 \listofsymbols
-
+\addcontentsline{toc}{chapter}{Symbols and abbreviations}
 \setlist[description]{style=multiline,topsep=10pt,leftmargin=3cm,font=\normalfont\normalfont\space,align=parleft}
 
 \begin{description} \itemsep2pt
@@ -114,32 +129,32 @@ The author wrote the first draft, developed and/or adapted the required theoreti
   \item[$\Delta T$] Temperature difference
   \item[$D$] Nanowire diameter
     \item[$e$] Local vibrational energy
-   \item[$\bE$] Electric field  
-   \item[$\Eenv$] Background electric field
+   \item[$E$] Electric field  
+   \item[$E_{\textrm{env}}$] Background electric field
    \item[$\varepsilon$] Electric permittivity
-   \item[$\varepsilon_{\textrm{env}}$] Electric permittivity of the environment
    \item[$\varepsilon_0$] Vacuum permittivity
+   \item[$\varepsilon_{\textrm{env}}$] Electric permittivity of the environment
    \item[$\eta$] Electron Langevin noise operator
    \item[$f$] Frequency
    \item[$f_{\textrm{BE}}$] Bose-Einstein function
     \item[$f_{\textrm{FD}}$] Fermi-Dirac function
-  \item[$\bb{F}$] Force
+  \item[$F$] Force
   \item[$g$] Spectrally decomposed thermal conductance
-  \item[$\bb{G}$] Green's function matrix
+  \item[$G$] Green's function matrix
   \item[$\mathbb{G}$] Electromagnetic Green's dyadic
   \item[GF] Green's function 
   \item[$\gamma$] Langevin friction constant
   \item[$\gamma_e$] Electron Langevin friction constant
   \item[$\Gamma$] Bath coupling function
   \item[$\hbar$] Reduced Planck's constant
-  \item[$\bb{H}$] Magnetic field 
+  \item[$H$] Magnetic field 
   \item[$\mathcal{H}_\textrm{ph}$] Lattice Hamiltonian
   \item[$\mathcal{H}_\textrm{el}$] Electron Hamiltonian
   \item[$\mathcal{H}_\textrm{el}^{\textrm{tb}}$] Electron tight-binding Hamiltonian
-  \item[$\bb{I}$] Unit matrix
+  \item[$\bb{I}_{3\times 3}$] $3\times 3$ unit matrix
   \item[$j$] Polarization current
   \item[$k_B$] Boltzmann constant
-  \item[$\bb{K}$] Force constant matrix 
+  \item[$K$] Force constant matrix 
   \item[$L$] System length
    \item[$\lambda_{\textrm{max}}$] Thermal wavelength
   \item[$\Lambda$] Phonon mean free path
@@ -149,26 +164,27 @@ The author wrote the first draft, developed and/or adapted the required theoreti
   \item[$\mu_0$] Vacuum permeability
    \item[MD] Molecular dynamics
   \item[$n$] Refractive index
+  \item[NEMD] Non-equilibrium molecular dynamics
   \item[$\xi$] Langevin force 
   \item[$\omega$] Angular frequency
   \item[$\omega_0$] Oscillator resonance frequency
-  \item[$\bb{p}^{\textrm{kin}}$] Kinetic momentum  
-  \item[$\bb{p}$] Dipole moment
-  \item[$\bb{P}$] Electric polarization
-  \item[$\bb{P}_{\textrm{ind}}$] Induced part of electric polarization
-  \item[$\bb{P}_{\textrm{fluc}}$] Fluctuating part of electric polarization
+  \item[$p^{\textrm{kin}}$] Kinetic momentum  
+  \item[$p$] Dipole moment
+  \item[$P$] Electric polarization density
+  \item[$P_{\textrm{ind}}$] Induced part of electric polarization density
+  \item[$P_{\textrm{fluc}}$] Fluctuating part of electric polarization density
   \item[$\phi$] Localized electron eigenstate
   \item[$q$] Dipole charge
-  \item[$q(\omega)$] Spectrally decomposed heat current
+  \item[$q(\omega)$] Spectral decomposition of heat current
   \item[$Q$] Heat current
   \item[$Q^{\textrm{bath}}$] Heat current to bath
-  \item[$\bb{r}$] Atom position
-  \item[$\bb{r}_0$] Equilibrim position of atom 
+  \item[$r$] Atom position
+  \item[$r_0$] Equilibrim position of atom 
   \item[$R$] Nanoparticle radius
-  \item[$\bb{S}$] Poynting vector
+  \item[$S$] Poynting vector
   \item[$\Sigma$] Bath self-energy
   \item[$\sigma$] Electron orbital index
-  \item[$t_{ij}^{\sigma\sigma'}$] Electron tight-binding hopping constant between orbitals $\sigma$ and $\sigma'$ at atoms $i$ and $j$
+  \item[$t_{ij}^{\sigma\sigma'}$] Electron tight-binding hopping constant
   \item[$T$] Temperature
    \item[$T_D$] Debye temperature
    \item[$\mathcal{T}$] Transmission function
