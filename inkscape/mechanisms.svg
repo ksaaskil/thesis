@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="315.66704"
-     inkscape:cy="744.91528"
+     inkscape:zoom="1.979899"
+     inkscape:cx="291.0823"
+     inkscape:cy="781.01145"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -585,7 +585,7 @@
          sodipodi:role="line">(a)</tspan></text>
     <g
        id="g15095"
-       transform="matrix(0.33439673,0,0,0.32136725,74.072255,39.016435)">
+       transform="matrix(0.24339441,0,0,0.22696741,101.92908,70.513127)">
       <g
          word-spacing="normal"
          letter-spacing="normal"
@@ -612,7 +612,7 @@
            inkscape:connector-curvature="0"
            style="fill:#000000;stroke-width:0" /></g>    </g>
     <g
-       transform="matrix(0.25572788,0,0,0.24648374,333.84411,29.09875)"
+       transform="matrix(0.22758314,0,0,0.19266115,345.31613,49.937209)"
        id="g15311">
       <g
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
@@ -653,7 +653,7 @@
            id="path15325" /></g>    </g>
     <g
        id="g15523"
-       transform="matrix(0.26605525,0,0,0.24076059,158.51558,59.727981)">
+       transform="matrix(0.2201837,0,0,0.18554318,169.74863,74.448856)">
       <g
          word-spacing="normal"
          letter-spacing="normal"
@@ -715,7 +715,7 @@
          y="214.97498">(b)</tspan></text>
     <g
        id="g10903"
-       transform="translate(74.062385,8.8165327)">
+       transform="matrix(0.8410282,0,0,0.77811531,118.45802,51.472109)">
       <path
          inkscape:connector-curvature="0"
          id="path16395"
@@ -812,7 +812,7 @@
        sodipodi:type="arc" />
     <g
        id="g6283"
-       transform="matrix(0.38482693,0,0,0.33383853,171.97084,242.53308)">
+       transform="matrix(0.29386817,0,0,0.26203324,199.29209,266.18782)">
       <g
          word-spacing="normal"
          letter-spacing="normal"
@@ -865,17 +865,18 @@
     <text
        sodipodi:linespacing="125%"
        id="text16813"
-       y="244.56012"
-       x="455.85492"
-       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
-       xml:space="preserve"><tspan
-         y="244.56012"
-         x="455.85492"
+       y="229.67761"
+       x="477.42679"
+       style="font-size:9.92972946px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       xml:space="preserve"
+       transform="scale(0.95479636,1.0473438)"><tspan
+         y="229.67761"
+         x="477.42679"
          id="tspan16815"
          sodipodi:role="line">Absorption by </tspan><tspan
          id="tspan16817"
-         y="264.56012"
-         x="455.85492"
+         y="242.08978"
+         x="477.42679"
          sodipodi:role="line">other dipoles</tspan></text>
     <path
        sodipodi:type="arc"
@@ -938,7 +939,7 @@
        id="path15831"
        inkscape:connector-curvature="0" />
     <g
-       transform="matrix(0.3395672,0,0,0.34948838,157.24898,130.80051)"
+       transform="matrix(0.2380162,0,0,0.22610301,193.79547,171.38355)"
        id="g16135">
       <g
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
@@ -1292,7 +1293,7 @@
        sodipodi:ry="4.375"
        d="m 264.10713,292.63004 a 4.5535712,4.375 0 1 1 -9.10714,0 4.5535712,4.375 0 1 1 9.10714,0 z" />
     <g
-       transform="matrix(0.49930812,0,0,0.4181237,140.08385,192.48643)"
+       transform="matrix(0.37386295,0,0,0.31073439,183.20183,225.9305)"
        id="g5021">
       <g
          inkscape:transform-center-x="0.00030064651"
@@ -1368,7 +1369,7 @@
        id="path11333" />
     <g
        id="g11468"
-       transform="translate(0,-2.5000004)">
+       transform="matrix(0.8043424,0,0,0.7932988,63.489449,77.396601)">
       <path
          style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)"
          d="m 298.68422,376.73456 32.85714,0"
@@ -1426,16 +1427,16 @@
        sodipodi:type="arc"
        transform="matrix(2.3855406,0,0,2.2858863,-216.76047,-340.9897)" />
     <g
-       id="g11500"
-       transform="matrix(0.49930812,0,0,0.4181237,228.65528,192.48643)">
+       id="g3711"
+       transform="matrix(0.37386295,0,0,0.31073439,271.59018,225.9305)">
       <g
-         id="g11502"
+         id="g3713"
          inkscape:transform-center-y="10.659707"
          transform="matrix(0.83338821,0,0,0.82911163,62.509706,40.19234)"
          inkscape:transform-center-x="0.00030064651">
         <g
            transform="translate(27.131981,-2.5654336)"
-           id="g11504">
+           id="g3715">
           <g
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
              word-spacing="normal"
@@ -1448,16 +1449,16 @@
              stroke-miterlimit="10.433"
              xml:space="preserve"
              transform="matrix(1.0629921,0,0,-1.0629921,-186.02362,789.27165)"
-             id="g11506"><path
+             id="g3717"><path
                style="fill:#000000;stroke-width:0"
                inkscape:connector-curvature="0"
-               id="path11508"
+               id="path3719"
                d="m 464.83,417.71 0.14,0.01 0.16,0 0.17,0 0.17,0 0.19,0.01 0.2,0 0.21,0.01 0.22,0.01 0.22,0.01 0.23,0.01 0.24,0.01 0.25,0.02 0.25,0.02 0.25,0.02 0.53,0.05 0.53,0.07 0.55,0.07 0.54,0.1 0.54,0.11 0.54,0.12 0.26,0.07 0.26,0.08 0.25,0.08 0.25,0.08 0.24,0.09 0.24,0.1 c 3.48,1.5 3.73,4.43 3.73,5.12 0,2.2 -1.89,4.23 -5.33,4.23 v -1.09 c 2.35,0 3.69,-1.44 3.69,-3.14 0,-5.17 -7.97,-5.17 -10.01,-5.17 h -2.05 c 1.95,7.56 7.08,8.31 8.37,8.31 v 1.09 c -5.53,0 -13.04,-4.82 -13.04,-13.54 0,-5.08 2.93,-9.02 7.81,-9.02 7.12,0 11.31,5.28 11.31,5.88 0,0.29 -0.3,0.65 -0.59,0.65 -0.25,0 -0.35,-0.11 -0.66,-0.5 -3.94,-4.93 -9.36,-4.93 -9.95,-4.93 -3.89,0 -4.35,4.18 -4.35,5.78 0,0.59 0.05,2.14 0.8,5.18 z" /></g>        </g>
         <path
            inkscape:connector-curvature="0"
            inkscape:original-d="M 349.44689,328.4759 360.747,328.14732"
            inkscape:path-effect="#path-effect6067"
-           id="path11510"
+           id="path3721"
            d="M 349.44689,328.4759 360.747,328.14732"
            style="fill:none;stroke:#000000;stroke-width:1.83808589;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
       </g>
@@ -1465,7 +1466,7 @@
   </g>
   <g
      id="g10572"
-     transform="matrix(0.34238527,0,0,0.23798698,219.38398,275.53432)">
+     transform="matrix(0.25710865,0,0,0.19550635,244.99849,289.60646)">
     <g
        word-spacing="normal"
        letter-spacing="normal"

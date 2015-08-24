@@ -53,6 +53,7 @@
 \newcommand{\kw}{k_0}
 \newcommand{\unitdyadic}{\bb{I}_{3 \times 3}}
 \newcommand{\change}{\uline}
+%\newcommand{\change}{}
 \newcommand{\listofsymbols}{%
   \chapter*{Symbols and abbreviations}%
 }
@@ -60,26 +61,37 @@
 % The author of the dissertation
 \author{Kimmo S\"a\"askilahti}
 % The title of the thesis
-\title{Energy transfer in nanoscale structures -- Insight from computational modeling and spectral analysis}
+\title{Nanoscale energy transfer -- Insight from computational modeling and spectral analysis}
 
 \begin{document}
 \pagenumbering{roman}
 
 % Use this command!
-\draftabstract{Swift progress in the synthesis and processing of materials with nanoscale structures has spawned new ways to control the flow of thermal energy. Mastering the capabilities to engineer new materials and devices with tailored thermal properties is expected to enable, e.g., clean production of energy from waste heat by thermoelectric converters, reducing the energy consumption of digital electronics, and generating novel technologies such as heat-assisted magnetic recording and phase-change memories. As the classical laws of energy transfer do not generally apply in nanoscale, practical realization of such applications calls for new computational methods delivering scientific understanding of nanoscale heat transfer.
 
-The goal of the thesis is to develop new computational models and methods for nanoscale energy transfer and to apply the methods to generate useful insight into thermal phenomena. The thesis presents, for example, a mathematical expression for the spectral decomposition of lattice heat current, allowing for detailed analysis of thermal transfer in non-linear systems. The results of the thesis underline the role of non-linear processes in thermal conduction across interfaces, provide numerical evidence on non-diffusive thermal conduction in carbon nanotubes as long as 10 $\mu$m, suggest the increase of thermoelectric efficiency in silicon nanowires by the introduction of periodic stacking faults, and demonstrate the possibility to tune electromagnetic energy transfer between nanoparticles by a mirror cavity. Thesis also develops a unified framework for the modeling of energy transfer by lattice vibrations, electromagnetic fields, and electrons. %The model is applied to studying quantum effects in thermal transfer in point contacts and demonstrating the tuning of electromagnetic energy transfer between nanoparticles by a mirror cavity.
+\draftabstract{Swift progress in the synthesis and processing of materials with nanoscale structures has spawned new ways to control the flow of thermal energy. Mastering the capabilities to engineer new materials and devices with tailored thermal properties is expected to enable, e.g., clean and more efficient production of energy from waste heat by thermoelectric converters, reducing the energy consumption of digital electronics, and generating novel technologies such as heat-assisted magnetic recording and phase-change memories. As the classical laws of energy transfer do not generally apply in nanoscale, practical realization of such applications calls for powerful computational methods delivering scientific understanding of nanoscale heat transfer.
 
-The methods and results presented in the thesis contribute to the science of nanoscale heat transfer by creating new understanding of thermal phenomena in small structures and providing researchers with tools for more detailed analysis of numerical simulations.} 
+The goal of this thesis is to develop new computational models and methods for describing nanoscale energy transfer and to apply the methods to generate useful insight into various thermal phenomena. The results include, e.g., new methods to spectrally decompose the lattice heat current into its frequency components, allowing detailed analysis of thermal transfer in non-linear systems. The work provides substantial new insight on the role of non-linear processes in thermal conduction across interfaces and in the non-diffusive thermal conduction in carbon nanotubes up to 10 $\upmu$m lengths as well as on increasing thermoelectric efficiency in silicon nanowires by the introduction of periodic stacking faults, and demonstrates the possibility to tune electromagnetic energy transfer between nanoparticles by a mirror cavity.
+
+As a whole, the thesis initiates the development of a unified fluctuational model for describing energy transfer by lattice vibrations, electromagnetic fields, and electrons in a single mathematical framework than can generate substantial new insight on the thermal phenomena present in small structures. More specifically, the methods and results of the thesis provide new analytical and numerical tools for describing nanoscale energy transfer within a framework that may, with further development, become instrumental also in modeling complete multiscale energy conversion processes and systems involving heat, light and electricity.}
+
+%\draftabstract{Swift progress in the synthesis and processing of materials with nanoscale structures has spawned new ways to control the flow of thermal energy. Mastering the capabilities to engineer new materials and devices with tailored thermal properties is expected to enable, e.g., clean production of energy from waste heat by thermoelectric converters, reducing the energy consumption of digital electronics, and generating novel technologies such as heat-assisted magnetic recording and phase-change memories. As the classical laws of energy transfer do not generally apply in nanoscale, practical realization of such applications calls for new computational methods delivering scientific understanding of nanoscale heat transfer.
+
+%The goal of the thesis is to develop new computational models and methods for nanoscale energy transfer and to apply the methods to generate useful insight into thermal phenomena. The thesis presents, for example, a mathematical expression for the spectral decomposition of lattice heat current, allowing for detailed analysis of thermal transfer in non-linear systems. The results of the thesis underline the role of non-linear processes in thermal conduction across interfaces, provide numerical evidence on non-diffusive thermal conduction in carbon nanotubes as long as 10 $\mu$m, suggest the increase of thermoelectric efficiency in silicon nanowires by the introduction of periodic stacking faults, and demonstrate the possibility to tune electromagnetic energy transfer between nanoparticles by a mirror cavity. Thesis also develops a unified framework for the modeling of energy transfer by lattice vibrations, electromagnetic fields, and electrons. %The model is applied to studying quantum effects in thermal transfer in point contacts and demonstrating the tuning of electromagnetic energy transfer between nanoparticles by a mirror cavity.
+
+%The methods and results presented in the thesis contribute to the science of nanoscale heat transfer by creating new understanding of thermal phenomena in small structures and providing researchers with tools for more detailed analysis of numerical simulations.} 
 
 % Let's add another one in Finnish
-\draftabstract[finnish]{Tiivistelm\"a}
+\draftabstract[finnish]{Abstract in Finnish}
 
 \author{Kimmo S\"a\"askilahti}
 \begin{preface}[Espoo, Finland]
 Preface text
 %...
 \end{preface}
+
+\vspace{1cm}
+\noindent
+\textit{Funding organizations}
 
 \tableofcontents
 
@@ -230,7 +242,7 @@ The author actively contributed to the writing of the manuscript and participate
 % Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
 %\adderrata{This is wrong}
 % Add the publication pdf file, the filename is the parameter (must be the last).
-%\addpublicationpdf{articles/spectral_article.pdf}
+% \addpublicationpdf{articles/spectral_article.pdf}
 
 \addpublication{K. S\"a\"askilahti, J. Oksanen, S. Volz, and J. Tulkki}{Frequency-dependent phonon mean free paths in carbon nanotubes from non-equilibrium molecular dynamics}{Phys. Rev. B}{91, 115426}{March}{2015}{American Physical Society}{cnt}
 % Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
@@ -238,7 +250,7 @@ The author actively contributed to the writing of the manuscript and participate
 % Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
 %\adderrata{This is wrong}
 % Add the publication pdf file, the filename is the parameter (must be the last).
-%\addpublicationpdf{articles/cnt_article.pdf}
+% \addpublicationpdf{articles/cnt_article.pdf}
 
 
 \addpublication{Shiyun Xiong, Yuriy A. Kosevich, K. S\"a\"askilahti, Yuxiang Ni, and Sebastian Volz}{Tunable thermal conductivity in silicon twinning superlattice nanowires}{Phys. Rev. B}{90, 195439}{November}{2014}{American Physical Society}{twinning}
@@ -247,7 +259,7 @@ The author actively contributed to the writing of the manuscript and participate
 % Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
 %\adderrata{This is wrong}
 % Add the publication pdf file, the filename is the parameter (must be the last).
-%\addpublicationpdf{articles/twinning_article.pdf}
+% \addpublicationpdf{articles/twinning_article.pdf}
 
 \addpublication{K. S\"a\"askilahti, J. Oksanen, R.~P. Linna, and J. Tulkki}{Thermal conduction and interface effects in nanoscale Fermi-Pasta-Ulam conductors}{Phys. Rev. E}{86, 031107}{September}{2012}{American Physical Society}{fpu}
 % Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
@@ -255,7 +267,7 @@ The author actively contributed to the writing of the manuscript and participate
 % Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
 %\adderrata{This is wrong}
 % Add the publication pdf file, the filename is the parameter (must be the last).
-%\addpublicationpdf{articles/fpu_article.pdf}
+% \addpublicationpdf{articles/fpu_article.pdf}
 
 \addpublication{K. S\"a\"askilahti, J. Oksanen, R.~P. Linna, and J. Tulkki}{Phonon interference and anharmonicity effects in nanoconstrictions}{AIP Conf. Proc.}{1506, 15}{December}{2012}{American Physical Society}{fpu2}
 \addcontribution{The author made the coffee.}.
@@ -264,7 +276,7 @@ The author actively contributed to the writing of the manuscript and participate
 % Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
 %\adderrata{This is wrong}
 % Add the publication pdf file, the filename is the parameter (must be the last).
-%\addpublicationpdf{articles/fpu_article.pdf}
+% \addpublicationpdf{articles/fpu_article.pdf}
 
 \addpublication{K. S\"a\"askilahti, J. Oksanen, and J. Tulkki}{Thermal balance and quantum heat transport in nanostructures thermalized by local Langevin heat baths}{Phys. Rev. E}{88, 012128}{July}{2013}{American Physical Society}{gf}
 % Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
@@ -272,7 +284,7 @@ The author actively contributed to the writing of the manuscript and participate
 % Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
 %\adderrata{This is wrong}
 % Add the publication pdf file, the filename is the parameter (must be the last).
-%\addpublicationpdf{articles/gf_article.pdf}
+% \addpublicationpdf{articles/gf_article.pdf}
 
 \addpublication{K. S\"a\"askilahti, J. Oksanen, and J. Tulkki}{Quantum Langevin equation approach to electromagnetic energy transfer between dielectric bodies in an inhomogeneous environment}{Phys. Rev. B}{89, 134301}{April}{2014}{American Physical Society}{dipole}
 % Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
@@ -280,7 +292,7 @@ The author actively contributed to the writing of the manuscript and participate
 % Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
 %\adderrata{This is wrong}
 % Add the publication pdf file, the filename is the parameter (must be the last).
-%\addpublicationpdf{articles/dipole_article.pdf}
+% \addpublicationpdf{articles/dipole_article.pdf}
 
 
 \end{document}
