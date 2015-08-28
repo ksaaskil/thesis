@@ -6,6 +6,7 @@
 %\usepackage[utf8]{fontenc}
 %\usepackage{pslatex}
 %\usepackage{ae,aecompl}
+\usepackage[T1]{fontenc}
 \usepackage[finnish,english]{babel}
 \usepackage{lipsum}
 %\usepackage{auto-pst-pdf}
@@ -23,7 +24,8 @@
 \usepackage{upgreek}
 \usepackage{siunitx}
 \usepackage{tabularx}
-
+%\usepackage{setspace}
+%\doublespacing
 \newcommand{\ud}{\mathrm{d}}
 \newcommand{\bb}{\mathbf}
 \newcommand{\ca}{\mathcal}
@@ -58,40 +60,44 @@
   \chapter*{Symbols and abbreviations}%
 }
 
+
 % The author of the dissertation
 \author{Kimmo S\"a\"askilahti}
 % The title of the thesis
-\title{Nanoscale energy transfer -- Insight from computational modeling and spectral analysis}
+
+
+\title{Computational modeling and spectral\\ analysis of nanoscale energy transfer}
 
 \begin{document}
+% \doublespace
 \pagenumbering{roman}
 
-% Use this command!
+\draftabstract{Swift progress in the synthesis and processing of materials with nanoscale feature sizes has spawned new possibilities to control the flow of thermal energy. New materials and devices with engineered thermal properties are expected to enable, e.g., clean and more efficient production of energy from waste heat by thermoelectric converters, reducing the energy consumption of digital electronics, and generating novel technologies such as heat-assisted magnetic recording and phase-change memories. As the classical laws of energy transfer do not generally apply in nanoscale, practical realization of such applications calls for powerful computational methods delivering scientific understanding of nanoscale heat transfer.
 
-\draftabstract{Swift progress in the synthesis and processing of materials with nanoscale structures has spawned new ways to control the flow of thermal energy. Mastering the capabilities to engineer new materials and devices with tailored thermal properties is expected to enable, e.g., clean and more efficient production of energy from waste heat by thermoelectric converters, reducing the energy consumption of digital electronics, and generating novel technologies such as heat-assisted magnetic recording and phase-change memories. As the classical laws of energy transfer do not generally apply in nanoscale, practical realization of such applications calls for powerful computational methods delivering scientific understanding of nanoscale heat transfer.
+The goal of this thesis is to develop new computational models and methods for describing energy transfer in atomic-scale structures and to apply the methods to generate useful insight into various thermal phenomena. The work is founded on classical molecular dynamics simulations and quantum-mechanical Green's function approaches, both using the fluctuation-dissipation theorem to couple the studied systems to external heat baths. To enable detailed analysis of energy transfer mechanisms in thermal conduction, new methods to spectrally decompose the lattice heat current into frequency componets are also developed. Spectral analysis is applied in the thesis to identify non-linear energy transfer mechanisms at material interfaces and to determine the mean free paths of heat carriers in carbon nanotubes. The results also suggest that the thermoelectric efficiency of silicon nanowires can be increased by a specific superlattice structure and that the electromagnetic energy transfer rate between dielectric nanoparticles can be tuned by a mirror cavity.
 
-The goal of this thesis is to develop new computational models and methods for describing nanoscale energy transfer and to apply the methods to generate useful insight into various thermal phenomena. The results include, e.g., new methods to spectrally decompose the lattice heat current into its frequency components, allowing detailed analysis of thermal transfer in non-linear systems. The work provides substantial new insight into the role of non-linear processes in thermal conduction across interfaces and in carbon nanotubes. The results also suggest that the thermoelectric efficiency of silicon nanowires and the electromagnetic energy transfer rate between nanoparticles can be tuned, respectively, by periodical twinning stacking faults and a mirror cavity.
+In addition, the thesis initiates the development of a unified fluctuational model for describing energy transfer by lattice vibrations, electromagnetic fields, and electrons in a single mathematical framework that can generate extensive understanding of the energy conversion phenomena present in small structures. As a whole, the methods and results of the thesis provide new analytical and numerical tools for describing nanoscale energy transfer within a framework that may, with further development, become instrumental also in modeling energy conversion and transfer processes in multiscale systems involving heat, light and electricity.}
 
-As a whole, the thesis initiates the development of a unified fluctuational model for describing energy transfer by lattice vibrations, electromagnetic fields, and electrons in a single mathematical framework that can generate extensive understanding of the thermal phenomena present in small structures. More specifically, the methods and results of the thesis provide new analytical and numerical tools for describing nanoscale energy transfer within a framework that may, with further development, become instrumental also in modeling complete multiscale energy conversion processes and systems involving heat, light and electricity.}
-
-%\draftabstract{Swift progress in the synthesis and processing of materials with nanoscale structures has spawned new ways to control the flow of thermal energy. Mastering the capabilities to engineer new materials and devices with tailored thermal properties is expected to enable, e.g., clean production of energy from waste heat by thermoelectric converters, reducing the energy consumption of digital electronics, and generating novel technologies such as heat-assisted magnetic recording and phase-change memories. As the classical laws of energy transfer do not generally apply in nanoscale, practical realization of such applications calls for new computational methods delivering scientific understanding of nanoscale heat transfer.
-
-%The goal of the thesis is to develop new computational models and methods for nanoscale energy transfer and to apply the methods to generate useful insight into thermal phenomena. The thesis presents, for example, a mathematical expression for the spectral decomposition of lattice heat current, allowing for detailed analysis of thermal transfer in non-linear systems. The results of the thesis underline the role of non-linear processes in thermal conduction across interfaces, provide numerical evidence on non-diffusive thermal conduction in carbon nanotubes as long as 10 $\mu$m, suggest the increase of thermoelectric efficiency in silicon nanowires by the introduction of periodic stacking faults, and demonstrate the possibility to tune electromagnetic energy transfer between nanoparticles by a mirror cavity. Thesis also develops a unified framework for the modeling of energy transfer by lattice vibrations, electromagnetic fields, and electrons. %The model is applied to studying quantum effects in thermal transfer in point contacts and demonstrating the tuning of electromagnetic energy transfer between nanoparticles by a mirror cavity.
-
-%The methods and results presented in the thesis contribute to the science of nanoscale heat transfer by creating new understanding of thermal phenomena in small structures and providing researchers with tools for more detailed analysis of numerical simulations.} 
+% As a whole, the methods and results of the thesis provide new analytical and numerical tools for describing nanoscale energy transfer within a framework that may, with further development, become instrumental also in modeling complete multiscale energy conversion processes and systems involving heat, light and electricity.
 
 % Let's add another one in Finnish
-\draftabstract[finnish]{Abstract in Finnish}
+\draftabstract[finnish]{Nanoteknologian nopea kehitys on synnytt\"anyt uusia tapoja hallita l\"amp\"oenergiaa. L\"amp\"oenergian tehokkaan hallinnan ja ohjauksen odotetaan mahdollistavan mm. puhtaan energiantuotannon termos\"ahk\"oisill\"a materiaaleilla, digitaalielektroniikan tehonkulutuksen pienent\"amisen sek\"a t\"aysin uusien sovellusten kuten l\"amp\"oohjatun magneettisen tallentamisen kehitt\"amisen. L\"amp\"oenergiaa hy\"odynt\"avien sovellusten kehitt\"aminen vaatii kuitenkin erinomaista ymm\"arryst\"a energiansiirtomekanismeista hyvin pieniss\"a rakenteissa.
+
+% To enable more detailed analysis of the energy transfer mechanisms in thermal conduction, new methods to spectrally decompose the lattice heat current to its frequency componets are also developed.
+
+V\"ait\"oskirjaty\"on tavoitteena on kehitt\"a\"a uusia laskennallisia malleja ja menetelmi\"a l\"amm\"onsiirron mallintamiseen nanomittakaavan rakenteissa sek\"a soveltaa menetelmi\"a uuden ymm\"arryksen synnytt\"amiseen. Ty\"o perustuu klassiseen ep\"atasapainotilan molekyylidynamiikkamenetelm\"a\"an sek\"a kvanttimekaanisiin Greenin funktio -laskuihin, jotka molemmat hy\"odynt\"av\"at fluktuaatio-dissipaatioteoriaa tarkasteltavan systeemin ja ymp\"arist\"on v\"alisen kytkenn\"an kuvaamiseen. L\"ammonjohtumismekanismien analysoimiseksi kehitet\"a\"an mm. menetelm\"a hilav\"ar\"ahtelyjen kuljettaman l\"amp\"ovirran jakamiseksi taajuuskomponentteihin. Ty\"on malleja ja spektraalista hajotelmaa sovelletaan ep\"alineaaristen l\"amm\"onsiirtomekanismien tunnistamiseen materiaalirajapinnoilla sek\"a l\"amp\"o\"a kuljettavien hilav\"ar\"ahtelyjen sirontapituuksien m\"a\"aritt\"amiseen hiilinanoputkissa. Ty\"on tulokset osoittavat my\"os, ett\"a piinanolankojen termos\"ahk\"oisi\"a ominaisuuksia voidaan parantaa erityisell\"a superhilarakenteella ja ett\"a s\"ahk\"omagneettisen l\"amm\"onsiirron voimakkuutta nanopartikkeleiden v\"alill\"a voidaan muokata sijoittamalla partikkelit peilikaviteettiin.
+
+Ty\"oss\"a kehitet\"a\"an lis\"aksi yhten\"ainen matemaattinen malli hilav\"ar\"ahtelyjen, s\"ahk\"omagneettisten kenttien ja elektronien l\"amm\"onkuljetuksen mallintamiseen. Kokonaisuudessaan v\"ait\"oskirjaty\"o tarjoaa energiansiirron mallintamiseen ty\"okaluja, jotka voivat tulevaisuudessa olla merkitt\"av\"ass\"a roolissa valon, s\"ahk\"on ja l\"amm\"on vuorovaikutuksien kuvaamisessa eri mittakaavan rakenteissa.}
+
+% 
 
 \author{Kimmo S\"a\"askilahti}
-\begin{preface}[Espoo, Finland]
-Preface text
-%...
-\end{preface}
-
-\vspace{1cm}
-\noindent
-\textit{Funding organizations}
+%\begin{preface}[Espoo, Finland]
+%Preface text
+%\end{preface}
+%\vspace{1cm}
+%\noindent
+%\textit{Funding organizations}
 
 \tableofcontents
 
@@ -100,7 +106,7 @@ Preface text
 \chapter*{Summary of article contents}
 \addcontentsline{toc}{chapter}{Summary of article contents}
 
-\textbf{Publication I} investigates the role of anharmonic phonon scattering in thermal conduction across planar material interfaces and thereby provides the first application of the spectral decomposition formula for heat current in non-linear systems. The results show that anharmonic phonon scattering facilitates thermal conduction across the interface by providing a dissipation mechanism for evanescent waves and by enabling multi-phonon energy transfer processes at the interface.
+\textbf{Publication I} investigates the role of anharmonic phonon scattering in thermal conduction across planar material interfaces and provides the first application of the spectral decomposition formula for heat current. The results show that anharmonic phonon scattering facilitates thermal conduction across the interface by providing a dissipation mechanism for evanescent waves and by enabling multi-phonon energy transfer processes at the interface.
 
 \vspace{1cm}
 \noindent
@@ -116,7 +122,7 @@ Preface text
 
 \vspace{1cm}
 \noindent
-\textbf{Publication VII} presents Langevin theory of electromagnetic energy transfer, providing an alternative description complementing the traditional fluctuational electrodynamics. Numerical results for nanoparticles in a mirror cavity demonstrate the possibility to tune the rate of electromagnetic energy transfer between dielectric bodies by an inhomogeneous environment.
+\textbf{Publication VII} presents Langevin theory of electromagnetic energy transfer, providing an alternative description complementing the traditional fluctuational electrodynamics. Numerical results for nanoparticles in a mirror cavity demonstrate the possibility to tune the rate of electromagnetic energy transfer between dielectric bodies by an inhomogeneous environment, in analogy to the well-known Purcell effect enabling the tuning of spontaneous emission.
 
 \chapter*{Author's contribution}
 \addcontentsline{toc}{chapter}{Author's contribution}
@@ -147,11 +153,11 @@ The author actively contributed to the writing of the manuscript and participate
    \item[$\varepsilon_0$] Vacuum permittivity
    \item[$\varepsilon_{\textrm{env}}$] Electric permittivity of the environment
    \item[$\eta$] Electron Langevin noise operator
-   \item[FDT] Fluctuation-dissipation theorem
    \item[$f$] Frequency
    \item[$f_{\textrm{BE}}$] Bose-Einstein function
    \item[$f_{\textrm{FD}}$] Fermi-Dirac function
   \item[$F$] Force
+   \item[FDT] Fluctuation-dissipation theorem
   \item[$g$] Spectrally decomposed thermal conductance
   \item[$G$] Green's function matrix
   \item[$\mathbb{G}$] Electromagnetic Green's dyadic
@@ -168,21 +174,21 @@ The author actively contributed to the writing of the manuscript and participate
   \item[$j$] Polarization current
   \item[$k_B$] Boltzmann constant
   \item[$K$] Force constant matrix 
-  \item[$L$] System length
    \item[$\lambda_{\textrm{max}}$] Thermal wavelength
   \item[$\Lambda$] Phonon mean free path
+  \item[$L$] System length
+   \item[$\mu$] Chemical potential
+  \item[$\mu_0$] Vacuum permeability
   \item[$m$] Mass of atom or dipole
   \item[$m_e$] Electron mass
-  \item[$\mu$] Chemical potential
-  \item[$\mu_0$] Vacuum permeability
-   \item[MD] Molecular dynamics
+  \item[MD] Molecular dynamics
   \item[$n$] Refractive index
   \item[NEMD] Non-equilibrium molecular dynamics
   \item[$\xi$] Langevin force 
   \item[$\omega$] Angular frequency
   \item[$\omega_0$] Oscillator resonance frequency
+    \item[$p$] Dipole moment
   \item[$p^{\textrm{kin}}$] Kinetic momentum  
-  \item[$p$] Dipole moment
   \item[$P$] Electric polarization density
   \item[$P_{\textrm{ind}}$] Induced part of electric polarization density
   \item[$P_{\textrm{fluc}}$] Fluctuating part of electric polarization density
@@ -194,9 +200,9 @@ The author actively contributed to the writing of the manuscript and participate
   \item[$r$] Atom position
   \item[$r_0$] Equilibrim position of atom 
   \item[$R$] Nanoparticle radius
-  \item[$S$] Poynting vector
-  \item[$\Sigma$] Bath self-energy
+   \item[$\Sigma$] Bath self-energy
   \item[$\sigma$] Electron orbital index
+  \item[$S$] Poynting vector
   \item[$t$] Time
   \item[$t_{ij}^{\sigma\sigma'}$] Electron tight-binding hopping constant
   \item[$T$] Temperature
