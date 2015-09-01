@@ -1,4 +1,4 @@
-\documentclass[dissertation,draft*]{aaltoseries}
+\documentclass[dissertation]{aaltoseries}
 %\documentclass[dissertation,draft*]{aaltoseries}
 %\documentclass[draft]{aaltoseries}
 %\usepackage{aaltothesis}
@@ -78,12 +78,7 @@ The goal of this thesis is to develop new computational models and methods for d
 
 In addition, the thesis initiates the development of a unified fluctuational model for describing energy transfer by lattice vibrations, electromagnetic fields, and electrons in a single mathematical framework that can generate extensive understanding of the energy conversion phenomena present in small structures. As a whole, the methods and results of the thesis provide new analytical and numerical tools for describing nanoscale energy transfer within a framework that may, with further development, become instrumental also in modeling energy conversion and transfer processes in multiscale systems involving heat, light and electricity.}
 
-% As a whole, the methods and results of the thesis provide new analytical and numerical tools for describing nanoscale energy transfer within a framework that may, with further development, become instrumental also in modeling complete multiscale energy conversion processes and systems involving heat, light and electricity.
-
-% Let's add another one in Finnish
 \draftabstract[finnish]{Nanoteknologian nopea kehitys on synnytt\"anyt uusia tapoja hallita l\"amp\"oenergiaa. L\"amp\"oenergian tehokkaan hallinnan ja ohjauksen odotetaan mahdollistavan mm. puhtaan energiantuotannon termos\"ahk\"oisill\"a materiaaleilla, digitaalielektroniikan tehonkulutuksen pienent\"amisen sek\"a t\"aysin uusien sovellusten kuten l\"amp\"oohjatun magneettisen tallentamisen kehitt\"amisen. L\"amp\"oenergiaa hy\"odynt\"avien sovellusten kehitt\"aminen vaatii kuitenkin erinomaista ymm\"arryst\"a energiansiirtomekanismeista hyvin pieniss\"a rakenteissa.
-
-% To enable more detailed analysis of the energy transfer mechanisms in thermal conduction, new methods to spectrally decompose the lattice heat current to its frequency componets are also developed.
 
 V\"ait\"oskirjaty\"on tavoitteena on kehitt\"a\"a uusia laskennallisia malleja ja menetelmi\"a l\"amm\"onsiirron mallintamiseen nanomittakaavan rakenteissa sek\"a soveltaa menetelmi\"a uuden ymm\"arryksen synnytt\"amiseen. Ty\"o perustuu klassiseen ep\"atasapainotilan molekyylidynamiikkamenetelm\"a\"an sek\"a kvanttimekaanisiin Greenin funktio -laskuihin, jotka molemmat hy\"odynt\"av\"at fluktuaatio-dissipaatioteoriaa tarkasteltavan systeemin ja ymp\"arist\"on v\"alisen kytkenn\"an kuvaamiseen. L\"ammonjohtumismekanismien analysoimiseksi kehitet\"a\"an mm. menetelm\"a hilav\"ar\"ahtelyjen kuljettaman l\"amp\"ovirran jakamiseksi taajuuskomponentteihin. Ty\"on malleja ja spektraalista hajotelmaa sovelletaan ep\"alineaaristen l\"amm\"onsiirtomekanismien tunnistamiseen materiaalirajapinnoilla sek\"a l\"amp\"o\"a kuljettavien hilav\"ar\"ahtelyjen sirontapituuksien m\"a\"aritt\"amiseen hiilinanoputkissa. Ty\"on tulokset osoittavat my\"os, ett\"a piinanolankojen termos\"ahk\"oisi\"a ominaisuuksia voidaan parantaa erityisell\"a superhilarakenteella ja ett\"a s\"ahk\"omagneettisen l\"amm\"onsiirron voimakkuutta nanopartikkeleiden v\"alill\"a voidaan muokata sijoittamalla partikkelit peilikaviteettiin.
 
@@ -97,7 +92,7 @@ Ty\"oss\"a kehitet\"a\"an lis\"aksi yhten\"ainen matemaattinen malli hilav\"ar\"
 %\end{preface}
 %\vspace{1cm}
 %\noindent
-%\textit{Funding organizations}
+%\textit{Funding organizations, computational resources}
 
 \tableofcontents
 
@@ -177,16 +172,19 @@ The author actively contributed to the writing of the manuscript and participate
    \item[$\lambda_{\textrm{max}}$] Thermal wavelength
   \item[$\Lambda$] Phonon mean free path
   \item[$L$] System length
+  \item[$L_{\textrm{bath}}$] Length of heat bath
    \item[$\mu$] Chemical potential
   \item[$\mu_0$] Vacuum permeability
   \item[$m$] Mass of atom or dipole
   \item[$m_e$] Electron mass
   \item[MD] Molecular dynamics
   \item[$n$] Refractive index
+  \item[$N$] Number of atoms
   \item[NEMD] Non-equilibrium molecular dynamics
   \item[$\xi$] Langevin force 
   \item[$\omega$] Angular frequency
   \item[$\omega_0$] Oscillator resonance frequency
+  \item[$\omega_r$] Phonon-polariton resonance frequency
     \item[$p$] Dipole moment
   \item[$p^{\textrm{kin}}$] Kinetic momentum  
   \item[$P$] Electric polarization density
@@ -250,15 +248,15 @@ The author actively contributed to the writing of the manuscript and participate
 % Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
 %\adderrata{This is wrong}
 % Add the publication pdf file, the filename is the parameter (must be the last).
-% \addpublicationpdf{articles/spectral_article.pdf}
+\addpublicationpdf{articles/spectral_article.pdf}
 
-\addpublication{K. S\"a\"askilahti, J. Oksanen, S. Volz, and J. Tulkki}{Frequency-dependent phonon mean free paths in carbon nanotubes from non-equilibrium molecular dynamics}{Phys. Rev. B}{91, 115426}{March}{2015}{American Physical Society}{cnt}
+\addpublication{K. S\"a\"askilahti, J. Oksanen, S. Volz, and J. Tulkki}{Frequency-dependent phonon mean free paths in carbon nanotubes from nonequilibrium molecular dynamics}{Phys. Rev. B}{91, 115426}{March}{2015}{American Physical Society}{cnt}
 % Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
 %\addcontribution{The author did this and that}
 % Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
 %\adderrata{This is wrong}
 % Add the publication pdf file, the filename is the parameter (must be the last).
-% \addpublicationpdf{articles/cnt_article.pdf}
+\addpublicationpdf{articles/cnt_article.pdf}
 
 
 \addpublication{Shiyun Xiong, Yuriy A. Kosevich, K. S\"a\"askilahti, Yuxiang Ni, and Sebastian Volz}{Tunable thermal conductivity in silicon twinning superlattice nanowires}{Phys. Rev. B}{90, 195439}{November}{2014}{American Physical Society}{twinning}
@@ -267,24 +265,24 @@ The author actively contributed to the writing of the manuscript and participate
 % Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
 %\adderrata{This is wrong}
 % Add the publication pdf file, the filename is the parameter (must be the last).
-% \addpublicationpdf{articles/twinning_article.pdf}
+\addpublicationpdf{articles/twinning_article.pdf}
 
 \addpublication{K. S\"a\"askilahti, J. Oksanen, R.~P. Linna, and J. Tulkki}{Thermal conduction and interface effects in nanoscale Fermi-Pasta-Ulam conductors}{Phys. Rev. E}{86, 031107}{September}{2012}{American Physical Society}{fpu}
 % Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
-\addcontribution{The author made the coffee.}
+% \addcontribution{The author made the coffee.}
 % Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
 %\adderrata{This is wrong}
 % Add the publication pdf file, the filename is the parameter (must be the last).
-% \addpublicationpdf{articles/fpu_article.pdf}
+\addpublicationpdf{articles/fpu_article.pdf}
 
 \addpublication{K. S\"a\"askilahti, J. Oksanen, R.~P. Linna, and J. Tulkki}{Phonon interference and anharmonicity effects in nanoconstrictions}{AIP Conf. Proc.}{1506, 15}{December}{2012}{American Physical Society}{fpu2}
-\addcontribution{The author made the coffee.}.
+% \addcontribution{The author made the coffee.}.
 % Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
 %\addcontribution{The author made the coffee.}
 % Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
 %\adderrata{This is wrong}
 % Add the publication pdf file, the filename is the parameter (must be the last).
-% \addpublicationpdf{articles/fpu_article.pdf}
+\addpublicationpdf{articles/fpu_article2b.pdf}
 
 \addpublication{K. S\"a\"askilahti, J. Oksanen, and J. Tulkki}{Thermal balance and quantum heat transport in nanostructures thermalized by local Langevin heat baths}{Phys. Rev. E}{88, 012128}{July}{2013}{American Physical Society}{gf}
 % Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
@@ -292,7 +290,7 @@ The author actively contributed to the writing of the manuscript and participate
 % Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
 %\adderrata{This is wrong}
 % Add the publication pdf file, the filename is the parameter (must be the last).
-% \addpublicationpdf{articles/gf_article.pdf}
+\addpublicationpdf{articles/gf_article.pdf}
 
 \addpublication{K. S\"a\"askilahti, J. Oksanen, and J. Tulkki}{Quantum Langevin equation approach to electromagnetic energy transfer between dielectric bodies in an inhomogeneous environment}{Phys. Rev. B}{89, 134301}{April}{2014}{American Physical Society}{dipole}
 % Add the dissertation author's contribution to that publication (the order can be interchanged with \adderrata).
@@ -300,7 +298,7 @@ The author actively contributed to the writing of the manuscript and participate
 % Add the errata of the publication, remove if there are none (the order can be interchanged with \addauthorscontribution).
 %\adderrata{This is wrong}
 % Add the publication pdf file, the filename is the parameter (must be the last).
-% \addpublicationpdf{articles/dipole_article.pdf}
+\addpublicationpdf{articles/dipole_article.pdf}
 
 
 \end{document}
